@@ -1,0 +1,40 @@
+# Infraestrutura
+
+## Hardware
+
+## Software
+
+## Gestão de dados
+
+Um importante passo consiste na criação do nosso diretório de trabalho. Para isso, acesse seu gerenciador
+de diretórios e crie a seguinte estrutura de diretórios em seu local favorito de trabalho:
+
+    projeto
+    |- code/       # qualquer código de programação
+    |  |- R/       # código de programação em R
+    |
+    |- data
+    |  |- grid/    # dados matriciais
+    |  |- R/       # dados no formato *.rda
+    |  |- vector/  # dados vetoriais
+    |
+    |- doc/        # arquivos usados para redigir o relatório
+    |  |- fig/     # figuras usadas no relatório
+
+Note que, dentro do nosso diretório de trabalho principal (`projeto`) existem três subdiretórios:
+`code`, `data` e `doc`. O primeiro deles, `code`, serve para armazernamos os arquivos
+contendo código de programação em qualquer linguagem. Para cada linguagem criamos um subsubdiretório 
+específico. Nesse exemplo, como usaremos apenas o R, criaremos apenas um subsubdiretório chamado `R`. Ali 
+dentro serão armazenados os *scripts* com código de programação do escritos em R.
+
+O segundo subdiretório será utilizado para armazenarmos os dados usados no projeto. Nesse exemplo, são 
+três os tipos de dados que utilizaremos, cada um armazenado em um subsubdiretório específico. No 
+subsubdiretório `grid` ficarão armazenados os dados matriciais, ou seja, os dados das covariáveis e 
+os resultados das predições espaciais. Já no subsubdiretório `vector` ficarão armazenados os dados 
+vetoriais, ou seja, aqueles cuja forma de representação espacial pode ser a de pontos, linhas e polígonos. 
+Isso inclui os dados de solo e dos limites da área de estudo. Por fim, o subsubdiretório `R` será
+usado para armazenar dados diversos produzidos durante o processamento no R, os quais serão salvos 
+usando o formato `rda`.
+
+O terceito e último subdiretório de nosso diretório de trabalho `projeto`, aqui denominado `doc`,
+será usado para armazenar os arquivos usados para redigir os documentos resultantes do projeto.
