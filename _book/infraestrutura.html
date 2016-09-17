@@ -25,8 +25,13 @@
 
 <meta name="author" content="Alessandro Samuel-Rosa">
 
-<meta name="date" content="2016-09-16">
+<meta name="date" content="2016-09-17">
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,6 +56,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -71,7 +113,13 @@
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
 <li class="chapter" data-level="3" data-path="infraestrutura.html"><a href="infraestrutura.html"><i class="fa fa-check"></i><b>3</b> Infraestrutura</a><ul>
 <li class="chapter" data-level="3.1" data-path="infraestrutura.html"><a href="infraestrutura.html#hardware"><i class="fa fa-check"></i><b>3.1</b> Hardware</a></li>
-<li class="chapter" data-level="3.2" data-path="infraestrutura.html"><a href="infraestrutura.html#software"><i class="fa fa-check"></i><b>3.2</b> Software</a></li>
+<li class="chapter" data-level="3.2" data-path="infraestrutura.html"><a href="infraestrutura.html#software"><i class="fa fa-check"></i><b>3.2</b> Software</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="infraestrutura.html"><a href="infraestrutura.html#r"><i class="fa fa-check"></i><b>3.2.1</b> R</a></li>
+<li class="chapter" data-level="3.2.2" data-path="infraestrutura.html"><a href="infraestrutura.html#qgis"><i class="fa fa-check"></i><b>3.2.2</b> QGIS</a></li>
+<li class="chapter" data-level="3.2.3" data-path="infraestrutura.html"><a href="infraestrutura.html#saga-gis"><i class="fa fa-check"></i><b>3.2.3</b> SAGA GIS</a></li>
+<li class="chapter" data-level="3.2.4" data-path="infraestrutura.html"><a href="infraestrutura.html#grass-gis"><i class="fa fa-check"></i><b>3.2.4</b> GRASS GIS</a></li>
+<li class="chapter" data-level="3.2.5" data-path="infraestrutura.html"><a href="infraestrutura.html#gdal"><i class="fa fa-check"></i><b>3.2.5</b> GDAL</a></li>
+</ul></li>
 <li class="chapter" data-level="3.3" data-path="infraestrutura.html"><a href="infraestrutura.html#gestao-de-dados"><i class="fa fa-check"></i><b>3.3</b> Gestão de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="metodos.html"><a href="metodos.html"><i class="fa fa-check"></i><b>4</b> Métodos</a></li>
@@ -105,6 +153,169 @@
 </div>
 <div id="software" class="section level2">
 <h2><span class="header-section-number">3.2</span> Software</h2>
+<div id="r" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> R</h3>
+<p>O <img src='images/r.jpeg'; height='12'/>, daqui em diante simbolizado ‘R’, é uma linguagem de programação e um ambiente de análises estatísticas e gráficas. Sua origem data de 1995, quando dois pesquisadores (Robert Gentleman e Ross Ihaka) iniciaram o projeto de seu desenvolvimento no Departamento de Estatística da Universidade de Auckland na Nova Zelândia. O nome deriva, exatamente, das iniciais dos dois pesquisadores: R.</p>
+<p>Atualmente o R está disponível como um Software Livre sob os termos da Licença Pública Geral do GNU da Fundação do Software Livre na forma de código fonte. Isso quer dizer que o R está disponível gratuitamente para qualquer interessado em utilizá-lo, seja para atividades com ou sem fins lucrativos. Além disso, essa licença permite que o usuário faça alterações conforme desejado. Tanto o aplicativo como as alterações podem ser reproduzidas e distribuídas, desde que sempre mantidos os direitos dos autores.</p>
+<p>Enfim, a grande vantagem do R em relação à maioria dos <em>softwares</em> de análise estatística disponíveis no mercado é exatamente a sua gratuidade. Mas essa gratuidade não é, como em alguns casos, sinônimo de baixa qualidade. Pelo contrário, o R possui uma série de funcionalidades muitas vezes ainda não implementadas em softwares comercializados. Todo tipo de análise pode ser realizada utilizando o R: basta que já exista um pacote que a implemente ou que o usuário desenvolva o código. Além disso, o R permite que as rotinas de análise sejam registradas e, quando necessário, verificadas ou disponibilizadas para verificação por outros pesquisadores. Trata-se de uma funcionalidade que possibilita verdadeiramente a observação de alguns dos princípios do método científico.</p>
+<p>A gratuidade do R por si só já deveria ser suficiente para convencer nossos pesquisadores, que dispõe de recursos escassos para manter as licenças dos softwares comerciais, a usar o R. Mas não é só isso! O R é hoje o que a maioria dos estatísticos e matemáticos ao redor do mundo utiliza para analisar seus dados. São esses estatísticos e matemáticos que estão ajudando a desenvolver o R mais e mais. Além disso, são esses profissionais que disponibilizam parte de seu tempo para elaborar a miríade de tutoriais e materiais de apoio disponíveis atualmente. Nenhum software comercial possui, hoje, seja em meio digital como em meio impresso, um volume de material de apoio maior do que o R. Soma-se ainda o fato de que o R permite a confecção de gráficos de qualidade igual ou até superior a qualquer pacote comercial disponível hoje no mercado. Além disso, o R roda em qualquer sistema operacional. Será que é preciso dizer mais alguma coisa?</p>
+<div id="conhecendo-melhor-o-r" class="section level4 unnumbered">
+<h4>Conhecendo melhor o R</h4>
+<p>A melhor maneira de conhecer melhor o R é, sem dúvida, instalando-o em seu computador. Para isso precisamos, primeiro, visitar a página do projeto na Internet:</p>
+<iframe src="http://www.r-project.org/" width="672" height="400px">
+</iframe>
+<p>Uma grande quantidade de informação, muito além do que se busca incluir neste livro, pode ser encontrada no sítio do projeto. Ali estão disponíveis diversos manuais de uso (<code>Documentation &gt; Munuals</code>), bem como livros (<code>Documentation &gt; Books</code>) e artigos publicados na revista do projeto (<code>Documentation &gt; The R Journal</code>). Ainda ha uma página com respostas às perguntas mais frequentes (<code>Documentation &gt; FAQs</code>) e uma página inteira explicando sobre como é possível conseguir ajuda do próprio R antes de recorrer a terceiros (<code>Help With R &gt; Getting Help</code>) – como a documentação do R é extensa e a maioria dos colaboradores do projeto não são pagos pela colaboração, recomendo que você sempre procure, primeiro, resolver qualquer dúvida sozinho.</p>
+<p>O procedimento de instalação do R depende do sistema operacional (<a href="https://en.wikipedia.org/wiki/Operating_system">OS</a>, do inglês <em>operating system</em>) de seu computador:</p>
+<ul>
+<li>Linux: <a href="https://cloud.r-project.org/bin/linux/" class="uri">https://cloud.r-project.org/bin/linux/</a></li>
+<li>(Mac) OS X: <a href="https://cloud.r-project.org/bin/macosx/" class="uri">https://cloud.r-project.org/bin/macosx/</a></li>
+<li>Windows: <a href="https://cloud.r-project.org/bin/windows/base/" class="uri">https://cloud.r-project.org/bin/windows/base/</a></li>
+</ul>
+<p>A página referente à cada OS possui as instruções necessárias para descarregar e instalar o R em seu computador. Em geral, o processo de instalação é exatamente igual àquele de outros <em>softwares</em> que você usa em seu dia-a-dia.</p>
+<p>Depois de instalar o R, agora é a hora de escolher uma interface gráfica do usuário (<a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a>, do inglês <em>graphical user interface</em>) que facilite nossa interação com o R. Isso porque o R possui apenas uma interface de linha de comando (<a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>, do inglês <em>command-line interface</em>), ou seja, a única forma de interação com o R se dá via emissão de comandos sob a forma de sucessivas linhas de texto, as chamadas linhas de comando. Dentre as diversas opções gratuitamente disponíveis, as mais atrativas são aquelas que incluem ferramentas adicionais de apoio à programação em R e facilitem a análise, visualização e gerenciamento dos dados. Tais ferramentas constituem os chamados ambientes de desenvolvimento integrado (<a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a>, do inglês <em>integrated development environment</em>). Atualmente, a GUI e IDE mais popular é o RStudio, cujo instalador pode ser descarregado de <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>.</p>
+<p>Assim como para o R, o procedimento de instalação do RStudio depende do seu OS. Depois de instalado, inicie o RStudio em seu computador. Ele deve se parecer mais ou menos como na figura a seguir:</p>
+<div class="figure">
+<img src="images/rstudio-snapshot.png" alt="RStudio – interface gráfica do usuário e ambiente de desenvolvimento integrado para R (em sua versão para Linux). Uma extensa lista de alternativas está disponível na Wikipedia." />
+<p class="caption">RStudio – interface gráfica do usuário e ambiente de desenvolvimento integrado para R (em sua versão para Linux). Uma extensa lista de alternativas está disponível na <a href="https://en.wikipedia.org/wiki/R_(programming_language)#Interfaces">Wikipedia</a>.</p>
+</div>
+<p>Você deve ter notado que o RStudio é composto por quatro grandes painéis retangulares, cada um contendo conteúdo específico. Grosso modo, o painel superior direito mostra informações diversas sobre a atual sessão de trabalho, sendo geralmente pouco utilizado. Já o painel inferior direito serve à visualização de gráficos e páginas de ajuda do R, o que o faz ser bastante utilizado. O painel superior esquerdo é aquele utilizado para a programação em R, ou seja, aquele onde o código fonte utilizado para a análise dos dados é editado. Esse painel é aquele onde creio que ocupamos a maior parte do tempo. Por fim, o painel inferior esquerdo corresponde à interface de linha de comando, CLI, do R. É ali que o código fonte editado no painel superior esquerdo deve ser emitido para que a mágica aconteça.</p>
+</div>
+<div id="primeiros-passos" class="section level4 unnumbered">
+<h4>Primeiros passos</h4>
+<p>Façamos algumas operações matemáticas para nos familiarizarmos com o R. Você pode copiar e colar as linhas de código abaixo no CLI do R, que de agora em diante chamaremos <strong><em>console</em></strong>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># As quatro operações matemáticas básicas:</span>
+<span class="dv">2</span> +<span class="st"> </span><span class="dv">3</span> <span class="co"># soma</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span>*<span class="st"> </span><span class="dv">5</span> <span class="co"># multiplicação</span></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">25</span>/<span class="dv">5</span> <span class="co"># divisão </span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> -<span class="dv">3</span> <span class="co"># subtração</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Três operações matemáticas úteis:</span>
+<span class="dv">2</span>^<span class="dv">2</span>      <span class="co"># Potenciação (ou exponenciação)</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">4</span>)   <span class="co"># Função logarítmica</span></code></pre></div>
+<pre><code>## [1] 1.386294</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">25</span>) <span class="co"># Raiz quadrada</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>Você deve ter notado que que os símbolos utilizados são os mesmos encontrados em qualquer calculadora científica. São também os mesmos utilizados nas operações matemáticas de qualquer planilha eletrônica de edição de dados. Isso significa que podemos deduzir muitas coisas sobre o funcionamento do R. Você também deve ter observado que o espaçamento entre número e operador matemático não tem qualquer importância do ponto de vista da operação matemática. Contudo, do ponto de vista estético – para facilidade de leitura do código fonte –, costuma ser indicado usar a formatação <code>2 + 3</code> ao invés de <code>2+3</code>.</p>
+<p>Outro detalhe importante nas linhas de código acima é o uso do símbolo <code>#</code> para a inclusão de comentários na sua sequência. Os comentários podem ser incluídos tanto em uma linha própria como após (nunca antes) um comando. A inclusão de comentários no código fonte é fundamental para documentarmos a atividade que estamos realizando a fim de que outros (e nós mesmos, algumas semanas ou meses mais tarde) possamos entender o propósito daquelas linhas de código.</p>
+<p>Finalmente, você deve ter notado que as duas últimas operações matemáticas foram feitas usando uma declaração nominal, ou seja, <code>log()</code> para a função logarítmica e <code>sqrt()</code> para a raiz quadrada. Na verdade, <code>log()</code> e <code>sqrt()</code> são <strong><em>funções</em></strong> do R, assim como <code>sum()</code> (soma), <code>diff()</code> (diferença), entre outras. Uma função arbitrária chamada <code>fun()</code> sempre é usada da seguinte maneira: <code>fun(x)</code>, onde <code>x</code> é um argumento qualquer (um número, por exemplo) tomado pela função. Veja mais um exemplo, agora de uma função que aceita vários argumentos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># No RStudio, ponha o cursor sobre o nome da função e pressione &#39;F1&#39; para ver a </span>
+<span class="co"># sua página de ajuda.</span>
+<span class="kw">plot</span>(<span class="dt">x =</span> <span class="dv">25</span>, <span class="dt">y =</span> <span class="dv">25</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Um ponto vermelho&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;y&quot;</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="conceitos-basicos" class="section level4 unnumbered">
+<h4>Conceitos básicos</h4>
+<p>Passada a primeira impressão do R vamos aos conceitos básicos que nos permitirão entender o R e permitir seu uso com êxito.</p>
+<p>O primeiro conceito importante, e que já foi comentado no primeiro tópico (O que é o R?), é o de que o R não é um software de análises estatísticas, mas sim um ambiente de programação. E, para isso, precisamos de uma linguagem de programação.</p>
+<p>Mas o que é uma linguagem? A Wikipedia fornece um bom conceito:</p>
+<iframe src="https://pt.wikipedia.org/wiki/Linguagem" width="672" height="400px">
+</iframe>
+<p>E, uma linguagem de programação, segundo a Wikipedia, constitui:</p>
+<iframe src="https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o" width="672" height="400px">
+</iframe>
+<p>Assim, o R constitui um ambiente de programação utilizado para a realização de análises estatísticas e gráficas. A linguagem de programação utilizada também recebe o mesmo nome: R. Da mesma maneira, existem outras linguagens de programação chamadas C, C++, entre outras. Essas linguagens de programação possuem uma gramática. E dois dos principais elementos dessa gramática são as palavras reservadas e as palavras-chave.</p>
+<p>As palavras reservadas constituem signos com significado especial para a linguagem de programação e que não podem ser utilizadas para identificar objetos e funções (veremos esses conceitos logo a seguir). Vejamos alguns exemplos de palavras reservadas no Quadro 2.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Algumas palavras reservadas do pacote ‘base’</span>
+<span class="co"># if</span>
+<span class="co"># else</span>
+<span class="co"># etc</span></code></pre></div>
+<p>Se usarmos uma palavra reservada para identificar um objeto o R automaticamente retorna uma mensagem de erro. Essas palavras somente podem ser utilizadas na construção dos comandos. Veja os exemplos no Quadro 3.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Uso da palavra reservada NULL para identificar um objeto e na construção de um comando.</span>
+<span class="co"># Uso incorreto</span>
+<span class="co"># TRUE &lt;- c(1, 2)</span>
+
+<span class="co"># Uso correto</span>
+<span class="co"># dados &lt;- read.table(“dados.csv”, sep = ”;”, head = TRUE)</span>
+<span class="co"># dados</span></code></pre></div>
+<p>Já as palavras-chave são aquelas utilizadas para definir objetos e funções. Elas podem já estar definidas na linguagem de programação ou serem criadas pelo usuário. As palavras-chave que definem funções são aquelas que acionam operações matemáticas e lógicas que possibilitam a análise estatística de um determinado conjunto de dados. Veja o exemplo no Quadro 4.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Utilização das palavras-chave dados (identificadora de um objeto definido pelo</span>
+<span class="co"># usuário) e `read.table` (identificadora de uma função já definida na linguagem</span>
+<span class="co"># de programação).</span>
+<span class="co"># dados &lt;- read.table(“dados.csv”, sep = ”;”, head = TRUE)</span>
+<span class="co"># dados</span></code></pre></div>
+<p>Veja que a tela branca do R nada mais é do que a sua interface com o usuário, ou seja, o meio pelo qual ocorre a comunicação (note na interface do R que aparece o seguinte símbolo na cor vermelha: &gt;; Esse símbolo indica que o R está pronto para receber os comandos). Assim, aprender a utilizar o R para realização de análises estatísticas constitui, antes de tudo, aprender uma nova linguagem, um novo sistema de signos. Como o R foi desenvolvido inicialmente por pesquisadores da Nova Zelândia, onde o idioma oficial é o inglês, a linguagem utilizada possui uma forte relação com aquela língua. A maioria das palavras reservadas e palavras-chave são derivadas de palavras da língua inglesa. Assim, o conhecimento da língua inglesa facilita, e muito, o entendimento da linguagem do R.</p>
+</div>
+<div id="os-pacotes" class="section level4 unnumbered">
+<h4>Os pacotes</h4>
+<p>Um pacote constitui uma coleção de arquivos e diretórios que contém as regras sintáticas e semânticas que definem determinadas operações matemáticas e lógicas. Na instalação padrão do R um conjunto de pacotes já está incluído. Esses pacotes permitem que uma determinada gama de análises estatísticas sejam realizadas. Cada pacote possui um nome específico e ficam armazenados no diretório de instalação do R. São exemplos os pacotes ‘base’ e ‘stats’.</p>
+<p>Mas as capacidades do R podem ser estendidas através da instalação de novos pacotes. Esses pacotes irão conter as regras sintáticas e semânticas que também definem operações matemáticas e lógicas permitindo a realização de novos métodos de análise estatística e gráfica. São exemplos os pacotes ‘chemometrics’ e ‘agricolae’.</p>
+<p>Para instalar um novo pacote deve-se clicar na barra de menus localizada no topo da interface em Pacotes &gt; Instalar pacote(s)… e então seleciona-se o espelho (CRAN mirror) mais próximo. Na lista que aparece são selecionados os pacotes desejados. Clique em OK.</p>
+<p>Depois de instalado o pacote é preciso carregá-lo. Para isso dirija-se novamente até a barra de menus localizada no topo da interface e clique em Pacotes &gt; Carregar pacote e selecione na lista o pacote desejado. Toda vez que o R é iniciado apenas os pacotes básicos (já presentes na instalação padrão) são carregados automaticamente. Os pacotes instalados posteriormente através do procedimento descrito acima devem ser carregados manualmente.</p>
+</div>
+<div id="diretorio" class="section level4 unnumbered">
+<h4>Diretório</h4>
+<p>Sempre que uma rotina de análises for desenvolvida no R é preciso definir o diretório de trabalho. O diretório de trabalho constitui a pasta em que estão localizados os arquivos contendo os dados a serem analisados. Além disso, é no diretório de trabalho que o R salva o histórico de trabalho contendo todas as operações realizadas.</p>
+<p>Para definir o diretório de trabalho basta dirigir-se à barra de ferramentas e clicar em Arquivo &gt; Mudar dir… e então definir a pasta desejada (Figura 6).</p>
+<p>Figura 6. Definição do diretório de trabalho.</p>
+</div>
+<div id="objetos" class="section level4 unnumbered">
+<h4>Objetos</h4>
+<p>O R trabalha com a noção de <strong><em>objetos</em></strong>, os quais são nada mais do que estruturas básicas de dados. Essas estruturas básicas de dados consistem em vetores e matrizes de dados inseridos pelo próprio usuário, bem como podem conter os resultados dos diversos procedimentos analíticos. Usemos alguns exemplos para esclarecer melhor esse conceito.</p>
+<p>Imagine dois vetores de dados <span class="math display">\[a = [1, 2, 3, 4, 5]\]</span> e <span class="math display">\[b = [2, 4, 3, 5, 7]\]</span>. Esses vetores são inseridos no R e nomeados, respectivamente, como <code>a</code> e <code>b</code>. Então, <code>a</code> e <code>b</code> constituem o que chamamos de objetos, ou seja, uma estrutura de dados. Ao chamarmos os objetos <code>a</code> e <code>b</code> o R retorna os respectivos vetores de dados <span class="math display">\[a = [1, 2, 3, 4, 5]\]</span> e <span class="math display">\[b = [2, 4, 3, 5, 7]\]</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Primeiro definimos os objetos</span>
+a &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
+b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>)
+a</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b</code></pre></div>
+<pre><code>## [1] 2 4 3 5 7</code></pre>
+<p>Suponha agora a realização de uma análise de regressão linear, para a qual usamos a função <code>lm</code>, do vetor <span class="math display">\[a\]</span> em função do vetor <span class="math display">\[b\]</span> acima.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">modelo_linear &lt;-<span class="st"> </span><span class="kw">lm</span>(a ~<span class="st"> </span>b)
+modelo_linear</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = a ~ b)
+## 
+## Coefficients:
+## (Intercept)            b  
+##     -0.1216       0.7432</code></pre>
+<p>Nesse caso o objeto <code>modelo_linear</code> constitui uma estrutura de dados que contém todas as especificações da análise de regressão linear de <span class="math display">\[a\]</span> em função de <span class="math display">\[b\]</span>. Ao chamarmos o objeto <code>modelo_linear</code> o R retorna os coeficientes da regressão linear. Contudo, esse não é o conteúdo completo do objeto ajuste, mas apenas um resumo. Para ver o conteúdo completo desse (e de qualquer objeto) deve-se utilizar a função <code>str</code>.</p>
+<p>Note que a criação ou definição de um objeto depende do uso do símbolo <code>-</code>, ou ainda do símbolo <code>&lt;-</code>.</p>
+</div>
+<div id="comandos-e-simbolos" class="section level4 unnumbered">
+<h4>Comandos e símbolos</h4>
+<p>Conforme mostrado nos quadros acima, todas as funcionalidades do R são acionadas através do uso de comandos de texto e símbolos (matemáticos ou não). Esses comandos e símbolos já estão definidos na linguagem do R e, por isso, quando utilizados, devem ser inseridos de maneira correta para que sejam efetivamente reconhecidos. Assim, é importante ter cuidado porque o R é sensível ao uso de letras maiúsculas e minúsculas, bem como a acentuação e uso de cedilha.</p>
+<p>Basta pressionar a tecla ‘enter’ para acionar um comando. Caso o comando não esteja sintaticamente completo o R mostra o símbolo ‘+’. Nesse caso é preciso verificar o que está faltando no comando inserido. Note que esse aviso não constitui uma mensagem de erro, ou seja, não há necessidade de reescrever o comando, mas apenas completar o que falta. Em alguns casos, se a linha de comando for muito extensa é possível mudar para a linha seguinte e nela continuar o comando sem que isso implique em erros.</p>
+<p>Um comando de grande utilidade é o ‘help(nome_do_comando)’ ou apenas ‘?nome_do_comando’. Esses comandos permitem acionar a ajuda do R sobre os diversos comandos. Contudo, seu uso exige conexão com a Internet, uma vez que a página de ajuda do R encontra-se online. Para acessos offline clique em Ajuda na barra de ferramentas do R.</p>
+<p>Para auxiliar no uso dos comandos e conhecer as suas funções existem alguns cartões de referência. Clique nos nomes dos respectivos autores dos cartões de referência abaixo para acessá-los.</p>
+<ul>
+<li><a href="http://cran.r-project.org/doc/contrib/Short-refcard.pdf">Tom Short</a></li>
+<li><a href="http://www.psych.upenn.edu/~baron/refcard.pdf">Jonathan Baron</a></li>
+<li><a href="http://cran.r-project.org/doc/contrib/YanchangZhao-refcard-data-mining.pdf">Yanchang Zhao</a></li>
+<li><a href="http://cran.r-project.org/doc/contrib/Ricci-refcard-regression.pdf">Vito Ricci</a></li>
+</ul>
+<p>RStudio (<a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>).</p>
+<p>Depois de instalados o R e o RStudio, inicie o RStudio e crie um novo projeto. Para isso, acesse</p>
+<pre><code>Arquivo &gt; Novo projeto &gt; Diretório existente</code></pre>
+<p>e navegue até o diretório recém criado <code>projeto</code>. Clique em <code>Criar projeto</code>. Toda a estrutura de diretórios criada recentemente aparecerá no painel direito inferior do RStudio. Agora crie um novo arquivo do R e salve-o no diretório <code>bigdata &gt; code &gt; R</code>. Será nesse arquivo que você organizará o código em R usado para o processamento dos dados. A criação de um projeto no RStudio facilita a organização dos dados.</p>
+<p>O próximo passo consiste em instalar alguns pacotes do R. Para isso, copie os comandos abaixo para o arquivo que você criou no diretório <code>bigdata &gt; code &gt; R</code> e, em seguida, envie-os para processamento selecionando a linha desejada e <code>Ctrl + Enter</code>. O mesmo se aplica à todos os comandos do R que aparecem neste documento.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(
+  <span class="kw">c</span>(<span class="st">&quot;sp&quot;</span>, <span class="st">&quot;raster&quot;</span>, <span class="st">&quot;rgdal&quot;</span>, <span class="st">&quot;pedometrics&quot;</span>, <span class="st">&quot;randomForest&quot;</span>, <span class="st">&quot;rsaga&quot;</span>), <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div>
+</div>
+</div>
+<div id="qgis" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> QGIS</h3>
+<p>QGIS (<a href="http://www.qgis.org/" class="uri">http://www.qgis.org/</a>)</p>
+<p>Inicie o QGIS e acesse</p>
+<pre><code>Projeto &gt; Novo &gt; Salvar como</code></pre>
+<p>e navegue até o diretório <code>projeto</code>. Nomeie o projeto como <code>projeto</code>. Assim como para o RStudio, a criação de um projeto no QGIS facilita a organização dos dados.</p>
+</div>
+<div id="saga-gis" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> SAGA GIS</h3>
+</div>
+<div id="grass-gis" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> GRASS GIS</h3>
+<p>O GRASS GIS, mais comumente chamado GRASS (Sistema de Apoio à Análise de Recursos Geográficos), é um Sistema de Informação Geográfica (SIG) livre e de código aberto usado para o gerenciamento e análise de dados geoespaciais, processamento de imagens, produção de mapas e gráficos, modelagem e visualização espacial. Trata-se de um SIG usado em ambientes acadêmicos e comerciais em todo o mundo, bem como por muitas agências governamentais e empresas de consultoria ambiental.</p>
+<p>Sítio: <a href="https://grass.osgeo.org/" class="uri">https://grass.osgeo.org/</a></p>
+</div>
+<div id="gdal" class="section level3">
+<h3><span class="header-section-number">3.2.5</span> GDAL</h3>
+<p>GDAL (<a href="http://www.gdal.org/" class="uri">http://www.gdal.org/</a>)</p>
+</div>
 </div>
 <div id="gestao-de-dados" class="section level2">
 <h2><span class="header-section-number">3.3</span> Gestão de dados</h2>
@@ -120,8 +331,8 @@
 |
 |- doc/        # arquivos usados para redigir o relatório
 |  |- fig/     # figuras usadas no relatório</code></pre>
-<p>Note que, dentro do nosso diretório de trabalho principal (<code>projeto</code>) existem três subdiretórios: <code>code</code>, <code>data</code> e <code>doc</code>. O primeiro deles, <code>code</code>, serve para armazernamos os arquivos contendo código de programação em qualquer linguagem. Para cada linguagem criamos um subsubdiretório específico. Nesse exemplo, como usaremos apenas o R, criaremos apenas um subsubdiretório chamado <code>R</code>. Ali dentro serão armazenados os <em>scripts</em> com código de programação do escritos em R.</p>
-<p>O segundo subdiretório será utilizado para armazenarmos os dados usados no projeto. Nesse exemplo, são três os tipos de dados que utilizaremos, cada um armazenado em um subsubdiretório específico. No subsubdiretório <code>grid</code> ficarão armazenados os dados matriciais, ou seja, os dados das covariáveis e os resultados das predições espaciais. Já no subsubdiretório <code>vector</code> ficarão armazenados os dados vetoriais, ou seja, aqueles cuja forma de representação espacial pode ser a de pontos, linhas e polígonos. Isso inclui os dados de solo e dos limites da área de estudo. Por fim, o subsubdiretório <code>R</code> será usado para armazenar dados diversos produzidos durante o processamento no R, os quais serão salvos usando o formato <code>rda</code>.</p>
+<p>Note que, dentro do nosso diretório de trabalho principal (<code>projeto</code>) existem três subdiretórios: <code>code</code>, <code>data</code> e <code>doc</code>. O primeiro deles, <code>code</code>, serve para armazernamos os arquivos contendo código de programação em qualquer linguagem. Para cada linguagem criamos um subsubdiretório específico. Nesse exemplo, como usaremos apenas o R, criaremos apenas um subsubdiretório chamado R. Ali dentro serão armazenados os <em>scripts</em> com código de programação do escritos em R.</p>
+<p>O segundo subdiretório será utilizado para armazenarmos os dados usados no projeto. Nesse exemplo, são três os tipos de dados que utilizaremos, cada um armazenado em um subsubdiretório específico. No subsubdiretório <code>grid</code> ficarão armazenados os dados matriciais, ou seja, os dados das covariáveis e os resultados das predições espaciais. Já no subsubdiretório <code>vector</code> ficarão armazenados os dados vetoriais, ou seja, aqueles cuja forma de representação espacial pode ser a de pontos, linhas e polígonos. Isso inclui os dados de solo e dos limites da área de estudo. Por fim, o subsubdiretório R será usado para armazenar dados diversos produzidos durante o processamento no R, os quais serão salvos usando o formato <code>rda</code>.</p>
 <p>O terceito e último subdiretório de nosso diretório de trabalho <code>projeto</code>, aqui denominado <code>doc</code>, será usado para armazenar os arquivos usados para redigir os documentos resultantes do projeto.</p>
 
 </div>
@@ -170,6 +381,17 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
