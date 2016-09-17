@@ -109,91 +109,155 @@ log(4)   # Função logarítmica
 sqrt(25) # Raiz quadrada
 ```
 
-Você deve ter notado que que os símbolos utilizados são os mesmos encontrados em qualquer calculadora 
+Você deve ter notado que que os símbolos utilizados (`+`, `*`, `/` e `-`) são os mesmos encontrados em 
+qualquer calculadora 
 científica. São também os mesmos utilizados nas operações matemáticas de qualquer planilha eletrônica de 
-edição de dados. Isso significa que podemos deduzir muitas coisas sobre o funcionamento do R. Você também deve
+edição de dados. Isso significa que podemos deduzir muitas coisas sobre o funcionamento do R a partir do que
+conhecemos de outros *softwares* dedicados à análise e manipulação de dados. Você também deve
 ter observado que o espaçamento entre número e operador matemático não tem qualquer importância do 
 ponto de vista da operação matemática. Contudo, do ponto de vista estético -- para facilidade de leitura do 
-código fonte --, costuma ser indicado usar a formatação `2 + 3` ao invés de `2+3`.
+código fonte --, costuma-se usar a formatação `2 + 3` ao invés de `2+3`.
 
-Outro detalhe importante nas linhas de código acima é o uso do símbolo `#` para a inclusão de comentários na
-sua sequência. Os comentários podem ser incluídos tanto em uma linha própria como após (nunca antes) um 
+Outro detalhe importante nas linhas de código acima é o uso do símbolo `#` para a inclusão de comentários. 
+Os comentários podem ser incluídos tanto em uma linha própria como após (nunca antes) um 
 comando. A inclusão de comentários no código fonte é fundamental para documentarmos a atividade que estamos
 realizando a fim de que outros (e nós mesmos, algumas semanas ou meses mais tarde) possamos entender o 
 propósito daquelas linhas de código.
 
 Finalmente, você deve ter notado que as duas últimas operações matemáticas foram feitas usando uma declaração
-nominal, ou seja, `log()` para a função logarítmica e `sqrt()` para a raiz quadrada. Na verdade, `log()` e
-`sqrt()` são ***funções*** do R, assim como `sum()` (soma), `diff()` (diferença), entre outras. Uma função
+nominal e dois parênteses, ou seja, `log()` para a função logarítmica e `sqrt()` para a raiz quadrada. Na
+verdade, `log()` e `sqrt()` são ***funções*** do R, assim como `sum()` (soma), `diff()` (diferença), entre 
+outras. Uma função 
 arbitrária chamada `fun()` sempre é usada da seguinte maneira: `fun(x)`, onde `x` é um argumento qualquer (um
-número, por exemplo) tomado pela função. Veja mais um exemplo, agora de uma função que aceita vários 
-argumentos:
+número, por exemplo) tomado pela função. Por exemplo, uma função bastante conhecida entre nós é aquela da
+Lei Básica da Ciência do Solo,
+
+$$solo = f(cl, o, r, p, t, \ldots)$$
+
+onde $cl$ representa o clima, $o$ representa os organismos vivos, incluindo nós seres humanos, $r$ significa
+relevo, $p$ é o material parental, $t$ representa o tempo e $\ldots$ são fatores não conhecidos ou de limitada 
+relevância. Em R, essa função seria escrita extamente da seguinte forma: `solo(cl, o, r, p, t, ...)`. Vejamos 
+mais um
+exemplo, agora de uma função que aceita vários argumentos:
 
 ```{r}
 # No RStudio, ponha o cursor sobre o nome da função e pressione 'F1' para ver a 
-# sua página de ajuda.
+# sua página de ajuda. Lá você verá o nome dos argumentos aceitos pela função 
+# 'plot()' seguido de uma breve descrição.
 plot(x = 25, y = 25, col = "red", main = "Um ponto vermelho", xlab = "x", ylab = "y")
 ```
 
-
 #### Conceitos básicos {-}
 
-Passada a primeira impressão do R vamos aos conceitos básicos que nos permitirão entender o R e
-permitir seu uso com êxito.
+Passada a primeira impressão, agora precisamos nos familiarizar com alguns conceitos básicos para que 
+possamos entender o R e utilizá-lo com êxito. Conforme destacado acima, o R não é um simples *software* para
+análises estatísticas, mas sim um ambiente de programação. E, para isso, precisamos de uma linguagem de 
+programação, ou seja, a linguagem de programação R. Como sabemos, uma linguagem é um sistema de signos 
+(símbolos ou palavras) convencionados que serve para a comunicação de conceitos, ideias, significados, 
+pensamentos -- veja mais sobre linguagem na [Wikipedia]("https://pt.wikipedia.org/wiki/Linguagem"). Assim, uma 
+linguagem de programação será, também, um sistema de signos convencionados, mas que serve para a nossa 
+comunicação com um computador, especificamente, para dar instruções a um computador. Sendo uma linguagem,
+haverá regras sintáticas e semânticas (uma gramática), as quais devem ser estritamente respeitadas para que
+haja, efetivamente, comunicação entre nós e o computador -- veja mais sobre linguagem de programação na
+[Wikipedia](https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o)
 
-O primeiro conceito importante, e que já foi comentado no primeiro tópico (O que é o R?), é o de que o R
-não é um software de análises estatísticas, mas sim um ambiente de programação. E, para isso, precisamos de 
-uma linguagem de programação.
+A gramática de uma linguagem de programação possui dois elementos principais: as palavras reservadas e as 
+palavras-chave. As ***palavras reservadas*** constituem signos com significado especial para a linguagem de
+programação, definidas internamente no código fonte, e que não podem ser utilizadas pelo usuário para fins 
+outros que não aqueles especificados internamente pelo *software* (por exemplo, para identificar objetos e
+funções -- veremos esses conceitos a seguir). Algumas das palavras reservadas do R são `if`, `else`, `while`,
+`TRUE` e `FALSE`. No editor de código fonte do RStudio as palavras reservadas aparecem sempre destacadas em
+azul -- busque pelo termo *reserved* no painel de ajuda do RStudio para conhecer as palavras reservadas do R. 
 
-Mas o que é uma linguagem? A Wikipedia fornece um bom conceito:
+As ***palavras-chave*** são aquelas utilizadas para definir funções (e objetos, como veremos a seguir). As
+palavras-chave que definem funções são aquelas que acionam operações matemáticas e lógicas que possibilitam, 
+por exemplo, a realização de uma determinada análise estatística de um determinado conjunto de dados -- na 
+verdade, tudo o que "acontece" no R acontece pela ação de uma função. As palavras-chave que definem funções
+podem já estar definidas na própria linguagem de programação -- como `log`, `sqrt` e `plot` nos exemplos acima
+-- ou ser criadas pelo usuário. Isso significa que o usuário pode criar suas próprias funções conforme sua
+necessidade. Vejamos um exemplo:
+
+```{r}
+# A palavra-chave 'soma' é usada para definir uma função que computa
+# e retorna como resultado `res` a soma de dois valores numéricos.
+# A estrutura da função aparece, sempre, entre '{' e '}'.
+soma <- 
+  function (x, y) { 
+    res <- x + y
+    return (res)
+    }
+soma(x = 2, y = 2)
+```
+
+Você deve ter notado que duas palavras reservadas foram usadas na construção da função `soma()`. São elas:
+`function` e `return`. Além disso, uma segunda palavra-chave foi usada: `res`. Essa palavra-chave foi usada
+para definir um objeto que armazena o resultado da operação matemática realizada pela função `soma()`. Assim, 
+na verdade, a função `soma()` não retorna o resultado da operação matemática, mas sim um objeto que armazena
+o seu resultado. Grosso modo, um ***objeto*** nada mais é do que uma estrutura de dados -- como diria John
+Chambers, tudo o que "existe" no R é um objeto. Essas estruturas de dados são vetores, matrizes, listas e 
+outras estruturas de dados inseridas ou criadas pelo próprio usuário ou produzidas como resultado dos diversos 
+procedimentos analíticos. Vejamos alguns exemplos para nos familiarizamos como esse conceito.
+
+Imagine dois vetores de dados $x = [1, 2, 3, 4, 5]$ e $y = [2, 4, 3, 5, 7]$. Esses vetores são inseridos 
+no R e nomeados, respectivamente, como `x` e `y`. Então, `x` e `y` passam a ser palavras-chave que identificam
+dois objetos, ou seja, uma estrutura de dados, nesse caso, vetores. Ao emitirmos uma chamada dos objetos 
+`x` e `y`, o R retorna os respectivos valores neles armazenados:
+
+```{r}
+# Definindo dois objetos vetoriais
+# Note que quando criamos uma sequência ordenada de valores podemos 
+# simplesmente usar o símbolo ':' entre o menor e o maior valor da 
+# sequência ao invés de declarar todos os seus valores.
+x <- 1:5
+y <- c(2, 4, 3, 5, 7)
+x
+y
+```
+
+Suponha agora que estejamos interessados na construção de um modelo de regressão linear, para a qual usamos a
+função `lm()`, do vetor $y$ em função do vetor $x$:
+
+```{r}
+# Calibração de um modelo de regressão linear
+# Note que é possível usar simbolos como '.' e '_' na construção de 
+# uma palavra-chave identificadora de objeto (ou função).
+meu.modelo_linear <- lm(y ~ x)
+meu.modelo_linear
+```
+
+Nesse exemplo, o objeto identificado pela palavra-chave `meu.modelo_linear` constitui uma estrutura de dados
+que contém todas as especificações do modelo de regressão linear de $y$ em função de $x$. Ao emitirmos uma 
+chamada ao objeto `meu.modelo_linear` o R retorna os coeficientes do modelo de regressão linear calibrado. Se
+você quiser conhecer mais sobre a estrutura do objeto `meu.modelo_linear`, use o seguinte comando: 
+`str(meu.modelo_linear)`. Como sugestão, use também os comandos `anova(meu.modelo_linear)`,
+`summary(meu.modelo_linear)` e `plot(meu.modelo_linear)`.
+
+Você deve ter notado nos exemplos acima que a atribuição de uma palavra-chave à um objeto ou à uma função 
+está sempre atrelada ao uso do símbolo `<-`. Por exemplo, `x <- 1:5` atribui a palavra-chave `x` ao objeto
+de estrutura vetorial contendo valores numéricos de 1 até 5. A atribuição também pode ser feita usando o 
+símbolo `=`. Contudo, como `=` também pode ser usado em contextos outros que não a atribuição de 
+palavras-chave, o uso de `<-` costuma ser preferido.
+
+Nesse ponto você já deve ter percebido que, para usar o R, será preciso aprender uma nova linguagem, um novo 
+sistema de signos. Alguma coisa poderá ser deduzida a partir daquilo que já sabemos em função do uso de outros
+*softwares* de análise e processamento de dados. Contudo, como qualquer linguagem de programação, o R possui
+suas especificidades, boa parte das quais é preciso conhecer para termos sucesso em seu uso. Além disso, 
+algum conhecimento da língua inglesa será necessário, haja vista que as palavras reservadas e palavras-chave 
+são derivadas de palavras da língua inglesa, e praticamente toda a (extensa) documentação está disponível
+apenas em inglês. A partir de agora estamos, oficialmente, nos domínios do Vale da Morte:
 
 ```{r, echo=FALSE}
-knitr::include_url("https://pt.wikipedia.org/wiki/Linguagem")
+y0 <- 0.2
+y <- c(rep(y0, 25), seq(y0, 0.1, -0.1), rep(0.01, 30), seq(0.1, y0 * 3, 0.1), rep(y0 * 3, 35))
+x <- 1:length(y)
+plot(y ~ x, type = "l", main = "Curva de aprendizagem do R", xlab = "Tempo empregado", 
+     ylab = "Produtividade relativa", ylim = c(0, 1), axes = FALSE)
+text(42, 0.1, "Vale da Morte", col = "red")
+text(12, 0.25, "Antes do R")
+text(80, 0.65, "Com o R")
+arrows(-1, -0.01, 100, -0.01, length = 0.1)
+arrows(-1, -0.01, -1, 1, length = 0.1)
 ```
-
-E, uma linguagem de programação, segundo a Wikipedia, constitui:
-
-```{r, echo=FALSE}
-knitr::include_url("https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o")
-```
-
-Assim, o R constitui um ambiente de programação utilizado para a realização de análises estatísticas e gráficas. A linguagem de programação utilizada também recebe o mesmo nome: R. Da mesma maneira, existem outras linguagens de programação chamadas C, C++, entre outras. Essas linguagens de programação possuem uma gramática. E dois dos principais elementos dessa gramática são as palavras reservadas e as palavras-chave.
-
-As palavras reservadas constituem signos com significado especial para a linguagem de programação e que não podem ser utilizadas para identificar objetos e funções (veremos esses conceitos logo a seguir). Vejamos alguns exemplos de palavras reservadas no Quadro 2.
-
-```{r}
-# Algumas palavras reservadas do pacote ‘base’
-# if
-# else
-# etc
-```
-
-Se usarmos uma palavra reservada para identificar um objeto o R automaticamente retorna uma mensagem de erro. Essas palavras somente podem ser utilizadas na construção dos comandos. Veja os exemplos no Quadro 3.
-
-```{r}
-# Uso da palavra reservada NULL para identificar um objeto e na construção de um comando.
-# Uso incorreto
-# TRUE <- c(1, 2)
-
-# Uso correto
-# dados <- read.table(“dados.csv”, sep = ”;”, head = TRUE)
-# dados
-```
-
-Já as palavras-chave são aquelas utilizadas para definir objetos e funções. Elas podem já estar definidas na 
-linguagem de programação ou serem criadas pelo usuário. As palavras-chave que definem funções são aquelas que 
-acionam operações matemáticas e lógicas que possibilitam a análise estatística de um determinado conjunto de 
-dados. Veja o exemplo no Quadro 4.
-
-```{r}
-# Utilização das palavras-chave dados (identificadora de um objeto definido pelo
-# usuário) e `read.table` (identificadora de uma função já definida na linguagem
-# de programação).
-# dados <- read.table(“dados.csv”, sep = ”;”, head = TRUE)
-# dados
-```
-
-Veja que a tela branca do R nada mais é do que a sua interface com o usuário, ou seja, o meio pelo qual ocorre a comunicação (note na interface do R que aparece o seguinte símbolo na cor vermelha: >; Esse símbolo indica que o R está pronto para receber os comandos). Assim, aprender a utilizar o R para realização de análises estatísticas constitui, antes de tudo, aprender uma nova linguagem, um novo sistema de signos. Como o R foi desenvolvido inicialmente por pesquisadores da Nova Zelândia, onde o idioma oficial é o inglês, a linguagem utilizada possui uma forte relação com aquela língua. A maioria das palavras reservadas e palavras-chave são derivadas de palavras da língua inglesa. Assim, o conhecimento da língua inglesa facilita, e muito, o entendimento da linguagem do R.
 
 #### Os pacotes {-}
 
@@ -208,45 +272,6 @@ Depois de instalado o pacote é preciso carregá-lo. Para isso dirija-se novamen
 #### Diretório {-}
 
 Sempre que uma rotina de análises for desenvolvida no R é preciso definir o diretório de trabalho. O diretório de trabalho constitui a pasta em que estão localizados os arquivos contendo os dados a serem analisados. Além disso, é no diretório de trabalho que o R salva o histórico de trabalho contendo todas as operações realizadas.
-
-Para definir o diretório de trabalho basta dirigir-se à barra de ferramentas e clicar em Arquivo > Mudar dir... e então definir a pasta desejada (Figura 6).
-
-Figura 6. Definição do diretório de trabalho.
-
-#### Objetos {-}
-
-O R trabalha com a noção de ***objetos***, os quais são nada mais do que estruturas básicas de dados. 
-Essas estruturas básicas de dados consistem em vetores e matrizes de dados inseridos pelo próprio usuário, bem
-como podem conter os resultados dos diversos procedimentos analíticos. Usemos alguns exemplos para esclarecer
-melhor esse conceito.
-
-Imagine dois vetores de dados $$a = [1, 2, 3, 4, 5]$$ e $$b = [2, 4, 3, 5, 7]$$. Esses vetores são inseridos 
-no R e nomeados, respectivamente, como `a` e `b`. Então, `a` e `b` constituem o que chamamos de objetos, 
-ou seja, uma estrutura de dados. Ao chamarmos os objetos `a` e `b` o R retorna os respectivos vetores de
-dados $$a = [1, 2, 3, 4, 5]$$ e $$b = [2, 4, 3, 5, 7]$$.
-
-```{r}
-# Primeiro definimos os objetos
-a <- 1:5
-b <- c(2, 4, 3, 5, 7)
-a
-b
-```
-
-Suponha agora a realização de uma análise de regressão linear, para a qual usamos a função `lm`, do vetor $$a$$
-em função do vetor $$b$$ acima.
-
-```{r}
-modelo_linear <- lm(a ~ b)
-modelo_linear
-```
-
-Nesse caso o objeto `modelo_linear` constitui uma estrutura de dados que contém todas as especificações da
-análise de regressão linear de $$a$$ em função de $$b$$. Ao chamarmos o objeto `modelo_linear` o R retorna
-os coeficientes da regressão linear. Contudo, esse não é o conteúdo completo do objeto ajuste, mas apenas um
-resumo. Para ver o conteúdo completo desse (e de qualquer objeto) deve-se utilizar a função `str`.
-
-Note que a criação ou definição de um objeto depende do uso do símbolo `-`, ou ainda do símbolo `<-`.
 
 #### Comandos e símbolos {-}
 
