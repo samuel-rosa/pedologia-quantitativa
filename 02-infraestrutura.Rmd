@@ -1,12 +1,12 @@
-# Infraestrutura
+# PARTE __ -- INFRAESTRUTURA {-}
 
-## Hardware
+<!-- ## Hardware -->
 
-## Software
+# SOFTWARE
 
-### R
+## R/RStudio
 
-O <img src='images/r.jpeg'; height='12'/>, daqui em diante simbolizado 'R', é uma linguagem de programação e 
+O R é uma linguagem de programação e 
 um ambiente de análises estatísticas e gráficas. Sua origem data de
 1995, quando dois pesquisadores (Robert Gentleman e Ross Ihaka) iniciaram o projeto de seu desenvolvimento no
 Departamento de Estatística da Universidade de Auckland na Nova Zelândia. O nome deriva, exatamente, das 
@@ -37,7 +37,7 @@ volume de material de apoio maior do que o R. Soma-se ainda o fato de que o R pe
 gráficos de qualidade igual ou até superior a qualquer pacote comercial disponível hoje no mercado. Além 
 disso, o R roda em qualquer sistema operacional. Será que é preciso dizer mais alguma coisa?
 
-#### Conhecendo melhor o R {-}
+### Conhecendo melhor o R
 
 A melhor maneira de conhecer melhor o R é, sem dúvida, instalando-o em seu computador. Para isso 
 precisamos, primeiro, visitar a página do projeto na Internet:
@@ -49,7 +49,7 @@ knitr::include_url("http://www.r-project.org/")
 Uma grande quantidade de informação, muito além do que se busca incluir neste livro, pode ser encontrada no
 sítio do projeto. Ali estão disponíveis diversos manuais de uso (`Documentation > Munuals`), bem como livros
 (`Documentation > Books`) e artigos publicados na revista do projeto (`Documentation > The R Journal`). Ainda 
-ha uma página com respostas às perguntas mais frequentes (`Documentation > FAQs`) e uma página inteira 
+há uma página com respostas às perguntas mais frequentes (`Documentation > FAQs`) e uma página inteira 
 explicando sobre como é possível conseguir ajuda do próprio R antes de recorrer a terceiros 
 (`Help With R > Getting Help`) -- como a documentação do R é extensa e a maioria dos colaboradores do projeto
 não são pagos pela colaboração, recomendo que você sempre procure, primeiro, resolver qualquer dúvida sozinho.
@@ -75,7 +75,8 @@ dados. Tais ferramentas constituem os chamados ambientes de desenvolvimento inte
 *integrated development environment*). Atualmente, a GUI e IDE mais popular é o RStudio, cujo instalador
 pode ser descarregado de https://www.rstudio.com/products/rstudio/download/. 
 
-Assim como para o R, o procedimento de instalação do RStudio depende do seu OS. Depois de instalado, inicie o
+Assim como para o R, o procedimento de instalação do RStudio depende do OS do seu computador. Depois de
+instalado, inicie o
 RStudio em seu computador. Ele deve se parecer mais ou menos como na figura a seguir:
 
 ![RStudio -- interface gráfica do usuário e ambiente de desenvolvimento integrado para R (em sua
@@ -91,7 +92,7 @@ Esse painel é aquele onde creio que ocupamos a maior parte do tempo. Por fim, o
 corresponde à interface de linha de comando, CLI, do R. É ali que o código fonte editado no painel superior
 esquerdo deve ser emitido para que a mágica aconteça.
 
-#### Primeiros passos {-}
+### Primeiros passos
 
 Façamos algumas operações matemáticas para nos familiarizarmos com o R. Você pode copiar e colar as linhas de
 código abaixo no CLI do R, que de agora em diante chamaremos ***console***.
@@ -147,7 +148,7 @@ exemplo, agora de uma função que aceita vários argumentos:
 plot(x = 25, y = 25, col = "red", main = "Um ponto vermelho", xlab = "x", ylab = "y")
 ```
 
-#### Conceitos básicos {-}
+### Conceitos básicos
 
 Passada a primeira impressão, agora precisamos nos familiarizar com alguns conceitos básicos para que 
 possamos entender o R e utilizá-lo com êxito. Conforme destacado acima, o R não é um simples *software* para
@@ -259,7 +260,7 @@ arrows(-1, -0.01, 100, -0.01, length = 0.1)
 arrows(-1, -0.01, -1, 1, length = 0.1)
 ```
 
-#### Os pacotes {-}
+### Os pacotes
 
 Um pacote constitui uma coleção de arquivos e diretórios que contém as regras sintáticas e semânticas que definem determinadas operações matemáticas e lógicas. Na instalação padrão do R um conjunto de pacotes já está incluído. Esses pacotes permitem que uma determinada gama de análises estatísticas sejam realizadas. Cada pacote possui um nome específico e ficam armazenados no diretório de instalação do R. São exemplos os pacotes ‘base’ e ‘stats’.
 
@@ -269,11 +270,12 @@ Para instalar um novo pacote deve-se clicar na barra de menus localizada no topo
 
 Depois de instalado o pacote é preciso carregá-lo. Para isso dirija-se novamente até a barra de menus localizada no topo da interface e clique em Pacotes > Carregar pacote e selecione na lista o pacote desejado. Toda vez que o R é iniciado apenas os pacotes básicos (já presentes na instalação padrão) são carregados automaticamente. Os pacotes instalados posteriormente através do procedimento descrito acima devem ser carregados manualmente.
 
-#### Diretório {-}
+```{r, eval=FALSE}
+install.packages(
+  c("sp", "raster", "rgdal", "pedometrics", "randomForest", "rsaga"), dependencies = TRUE)
+```
 
-Sempre que uma rotina de análises for desenvolvida no R é preciso definir o diretório de trabalho. O diretório de trabalho constitui a pasta em que estão localizados os arquivos contendo os dados a serem analisados. Além disso, é no diretório de trabalho que o R salva o histórico de trabalho contendo todas as operações realizadas.
-
-#### Comandos e símbolos {-}
+### Comandos e símbolos
 
 Conforme mostrado nos quadros acima, todas as funcionalidades do R são acionadas através do uso de comandos de texto e símbolos (matemáticos ou não). Esses comandos e símbolos já estão definidos na linguagem do R e, por isso, quando utilizados, devem ser inseridos de maneira correta para que sejam efetivamente reconhecidos. Assim, é importante ter cuidado porque o R é sensível ao uso de letras maiúsculas e minúsculas, bem como a acentuação e uso de cedilha.
 
@@ -288,57 +290,24 @@ Para auxiliar no uso dos comandos e conhecer as suas funções existem alguns ca
 * [Yanchang Zhao](http://cran.r-project.org/doc/contrib/YanchangZhao-refcard-data-mining.pdf)
 * [Vito Ricci](http://cran.r-project.org/doc/contrib/Ricci-refcard-regression.pdf)
 
-RStudio (https://www.rstudio.com/).
 
-Depois de instalados o R e o RStudio, inicie o RStudio e crie um novo projeto. Para isso, acesse
+## QGIS
 
-    Arquivo > Novo projeto > Diretório existente
+http://www.qgis.org/
 
-e navegue até o diretório recém criado `projeto`. Clique em `Criar projeto`. Toda a 
-estrutura de diretórios criada recentemente aparecerá no painel direito inferior do RStudio. Agora crie um
-novo arquivo do R e salve-o no diretório `bigdata > code > R`. Será nesse arquivo que você organizará o 
-código em R usado para o processamento dos dados. A criação de um projeto no RStudio 
-facilita a organização dos dados.
+## SAGA GIS
 
-O próximo passo consiste em instalar alguns pacotes do R.
-Para isso, copie os comandos abaixo para o arquivo que você criou no diretório `bigdata > code > R` e,
-em seguida, envie-os para processamento selecionando a linha desejada e `Ctrl + Enter`. O mesmo se 
-aplica à todos os comandos do R que aparecem neste documento.
+http://www.saga-gis.org/
 
-```{r, eval=FALSE}
-install.packages(
-  c("sp", "raster", "rgdal", "pedometrics", "randomForest", "rsaga"), dependencies = TRUE)
-```
+## GRASS GIS
 
-### QGIS
+https://grass.osgeo.org/
 
-QGIS (http://www.qgis.org/)
+## GDAL
 
-Inicie o QGIS e acesse
+http://www.gdal.org/
 
-    Projeto > Novo > Salvar como
-
-e navegue até o diretório `projeto`. Nomeie o projeto como `projeto`. Assim como para o
-RStudio, a criação de um projeto no QGIS facilita a organização dos dados.
-
-### SAGA GIS
-
-### GRASS GIS
-
-O GRASS GIS, mais comumente chamado GRASS (Sistema de Apoio à Análise de Recursos Geográficos), é um
-Sistema de Informação Geográfica (SIG) livre e de código aberto usado para o gerenciamento 
-e análise de dados geoespaciais, processamento de imagens, produção de mapas e gráficos, modelagem e 
-visualização espacial. Trata-se de um SIG usado em ambientes acadêmicos e comerciais em todo o mundo, bem como
-por muitas agências governamentais e empresas de consultoria ambiental.
-
-Sítio: https://grass.osgeo.org/
-
-### GDAL
-
-GDAL (http://www.gdal.org/)
-
-
-## Gestão de dados
+# GESTÃO DE DADOS
 
 Um importante passo consiste na criação do nosso diretório de trabalho. Para isso, acesse seu gerenciador
 de diretórios e crie a seguinte estrutura de diretórios em seu local favorito de trabalho:
@@ -373,7 +342,25 @@ usando o formato `rda`.
 O terceito e último subdiretório de nosso diretório de trabalho `projeto`, aqui denominado `doc`,
 será usado para armazenar os arquivos usados para redigir os documentos resultantes do projeto.
 
+No RStudio, acesse
 
+    Arquivo > Novo projeto > Diretório existente
+
+e navegue até o diretório recém criado `projeto`. Clique em `Criar projeto`. Toda a 
+estrutura de diretórios criada recentemente aparecerá no painel direito inferior do RStudio. Agora crie um
+novo arquivo do R e salve-o no diretório `bigdata > code > R`. Será nesse arquivo que você organizará o 
+código em R usado para o processamento dos dados. A criação de um projeto no RStudio 
+facilita a organização dos dados.
+Sempre que uma rotina de análises for desenvolvida no R é preciso definir o diretório de trabalho. O diretório 
+de trabalho constitui a pasta em que estão localizados os arquivos contendo os dados a serem analisados. Além 
+disso, é no diretório de trabalho que o R salva o histórico de trabalho contendo todas as operações realizadas.
+
+Inicie o QGIS e acesse
+
+    Projeto > Novo > Salvar como
+
+e navegue até o diretório `projeto`. Nomeie o projeto como `projeto`. Assim como para o
+RStudio, a criação de um projeto no QGIS facilita a organização dos dados.
 
 [gui]: https://en.wikipedia.org/wiki/Graphical_user_interface
 [ide]: https://en.wikipedia.org/wiki/Integrated_development_environment

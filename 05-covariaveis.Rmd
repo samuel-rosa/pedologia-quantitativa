@@ -1,11 +1,11 @@
-# Covariáveis
+# PARTE __ -- COVARIÁVEIS AMBIENTAIS {-}
 
 Independente do que as análises estatísticas possam indicar, o usuário das
 técnicas quantitativas deve ter domínio das possíveis relações entre as covariáveis
 e a variável resposta. Quais as possíveis relações que as
 covariáveis possuem com os atributos do solo?
 
-## Modelo digital de elevação
+# Modelo Digital de Elevação
 
 Os atributos de terreno podem ser classificados em primários e secundários. Os atributos primários são aqueles
 calculados diretamente a partir do MDE, enquanto os atributos secundários são aqueles calculados a partir de 
@@ -18,7 +18,7 @@ sinônimos e tradução para o inglês, além dos procedimentos e equações par
 apresentados foram derivados de um MDE com resolução de 10 m utilizando o software livre e de código aberto 
 SAGA GIS (SAGA GIS, 2010).
 
-### Área de dispersão
+## Área de dispersão
 
 Downslope area
 
@@ -38,7 +38,7 @@ Descreve a área à jusante de uma determinada célula que recebe o escoamento
  de variação espacial da distribuição do tamanho de partículas do solo geralment
 e explicado pela geologia local.
 
-### Área de contribuição
+## Área de contribuição
 
 Upslope area, catchment area, contribution area, ﬂow accumulation
 
@@ -55,7 +55,7 @@ $$AC_s = \frac{AC}{pixel}$$
 
 onde $AC$ é a área de contribuição (m^2^) e $pixel$ corresponde ao tamanho do pixel (m).
 
-### Balanço líquido da célula
+## Balanço líquido da célula
 
 Cell balance
 
@@ -71,14 +71,14 @@ Descreve a relação entre um atributo de terreno à montante e à jusante
  Interpretações semelhantes podem ser feitas para todos os demais atributos
  de terreno, bem como da sua relação com a distribuição do tamanho de partículas.
 
-### Comprimento do caminho do ﬂuxo
+## Comprimento do caminho do ﬂuxo
 
 Fow path length
 
 Descreve a distância percorrida pelo escoamento
 superﬁcial até atingir uma determinada célula.
 
-### Comprimento do declive
+## Comprimento do declive
 
 Slope length
 
@@ -92,7 +92,7 @@ Descreve o comprimento de gradientes crescentes de elevação entre células
  
 Comprimento do declive: (sinônimos – algum?; inglês – slope length; unidade – metro) atributo  regional relacionado à aceleração dos fluxos superficiais e as taxas de erosão e, portanto, ao Fator LS. Para sua obtenção parte-se das células de maior elevação em direção para as células de menor elevação, considerando-se a declividade de cada uma. Se a declividade da célula vizinha for maior do que o dobro da declividade da célula em questão, o comprimento do declive (CD) é a soma do comprimento da célula em questão e da célula vizinha. O algoritmo pára a acumulação de comprimento se a declividade da próxima célula vizinha for inferior a declividade da célula anterior. Se nenhuma das oito células vizinhas possui declividade superior dobro da declividade da célula em questão o CD é igual a zero. 
 
-### Curvaturas
+## Curvaturas
 
 Curvature
 
@@ -105,20 +105,20 @@ ou convexa). Curvatura planar: (sinônimo – algum?; inglês – plan curvature
 Curvatura vertical (proﬁle curvature) descreve a forma da vertente no plano vertical (côncava, retilínea
 ou convexa). Curvatura de perfil: (sinônimo – algum?; inglês – profile curvature; unidade – metro-1) atributo local que representa a primeira derivada da declividade. Valores positivos descrevem curvaturas convexas, enquanto valores negativos descrevem curvaturas côncavas (Olaya, 2004). Possui influência sobre a velocidade do fluxo superficial, a taxa de erosão/deposição e a geomorfologia (Wilson & Gallant, 2000a). No exemplo apresentado abaixo foi utilizado o método de cálculo de Zevenbergen & Thorne (1987).
 
-### Declividade
+## Declividade
 
 Slope
 
 Descreve o gradiente ou taxa de mudança da elevação entre células vizinhas. Declividade: (sinônimo – algum?; inglês – slope; unidade – graus) atributo local que representa a primeira derivada da superfície de elevação no sentido do declive, perpendicular às curvas de nível. Expressa o gradiente ou taxa de mudança da elevação. Possui influência sobre a velocidade dos fluxos superficiais e subsuperficiais, o que influencia diretamente o conteúdo de água no solo, a taxa de erosão e a formação do solo (Wilson & Gallant, 2000a). No exemplo apresentado abaixo foi utilizado o método de cálculo de Zevenbergen & Thorne (1987).
 
-### Declividade média da área à montante
+## Declividade média da área à montante
 
 Catchment slope
 
 Descreve a declividade média da área à montante
 de uma determinada célula. Declividade média da área de contribuição: (sinônimo – algum?; inglês – catchment slope; unidade – graus): atributo regional que representa a declividade média da de todas as células que drenam para a célula em questão (Olaya, 2004). Está relacionado ao tempo de concentração, definido como o tempo necessário para que toda a AC contribua para o escoamento superficial que chega até a célula em questão. Assim, constitui um indicador da velocidade e potência dos fluxos superficiais (Olaya, 2009).
 
-### Distância do fluxo até a rede de drenagem
+## Distância do fluxo até a rede de drenagem
 
 Overland flow distance to channel network
 
@@ -143,7 +143,7 @@ descreve o componente vertical da distância de ﬂuxo até a rede de drenagem;
 Distância vertical até a rede de drenagem (vertical distance to channel network): descreve a diferença de
 elevação entre a célula e um plano horizontal que representa o nível da rede de drenagem Elevação acima da rede de drenagem: (sinônimo: distância vertical acima da rede de drenagem; inglês – elevation above channel network, vertical distance to channel network; unidade – metro): atributo local que representa a distância vertical da célula em questão em relação à célula mais próxima localizada na rede de drenagem. Valores pequenos de elevação acima da rede de drenagem (EARD) indicam locais em que o lençol freático pode estar mais próximo da superfície do solo, sendo caracterizadas como zonas de acumulação (Böhner et al., 2002). Assim sendo, a EARD está relacionada ao índice de umidade topográfica (Olaya & Conrad, 2009). Já os valores intermediários indicam zonas de transferência de material, geralmente nos locais de maior declive (encostas), enquanto valores maiores indicam locais mais elevados da superfície geomórfica (possíveis zonas de perda de material) (Böhner et al., 2002).
 
-### Elevação
+## Elevação
 
 Elevação (elevation): descreve a distância vertical entre a célula e uma superfície que representa o nível
 médio dos mares; Elevação: (sinônimos – altitude; inglês – elevation, altitude; unidade – metro): atributo local extraído diretamente do MDE. Representa a altitude da célula em questão em relação a um plano de referência, geralmente o nível do mar. Possui influência sobre o clima, a vegetação e a energia potencial (Wilson & Gallant, 2000a).
@@ -158,7 +158,7 @@ Elevação normalizada (normalized height): converte os valores de elevação pa
 
 Elevação padronizada (standardised height): produto da elevação normalizada com a elevação absoluta
 
-### Fator LS
+## Fator LS
 
 (LS-factor): fator topográﬁco da Equação Universal de Perda de Solo;
 
@@ -169,7 +169,7 @@ $$LS = (n + 1) \times \left(\frac{AC_s}{22.13}\right)^n \times \left(\frac{\sin(
 onde $AC_s$ é a área de contribuição específica (m^2^ m^-1^), $\beta$ é a declividade (graus), $n = 0.4$ e 
 $m = 1.3$. 
 
-### Gradiente por distância à jusante
+## Gradiente por distância à jusante
 
 Downslope distance gradient
 
@@ -185,12 +185,12 @@ Descreve taxa de mudança da elevação à jusante dentro de uma distância
  disponibilidade de água costumam constituir áreas de deposição de sedimentos
  erodidos das partes mais altas do terreno.
 
-### Índice de balanço de massa
+## Índice de balanço de massa
 
 (mass balance index): descreve a forma geral da vertente (côncava, retilínea
 ou convexa) transport processes
 
-### Índice de convergência
+## Índice de convergência
 
 (convergence index): descreve a forma geral da vertente em todas as direções
 (côncava, retilínea ou convexa)
@@ -201,12 +201,12 @@ ou convexa) transport processes
 divergência total, (b) superfície plana e (c) convergência total. Adaptado de (Conrad, 
 1998).](images/convergence-index.png)
 
-### Índice de exposição ao norte
+## Índice de exposição ao norte
 
 (northerness): descreve o grau de exposição de uma determinada ao ponto
 cardeal norte; Northerness: (sinônimo: algum?; inglês – northerness; unidade - graus): atributo local que indica a direção da vertente em relação ao norte. Obtido através da seguinte equação: Northerness = |180 – aspecto|, onde aspecto é o azimute da declividade expresso em graus no sentido horário a partir do norte, representando a primeira derivada da superfície de elevação ao longo do declive, paralelo às curvas de nível. O aspecto possui influência sobre a insolação, evapotranspiração, e a distribuição e abundância da flora e da fauna (Wilson & Gallant, 2000a). Mas como o aspecto constitui uma medida circular, seus valores não são adequados para comparação direta, sendo necessária a sua transformação para northerness (Roecker & Thompson, 2010). O exemplo apresentado abaixo foi calculado utilizando o método de Zevenbergen & Thorne (1987).
 
-### Índice de exposição ao norte da área à montante
+## Índice de exposição ao norte da área à montante
 
 Catchment aspect
 
@@ -225,7 +225,7 @@ vo sobre a distribuição do tamanho de partículas em diversas partes do mundo
  do atributo aspecto ou orientação, o qual é um atributo circular e, portanto,
  inadequado para a construção de modelos matemáticos.
 
-### Índice de potência de escoamento
+## Índice de potência de escoamento
 
 (stream power index): descreve o potencial de acumulação do ﬂuxo hídrico e
 de escoamento superﬁcial.
@@ -237,7 +237,7 @@ onde $AC_s$ é a área de contribuição específica (m^2^ m^-1^) e $\beta$ é a
 utilizado para identificar os locais onde medidas de conservação do solo que reduzem os efeitos erosivos do 
 escoamento concentrado podem ser adotadas (Moore et al., 1991).
 
-### Índice de proteção morfométrica
+## Índice de proteção morfométrica
 
 (morphometric protection index): descreve como o relevo “protege”
 (fecha-se sobre) uma determinada célula a partir da sua relação morfométrica com as células vizinhas (de-
@@ -245,17 +245,17 @@ clividade e orientação). morphometric protection index (openess): this algorit
 surrounding of each cell up to an given distance and evaluates how the relief protects it → relacionada com a 
 curvatura.
 
-### Índice de resolução múltipla de nivelamento de fundo de vale
+## Índice de resolução múltipla de nivelamento de fundo de vale
 
 (multiresolution index of valley bottom
 ﬂatness): descreve o quão plano é o fundo de um vale; mapping of depositional areas
 
-### Índice de resolução múltipla de nivelamento de topo de morro
+## Índice de resolução múltipla de nivelamento de topo de morro
 
 (multiresolution index of ridge top ﬂat-
 ness): descreve o quão ﬂano é o topo de um morro;
 
-### Índice de rugosidade do terreno
+## Índice de rugosidade do terreno
 
 Terrain ruggedness index
 
@@ -311,7 +311,7 @@ limites:
 
 Cada classe recebe um número inteiro como identificador.
 
-### Índice de umidade topográﬁca
+## Índice de umidade topográﬁca
 
 (topographic wetness index): descreve tendência de uma célula acumular
 água; Índice de umidade topográfica: (sinônimo – algum?; inglês – topographic wetness index; unidade – adimensional): atributo local desenvolvido por Beven & Kirkby (1978) que descreve a tendência de uma célula acumular água Gruber & Peckham (2009). Assim, maiores valores de índice de umidade topográfica (IUT) indicam maior tendência de acumular água e, portanto, maior conteúdo de água no solo. O IUT é obtido através da seguinte equação:
@@ -324,7 +324,7 @@ ao longo da bacia e igual à unidade (Wilson & Gallant, 2000a). Como a variaçã
 comumente maior do que a variação da transmissividade do solo (Wood et al., 1990), essa equação pode ser usada 
 na maioria das superfícies geomórficas.
 
-### Insolação potencial
+## Insolação potencial
 
 Potential incoming solar radiation
 
@@ -340,7 +340,7 @@ Descreve a quantidade de energia radiativa que pode atingir uma superfície
 
  Largura do ﬂuxo (ﬂow width): descreve a largura alcançada pelo escoamento superﬁcial
 
-### Posição em relação ao meio da encosta
+## Posição em relação ao meio da encosta
 
 Mid-slope position
 
@@ -359,7 +359,7 @@ Descreve a posição da célula em relação ao meio da vertente.
 Profundidade do vale (valley depth, height below summit): descreve a distância vertical da célula até o topo
 da encosta;
 
-### Rugosidade vetorial do terreno
+## Rugosidade vetorial do terreno
 
 Vector ruggedness index
 
