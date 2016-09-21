@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 tmp
+_bookdown_files
+pedologia-quantitativa.log
+pedologia-quantitativa.tex
