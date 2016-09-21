@@ -40,16 +40,16 @@ e explicado pela geologia local.
 
 ## Área de contribuição
 
-Upslope area, catchment area, contribution area, ﬂow accumulation
+Upslope area, catchment area, contribution area, flow accumulation
 
 Descreve a
-área à montante de uma determinada célula que contribui para o escoamento superﬁcial que chega até essa
+área à montante de uma determinada célula que contribui para o escoamento superficial que chega até essa
 célula. 
 
 Área de contribuição: (sinônimos – área de captação, acumulação de fluxo; inglês – catchment area, contributing area, upslope area, flow accumulation; unidade – metro2) atributo regional que representa a área acima de uma determinada célula que contribui para o fluxo superficial que chega até aquela célula. Está relacionado ao volume de enxurrada que chega até uma determinada célula. No exemplo apresentado abaixo, a área de captação (AC) foi calculada utilizando algoritmos de direção de fluxo múltiplo (Freeman, 1991; Quinn et al., 1991), os quais consideram que os fluxos hídricos entre as células não é unidirecional. Assim, uma célula pode receber o fluxo proveniente de várias células e transferir o fluxo acumulado para várias outras células (Minella et al., 2010).
 
-A área de contribuição especíﬁca (speciﬁc catchment area) descreve a área à montante por unidade de
-largura da célula que recebe o escoamento superﬁcial. A área de contribuição específica é dada por:
+A área de contribuição específica (specific catchment area) descreve a área à montante por unidade de
+largura da célula que recebe o escoamento superficial. A área de contribuição específica é dada por:
 
 $$AC_s = \frac{AC}{pixel}$$
 
@@ -71,12 +71,12 @@ Descreve a relação entre um atributo de terreno à montante e à jusante
  Interpretações semelhantes podem ser feitas para todos os demais atributos
  de terreno, bem como da sua relação com a distribuição do tamanho de partículas.
 
-## Comprimento do caminho do ﬂuxo
+## Comprimento do caminho do fluxo
 
 Fow path length
 
 Descreve a distância percorrida pelo escoamento
-superﬁcial até atingir uma determinada célula.
+superficial até atingir uma determinada célula.
 
 ## Comprimento do declive
 
@@ -102,7 +102,7 @@ convexa). Curvatura (sinônimos – algum?; inglês – curvature; unidade – m
 Curvatura horizontal (plan curvature) descreve a forma da vertente no plano horizontal (côncava, retilínea
 ou convexa). Curvatura planar: (sinônimo – algum?; inglês – plan curvature; unidade – metro-1) atributo local que representa a primeira derivada do aspecto. Valores positivos descrevem curvaturas convexas, enquanto valores negativos descrevem curvaturas côncavas (Olaya, 2004). Possui influência sobre a concentração (convergência) e dispersão (divergência) dos fluxos na paisagem, o que influencia diretamente o conteúdo de água no solo e as características do solo (Wilson & Gallant, 2000a). No exemplo apresentado abaixo foi utilizado o método de cálculo de  Zevenbergen & Thorne (1987).
 
-Curvatura vertical (proﬁle curvature) descreve a forma da vertente no plano vertical (côncava, retilínea
+Curvatura vertical (profile curvature) descreve a forma da vertente no plano vertical (côncava, retilínea
 ou convexa). Curvatura de perfil: (sinônimo – algum?; inglês – profile curvature; unidade – metro-1) atributo local que representa a primeira derivada da declividade. Valores positivos descrevem curvaturas convexas, enquanto valores negativos descrevem curvaturas côncavas (Olaya, 2004). Possui influência sobre a velocidade do fluxo superficial, a taxa de erosão/deposição e a geomorfologia (Wilson & Gallant, 2000a). No exemplo apresentado abaixo foi utilizado o método de cálculo de Zevenbergen & Thorne (1987).
 
 ## Declividade
@@ -134,11 +134,11 @@ Descreve a distância hidrológica percorrida pelo escoamento superficial
  a erosão em uma área, está intimamente relacionado à distribuição do tamanho
  de partículas.
 
-Distância horizontal do ﬂuxo até a rede de drenagem (horizontal overland ﬂow distance to channel
-network): descreve o componente horizontal da distância de ﬂuxo até a rede de drenagem
+Distância horizontal do fluxo até a rede de drenagem (horizontal overland flow distance to channel
+network): descreve o componente horizontal da distância de fluxo até a rede de drenagem
 
-Distância vertical do ﬂuxo até a rede de drenagem (vetical overland ﬂow distance to channel network):
-descreve o componente vertical da distância de ﬂuxo até a rede de drenagem;
+Distância vertical do fluxo até a rede de drenagem (vetical overland flow distance to channel network):
+descreve o componente vertical da distância de fluxo até a rede de drenagem;
 
 Distância vertical até a rede de drenagem (vertical distance to channel network): descreve a diferença de
 elevação entre a célula e um plano horizontal que representa o nível da rede de drenagem Elevação acima da rede de drenagem: (sinônimo: distância vertical acima da rede de drenagem; inglês – elevation above channel network, vertical distance to channel network; unidade – metro): atributo local que representa a distância vertical da célula em questão em relação à célula mais próxima localizada na rede de drenagem. Valores pequenos de elevação acima da rede de drenagem (EARD) indicam locais em que o lençol freático pode estar mais próximo da superfície do solo, sendo caracterizadas como zonas de acumulação (Böhner et al., 2002). Assim sendo, a EARD está relacionada ao índice de umidade topográfica (Olaya & Conrad, 2009). Já os valores intermediários indicam zonas de transferência de material, geralmente nos locais de maior declive (encostas), enquanto valores maiores indicam locais mais elevados da superfície geomórfica (possíveis zonas de perda de material) (Böhner et al., 2002).
@@ -148,7 +148,7 @@ elevação entre a célula e um plano horizontal que representa o nível da rede
 Elevação (elevation): descreve a distância vertical entre a célula e uma superfície que representa o nível
 médio dos mares; Elevação: (sinônimos – altitude; inglês – elevation, altitude; unidade – metro): atributo local extraído diretamente do MDE. Representa a altitude da célula em questão em relação a um plano de referência, geralmente o nível do mar. Possui influência sobre o clima, a vegetação e a energia potencial (Wilson & Gallant, 2000a).
 
-Elevação da encosta (slope height, height above valley ﬂoor): descreve a distância vertical entre a célula e
+Elevação da encosta (slope height, height above valley floor): descreve a distância vertical entre a célula e
 o fundo do vale;
 
 Elevação média da área à montante (catchment height): descreve a distância vertical média entre uma
@@ -160,7 +160,7 @@ Elevação padronizada (standardised height): produto da elevação normalizada 
 
 ## Fator LS
 
-(LS-factor): fator topográﬁco da Equação Universal de Perda de Solo;
+(LS-factor): fator topográfico da Equação Universal de Perda de Solo;
 
 Fator LS: (sinônimo – índice de capacidade de transporte de sedimento; inglês – LS-factor, sediment transport capacity index; unidade – adimensional): atributo regional equivalente ao fator topográfico da Equação Universal de Perda de Solo Revisada (RUSLE) que representa o efeito da topografia sobre a erosão (quanto maior o LS, maior o potencial erosivo), além de caracterizar os processos de erosão e deposição (Moore et al., 1993). Na Equação Universal de Perda de Solo (EUPS) o LS é calculado utilizando equações que consideram uma vertente de relevo uniforme (encosta retilínea), tendo como referência a parcela padrão de 22,13 m. Mas em áreas de grande extensão e de relevo complexo o LS assume uma dimensão de área ou uma unidade hidrológica representativa da bacia (Minella et al., 2010). Nesse caso devem ser utilizadas equações que levem em consideração os fluxos divergentes e convergentes do escoamento superficial. Um dos métodos é aquele desenvolvido por (Moore et al., 1991), que incorpora a teoria da potência unitária do escoamento, segundo a qual a água na superfície do solo apresenta determinada energia capaz de desagregar e transportar partículas de solo quando estas se movem no sentido do declive (Minella et al., 2010). Assim, o LS é obtido através da seguinte equação:
 
@@ -227,8 +227,8 @@ vo sobre a distribuição do tamanho de partículas em diversas partes do mundo
 
 ## Índice de potência de escoamento
 
-(stream power index): descreve o potencial de acumulação do ﬂuxo hídrico e
-de escoamento superﬁcial.
+(stream power index): descreve o potencial de acumulação do fluxo hídrico e
+de escoamento superficial.
 Índice de potência de escoamento: (sinônimo – índice de capacidade de trasnporte de sedimento; inglês – stream power index, sediment transport capacity index; unidade – adimensional) atributo regional desenvolvido por Moore et al. (1988), trata-se de uma medida do potencial erosivo da enxurrada. Com o aumento da área de contribuição específica e da declividade, a quantidade de água que chega das áreas a montante e a velocidade do fluxo da água aumentam, levando ao consequente aumento da potencial de escoamento e de erosão (Gruber & Peckham, 2009). O índice de potência de escoamento (IPE) é obtido através da seguinte equação:
 
 $$IPE = AC_s \times \tan(\beta)$$
@@ -248,12 +248,12 @@ curvatura.
 ## Índice de resolução múltipla de nivelamento de fundo de vale
 
 (multiresolution index of valley bottom
-ﬂatness): descreve o quão plano é o fundo de um vale; mapping of depositional areas
+flatness): descreve o quão plano é o fundo de um vale; mapping of depositional areas
 
 ## Índice de resolução múltipla de nivelamento de topo de morro
 
-(multiresolution index of ridge top ﬂat-
-ness): descreve o quão ﬂano é o topo de um morro;
+(multiresolution index of ridge top flat-
+ness): descreve o quão flano é o topo de um morro;
 
 ## Índice de rugosidade do terreno
 
@@ -307,11 +307,11 @@ limites:
 * Rugosidade intermediária: 162--239 m
 * Moderadamente rugoso: 240--497 m
 * Altamente rugoso: 498--958 m
-* Extremamente rugoso: ≥ 958 m
+* Extremamente rugoso: > 958 m
 
 Cada classe recebe um número inteiro como identificador.
 
-## Índice de umidade topográﬁca
+## Índice de umidade topográfica
 
 (topographic wetness index): descreve tendência de uma célula acumular
 água; Índice de umidade topográfica: (sinônimo – algum?; inglês – topographic wetness index; unidade – adimensional): atributo local desenvolvido por Beven & Kirkby (1978) que descreve a tendência de uma célula acumular água Gruber & Peckham (2009). Assim, maiores valores de índice de umidade topográfica (IUT) indicam maior tendência de acumular água e, portanto, maior conteúdo de água no solo. O IUT é obtido através da seguinte equação:
@@ -338,7 +338,7 @@ Descreve a quantidade de energia radiativa que pode atingir uma superfície
  Como consequência, pode haver efeito sobre a distribuição do tamanho de
  partículas do solo de acordo com a entrada de energia radiativa.
 
- Largura do ﬂuxo (ﬂow width): descreve a largura alcançada pelo escoamento superﬁcial
+ Largura do fluxo (flow width): descreve a largura alcançada pelo escoamento superficial
 
 ## Posição em relação ao meio da encosta
 
@@ -372,5 +372,5 @@ Descreve a heterogeneidade (rugosidade) de uma superfície em função do
  Sua relação com a distribuição do tamanho de partículas é exatamente a
  mesma apresentada pelo índice de rugosidade do terreno.
 
-Sinuosidade do escoamento superﬁcial (ﬂow sinuosity): descreve a relação entre o caminho percorrido
-pelo escoamento superﬁcial de uma célula até o exutório e a distância Euclideana entre a célula e o exutório.
+Sinuosidade do escoamento superficial (flow sinuosity): descreve a relação entre o caminho percorrido
+pelo escoamento superficial de uma célula até o exutório e a distância Euclideana entre a célula e o exutório.
