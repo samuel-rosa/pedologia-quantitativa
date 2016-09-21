@@ -1,0 +1,175 @@
+# Amostragem
+
+## Tipos de amostragem
+
+A amostragem é um dos maiores contribuintes para os custos da modelagem espacial do solo, seja pelo método 
+chamado "tradicional" ou usando modelos estatísticos. Assim, o adequado planejamento amostral é essencial 
+para reduzir a necessidade de recursos (financeiros, psicológicos, humanos, entre outros) e maximizar o 
+número de observações possíveis, sejam elas tradagens, amostras superficiais, ou descrições de perfis 
+completos.
+
+A *situação ideal* é aquela em que os recursos disponíveis não impõe quaisquer limitações à amostragem. Nesse
+caso seria possível fazer observações e coletar amostras do solo em diversas etapas. Por exemplo, iniciaríamos
+com um levantamento exploratório para identificar a estrutura da variação espacial do solo. De posse desse 
+novo conhecimento, executaríamos uma nova etapa amostral a fim de atender a algum critério como, por exemplo, 
+obter uma cobertura espacial aproximadamente uniforme da área sendo modelada. Caso os resultados ainda sejam 
+insatisfatórios, uma nova etapa amostral poderia ser executada para, por exemplo, fazer observações em locais 
+específicos cujas condições ambientais estejam sub-representadas na base de dados. Por fim, calibrado o 
+modelo espacial do solo e feitas as predições espaciais, coletaríamos amostras para validação do modelo 
+preditivo em número suficiente para garantir um nível de confiança pré-determinado.
+
+Mas a *situação ideal* está longe de ser o que acontece na prática. Em geral temos que fazer todas as
+observações em uma única fase, coletando todo o material possível, inclusive para as amostras de validação. 
+Isso requer que o tipo de amostragem mais apropriado seja utilizado a fim de otimizar o uso dos recursos 
+disponíveis e obter o melhor modelo preditivo possível. E qual seria o tipo de amostragem mais apropriado? Uma
+resposta universal à essa pergunda continua desconhecida. A melhor estratégia costuma ser avaliar os 
+diferentes tipos de amostragem frente (1) os objetivos do projeto, (2) os recursos disponíveis, e (3) as 
+dificuldades operacionais encontradas na área sendo modelada.
+
+Podemos dizer que existem dois tipos fundamentais de amostragem:
+
+* probabilística, e
+* não-probabilística.
+
+### Amostragem probabilística
+
+A característica fundamental da amostragem probabilística é que a chance de um determinado local ser amostrado
+(probabilidade de inclusão) é conhecida e maior do que zero. Em outras palavras, todo e qualquer local possui 
+alguma chance de ser amostrado, mesmo que alguns tenham maior chance do que outros. Um local que não pode ser 
+amostrado tem probabilidade de inclusão igual a zero.
+
+A amostragem probabilística é muito utilizada em experimentos controlados, como aqueles desenvolvidos em 
+campos experimentais, casas de vegetação e laboratórios. No caso da modelagem espacial do solo, a amostragem
+probabilística costuma ser usada para a validação das predições espaciais. Entretanto, ela também pode ser 
+usada para obter observações para a calibração dos modelos preditivos.
+
+### Amostragem não-probabilística
+
+Na amostragem não-probabilística, como o próprio nome já diz, não são considerados os valores de probabilidade
+de inclusão para a seleção dos locais de amostragem. A escolha dos locais de amostragem depende da definição 
+de um critério a ser atendido.
+
+A amostragem não-probabilística costuma ser dividida em três categorias:
+
+* casual,
+* conveniente, e
+* intencional.
+
+#### Amostragem casual
+
+Na amostragem casual (em inglês, *haphazard sampling*) os locais de amostragem são escolhidos,
+fundamentalmente, em função da subjetividade da pessoa conduzindo a amostragem. Não existe um critério claro 
+a ser atendido. Outros locais amostrais podem ser escolhidos caso outra pessoa conduza a amostragem, mesmo que
+não haja justificativa plausível para isso. Assim, a amostragem causal deve ser evitada sempre que possível.
+
+Na prática, a amostragem casual consiste em transitar pela área a ser amostrada e, aqui e acolá, definir um 
+local para amostragem. Isso dá a impressão de que as observações são *aleatórias*, um pressuposto estatístico 
+comum. Entretanto, supor que tais observações são aleatórias é um equívoco, dado que é impossível calcular as 
+probabilidades de inclusão de cada amostra. É devido a esse comum equívoco que a expressão *amostragem 
+aleatória* tem caído em desuso junto a comunidade estatística, dando-se preferência à expressão *amostragem 
+probabilística* (veja acima).
+
+#### Amostragem conveniente
+
+A amostragem conveniente (em inglês, *convenience sampling*) está diretamente relacionada à otimização do uso 
+dos recursos disponíveis. Ela consiste em evitar realizar observações em locais de difícil acesso como áreas 
+densamente florestadas, distantes de estradas, terrenos íngremes, ou áreas que apresentem risco para a saúde 
+ou à vida devido à presença de, por exemplo, animais peçonhentos. Assim sendo, o critério usado para a
+definição dos locais de observação é a soma dos custos financeiro e operacional. Quanto menor forem os custos 
+financeiro e operacional, maior será o número de observações.
+
+O resultado da amostragem conveniente é a concentração das observações em áreas usadas para agricultura, 
+próximo de estradas, nas bordas de florestas, e em terrenos não-montanhosos. Perfis de solo descritos e 
+amostrados em cortes de estrada são resultado de amostragem conveniente. Nesse caso, o responsável pela
+amostragem usa os recursos que seriam necessários para abrir uma trincheira e descrever/amostrar um perfil 
+para descrever/amostrar vários perfis usando os cortes de estrada.
+
+O uso da amostragem conveniente exige assumir que a estrutura da variação espacial do solo pode ser 
+representada pelas observações obtidas, por exemplo, ao longo de estradas. Em outras palavras, qualquer
+estrutura de variação espacial que não apareça ao longo das estradas é descartada. Em áreas de pequena
+complexidade pedológica e bem servidas por estradas, a amostragem conveniente tem grande chance de ser 
+eficiente. Do contrário, a amostragem conveniente é incapaz de capturar a maior parte da estrutura variação 
+espacial do solo. Isso porque estradas costumam ser construídas em posições elevadas da paisagem, com boa 
+drenagem, como nos divisores de águas. As áreas de borda de florestas são fortemente influenciadas pelo uso da
+terra subjascente. E os terrenos não-montanhosos costumam ter solo com maior desenvolvimento em profundidade. 
+O modelo preditivo calibrado com tais observações terá bom desempenho aqui, mas não no restante da área.
+
+#### Amostragem intencional
+
+A amostragem intencional (em inglês, *purposive sampling*) é semelhante à amostragem conveniente no sentido de
+que em ambas os locais amostrais são definidos a fim de otimizar um critério pré-determinado. A diferença 
+fundamental entre as duas é a natureza desse critério. Enquanto na amostragem conveniente o critério tem 
+origem puramente econômica, na amostragem intencional o critério tem origem pedológica e/ou estatística, 
+podendo-se agregar critérios de origem econômica.
+
+Um critério pedológico e/ou estatístico tem origem no modelo usado para descrever a estrutura da variação 
+espacial do solo e o método usado para fazer predições espaciais. Por exemplo, o objetivo pode ser selecionar
+os locais amostrais de maneira a obter a melhor cobertura espacial porque isso minimiza a incerteza das 
+predições. O resultado disso seria uma amostra com observações equidistantes.
+
+Em geral, a amostragem intencional é o tipo de amostragem mais eficiente para a obtenção de observações de 
+calibração para a modelagem espacial do solo. Isso se dá exatamente porque a localização das observações é 
+definida com base no modelo usado para descrever a estrutura da variação espacial do solo. Em outras palavras,
+a configuração espacial das observações é otimizada para atender aos pressupostos e requerimentos do modelo de
+distribuição espacial que será usado. Quanto mais conhecido for o modelo de distribuição espacial, tanto mais 
+ótima será a configuração espacial das observações.
+
+O método do caminhamento livre (em inglês, *free survey*), usado no mapeamento tradicional, utiliza-se da 
+amostragem intencional. Aqui a localização das observações é definida com base no conhecimento tácito do
+responsável, seu modelo mental das relações solo-paisagem ou pedogênese [WebsterEtAl1990, Rossiter2000, 
+BrusEtAl2007a]. O modelo mental é construído com a experiência obtida no campo e sua qualidade geralmente é 
+diretamente proporcional ao número de anos de trabalho de campo. É este modelo aquele usado para descrever a 
+estrutura da variação espacial do solo.
+
+Um dos critérios utilizados para a escolha dos locais de observação no método do caminhamento livre é a 
+obtenção de uma amostra "representativa" das feições geomórficas, manchas de características do solo e usos da
+terra da área sendo mapeada [SamuelRosa2012]. A localização das observações também costuma ser definida de 
+forma a testar as hipóteses postuladas pelo responsável em função do seu modelo mental de pedogênese. Isso 
+resulta em um grande número de observações concentradas na chamadas áreas-problema [Rossiter2000]. As 
+áreas-problema são aquelas para as quais o modelo mental de pedogênese é incompleto ou possui limitações 
+significativas, ou seja, a variação espacial do solo é predita pobremente.
+
+Outra forma de amostragem intencional é o uso de uma malha regular de pontos amostrais. Isso é comumente usado
+em trabalhos de mapeamento do solo para fins de agricultura de precisão, onde as características do solo 
+costumam ser espacialmente homogêneas devido ao manejo agrícola. O objetivo principal não é a construção de um
+modelo para descrever a estrutura da variação espacial das propriedades do solo, mas sim obter predições com o
+menor erro possível usando métodos de interpolação como a krigagen. Quanto mais homogênea for a distribuição
+espacial das observações, menor será o erro de predição na área como um todo. Em outras palavras, o critério
+usado para otimizar a configuração espacial das observações é o erro de predição.
+
+Um aspecto importante da amostragem intencional é que uma configuração espacial otimizada para um modelo de
+distribuição espacial geralmente será sub-ótimo para outro modelo de distribuição espacial. Por exemplo, uma
+configuração espacial otimizada para atender aos requerimentos de um modelo mental de pedogênese será
+sub-ótimo para um modelo estatístico, e vice-versa. O mesmo vale para dois modelos mentais de pedogênese ou
+dois modelos estatísticos diferentes. É nesse sentido que quanto mais conhecido for o modelo de distribuição
+espacial, tanto mais ótima será a configuração espacial das observações.
+
+## Sumário
+
+Na amostragem não-probabilística, os critérios usados na definição dos locais de
+amostragem são:
+
+* Amostragem casual: desconhecido - baseado na subjetividade do responsável
+* Amostragem por conveniência: minimizar os custos financeiro e operacional
+* Amostragem intencional: atender aos pressupostos e requerimentos do modelo de 
+  distribuição espacial
+
+Para o mapeamento do solo, é mais adequado usar:
+* Amostragem intencional para calibrar o modelo de distribuição espacial
+* Amostragem probabilística para validar as predições espaciais
+
+## Bibliografia consultada
+
+de Gruijter, J.J.; Brus, D.; Bierkens, M.; Knotters, M. *Sampling for natural 
+resource monitoring*. Berlin: Springer, p. 332, 2006.
+
+Diggle, P.J.; Ribeiro Jr, P.J. *Model-based geostatistics*. New York: Springer, 
+p. 228, 2007.
+
+Müller, W.G. *Collecting spatial data - optimum design of experiments for 
+random fields*. Berlin: Springer, p. 242, 2007.
+
+Webster, R.; Lark, R.M. *Field sampling for environmental science and 
+management*. London: Routledge, p. 200, 2013.
+
+
