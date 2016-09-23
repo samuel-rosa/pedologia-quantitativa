@@ -1,10 +1,22 @@
-# PARTE __ -- INFRAESTRUTURA {-}
+# PARTE II -- INFRAESTRUTURA DE TECNOLOGIA DA INFORMAÇÃO {-}
 
 # HARDWARE
 
-Este capítulo está em desenvolvimento. Sua ajuda é bem vinda!
+**Atenção!** Este capítulo está em desenvolvimento. Visite a [página do projeto][issues] se tiver alguma
+ideia, dúvida ou estiver disposto a colaborar. Sua ajuda é muito bem vinda!
+
+**Objetivo**: Neste capítulo pretendo descrever os requerimentos de *hardware* e as opções disponíveis para o 
+desenvolvimento de atividades/projetos de pedologia quantitativa. Isso vai desde o uso de computadores 
+pessoais, móveis ou não, até a computação distribuída e em nuvem. Em princípio, o termo *hardware* também pode
+ser usado aqui para definir a família de sensores remotos proximais usados na coleta de dados do solo.
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Ideias e dúvidas"
 
 # SOFTWARE
+
+## Introdução
+
+
 
 ## R/RStudio
 
@@ -346,7 +358,7 @@ produzidos por diferentes usuários do R:
 * [Vito Ricci](https://cran.r-project.org/doc/contrib/Ricci-refcard-regression.pdf)
 * [Yanchang Zhao](https://cran.r-project.org/doc/contrib/YanchangZhao-refcard-data-mining.pdf)
 
-## QGIS
+## QGIS 
 
 http://www.qgis.org/
 
@@ -358,7 +370,7 @@ http://www.saga-gis.org/
 
 https://grass.osgeo.org/
 
-## GDAL
+## GDAL/OGR
 
 http://www.gdal.org/
 
