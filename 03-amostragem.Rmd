@@ -1,8 +1,8 @@
 # PARTE III -- AMOSTRAGEM ESPACIAL {-}
 
-# Amostragem
+# PRINCÍPIOS DA AMOSTRAGEM ESPACIAL
 
-## Tipos de amostragem
+## Introdução
 
 A amostragem é um dos maiores contribuintes para os custos da modelagem espacial do solo, seja pelo método 
 chamado "tradicional" ou usando modelos estatísticos. Assim, o adequado planejamento amostral é essencial 
@@ -33,7 +33,7 @@ Podemos dizer que existem dois tipos fundamentais de amostragem:
 * probabilística, e
 * não-probabilística.
 
-### Amostragem probabilística
+# AMOSTRAGEM PROBABILÍSTICA
 
 A característica fundamental da amostragem probabilística é que a chance de um determinado local ser amostrado
 (probabilidade de inclusão) é conhecida e maior do que zero. Em outras palavras, todo e qualquer local possui 
@@ -45,7 +45,7 @@ campos experimentais, casas de vegetação e laboratórios. No caso da modelagem
 probabilística costuma ser usada para a validação das predições espaciais. Entretanto, ela também pode ser 
 usada para obter observações para a calibração dos modelos preditivos.
 
-### Amostragem não-probabilística
+# AMOSTRAGEM NÃO-PROBABILÍSTICA
 
 Na amostragem não-probabilística, como o próprio nome já diz, não são considerados os valores de probabilidade
 de inclusão para a seleção dos locais de amostragem. A escolha dos locais de amostragem depende da definição 
@@ -57,7 +57,7 @@ A amostragem não-probabilística costuma ser dividida em três categorias:
 * conveniente, e
 * intencional.
 
-#### Amostragem casual
+## Amostragem casual
 
 Na amostragem casual (em inglês, *haphazard sampling*) os locais de amostragem são escolhidos,
 fundamentalmente, em função da subjetividade da pessoa conduzindo a amostragem. Não existe um critério claro 
@@ -71,7 +71,7 @@ probabilidades de inclusão de cada amostra. É devido a esse comum equívoco qu
 aleatória* tem caído em desuso junto a comunidade estatística, dando-se preferência à expressão *amostragem 
 probabilística* (veja acima).
 
-#### Amostragem conveniente
+## Amostragem conveniente
 
 A amostragem conveniente (em inglês, *convenience sampling*) está diretamente relacionada à otimização do uso 
 dos recursos disponíveis. Ela consiste em evitar realizar observações em locais de difícil acesso como áreas 
@@ -96,7 +96,7 @@ drenagem, como nos divisores de águas. As áreas de borda de florestas são for
 terra subjascente. E os terrenos não-montanhosos costumam ter solo com maior desenvolvimento em profundidade. 
 O modelo preditivo calibrado com tais observações terá bom desempenho aqui, mas não no restante da área.
 
-#### Amostragem intencional
+## Amostragem intencional
 
 A amostragem intencional (em inglês, *purposive sampling*) é semelhante à amostragem conveniente no sentido de
 que em ambas os locais amostrais são definidos a fim de otimizar um critério pré-determinado. A diferença 
@@ -145,33 +145,3 @@ configuração espacial otimizada para atender aos requerimentos de um modelo me
 sub-ótimo para um modelo estatístico, e vice-versa. O mesmo vale para dois modelos mentais de pedogênese ou
 dois modelos estatísticos diferentes. É nesse sentido que quanto mais conhecido for o modelo de distribuição
 espacial, tanto mais ótima será a configuração espacial das observações.
-
-## Sumário
-
-Na amostragem não-probabilística, os critérios usados na definição dos locais de
-amostragem são:
-
-* Amostragem casual: desconhecido - baseado na subjetividade do responsável
-* Amostragem por conveniência: minimizar os custos financeiro e operacional
-* Amostragem intencional: atender aos pressupostos e requerimentos do modelo de 
-  distribuição espacial
-
-Para o mapeamento do solo, é mais adequado usar:
-* Amostragem intencional para calibrar o modelo de distribuição espacial
-* Amostragem probabilística para validar as predições espaciais
-
-## Bibliografia consultada
-
-de Gruijter, J.J.; Brus, D.; Bierkens, M.; Knotters, M. *Sampling for natural 
-resource monitoring*. Berlin: Springer, p. 332, 2006.
-
-Diggle, P.J.; Ribeiro Jr, P.J. *Model-based geostatistics*. New York: Springer, 
-p. 228, 2007.
-
-Müller, W.G. *Collecting spatial data - optimum design of experiments for 
-random fields*. Berlin: Springer, p. 242, 2007.
-
-Webster, R.; Lark, R.M. *Field sampling for environmental science and 
-management*. London: Routledge, p. 200, 2013.
-
-
