@@ -2,4 +2,4 @@
 
 # O Componente Determinístico
 
-# Modelo de Regressão Logística
+# Regressão Logística
