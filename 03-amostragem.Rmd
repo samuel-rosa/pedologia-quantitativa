@@ -1,6 +1,11 @@
 # PARTE III -- AMOSTRAGEM ESPACIAL {-}
 
-# PRINCÍPIOS DA AMOSTRAGEM ESPACIAL
+# Princípios da Amostragem Espacial
+
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
 
 ## Introdução
 
@@ -33,7 +38,14 @@ Podemos dizer que existem dois tipos fundamentais de amostragem:
 * probabilística, e
 * não-probabilística.
 
-# AMOSTRAGEM PROBABILÍSTICA
+# Amostragem Probabilística
+
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+
+## Introdução
 
 A característica fundamental da amostragem probabilística é que a chance de um determinado local ser amostrado
 (probabilidade de inclusão) é conhecida e maior do que zero. Em outras palavras, todo e qualquer local possui 
@@ -45,7 +57,14 @@ campos experimentais, casas de vegetação e laboratórios. No caso da modelagem
 probabilística costuma ser usada para a validação das predições espaciais. Entretanto, ela também pode ser 
 usada para obter observações para a calibração dos modelos preditivos.
 
-# AMOSTRAGEM NÃO-PROBABILÍSTICA
+# Amostragem Não-Probabilística
+
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+
+## Introdução
 
 Na amostragem não-probabilística, como o próprio nome já diz, não são considerados os valores de probabilidade
 de inclusão para a seleção dos locais de amostragem. A escolha dos locais de amostragem depende da definição 
