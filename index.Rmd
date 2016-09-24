@@ -18,7 +18,7 @@ Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
 * Parte I -- Fundamentação histórica e conceitual
     + Contextualização histórica
     + Pedologia quantitativa (ou pedometria)
-    + Mapeamento (digital) do solo
+    + Mapeamento digital do solo
 * Parte II -- Infraestrutura tecnológica
     + Hardware
     + Software
@@ -31,4 +31,14 @@ Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
     + Princípios da formação do solo
     + Modelos digitais de elevação
     + Imagens de satélite
-* Parte V --- Análise exploratória espacial
+* Parte V -- Análise exploratória espacial
+    + Análise de padrões pontuais
+    + Transformação de dados
+    + Seleção de covariáveis
+* Parte VI -- Modelagem da variação espacial (I)
+    + O componente determinístico
+    + Regressão logística
+* Parte VII -- Modelagem da variação espacial (II)
+    + O componente estocástico
+    + Krigagem univariada
+    + Krigagem multivariada

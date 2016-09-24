@@ -7,6 +7,13 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 
 [issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
 
+## Introdução
+
+Neste capítulo pretendo situar o leitor, historicamente, para que saiba exatamente onde está se
+metendo ao decidir estudar pedologia quantitativa (ou pedometria). A ideia envolve descrever o contexto
+histórico, o mapeamento do solo no Brasil, o mapeamento digital do solo, o mapeamento digital do solo no
+Brasil, alguns mitos e verdades, entre outros.
+
 # Pedologia Quantitativa (ou Pedometria)
 
 **Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
@@ -81,7 +88,7 @@ espaciais.
 * **Sensoriamento proximal do solo**: definido como o estudo dos processos que ocorrem no solo, bem como 
 da variação espaço-temporal do solo, usando técnicas de sensoriamento proximal.
 
-# Mapeamento (Digital) do Solo
+# Mapeamento Digital do Solo
 
 **Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
@@ -90,7 +97,7 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 
 ## Introdução
 
-O *mapeamento (digital) do solo* (MDS) é uma das áreas de pesquisa da pedometria. 
+O *mapeamento digital do solo* (MDS) é uma das áreas de pesquisa da pedometria. 
 Apesar de ser aplicado desde a década de 1960, suas bases conceituais foram 
 estabelecidas formalmente apena no início dos anos 2000. Hoje o MDS é utilizado
 para a produção de mapas de propriedades do solo desde o nível de propriedade
