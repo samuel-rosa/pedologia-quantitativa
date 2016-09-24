@@ -57,7 +57,8 @@
       <term name="month-10" form="short">out.</term>
       <term name="month-11" form="short">nov.</term>
       <term name="month-12" form="short">dez.</term>
-      <!--Os termos abaixo serao utilizados quando houverem nomes de editores. Apos a citacao dos nomes, eles irao aparecer entre parenteses.-->
+      <!--Os termos abaixo serão utilizados quando houver nomes de editores.
+      Após a citação dos nomes, eles irão aparecer entre parenteses.-->
       <term name="editor" form="short">
         <single>ed</single>
         <multiple>eds</multiple>
@@ -72,8 +73,8 @@
       </term>
     </terms>
   </locale>
-  <!--A macro 'container-contribuitor' e responsavel por mostrar os nomes dos editores, serao apresentados SOBRENOME, INICIAIS PRENOMES 
-tendo as inicias separadas por ponto.-->
+  <!--A macro 'container-contribuitor' e responsavel por mostrar os nomes dos editores, 
+  serao apresentados SOBRENOME, INICIAIS PRENOMES tendo as inicias separadas por ponto.-->
   <macro name="container-contributors">
     <choose>
       <if type="chapter">
@@ -91,8 +92,8 @@ tendo as inicias separadas por ponto.-->
       </if>
     </choose>
   </macro>
-  <!--A macro 'secundary-contribuitor' e responsavel por mostrar os nomes dos organizadores, serao apresentados SOBRENOME, INICIAIS PRENOMES
-tendo as inicias separadas por ponto.-->
+  <!--A macro 'secundary-contribuitor' e responsavel por mostrar os nomes dos organizadores, 
+  serao apresentados SOBRENOME, INICIAIS PRENOMES tendo as inicias separadas por ponto.-->
   <macro name="secondary-contributors">
     <choose>
       <if type="chapter" match="none">
@@ -103,29 +104,35 @@ tendo as inicias separadas por ponto.-->
       </if>
     </choose>
   </macro>
-  <!--A macro 'author' e responsavel por mostrar os nomes dos autores na bibliografia, serao no formato SOBRENOME, INICIAIS PRENOMES, tendo 
-as inicias separadas por ponto. Quando houver mais de tres autores, somente o primeiro sera mostrado e no lugar dos outros
-aparecera a expess o 'et. al.'. Na regra da ABNT essa expressao deve aparecer em fonte normal-->
+  
+  <!--
+  A macro 'author' é responsável pela formatação dos nomes dos autores na lista de referências 
+  bibliográficas. O formato usado é o seguinte: 'Sobrenome, Iniciais Prenomes', sendo as inicias do nome de um
+  autor separadas por um '.' e os nomes dos autores separados por uma ',' (até 10 autores - veja abaixo - 
+  quando houver mais de 10 autores, somente o nome do primeiro autor é mostrado, e no lugar dos demais 
+  aparece a expessão 'et al.' usando fonte normal.) 
+  -->
   <macro name="author">
     <names variable="author">
-      <name name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter="; " delimiter-precedes-last="always">
-        <name-part name="family" text-case="uppercase"/>
-        <name-part name="given" text-case="uppercase"/>
+      <name name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter=", " delimiter-precedes-last="always">
+        <name-part name="family" text-case="capitalize-first"/>
+        <name-part name="given" text-case="capitalize-first"/>
       </name>
-      <label form="short" prefix=" (" suffix=".)" text-case="uppercase"/>
+      <label form="short" prefix=" (" suffix=".)" text-case="capitalize-first"/>
       <substitute>
         <names variable="editor"/>
         <text macro="title"/>
       </substitute>
     </names>
   </macro>
-  <!--A macro 'author-short' e responsavel por mostrar os nomes dos autores na citacao (no meio do texto). Nela aparecera apenas o ultimo nome
-do autor. Na regra da ABNT o sobrenome deve aparecer com todas as letras em caixa alta-->
+  
+  <!--A macro 'author-short' é responsável pela formatação do nome dos autores nas citações no texto.
+  Nela aparece apenas o último nome dos autores (até 2 autores) separados por um 'e'.-->
   <macro name="author-short">
     <names variable="author">
-      <name form="short" name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter="; " delimiter-precedes-last="never">
-        <name-part name="family" text-case="uppercase"/>
-        <name-part name="given" text-case="uppercase"/>
+      <name form="short" name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter=" e " delimiter-precedes-last="never">
+        <name-part name="family" text-case="capitalize-first"/>
+        <name-part name="given" text-case="capitalize-first"/>
       </name>
       <substitute>
         <names variable="editor"/>
@@ -140,30 +147,39 @@ do autor. Na regra da ABNT o sobrenome deve aparecer com todas as letras em caix
       </substitute>
     </names>
   </macro>
-  <!--A macro 'access' e utilizada em arquivos de paginas da web. Ela e responsavel por mostrar a URL do site pesquisado e a data do acesso-->
+
+  <!--
+  A macro 'access' é responsável pela formatação do endereço eletrônico da referência bibliográfica.
+  Estão disponíveis o DOI e a URL.
+  -->
   <macro name="access">
-    <text variable="URL" prefix="Disponível em: &lt;" suffix="&gt;"/>
-    <date variable="accessed" prefix=". Acesso em: ">
-      <date-part name="day" suffix=" "/>
-      <date-part name="month" form="short" suffix=". " text-case="lowercase"/>
-      <date-part name="year"/>
-    </date>
+    <choose>
+      <if variable="DOI">
+        <text variable="DOI" prefix="doi:"/>
+      </if>
+      <else-if variable="URL">
+        <text variable="URL"/>
+      </else-if>
+    </choose>
   </macro>
-  <!--A macro 'title' e responsavel por mostrar o titulo principal do arquivo. Em todos os tipos ele aparecera em negrito logo apos os nomes dos
-autores, exceto em arquivos do tipo 'artigo de jornal, artigo de revista, artigo de periodico', nesses arquivos eles irao aparecer em fonte normal.-->
+  
+  <!--A macro 'title' é responsável pela formatação do título principal da referência bibliográfica. 
+  Em todos os tipos ele aparece em itálico logo após os nomes dos autores, exceto em arquivos do tipo 
+  'artigo de jornal, artigo de revista, artigo de periodico', nesses arquivos eles irao aparecer em fonte 
+  normal.-->
   <macro name="title">
     <choose>
       <if type="chapter bill" match="any">
         <text variable="title"/>
       </if>
       <else-if type="book thesis" match="any">
-        <text variable="title" font-weight="bold"/>
+        <text variable="title" font-style="italic"/>
       </else-if>
       <else-if type="article-newspaper article-magazine article-journal" match="any">
         <text variable="title"/>
       </else-if>
       <else>
-        <text variable="title" font-weight="bold"/>
+        <text variable="title" font-style="italic"/>
       </else>
     </choose>
   </macro>
@@ -172,14 +188,15 @@ autores, exceto em arquivos do tipo 'artigo de jornal, artigo de revista, artigo
     <choose>
       <if type="paper-conference" match="any">
         <text variable="container-title" suffix=". "/>
-        <text value="Anais" font-weight="bold"/>
+        <text value="Anais" font-style="italic"/>
         <text value="..."/>
       </if>
       <else>
-        <text variable="container-title" font-weight="bold"/>
+        <text variable="container-title" font-style="italic"/>
       </else>
     </choose>
   </macro>
+  
   <!--A macro 'publisher' e responsavel por mostrar o nome da editora responsavel pela publicacao-->
   <macro name="publisher">
     <choose>
@@ -253,7 +270,7 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
       </else>
     </choose>
   </macro>
-  <!--A macro 'issued' e utilizada quando desejamos que apareca apenas o ano-->
+  <!--A macro 'issued-year' é utilizada quando desejamos que apareca apenas o ano-->
   <macro name="issued-year">
     <choose>
       <if variable="issued" match="any">
@@ -266,6 +283,7 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
       </else>
     </choose>
   </macro>
+  
   <!--A macro 'edition' e responsavel por mostrar o numero da edicao.-->
   <macro name="edition">
     <choose>
@@ -286,7 +304,9 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
       </if>
     </choose>
   </macro>
-  <!--A macro 'locators'tem como funcao mostrar os dados complementares do arquivo (paginas, secao, volume, etc)-->
+  
+  <!--A macro 'locators' tem como funcao mostrar os dados complementares do arquivo
+  (paginas, secao, volume, etc)-->
   <macro name="locators">
     <choose>
       <!--Se for projeto de lei mostrara o dia, mes "forma curta", ano, secao "Sec." e pagina "p."-->
@@ -301,16 +321,19 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
           <text variable="page" prefix="p. " suffix="."/>
         </group>
       </if>
-      <!--Se for artigos de jornal, revista, etc. Aparecera o volume "v.", edicao "n." e a pagina do artigo "p."-->
+      
+      <!--Para artigos de revista científicas aparece o volume e a edição (entre parênteses) da revista e as
+      páginas inicial e final do artigo-->
       <else-if match="any" type="article-journal article-magazine article-newspaper">
-        <group delimiter=", ">
-          <group delimiter=", ">
-            <text variable="volume" prefix="v. "/>
-            <text variable="issue" prefix="n. "/>
+        <group delimiter=" ">
+          <group delimiter="">
+            <text variable="volume" prefix=""/>
+            <text variable="issue" prefix="(" suffix=")"/>
           </group>
-          <text variable="page" prefix="p. "/>
+          <text variable="page" prefix=":"/>
         </group>
       </else-if>
+      
       <!--Se for capitulo de livro aparecera o volume "v." e a pagina "p."-->
       <else-if match="any" type="book chapter">
         <group delimiter=", ">
@@ -347,9 +370,10 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
       <text variable="archive" prefix=" "/>
     </group>
   </macro>
-  <!--Citacao-->
-  <!--et al. aparece a partir de 04 autores-->
-  <citation et-al-min="4" et-al-use-first="1" collapse="year" disambiguate-add-year-suffix="true">
+  
+  <!--Citação no texto-->
+  <!--et al. aparece a partir de 03 autores-->
+  <citation et-al-min="3" et-al-use-first="1" collapse="year" disambiguate-add-year-suffix="true">
     <sort>
       <key macro="author"/>
       <!--Puxa o autor primeiro-->
@@ -357,18 +381,22 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
       <!--Depois o ano-->
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
-      <!--Entre parenteses separando os autores com ponto-e-virgula-->
       <group>
-        <text suffix=", " macro="author-short"/>
-        <!--Seperando os autores das datas usando virgula-->
+      
+        <!--Separação entre o nome dos autores e o ano usando espaço.-->
+        <text suffix=" " macro="author-short"/>  
+        
+        <!--Seperando os autores da data usando espaço-->
         <text macro="issued-year"/>
-        <text prefix=", " macro="citation-locator"/>
+        <text prefix=" " macro="citation-locator"/>
       </group>
     </layout>
   </citation>
+  
+  
   <!--Bibliografia-->
-  <!--et al. aparece a partir de 04 autores-->
-  <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="1" entry-spacing="1">
+  <!--et al. aparece a partir de 10 autores-->
+  <bibliography hanging-indent="false" et-al-min="10" et-al-use-first="1" entry-spacing="1">
     <sort>
       <key macro="author"/>
       <!--Puxa o autor primeiro-->
@@ -470,8 +498,10 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
             <!--Edicao-->
             <text macro="locators" suffix=", "/>
             <!--Dados complementares "pagina, volume"-->
-            <text macro="issued" suffix=". "/>
-            <!--Data-->
+            
+            <!--Ano da publicação-->
+            <text macro="issued-year" suffix=". "/>
+            
             <text macro="access" suffix=". "/>
             <!--URL, data do acesso-->
           </group>
