@@ -1,0 +1,5 @@
+# PARTE VI -- MODELAGEM DA VARIAÇÃO ESPACIAL (I)
+
+# O Componente Determinístico
+
+# Modelo de Regressão Logística
