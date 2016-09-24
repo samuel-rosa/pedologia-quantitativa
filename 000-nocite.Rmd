@@ -1,0 +1,12 @@
+---
+nocite: | 
+  # PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II) {-}
+  # O Componente Estocástico
+  @Everitt2006, 
+  @Florinsky2012,
+  @Jenny1941,
+  @Kuhn2011,
+  @McBratneyEtAl2003,
+  @Webster1994
+
+...
