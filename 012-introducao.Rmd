@@ -77,7 +77,7 @@ futuro próximo.
 
 Uma definição pragmática de MDS seria
 
-> o mapeamento das propriedades do solo usando modelos estatísticos.
+> o mapeamento do solo usando modelos estatísticos.
 
 Tal definição descreve suficientemente bem o que é feito na prática, estando
 mais diretamente ligada à definição da disciplina que engloba o MDS, a
@@ -119,29 +119,3 @@ empíricas. Tais observações indicam que as propriedades do solo (*S*) observa
 em um dado momento no tempo e espaço são função (*f*) linear e/ou não-linear das 
 condições ambientais em diferentes momentos no tempo e espaço 
 *(cl, o, r, p, t, ...)*.
-
-## Bibliografia consultada
-
-Burrough, P.A.; Bouma, J.; Yates, S.R. The state of the art in pedometrics. 
-*Geoderma*, 62:311-326, 1994.
-
-Hengl, T.; Toomanian, N.; Reuter, H.I.; Malakouti, M.J. Methods to interpolate 
-soil categorical variables from profile observations: lessons from Iran. 
-*Geoderma*, 140:417-427, 2007.
-
-Lagacherie, P.; McBratney, A.B. Spatial soil information systems and spatial 
-soil inference systems: perspectives for digital soil mapping. In: Lagacherie, 
-P.; McBratney, A.B.; Voltz, M. (Eds.). *Digital soil mapping - an introductory 
-perspective*. Amsterdam: Elsevier, 2006. p.3-22.
-
-Heuvelink, G.B.M. The definition of pedometrics. *Pedometron*, 15:11-12, 2003. 
-
-McBratney, A.B.; Mendonça-Santos, M.; Minasny, B. On digital soil mapping. 
-*Geoderma*, 117:3-52, 2003.
-
-Samuel-Rosa, A.; Heuvelink, G.B.M.; Vasques, G.M.; Anjos, L.H.C. Do more 
-detailed environmental covariates deliver more accurate soil maps? *Geoderma*, 
-243-244:214-227, 2015.
-
-Troeh, F.R. Landform parameters correlated to soil drainage. *Soil Science 
-Society of America Journal*, 28:808-812, 1964.

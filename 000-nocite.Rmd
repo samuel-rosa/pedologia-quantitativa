@@ -1,6 +1,20 @@
 ---
 nocite: | 
-  # PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II) {-}
+  # PARTE I -- FUNDAMENTAÇÃO HISTÓRICA E CONCEITUAL
+  # Mapeamento Digital do Solo
+  @BurroughEtAl1994,
+  @HenglEtAl2007a, @Heuvelink2003a,
+  @LagacherieEtAl2007a,
+  @McBratneyEtAl2003,
+  @Samuel-RosaEtAl2015,
+  @Troeh1964,
+  
+  # PARTE V -- ANÁLISE EXPLORATÓRIA ESPACIAL
+  # Tipos de Dados
+  @HairEtAl2010, @HenglEtAl2007a,
+  @WebsterEtAl1990,
+  
+  # PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II)
   # O Componente Estocástico
   @Everitt2006, 
   @Florinsky2012,
