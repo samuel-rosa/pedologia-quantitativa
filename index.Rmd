@@ -11,7 +11,7 @@ link-citations: yes
 github-repo: samuel-rosa/pedologia-quantitativa
 ---
 
-# PREFÁCIO {-}
+# Prefácio {-}
 
 Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
 
