@@ -1,6 +1,13 @@
 ---
 nocite: | 
   # PARTE I -- FUNDAMENTAÇÃO HISTÓRICA E CONCEITUAL
+  
+  # Pedologia Quantitativa (ou Pedometria)
+  @Heuvelink2003c, @Heuvelink2003b, @Heuvelink2003a,
+  @Jenny1941,
+  @McBratney2003, @McBratneyEtAl2000,
+  @Webster1994, @Wittgenstein1999,
+  
   # Mapeamento Digital do Solo
   @BurroughEtAl1994,
   @HenglEtAl2007a, @Heuvelink2003a,
@@ -9,12 +16,27 @@ nocite: |
   @Samuel-RosaEtAl2015,
   @Troeh1964,
   
+  # PARTE III -- AMOSTRAGEM ESPACIAL
+  
+  # Princípios da Amostragem Espacial
+  @deGruijterEtAl2006,
+  @Mueller2007,
+  @WebsterEtAl2013,
+  
+  # Amostragem Não-Probabilística
+  @BrusEtAl2007a,
+  @Rossiter2000,
+  @Samuel-Rosa2012,
+  @WebsterEtAl1990,
+  
   # PARTE V -- ANÁLISE EXPLORATÓRIA ESPACIAL
+  
   # Tipos de Dados
   @HairEtAl2010, @HenglEtAl2007a,
   @WebsterEtAl1990,
   
   # PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II)
+  
   # O Componente Estocástico
   @Everitt2006, 
   @Florinsky2012,

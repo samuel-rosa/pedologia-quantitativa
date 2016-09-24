@@ -82,16 +82,16 @@ distribuição espacial que será usado. Quanto mais conhecido for o modelo de d
 
 O método do caminhamento livre (em inglês, *free survey*), usado no mapeamento tradicional, utiliza-se da 
 amostragem intencional. Aqui a localização das observações é definida com base no conhecimento tácito do
-responsável, seu modelo mental das relações solo-paisagem ou pedogênese [WebsterEtAl1990, Rossiter2000, 
-BrusEtAl2007a]. O modelo mental é construído com a experiência obtida no campo e sua qualidade geralmente é 
+responsável, seu modelo mental das relações solo-paisagem ou pedogênese. O modelo mental é construído com a
+experiência obtida no campo e sua qualidade geralmente é 
 diretamente proporcional ao número de anos de trabalho de campo. É este modelo aquele usado para descrever a 
 estrutura da variação espacial do solo.
 
 Um dos critérios utilizados para a escolha dos locais de observação no método do caminhamento livre é a 
 obtenção de uma amostra "representativa" das feições geomórficas, manchas de características do solo e usos da
-terra da área sendo mapeada [SamuelRosa2012]. A localização das observações também costuma ser definida de 
+terra da área sendo mapeada. A localização das observações também costuma ser definida de 
 forma a testar as hipóteses postuladas pelo responsável em função do seu modelo mental de pedogênese. Isso 
-resulta em um grande número de observações concentradas na chamadas áreas-problema [Rossiter2000]. As 
+resulta em um grande número de observações concentradas na chamadas áreas-problema. As 
 áreas-problema são aquelas para as quais o modelo mental de pedogênese é incompleto ou possui limitações 
 significativas, ou seja, a variação espacial do solo é predita pobremente.
 
