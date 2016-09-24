@@ -1,6 +1,10 @@
 --- 
 title: "Pedologia Quantitativa feita Simples"
-author: "Alessandro Samuel-Rosa"
+author: |
+  | Alessandro Samuel-Rosa
+  | Universidade Federal Rural do Rio de Janeiro
+# author: "Alessandro Samuel-Rosa"
+# institute: "Universidade Federal Rural do Rio de Janeiro" THIS IS NOT IMPLEMENTET YET!
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
