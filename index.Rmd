@@ -12,3 +12,21 @@ github-repo: samuel-rosa/pedologia-quantitativa
 ---
 
 # PREFÁCIO {-}
+
+Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
+
+* Parte I -- Fundamentação histórica e conceitual
+    + Introdução
+* Parte II -- Infraestrutura tecnológica
+    + Hardware
+    + Software
+    + Gestão de dados
+* Parte III -- Amostragem espacial
+    + Princípios da amostragem espacial
+    + Amostragem probabilística
+    + Amostragem não-probabilística
+* Parte IV -- Covariáveis ambientais
+    + Princípios da formação do solo
+    + Modelos digitais de elevação
+    + Imagens de satélite
+* Parte V --- Análise exploratória espacial
