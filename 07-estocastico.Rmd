@@ -1,0 +1,13 @@
+# PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II)
+
+# O Componente Estocástico
+
+# Krigagem Univariada
+
+## Krigagem simples
+
+## Krigagem ordinária
+
+## Krigagem universal
+
+# Krigagem Multivariada
