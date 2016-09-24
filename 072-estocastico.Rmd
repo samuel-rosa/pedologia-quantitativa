@@ -1,10 +1,14 @@
-# PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II) {-}
+<!-- # PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II) {-} -->
 
-# O Componente Estocástico
-
-**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
-alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+<!-- # O Componente Estocástico -->
 
 <!-- # Geoestatística Univariada -->
 
 <!-- # Geoestatística Multivariada -->
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Introdução
+
+## Co-krigagem

@@ -1,10 +1,18 @@
-# PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II) {-}
+<!-- # PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II) {-} -->
 
-# O Componente Estocástico
+<!-- # O Componente Estocástico -->
+
+# Geoestatística Univariada
 
 **Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
-<!-- # Geoestatística Univariada -->
+## Introdução
+
+## Krigagem simples
+
+## Krigagem ordinária
+
+## Krigagem universal
 
 <!-- # Geoestatística Multivariada -->
