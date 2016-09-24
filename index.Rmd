@@ -14,7 +14,9 @@ github-repo: samuel-rosa/pedologia-quantitativa
 
 # Prefácio {-}
 
-Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
+O planejamento e desenvolvimento deste livro estão (mais ou menos) estruturados em partes, de 
+caráter mais geral, subdivididas em capítulos, de caráter mais específico. Atualmente, isso se dá da seguinte
+maneira:
 
 * Parte I -- Fundamentação histórica e conceitual
     + Contextualização histórica
@@ -33,6 +35,7 @@ Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
     + Modelos digitais de elevação
     + Imagens de satélite
 * Parte V -- Análise exploratória espacial
+    + Tipos de dados
     + Análise de padrões pontuais
     + Transformação de dados
     + Seleção de covariáveis

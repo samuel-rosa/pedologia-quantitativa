@@ -1,16 +1,39 @@
-# PARTE V -- ANÁLISE EXPLORATÓRIA ESPACIAL
+# PARTE V -- ANÁLISE EXPLORATÓRIA ESPACIAL {-}
 
-# Análise de Padrões Pontuais
+# Tipos de Dados
 
-**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
-# Transformação de Dados
+## Variáveis categóricas
 
-**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
-alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+Todo objeto de estudo pode ser descrito de maneira quantitativa e qualitativa. A descrição quantitativa se 
+utiliza, majoritariamente, de variáveis contínuas, enquanto a descrição qualitativa se utiliza, 
+majoritariamente, de variáveis categóricas. Variáveis categóricas não possuem qualquer significado numérico, 
+mesmo que os símbolos utilizados sejam números. Servem para indicar a presença de atributos, características, 
+propriedades categóricas que identificam ou descrevem o objeto de estudo, mas não indicam a sua quantidade. 
+Sua principal vantagem sobre as variáveis contínuas é a capacidade de condensar, de maneira relativamente 
+eficiente, uma dada quantidade de informação do objeto de estudo que necessitaria um grande número daquelas 
+para ser expressa. Isso facilita o trabalho do pesquisador, que precisará de menos horas de trabalho no campo 
+e no laboratório, e do tomador de decisão, que terá que interpretar uma menor quantidade de dados.
 
-# Seleção de Covariáveis
+No caso do objeto de estudo solo, existe uma série de variáveis categóricas que utilizamos diariamente para a 
+sua descrição. Uma das mais comuns constitui o que chamamos de classe taxonômica. A classe taxonômica 
+designada à uma dada observação do solo constitui nada menos do que uma tentativa de condensar uma variedade 
+de informações quantitativas e qualitativas tetradimensionais. Os diferentes sistemas de classificação 
+taxonômica constituem diferentes modelos de condensação dessas informações com variação horizontal, vertical e 
+temporal. Outros exemplos de variáveis categóricas utilizadas para descrever o solo são a textura, a 
+estrutura, os horizontes diagnósticos, a drenagem, a cor, entre outras mais.
 
-**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
-alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+Assim como as variáveis quantitativas utilizadas para descrever o solo, as variáveis categóricas também são 
+contínuas no espaço e no tempo. O único espaço em que não possuem significado algum é o espaço matemático. 
+Devido à sua espacialidade e temporalidade, as variáveis categóricas também são passíveis de mapeamento. É por 
+esse motivo que podemos, por exemplo, produzir mapas da distribuição espacial da textura ou da drenagem ou da 
+classificação taxonômica do solo em uma dada área de interesse. Da mesma maneira, podemos produzir mapas da 
+distribuição temporal dessas variáveis categóricas, representando assim a sua quarta dimensão.
+
+<!-- # Análise de Padrões Pontuais -->
+
+<!-- # Transformação de Dados -->
+
+<!-- # Seleção de Covariáveis -->
