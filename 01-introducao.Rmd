@@ -1,6 +1,18 @@
 # PARTE I -- FUNDAMENTAÇÃO HISTÓRICA E CONCEITUAL {-}
 
-# Pedologia Quantitativa ou Pedometria
+# Contextualização Histórica
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+
+# Pedologia Quantitativa (ou Pedometria)
+
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
 
 ## Introdução
 
@@ -12,7 +24,8 @@ significativo, e aumenta a cada dia.
 O termo *pedometria* é um neologismo derivado do grego *pedos* (solo) e *metron* (medida). Ele foi proposto 
 por Alex McBratney e Richard Webster para identificar o estudo quantitativo da variação do solo na paisagem. 
 Assim, o uso do termo pedometria se dá de maneira análoga a outros termos como econometria, geometria, 
-biometria, psicometria, bibliometria, dendrometria, entre outras. Assim, tenta abranger duas ideias principais. 
+biometria, psicometria, bibliometria, dendrometria, entre outras. Assim, tenta abranger duas ideias 
+principais. 
 A primeira delas está relacionada à parte da mensuração (*metron*), sendo restrita aos métodos quantitativos 
 matemáticos e estatísticos. A segunda está relacionada à parte do solo (*pedos*), correspondendo ao campo das 
 chamadas ciências da terra conhecido como pedologia. É nesse sentido que costuma-se dizer que a pedometria
@@ -20,9 +33,12 @@ possui um caráter mais amplo do que as outras disciplinas tradicionais da ciên
 
 A complexidade conceitual desse novo campo de pesquisa é exemplificada pela diversidade de interpretações do 
 termo pedometria. A pedometria poder ser vista como a ciência do solo sob incerteza, a matemática ou 
-informática do solo, entre outras formas. A definição oficial e mais aceita é aquela elaborada pela Comissão de 
-Pedometria da União Internacional de Ciência do Solo (IUSS), segundo a qual a pedometria trata da "aplicação de
-métodos matemáticos e estatísticos para o estudo da distribuição e gênese do solo". Essa definição possui uma 
+informática do solo, entre outras formas. A definição oficial e mais aceita é aquela elaborada pela Comissão 
+de Pedometria da União Internacional de Ciência do Solo (IUSS), segundo a qual a pedometria trata da 
+
+> "aplicação de métodos matemáticos e estatísticos para o estudo da distribuição e gênese do solo."
+
+Essa definição possui uma 
 série de implicações práticas. A utilização da expressão *métodos matemáticos e estatísticos*, por exemplo, 
 carrega a noção de que os estudos são de caráter mais quantitativo do que qualitativo. No que diz respeito à
 *gênese do solo*, o objetivo é explicitar, numericamente, a relação dos fatores e processos de formação do 
@@ -64,3 +80,147 @@ espaciais.
 
 * **Sensoriamento proximal do solo**: definido como o estudo dos processos que ocorrem no solo, bem como 
 da variação espaço-temporal do solo, usando técnicas de sensoriamento proximal.
+
+# Mapeamento (Digital) do Solo
+
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+
+## Introdução
+
+O *mapeamento (digital) do solo* (MDS) é uma das áreas de pesquisa da pedometria. 
+Apesar de ser aplicado desde a década de 1960, suas bases conceituais foram 
+estabelecidas formalmente apena no início dos anos 2000. Hoje o MDS é utilizado
+para a produção de mapas de propriedades do solo desde o nível de propriedade
+rural, usando modelos locais, até a escala planetária, usando modelos globais.
+
+A expressão *mapeamento digital do solo* foi cunhada por 
+[Alex McBratney](http://sydney.edu.au/agriculture/academic_staff/alex.mcbratney.php).
+Uma definição elaborada por Lagacherie & McBratney (2006) postula que o MDS 
+constitui:
+
+> "a criação e população de sistemas de informação pedológica
+espacial através do uso de métodos observacionais de campo e laboratório, 
+acoplados a sistemas de inferência pedológica espacial e não-espacial."
+
+Sendo uma área de pesquisa da pedometria, o MDS utilizaria-se de métodos 
+matemáticos e estatísticos para a construção das chamadas funções de predição 
+espacial de solos com erros autocorrelacionados espacialmente (FPESe). Em outras
+palavras, as FPESe seriam construídas pelo ajuste empírico das relações 
+quantitativas existentes entre as propriedades do solo e as características do 
+ambiente em que o mesmo ocorre. Para McBratney et al. (2003), a estrutura das 
+FPESe é do tipo
+
+*S = f(s, c, o, r, p, a, n)*,
+
+que constitui o modelo chamado *scorpan*, onde *S* é uma propriedade do solo a 
+ser predita em função de informações do solo previamente disponíveis (*s*), 
+clima (*c*), organismos (*o*), relevo (*r*), material de origem (*p*), 
+tempo (*a*), e posição espacial (*n*). O modelo *scorpan* seria então uma
+generalização do modelo *clorpt* de Jenny (1941):
+
+*S = f(cl, o, r, p, t, ...)*
+
+onde *S* é uma propriedade do solo a ser predita em função do clima (*cl*), 
+organismos (*o*), relevo (*r*), material de origem (*p*), e tempo (*t*), além 
+de fatores desconhecidos (...). A principal diferença na estrutura das duas
+formulações é a existência, no modelo *scorpan*, dos "fatores" adicionais *n* e
+*s*. O "fator" adicional *s* indicaria que as propriedades do solo podem ser 
+preditas a partir de outras propriedades do solo. Já o "fator" adicional *n* 
+seria responsável por espacializar as relações entre as propriedades do solo e 
+as características do ambiente em que o mesmo ocorre, indicando que o solo pode 
+ser predito a partir de coordenadas geográficas. A vantagem dessa abordagem
+espacial seria que ela permite predizer as propriedades do solo levando em 
+consideração um dos aspectos mais importantes para o seu funcionamento como 
+componente ambiental: a variabilidade espacial. Além disso, os produtos do 
+modelo *scorpan* incluiriam os conceitos de incerteza e acurácia associados às 
+FPESe, os quais aparentemente não estariam disponíveis quando do uso do modelo 
+*clorpt*.
+
+## Uma definição pragmática
+
+A definição de Lagacherie & McBratney (2006) para o que seja o MDS é bastante 
+complexa e restritiva, representando um cenário idealizado, muito diferente do 
+que acontece na prática. Isso porque são raras as situações em que são criados 
+verdadeiros sistemas de informação pedológica espacial. Na maioria dos casos, a 
+disponibilidade de recursos financeiros e humanos permitem que apenas os mapas 
+das propriedades do solo sejam entregues ao usuário final, geralmente em formato
+digital, mas também em formato analógico (impresso). Nem sempre os usuários dos
+mapas das propriedades do solo organizam tais informações em sistemas de 
+informação pedológica espacial. Tomando a definição de Lagacherie & McBratney 
+(2006), tais projetos de mapeamento não seriam considerados MDS. Assim, tal 
+definição deve ser considerada como uma meta, um objetivo a ser alcançado num 
+futuro próximo.
+
+Uma definição pragmática de MDS seria
+
+> o mapeamento das propriedades do solo usando modelos estatísticos.
+
+Tal definição descreve suficientemente bem o que é feito na prática, estando
+mais diretamente ligada à definição da disciplina que engloba o MDS, a
+[pedometria]({% post_url 2015-05-01-pedometria %}). Talvez, a expressão 
+*mapeamento digital do solo*, assim como o termo *pedometria*, poderiam ser 
+abolidos sem prejuízos para a prática de mapeamento das propriedades do solo. 
+Talvez a abolição fosse beneficial. O termo *digital*, por exemplo, tem sido 
+motivo de confusão para muitos por dar a impressão de que a produção de 
+quaisquer mapas das propriedades do solo usando um computador constitui MDS, 
+mesmo que não tenham sido usados modelos estatísticos. Entretanto, os mesmos 
+argumentos favoráveis à formulação do termo *pedometria* aplicam-se à expressão
+*mapeamento digital do solo*.
+
+## *scorpan* ou *clorpt*?
+
+Assim como a definição de Lagacherie & McBratney (2006) para o que seja o MDS,
+a formulação do modelo de McBratney et al. (2003) chamado *scorpan* parece
+incluir uma complexidade desnecessária à atividade de mapeamento das 
+propriedades do solo. Primeiro porque os dois "fatores" adicionais, *s* e *n*, 
+não são, exatamente, fatores de formação do solo. Por exemplo, as coordenadas 
+geográficas podem ser usadas para explicar uma tendência espacial nas 
+propriedades do solo causada pela variação da precipitação, mas não por elas 
+mesmas. Caso *s* e *n* sejam fatores de formação do solo, eles já estão 
+contemplados pelo que Jenny (1941) denominou fatores desconhecidos (...).
+
+O segundo aspecto refere-se à suposição de que o uso do "fator" adicional *n*
+representaria a elaboração de uma abordagem que leva em conta a variabilidade 
+espacial das propriedades do solo. Contudo, o simples uso das coordenadas 
+geográficas como covariáveis não significa que a estrutura de autocorrelação 
+espacial das propriedades do solo esteja sendo levada em consideração. A
+formulação de uma abordagem verdadeiramente espacial depende, fundamentalmente, 
+da forma do modelo *f* utilizado. Isso só pode ser alcançado pelo uso de um 
+modelo geoestatístico.
+
+Assim, o modelo *clorpt* parece continuar sendo o mais plausível como 
+representação teórica da atividade de mapeamento das propriedades do solo. Isso
+porque, além de simples, ele é suficiente para explicar nossas observações 
+empíricas. Tais observações indicam que as propriedades do solo (*S*) observadas
+em um dado momento no tempo e espaço são função (*f*) linear e/ou não-linear das 
+condições ambientais em diferentes momentos no tempo e espaço 
+*(cl, o, r, p, t, ...)*.
+
+## Bibliografia consultada
+
+Burrough, P.A.; Bouma, J.; Yates, S.R. The state of the art in pedometrics. 
+*Geoderma*, 62:311-326, 1994.
+
+Hengl, T.; Toomanian, N.; Reuter, H.I.; Malakouti, M.J. Methods to interpolate 
+soil categorical variables from profile observations: lessons from Iran. 
+*Geoderma*, 140:417-427, 2007.
+
+Lagacherie, P.; McBratney, A.B. Spatial soil information systems and spatial 
+soil inference systems: perspectives for digital soil mapping. In: Lagacherie, 
+P.; McBratney, A.B.; Voltz, M. (Eds.). *Digital soil mapping - an introductory 
+perspective*. Amsterdam: Elsevier, 2006. p.3-22.
+
+Heuvelink, G.B.M. The definition of pedometrics. *Pedometron*, 15:11-12, 2003. 
+
+McBratney, A.B.; Mendonça-Santos, M.; Minasny, B. On digital soil mapping. 
+*Geoderma*, 117:3-52, 2003.
+
+Samuel-Rosa, A.; Heuvelink, G.B.M.; Vasques, G.M.; Anjos, L.H.C. Do more 
+detailed environmental covariates deliver more accurate soil maps? *Geoderma*, 
+243-244:214-227, 2015.
+
+Troeh, F.R. Landform parameters correlated to soil drainage. *Soil Science 
+Society of America Journal*, 28:808-812, 1964.
