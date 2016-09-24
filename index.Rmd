@@ -16,7 +16,9 @@ github-repo: samuel-rosa/pedologia-quantitativa
 Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
 
 * Parte I -- Fundamentação histórica e conceitual
-    + Introdução
+    + Contextualização histórica
+    + Pedologia quantitativa (ou pedometria)
+    + Mapeamento (digital) do solo
 * Parte II -- Infraestrutura tecnológica
     + Hardware
     + Software
