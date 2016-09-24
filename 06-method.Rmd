@@ -1,3 +1,22 @@
-# Métodos
+# PARTE V -- ANÁLISE EXPLORATÓRIA ESPACIAL
 
-We describe our methods in this chapter.
+# Análise de Padrões Pontuais
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+
+# Transformação de Dados
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+
+# Seleção de Covariáveis
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
