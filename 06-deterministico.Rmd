@@ -1,4 +1,4 @@
-# PARTE VI -- MODELAGEM DA VARIAÇÃO ESPACIAL (I)
+# PARTE VI -- MODELAGEM DA VARIAÇÃO ESPACIAL (I) {-}
 
 # O Componente Determinístico
 
