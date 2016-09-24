@@ -1,18 +1,18 @@
-# PARTE II -- INFRAESTRUTURA DE TECNOLOGIA DA INFORMAÇÃO {-}
+# PARTE II -- INFRAESTRUTURA TECNOLÓGICA {-}
 
-# HARDWARE
+# Hardware
 
 **Atenção!** Este capítulo está em desenvolvimento. Visite a [página do projeto][issues] se tiver alguma
-ideia, dúvida ou estiver disposto a colaborar. Sua ajuda é muito bem vinda!
+sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
 **Objetivo**: Neste capítulo pretendo descrever os requerimentos de *hardware* e as opções disponíveis para o 
 desenvolvimento de atividades/projetos de pedologia quantitativa. Isso vai desde o uso de computadores 
 pessoais, móveis ou não, até a computação distribuída e em nuvem. Em princípio, o termo *hardware* também pode
 ser usado aqui para definir a família de sensores remotos proximais usados na coleta de dados do solo.
 
-[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Ideias e dúvidas"
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
 
-# SOFTWARE
+# Software
 
 ## Introdução
 
@@ -374,7 +374,7 @@ https://grass.osgeo.org/
 
 http://www.gdal.org/
 
-# GESTÃO DE DADOS
+# Gestão de Dados
 
 Um importante passo consiste na criação do nosso diretório de trabalho. Para isso, acesse seu gerenciador
 de diretórios e crie a seguinte estrutura de diretórios em seu local favorito de trabalho:
