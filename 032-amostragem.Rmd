@@ -9,6 +9,13 @@
 **Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
+Até agora, este capítulo contou com contribuições na forma de conteúdo intelectual e/ou revisões relevantes 
+das seguintes pessoas:
+
+* [Lúcia Anjos](http://lattes.cnpq.br/7882538227876962)
+* [Gustavo Vasques](http://lattes.cnpq.br/1838153897546051)
+* [Gerard Heuvelink](http://isric.org/staff/Dr%20ir%20GBM%20(Gerard)%20Heuvelink)
+
 ## Introdução
 
 Na amostragem não-probabilística, como o próprio nome já diz, não são considerados os valores de probabilidade

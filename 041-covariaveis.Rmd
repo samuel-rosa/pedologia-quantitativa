@@ -7,6 +7,13 @@
 **Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
+Até agora, este capítulo contou com contribuições na forma de conteúdo intelectual e/ou revisões relevantes 
+das seguintes pessoas:
+
+* [Ricardo Dalmolin](http://lattes.cnpq.br/3735884911693854)
+* [Jean Minella](http://lattes.cnpq.br/3194231720402587)
+* [Alexandre ten Caten](http://lattes.cnpq.br/4065267714747712)
+
 ## Introdução
 
 Os atributos de terreno podem ser classificados em primários e secundários. Os atributos primários são aqueles
