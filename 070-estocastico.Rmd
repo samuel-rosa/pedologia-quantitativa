@@ -2,8 +2,66 @@
 
 # O Componente Estocástico
 
-**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Introdução
+
+Em diversas situações assumimos que uma determinada variável é distribuída aleatoriamente, ou seja, de maneira 
+totalmente casual, sem que haja qualquer fator determinante daquela variação e que seja capaz de explicar o 
+mecanismo de variação. A utilização da grande maioria das ferramentas estatísticas exige que as variáveis sob 
+análise possuam tal comportamento para que os resultados obtidos não sejam espúrios ou enganosos. Isso não é 
+diferente quando lançamos mão da pedometria para o estudo da distribuição espacial do solo e entendimento de 
+seus atributos.
+
+Entretanto, alguns pesquisadores rejeitam a possibilidade de que os atributos do solo possam ser tratados como 
+variáveis aleatórias. Isso porque o solo é, conforme estabelecido pelo paradigma da relação solo-paisagem, 
+resultado da ação dos agentes intempéricos sobre o material de origem, sendo condicionados pela geomorfologia e 
+pelo tempo. Ao nível molecular, podem ser listadas todas as reações físico-químicas responsáveis pela 
+transformação do material de origem em solo. Sob essa perspectiva limitada, o uso de métodos probabilísticos 
+para o estudo da distribuição espacial do solo e de seus atributos é equivocada.
+
+O raciocínio lógico descrito é bastante plausível. Entretanto, é resultado do exercício de um paradigma 
+científico distinto daquele utilizado pela comunidade pedométrica. Por esse motivo o desentendimento. Enquanto
+a geração mais velha de cientistas do solo utiliza o método dedutivo nomológico para responder às perguntas 
+científicas, de caráter predominantemente qualitativo, a nova geração de cientistas do solo utiliza métodos 
+quantitativos, parcialmente determinísticos, parcialmente probabilísticos, tomado como indutivo estatístico. 
+Deixadas de lado as vantagens e desvantagens da abordagem quantitativa em relação à abordagem qualitativa, é 
+necessário entender como é possível assumir que o solo e seus atributos possam assumir variação aleatória. 
+
+## Jogos de azar
+
+Os melhores exemplos para entender a teoria estatística e as probabilidades vem dos jogos de azar. Talvez 
+porque boa parte do desenvolvimento desses campos do conhecimento humano ocorreu devido à necessidade de 
+encontrar respostas aos problemas encontrados nos jogos de azar.
+
+Tomemos como exemplo um jogo de dados. Lançados os dados sobre a mesa, temos uma determinada configuração. A 
+configuração observada é resultado de uma série de fatores determinantes: 
+
+* O copo em que os dados estavam contidos e em que foram agitados (volume, altura, largura, material, 
+  relevo etc);
+* O número de dados utilizados;
+* As características dos dados (densidade, tamanho, material, relevo etc);
+* A forma de agitação dos dados (número, direção e intensidade dos movimentos do braço);
+* A forma como o copo é girado sobre a mesa;
+* As características da mesa (material, relevo, inclinação etc);
+* As condições atmosféricas de temperatura, umidade e pressão;
+* Etc.
+
+Note que o número de fatores determinantes é enorme, sendo bastante possível que tenhas encontrado algum outro 
+de grande importância. Mas note também que a interação entre esses fatores é tão complexa e diversa, que é 
+impossível estabelecer um modelo determinístico que possa prever o resultado de um jogo de dados. Melhor 
+assumir que o resultado é pura e simplesmente aleatório.
+
+O mesmo ocorre com o solo e seus atributos: o número de fatores determinantes, por exemplo, da distribuição de 
+mosqueados ao longo do perfil é tão grande que, eliminado o efeito de algum fator principal (a profundidade do 
+lençol freático, por exemplo), a variação pode ser considerada pura e simplesmente aleatória.
+
+O exemplo do jogo de azar se presta muito bem para explicar a teoria probabilística utilizada pela comunidade 
+pedométrica. Entretanto, essa mesma comunidade entende e reconhece que não há nada de aleatório no solo. Então 
+porque assumir essa aleatoriedade? Simplesmente porque ainda não fomos capazes de desenvolver modelos 
+determinísticos ou mecanísticos que expliquem a variação do solo. Assim, trata-se apenas de uma limitação 
+tecnológica, cuja resolução deverá ficar em aberto por mais alguns anos. 
 
 <!-- # Geoestatística Univariada -->
 
