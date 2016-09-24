@@ -37,6 +37,7 @@ Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
     + Seleção de covariáveis
 * Parte VI -- Modelagem da variação espacial (I)
     + O componente determinístico
+    + Regressão linear
     + Regressão logística
 * Parte VII -- Modelagem da variação espacial (II)
     + O componente estocástico
