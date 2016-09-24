@@ -5,14 +5,10 @@
 **Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
-[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
-
 # Geoestatística Univariada
 
 **Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
-
-[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
 
 ## Introdução
 
@@ -26,8 +22,6 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 
 **Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
-
-[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
 
 ## Introdução
 

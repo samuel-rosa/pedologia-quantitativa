@@ -1,23 +1,11 @@
-# PARTE IV -- COVARIÁVEIS AMBIENTAIS {-}
+<!-- # PARTE IV -- COVARIÁVEIS AMBIENTAIS {-} -->
 
-# Princípios da Formação do Solo
-
-**Atenção!** Este capítulo está em desenvolvimento. Visite a [página do projeto][issues] se tiver alguma
-sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
-
-[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
-
-Independente do que as análises estatísticas possam indicar, o usuário das
-técnicas quantitativas deve ter domínio das possíveis relações entre as covariáveis
-e a variável resposta. Quais as possíveis relações que as
-covariáveis possuem com os atributos do solo?
+<!-- # Princípios da Formação do Solo -->
 
 # Modelos Digitais de Elevação
 
-**Atenção!** Este capítulo está em desenvolvimento. Visite a [página do projeto][issues] se tiver alguma
-sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
-
-[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
 ## Introdução
 
@@ -391,9 +379,4 @@ Descreve a heterogeneidade (rugosidade) de uma superfície em função do
 Sinuosidade do escoamento superficial (flow sinuosity): descreve a relação entre o caminho percorrido
 pelo escoamento superficial de uma célula até o exutório e a distância Euclideana entre a célula e o exutório.
 
-# Imagens de Satélite
-
-**Atenção!** Este capítulo está em desenvolvimento. Visite a [página do projeto][issues] se tiver alguma
-sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
-
-[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"
+<!-- # Imagens de Satélite -->

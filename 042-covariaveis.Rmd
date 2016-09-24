@@ -1,0 +1,8 @@
+<!-- # PARTE IV -- COVARIÁVEIS AMBIENTAIS {-} -->
+
+<!-- # Princípios da Formação do Solo -->
+
+# Imagens de Satélite
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!

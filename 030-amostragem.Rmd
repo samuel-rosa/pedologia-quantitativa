@@ -1,0 +1,41 @@
+# PARTE III -- AMOSTRAGEM ESPACIAL {-}
+
+# Princípios da Amostragem Espacial
+
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Introdução
+
+A amostragem é um dos maiores contribuintes para os custos da modelagem espacial do solo, seja pelo método 
+chamado "tradicional" ou usando modelos estatísticos. Assim, o adequado planejamento amostral é essencial 
+para reduzir a necessidade de recursos (financeiros, psicológicos, humanos, entre outros) e maximizar o 
+número de observações possíveis, sejam elas tradagens, amostras superficiais, ou descrições de perfis 
+completos.
+
+A *situação ideal* é aquela em que os recursos disponíveis não impõe quaisquer limitações à amostragem. Nesse
+caso seria possível fazer observações e coletar amostras do solo em diversas etapas. Por exemplo, iniciaríamos
+com um levantamento exploratório para identificar a estrutura da variação espacial do solo. De posse desse 
+novo conhecimento, executaríamos uma nova etapa amostral a fim de atender a algum critério como, por exemplo, 
+obter uma cobertura espacial aproximadamente uniforme da área sendo modelada. Caso os resultados ainda sejam 
+insatisfatórios, uma nova etapa amostral poderia ser executada para, por exemplo, fazer observações em locais 
+específicos cujas condições ambientais estejam sub-representadas na base de dados. Por fim, calibrado o 
+modelo espacial do solo e feitas as predições espaciais, coletaríamos amostras para validação do modelo 
+preditivo em número suficiente para garantir um nível de confiança pré-determinado.
+
+Mas a *situação ideal* está longe de ser o que acontece na prática. Em geral temos que fazer todas as
+observações em uma única fase, coletando todo o material possível, inclusive para as amostras de validação. 
+Isso requer que o tipo de amostragem mais apropriado seja utilizado a fim de otimizar o uso dos recursos 
+disponíveis e obter o melhor modelo preditivo possível. E qual seria o tipo de amostragem mais apropriado? Uma
+resposta universal à essa pergunda continua desconhecida. A melhor estratégia costuma ser avaliar os 
+diferentes tipos de amostragem frente (1) os objetivos do projeto, (2) os recursos disponíveis, e (3) as 
+dificuldades operacionais encontradas na área sendo modelada.
+
+Podemos dizer que existem dois tipos fundamentais de amostragem:
+
+* probabilística, e
+* não-probabilística.
+
+<!-- # Amostragem Probabilística -->
+
+<!-- # Amostragem Não-Probabilística -->

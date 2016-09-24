@@ -1,0 +1,17 @@
+# PARTE II -- INFRAESTRUTURA TECNOLÓGICA {-}
+
+# Hardware
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Introdução
+
+Neste capítulo pretendo descrever os requerimentos de *hardware* e as opções disponíveis para o 
+desenvolvimento de atividades/projetos de pedologia quantitativa. Isso vai desde o uso de computadores 
+pessoais, móveis ou não, até a computação distribuída e em nuvem. Em princípio, o termo *hardware* também pode
+ser usado aqui para definir a família de sensores remotos proximais usados na coleta de dados do solo.
+
+<!-- # Software -->
+
+<!-- # Gestão de Dados -->

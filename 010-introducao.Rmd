@@ -1,0 +1,17 @@
+# PARTE I -- FUNDAMENTAÇÃO HISTÓRICA E CONCEITUAL {-}
+
+# Contextualização Histórica
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Introdução
+
+Neste capítulo pretendo situar o leitor, historicamente, para que saiba exatamente onde está se
+metendo ao decidir estudar pedologia quantitativa (ou pedometria). A ideia envolve descrever o contexto
+histórico, o mapeamento do solo no Brasil, o mapeamento digital do solo, o mapeamento digital do solo no
+Brasil, alguns mitos e verdades, entre outros.
+
+<!-- # Pedologia Quantitativa (ou Pedometria) -->
+
+<!-- # Mapeamento Digital do Solo -->

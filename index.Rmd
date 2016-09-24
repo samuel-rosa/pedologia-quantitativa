@@ -40,5 +40,7 @@ Atualmente, este livro está (mais ou menos) estruturado da seguinte maneira:
     + Regressão logística
 * Parte VII -- Modelagem da variação espacial (II)
     + O componente estocástico
-    + Krigagem univariada
-    + Krigagem multivariada
+    + Geoestatística univariada
+    + Geoestatística multivariada
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues "Sugestões e dúvidas"

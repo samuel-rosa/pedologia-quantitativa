@@ -1,0 +1,15 @@
+# PARTE IV -- COVARIÁVEIS AMBIENTAIS {-}
+
+# Princípios da Formação do Solo
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+Independente do que as análises estatísticas possam indicar, o usuário das
+técnicas quantitativas deve ter domínio das possíveis relações entre as covariáveis
+e a variável resposta. Quais as possíveis relações que as
+covariáveis possuem com os atributos do solo?
+
+<!-- # Modelos Digitais de Elevação -->
+
+<!-- # Imagens de Satélite -->

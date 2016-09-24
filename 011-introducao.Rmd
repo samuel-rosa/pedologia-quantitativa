@@ -1,0 +1,77 @@
+<!-- # PARTE I -- FUNDAMENTAÇÃO HISTÓRICA E CONCEITUAL {-} -->
+
+<!-- # Contextualização Histórica -->
+
+# Pedologia Quantitativa (ou Pedometria)
+
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Introdução
+
+A pedometria é uma disciplina científica recente. Introduzida (talvez) por Hanns Jenny em 1941, mesmo que de
+maneira rudimentar, a pedometria alcançou seu máximo desenvolvimento conceitual a partir do início da década 
+de 1990. Hoje o número de pesquisadores desenvolvendo pesquisas pedométricas, os chamados pedometristas é 
+significativo, e aumenta a cada dia.
+
+O termo *pedometria* é um neologismo derivado do grego *pedos* (solo) e *metron* (medida). Ele foi proposto 
+por Alex McBratney e Richard Webster para identificar o estudo quantitativo da variação do solo na paisagem. 
+Assim, o uso do termo pedometria se dá de maneira análoga a outros termos como econometria, geometria, 
+biometria, psicometria, bibliometria, dendrometria, entre outras. Assim, tenta abranger duas ideias 
+principais. 
+A primeira delas está relacionada à parte da mensuração (*metron*), sendo restrita aos métodos quantitativos 
+matemáticos e estatísticos. A segunda está relacionada à parte do solo (*pedos*), correspondendo ao campo das 
+chamadas ciências da terra conhecido como pedologia. É nesse sentido que costuma-se dizer que a pedometria
+possui um caráter mais amplo do que as outras disciplinas tradicionais da ciência do solo.
+
+A complexidade conceitual desse novo campo de pesquisa é exemplificada pela diversidade de interpretações do 
+termo pedometria. A pedometria poder ser vista como a ciência do solo sob incerteza, a matemática ou 
+informática do solo, entre outras formas. A definição oficial e mais aceita é aquela elaborada pela Comissão 
+de Pedometria da União Internacional de Ciência do Solo (IUSS), segundo a qual a pedometria trata da 
+
+> "aplicação de métodos matemáticos e estatísticos para o estudo da distribuição e gênese do solo."
+
+Essa definição possui uma 
+série de implicações práticas. A utilização da expressão *métodos matemáticos e estatísticos*, por exemplo, 
+carrega a noção de que os estudos são de caráter mais quantitativo do que qualitativo. No que diz respeito à
+*gênese do solo*, o objetivo é explicitar, numericamente, a relação dos fatores e processos de formação do 
+solo com as propriedades apresentadas pelo solo. Por fim, a *distribuição do solo* é abordada nas três 
+dimensões em que as propriedades do solo apresentam potencial de variação: o espaço geográfico, o espaço de 
+atributos, e o espaço temporal.
+
+## Atividades tipicamente pedométricas
+
+Na prática, a pedometria envolve uma série de estudos em ciência do solo, havendo sobreposição com muitas das
+demais áreas do conhecimento. Um dos principais exemplos de aplicação da pedometria é o chamado mapeamento 
+digital do solo, o qual pode se utilizar das chamadas funções de pedotransferência, outra ferramenta
+desenvolvida a partir da utilização dos métodos pedométricos. Nesse caso, a pedometria se sobrepõe, por 
+exemplo, à pedologia (mapeamento do solo) e à quemometria (do inglês, *chemometrics*). Além disso, a 
+pedometria trata da aplicação de sensores remotos para a obtenção de informações do solo, assim como o
+desenvolvimento de sistemas de informação pedológica, plataformas de bancos de dados, entre outras ferramentas 
+relacionadas à informática e eletrônica. Soma-se ainda as possibilidades de aplicação em áreas como a biologia 
+e microbiologia do solo, física do solo, entre outras.
+
+Atualmente, as atividades pedométricas desenvolvidas pelos diversos cientistas do solo podem ser divididas em
+cinco subáreas. Essa subdivisão é operacional, sendo baseada nos Grupos de Trabalho sob a coordenação da 
+Comissão de Pedometria da União Internacional de Ciências do Solo. São elas:
+
+* **Mapeamento digital do solo**: trata da criação e população de bases de dados de solo geograficamente 
+referenciados, gerados em uma determinada resolução pelo uso de métodos de observação de campo e laboratório, 
+combinados com dados ambientais por meio do uso de relações quantitativas.
+
+* **Morfometria digital do solo**: definida como a aplicação de instrumentos e técnicas para mensuração e 
+mapeamento das propriedades do perfil do solo, no campo e laboratório, e construção de funções contínuas em 
+profundidade.
+
+* **Modelagem da evolução do solo e da paisagem**: trata da modelagem quantitativa da evolução das do solo e 
+da paisagem, tanto em duas ou três dimensões, pelo uso de modelos de processos mecanísticos, como em uma 
+dimensão, pelo uso de modelos de fluxos de matéria na paisagem.
+
+* **Monitoramento do solo**: preocupada com o delineamento, implementação e análise estatística de redes de
+monitoramento do solo para quantificação do estado e mudança das propriedades do solo nas diferentes escalas 
+espaciais.
+
+* **Sensoriamento proximal do solo**: definido como o estudo dos processos que ocorrem no solo, bem como 
+da variação espaço-temporal do solo, usando técnicas de sensoriamento proximal.
+
+<!-- # Mapeamento Digital do Solo -->
