@@ -9,7 +9,69 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 
 ## Introdução
 
+Conforme vimos no capítulo anterior, a aplicação de métodos quantitativos (matemáticos e estatísticos) para o
+estudo da distribuição e gênese do solo se dá, fundamentalmente, pelo uso de computadores. Isso significa
+que necessitamos, obrigatoriamente, de [*softwares*](https://en.wikipedia.org/wiki/Software) especializados
+para tal tarefa. É por meio desses *softwares* que daremos instruções ao nosso computador para que este 
+desempenhe determinada tarefa quantitativa como, por exemplo, computar estatísticas descritivas de um conjunto
+de dados do solo.
 
+Os *softwares* disponíveis para o desenvolvimento de estudos quantitativos são inúmeros e diversos, gratuitos
+ou privados, sendo geralmente necessário usar dois ou mais *softwares* para desenvolver qualquer estudo -- por
+mais simples que o estudo seja. Para aprender e dominar o uso desses *softwares*, possivelmente alguns dos
+quais lhe são desconhecidos até então, a pedologia quantitativa exigirá que você aprenda a "linguagem" desses
+*softwares*. Como sabemos, uma linguagem é um sistema de signos (símbolos ou palavras) convencionados que 
+serve para a comunicação de conceitos, ideias, significados, pensamentos -- veja mais sobre linguagem na
+[Wikipedia]("https://pt.wikipedia.org/wiki/Linguagem"). Assim, a linguagem de um *software* será, também um
+sistema de signos convencionados, mas que serve para a nossa comunicação com um computador. Essa "linguagem" 
+pode ser (ou parecer) simples, como aquela usada nos *softwares* mais populares que você provavelmente já usa,
+onde a comunicação com o computador se dá pressionando botões ou escolhendo itens em caixas de diálogo. Tais
+softwares são caracterizados por apresentar aquilo que chamamos de interface gráfica do usuário ([GUI][gui], 
+do inglês *graphical user interface*), uma "camada" sobreposta ao *software* que o torna mais "amigável" para
+uso.
+
+Outros *softwares* usam "linguagens" (que parecem) mais complicadas, especificamente, linguagens de
+programação. Nesse caso, a comunicação com o computador se dá via uso de uma interface de linha de comando
+([CLI][cli], do inglês *command-line interface*), ou seja, via emissão de comandos sob a forma de sucessivas
+linhas de texto, as chamadas linhas de comando. Sendo uma linguagem, toda linguagem de programação possui 
+regras sintáticas e semânticas (uma gramática), as quais devem ser estritamente respeitadas para que haja, 
+efetivamente, comunicação entre nós e o computador -- veja mais sobre linguagem de programação na 
+[Wikipedia](https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o).
+
+Um das principais vantagens dos *softwares* que utilizam comandos de texto (ao invés de botões e caixas de 
+diálogo) é o fato de permitirem ao usuário fazer adaptações metodológicas e expandir sua caixa de ferramentas
+analíticas para além daquilo que já estiver implementado. Assim, você já deve ter percebido que, para 
+desenvolver estudos de pedologia quantitativa, será preciso aprender (pelo menos) uma nova linguagem, um novo 
+sistema de signos. Em geral, algumas das regras gramaticais podem ser deduzida a partir daquilo que já sabemos
+em função do uso de outros *softwares* de análise e processamento de dados. Contudo, como qualquer linguagem 
+de programação, existem especificidades, boa parte das quais é preciso conhecer para termos sucesso em seu uso.
+Além disso, algum conhecimento da língua inglesa ciostuma ser necessário, haja vista que as linguagens de 
+programação costumam ser construídas com base em palavras da língua inglesa.
+
+Se todos esses detalhes que vimos até agora lhe deixaram assustados ou apreensivos, é preciso que você esteja
+ciente que isso faz parte da caminhada pelos domínios do Vale da Morte:
+
+```{r, echo=FALSE}
+y0 <- 0.2
+y <- c(rep(y0, 25), seq(y0, 0.1, -0.1), rep(0.01, 30), seq(0.1, y0 * 3, 0.1), rep(y0 * 3, 35))
+x <- 1:length(y)
+par(mgp = c(0, 1, 0), mar = rep(1, 4))
+plot(y ~ x, type = "l", main = "Curva de aprendizagem", xlab = "Tempo empregado", 
+     ylab = "Produtividade relativa", ylim = c(0, 1), axes = FALSE)
+text(42, 0.1, "Vale da Morte", col = "red")
+text(12, 0.25, "Antes")
+text(80, 0.65, "Depois")
+arrows(-1, -0.01, 100, -0.01, length = 0.1)
+arrows(-1, -0.01, -1, 1, length = 0.1)
+arrows(x[length(x)- 1], y[length(y)], x[length(x)], y[length(y)], length = 0.1)
+```
+
+As primeiras experiências com o novo *software* serão difíceis e você se sentirá perdido, talvez desesperado. 
+A tentação de abandonar aquele novo *software* aparecerá logo, e você se sentirá inclinado a voltar a usar
+apenas as mesmas ferramentas que usava antes. Contudo, você precisa resistir e acreditar que consegue vencer 
+os perigos do Vale da Morte. Você precisa estar disposto a encarar a íngreme curva de aprendizagem. Depois de
+passar por tudo isso, sua produtividade (ou capacidade produtiva) deverá ser algumas ordens de magnitude maior
+do que antes de conhecer aquele novo *software*.
 
 ## R/RStudio
 
@@ -83,15 +145,17 @@ computador. Em geral, o processo de instalação é exatamente igual àquele de 
 em seu dia-a-dia. (Caso o R apresente problemas de funcionamento após a instalação, tente descarregar e
 instalar a versão anterior do R.)
 
-Depois de instalar o R, agora é a hora de escolher uma interface gráfica do usuário ([GUI][gui], do inglês
-*graphical user interface*) que facilite nossa interação com o R. Isso porque o R possui apenas uma 
-interface de linha de comando ([CLI][cli], do inglês *command-line interface*), ou seja, a única forma de 
-interação com o R se dá via emissão de comandos sob a forma de sucessivas linhas de texto, as chamadas linhas 
-de comando. Dentre as diversas opções gratuitamente disponíveis, as mais atrativas são aquelas que incluem
-ferramentas adicionais de apoio à programação em R e facilitem a análise, visualização e gerenciamento dos
-dados. Tais ferramentas constituem os chamados ambientes de desenvolvimento integrado ([IDE][ide], do inglês
-*integrated development environment*). Atualmente, a GUI e IDE mais popular é o RStudio, cujo instalador
-pode ser descarregado de https://www.rstudio.com/products/rstudio/download/. 
+Depois de instalar o R, agora é a hora de escolher uma GUI que facilite nossa interação com o R. Isso porque 
+o R possui apenas uma 
+interface para emissão de linhas de comando de texto, também chamado ***console***. Dentre as diversas opções
+gratuitamente disponíveis, as
+mais atrativas são aquelas que incluem ferramentas adicionais de apoio à programação em R e facilitem a
+análise, visualização e gerenciamento dos dados. Tais ferramentas constituem os chamados ambientes de
+desenvolvimento integrado ([IDE][ide], do inglês *integrated development environment*). Atualmente, a GUI e 
+IDE mais popular é o
+
+* RStudio, cujo instalador pode ser descarregado de
+    + https://www.rstudio.com/products/rstudio/download/.
 
 Assim como para o R, o procedimento de instalação do RStudio depende do OS do seu computador. Depois de
 instalado, inicie o RStudio em seu computador. Ele deve se parecer mais ou menos como na figura a seguir:
@@ -115,7 +179,7 @@ então pressionar as teclas `Ctrl` e `Enter`.
 ### Primeiros passos
 
 Façamos algumas operações matemáticas para nos familiarizarmos com o R. Você pode copiar e colar as linhas de
-código abaixo no CLI do R, que de agora em diante chamaremos ***console***.
+código abaixo no console do R.
 
 ```{r}
 # As quatro operações matemáticas básicas:
@@ -173,31 +237,24 @@ plot(x = 25, y = 25, col = "red", main = "Um ponto vermelho", xlab = "x", ylab =
 Passada a primeira impressão, agora precisamos nos familiarizar com alguns conceitos básicos para que 
 possamos entender o R e utilizá-lo com êxito. Conforme destacado acima, o R não é um simples *software* para
 análises estatísticas, mas sim um ambiente de programação. E, para isso, precisamos de uma linguagem de 
-programação, ou seja, a linguagem de programação R. Como sabemos, uma linguagem é um sistema de signos 
-(símbolos ou palavras) convencionados que serve para a comunicação de conceitos, ideias, significados, 
-pensamentos -- veja mais sobre linguagem na [Wikipedia]("https://pt.wikipedia.org/wiki/Linguagem"). Assim, uma 
-linguagem de programação será, também, um sistema de signos convencionados, mas que serve para a nossa 
-comunicação com um computador, especificamente, para dar instruções a um computador. Sendo uma linguagem,
-haverá regras sintáticas e semânticas (uma gramática), as quais devem ser estritamente respeitadas para que
-haja, efetivamente, comunicação entre nós e o computador -- veja mais sobre linguagem de programação na
-[Wikipedia](https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o)
+programação, ou seja, a linguagem de programação R.
 
-A gramática de uma linguagem de programação possui dois elementos principais: as palavras reservadas e as 
-palavras-chave. As ***palavras reservadas*** constituem signos com significado especial para a linguagem de
-programação, definidas internamente no código fonte, e que não podem ser utilizadas pelo usuário para fins 
+A gramática da linguagem de programação R possui dois elementos principais: as palavras reservadas
+e as palavras-chave. As ***palavras reservadas*** constituem signos com significado especial para a linguagem
+de programação, definidas internamente no código fonte, e que não podem ser utilizadas pelo usuário para fins 
 outros que não aqueles especificados internamente pelo *software* (por exemplo, para identificar objetos e
 funções -- veremos esses conceitos a seguir). Algumas das palavras reservadas do R são `if`, `else`, `while`,
-`TRUE` e `FALSE`. No editor de código fonte do RStudio as palavras reservadas aparecem sempre destacadas em
-azul -- busque pelo termo *reserved* no painel de ajuda do RStudio (painel inferior direito) para conhecer as
-palavras reservadas do R.
+`TRUE` e `FALSE`. Note que no editor de código fonte do RStudio as palavras reservadas aparecem sempre
+destacadas em azul -- busque pelo termo *reserved* no painel de ajuda do RStudio (painel inferior direito) 
+para conhecer as palavras reservadas do R.
 
 As ***palavras-chave*** são aquelas utilizadas para definir funções (e objetos, como veremos a seguir). As
 palavras-chave que definem funções são aquelas que acionam operações matemáticas e lógicas que possibilitam, 
 por exemplo, a realização de uma determinada análise estatística de um determinado conjunto de dados -- na 
 verdade, tudo o que "acontece" no R acontece pela ação de uma função. As palavras-chave que definem funções
 podem já estar definidas na própria linguagem de programação -- como `log`, `sqrt` e `plot` nos exemplos acima
--- ou ser criadas pelo usuário. Isso significa que o usuário pode criar suas próprias funções conforme sua
-necessidade. Vejamos um exemplo:
+-- ou ser criadas pelo usuário. Isso significa que o usuário pode criar suas próprias funções no R conforme 
+sua necessidade. Vejamos um exemplo:
 
 ```{r}
 # A palavra-chave 'soma' é usada para definir uma função que computa
@@ -295,37 +352,6 @@ install.packages(
 ```
 
 Pronto! Agora você terá a sua disposição também as funcionalidades incluídas nesses pacotes.
-
-### Uma palavra de motivação
-
-Nesse ponto você já deve ter percebido que, para usar o R, será preciso aprender uma nova linguagem, um novo 
-sistema de signos. Alguma coisa poderá ser deduzida a partir daquilo que já sabemos em função do uso de outros
-*softwares* de análise e processamento de dados. Contudo, como qualquer linguagem de programação, o R possui
-suas especificidades, boa parte das quais é preciso conhecer para termos sucesso em seu uso. Além disso, 
-algum conhecimento da língua inglesa será necessário, haja vista que as palavras reservadas e palavras-chave 
-são derivadas de palavras da língua inglesa, e praticamente toda a (extensa) documentação está disponível
-apenas em inglês. Se todos esses detalhes que vimos até agora lhe deixaram assustados ou apreensivos, é 
-preciso que você esteja ciente que está adentrando os domínios do Vale da Morte:
-
-```{r, echo=FALSE}
-y0 <- 0.2
-y <- c(rep(y0, 25), seq(y0, 0.1, -0.1), rep(0.01, 30), seq(0.1, y0 * 3, 0.1), rep(y0 * 3, 35))
-x <- 1:length(y)
-plot(y ~ x, type = "l", main = "Curva de aprendizagem do R", xlab = "Tempo empregado", 
-     ylab = "Produtividade relativa", ylim = c(0, 1), axes = FALSE)
-text(42, 0.1, "Vale da Morte", col = "red")
-text(12, 0.25, "Antes do R")
-text(80, 0.65, "Com o R")
-arrows(-1, -0.01, 100, -0.01, length = 0.1)
-arrows(-1, -0.01, -1, 1, length = 0.1)
-```
-
-As primeiras experiências com o R serão difíceis e você se sentirá perdido, talvez desesperado. A tentação de 
-abandonar o R aparecerá logo -- se já não apareceu --, e você se sentirá inclinado a voltar a usar apenas as
-mesmas ferramentas que usava antes. Contudo, você precisa resistir e acreditar que consegue vencer os perigos
-do Vale da Morte. Você precisa estar disposto a encarar a íngreme curva de aprendizagem do R. Depois de passar
-por tudo isso, sua produtividade (ou capacidade produtiva) deverá ser algumas ordens de magnitude maior do que
-antes de conhecer o R.
 
 ### Lembrete final
 
