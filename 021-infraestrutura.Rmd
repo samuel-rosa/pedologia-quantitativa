@@ -9,21 +9,25 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 
 ## Introdução
 
-Conforme vimos no capítulo anterior, a aplicação de métodos quantitativos (matemáticos e estatísticos) para o
+<!-- Conforme vimos no capítulo anterior,  -->
+A aplicação de métodos quantitativos -- matemáticos e estatísticos -- para o
 estudo da distribuição e gênese do solo se dá, fundamentalmente, pelo uso de computadores. Isso significa
 que necessitamos, obrigatoriamente, de [*softwares*](https://en.wikipedia.org/wiki/Software) especializados
 para tal tarefa. É por meio desses *softwares* que daremos instruções ao nosso computador para que este 
 desempenhe determinada tarefa quantitativa como, por exemplo, computar estatísticas descritivas de um conjunto
-de dados do solo.
+de dados do solo ou produzir um gráfico relacionando uma variável dependente $y$ com uma variável independente
+$x$.
 
-Os *softwares* disponíveis para o desenvolvimento de estudos quantitativos são inúmeros e diversos, gratuitos
-ou privados, sendo geralmente necessário usar dois ou mais *softwares* para desenvolver qualquer estudo -- por
-mais simples que o estudo seja. Para aprender e dominar o uso desses *softwares*, possivelmente alguns dos
-quais lhe são desconhecidos até então, a pedologia quantitativa exigirá que você aprenda a "linguagem" desses
-*softwares*. Como sabemos, uma linguagem é um sistema de signos (símbolos ou palavras) convencionados que 
-serve para a comunicação de conceitos, ideias, significados, pensamentos -- veja mais sobre linguagem na
-[Wikipedia]("https://pt.wikipedia.org/wiki/Linguagem"). Assim, a linguagem de um *software* será, também um
-sistema de signos convencionados, mas que serve para a nossa comunicação com um computador. Essa "linguagem" 
+Os *softwares* disponíveis para o desenvolvimento de estudos quantitativos são inúmeros e diversos -- fruto da
+diversidade de métodos quantitativos hoje existentes --, sendo geralmente necessário usar dois ou mais
+*softwares* para desenvolver qualquer estudo pedométrico -- por mais simples que o estudo seja. Para aprender 
+e dominar o uso de qualquer *software* com aplicação pedométrica, possivelmente alguns dos quais lhe são
+desconhecidos até então, será necessário que você aprenda a sua 'linguagem'. Como sabemos, uma linguagem é um
+sistema de signos -- símbolos ou palavras -- convencionados que serve para a comunicação de conceitos, ideias, 
+significados, pensamentos (veja mais na [Wikipedia]("https://pt.wikipedia.org/wiki/Linguagem")). Assim, a
+linguagem de um *software* qualquer será, também, um sistema de signos convencionados, mas que serve para a
+nossa comunicação com o computador. 
+Essa "linguagem" 
 pode ser (ou parecer) simples, como aquela usada nos *softwares* mais populares que você provavelmente já usa,
 onde a comunicação com o computador se dá pressionando botões ou escolhendo itens em caixas de diálogo. Tais
 softwares são caracterizados por apresentar aquilo que chamamos de interface gráfica do usuário ([GUI][gui], 
