@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  includes:
+    after_body: google_analytics.html
   css: style.css
   config:
     toc:
