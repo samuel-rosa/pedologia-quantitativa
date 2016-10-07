@@ -1,5 +1,5 @@
 --- 
-title: "Pedologia Quantitativa feita Simples"
+title: "Pedologia Quantitativa"
 author: |
   | ALESSANDRO SAMUEL-ROSA
   | Universidade Federal Rural do Rio de Janeiro
