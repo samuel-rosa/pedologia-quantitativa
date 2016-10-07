@@ -13,7 +13,7 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 A aplicação de métodos quantitativos -- matemáticos e estatísticos -- para o
 estudo da distribuição e gênese do solo se dá, fundamentalmente, pelo uso de computadores. Isso significa
 que necessitamos, obrigatoriamente, de [*softwares*](https://en.wikipedia.org/wiki/Software) especializados
-para tal tarefa. É por meio desses *softwares* que daremos instruções ao nosso computador para que este 
+para tal tarefa. É por meio desses *softwares* que daremos instruções ao nosso computador para que ele 
 desempenhe determinada tarefa quantitativa como, por exemplo, computar estatísticas descritivas de um conjunto
 de dados do solo ou produzir um gráfico relacionando uma variável dependente $y$ com uma variável independente
 $x$.
@@ -23,37 +23,62 @@ diversidade de métodos quantitativos hoje existentes --, sendo geralmente neces
 *softwares* para desenvolver qualquer estudo pedométrico -- por mais simples que o estudo seja. Para aprender 
 e dominar o uso de qualquer *software* com aplicação pedométrica, possivelmente alguns dos quais lhe são
 desconhecidos até então, será necessário que você aprenda a sua 'linguagem'. Como sabemos, uma linguagem é um
-sistema de signos -- símbolos ou palavras -- convencionados que serve para a comunicação de conceitos, ideias, 
+sistema de signos -- símbolos ou palavras -- convencionados que serve para a comunicação de conceitos, ideias,
 significados, pensamentos (veja mais na [Wikipedia]("https://pt.wikipedia.org/wiki/Linguagem")). Assim, a
 linguagem de um *software* qualquer será, também, um sistema de signos convencionados, mas que serve para a
 nossa comunicação com o computador. 
-Essa "linguagem" 
-pode ser (ou parecer) simples, como aquela usada nos *softwares* mais populares que você provavelmente já usa,
-onde a comunicação com o computador se dá pressionando botões ou escolhendo itens em caixas de diálogo. Tais
-softwares são caracterizados por apresentar aquilo que chamamos de interface gráfica do usuário ([GUI][gui], 
-do inglês *graphical user interface*), uma "camada" sobreposta ao *software* que o torna mais "amigável" para
-uso.
 
-Outros *softwares* usam "linguagens" (que parecem) mais complicadas, especificamente, linguagens de
-programação. Nesse caso, a comunicação com o computador se dá via uso de uma interface de linha de comando
-([CLI][cli], do inglês *command-line interface*), ou seja, via emissão de comandos sob a forma de sucessivas
-linhas de texto, as chamadas linhas de comando. Sendo uma linguagem, toda linguagem de programação possui 
-regras sintáticas e semânticas (uma gramática), as quais devem ser estritamente respeitadas para que haja, 
-efetivamente, comunicação entre nós e o computador -- veja mais sobre linguagem de programação na 
-[Wikipedia](https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o).
+A linguagem usada por um software geralmente é um tanto quanto complicada quando comparada à linguagem que nós
+seres humanos usamos para nos comunicar entre nós mesmos. Isso é tanto mais verdade quanto mais distante das 
+chamadas Ciências Exatas for a nossa formação -- como é o meu caso. É por isso que os *softwares* mais
+populares, que você provavelmente já usa, são aqueles que possuem o que chamamos de interface gráfica do
+usuário ([GUI][gui], do inglês *graphical user interface*). Essa interface nada mais é, como o próprio nome
+já diz, uma camada sobreposta à linguagem usada pelo *software*, uma camada intermediária entre a linguagem 
+e o usuário, cuja função é tornar o *software* mais amigável para uso. Assim, a comunicação do usuário se
+dá, primeiro, via emissão de comandos pressionando botões e ícones ou escolhendo itens em caixas de diálogo, 
+usando tanto o *mouse* como o teclado. Ao longo deste capítulo nós veremos alguns *softwares* desse tipo, tais
+como o QGIS.
 
-Um das principais vantagens dos *softwares* que utilizam comandos de texto (ao invés de botões e caixas de 
-diálogo) é o fato de permitirem ao usuário fazer adaptações metodológicas e expandir sua caixa de ferramentas
-analíticas para além daquilo que já estiver implementado. Assim, você já deve ter percebido que, para 
-desenvolver estudos de pedologia quantitativa, será preciso aprender (pelo menos) uma nova linguagem, um novo 
-sistema de signos. Em geral, algumas das regras gramaticais podem ser deduzida a partir daquilo que já sabemos
-em função do uso de outros *softwares* de análise e processamento de dados. Contudo, como qualquer linguagem 
-de programação, existem especificidades, boa parte das quais é preciso conhecer para termos sucesso em seu uso.
-Além disso, algum conhecimento da língua inglesa ciostuma ser necessário, haja vista que as linguagens de 
-programação costumam ser construídas com base em palavras da língua inglesa.
+Apesar da amigabilidade dos *softwares* que usam uma interface gráfica, no longo prazo, seu uso pode se tornar
+um tanto quanto difícil. Isso porque é praticamente impossível memorizar a sequência de ícones pressionados e
+itens escolhidos em caixas de diálogo para realizar uma determinada tarefa pedométrica. Em geral, será preciso
+anotar todos os passos em um arquivo separado, muitas vezes incluindo imagens da própria interface gráfica e
+dos ícones pressionados. Se essa documentação não for feita, você corre o risco de, depois de algum tempo, não 
+mais conseguir executar exatamente a mesma tarefa com seu conjunto de dados. Por exemplo, os revisores de seu
+artigo exigem que você refaça uma determinada análise estatística do conjunto de dados usado para produzir uma
+determinada tabela do seu artigo submetido para publicação: doze meses depois da submissão, você já esqueceu,
+quase que completamente, como foi que você analisou aqueles dados. Esse problema é comumente conhecido como o
+problema da (ir)reprodutibilidade -- veja mais na [Wikipedia](https://en.wikipedia.org/wiki/Reproducibility).
 
-Se todos esses detalhes que vimos até agora lhe deixaram assustados ou apreensivos, é preciso que você esteja
-ciente que isso faz parte da caminhada pelos domínios do Vale da Morte:
+A **reprodutibilidade** é uma característica de um experimento ou estudo. Ela correspondendo ao potencial que
+um experimento tem de ser reproduzido, tanto pelo mesmo pesquisador como por qualquer outro pesquisador
+trabalhando independentemente em qualquer lugar do planeta, constituindo um dos principais elementos do ideal
+científico -- veja mais na [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method). Logicamente, o
+problema da irreprodutibilidade de um estudo é muito mais difícil de superar quando outro pesquisador deseja
+reproduzir o experimento pedométrico que você conduziu e vice-versa. Em geral, além de uma extensiva descrição
+do material e dos métodos usados em um estudo pedométrico, a reprodutibilidade só se torna um fato quando o
+a totalidade do ambiente computacional usado para realizar o estudo está livremente disponível. Grosso modo,
+isso inclui os dados -- veja mais no próximo capítulo [Gestão de Dados] -- e a sequência de comandos emitidos
+para comunicação com o computador.
+
+A maneira mais eficiente de registrar a sequência de comandos emitidos para comunicação com o computador 
+durante a realização de uma tarefa pedométrica requer o uso, diretamente, da linguagem do *software*, ou seja,
+uma linguagem de programação -- veja mais na 
+[Wikipedia](https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o). Nesse caso, nossa comunicação
+com o computador se dá via uso de uma interface de linha de comando ([CLI][cli], do inglês 
+*command-line interface*), ou seja, via emissão de comandos sob a forma de sucessivas linhas de texto, as
+chamadas linhas de comando -- veja mais na [Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface).
+Sendo uma linguagem, toda linguagem de programação possui regras sintáticas e semânticas -- uma gramática --, 
+as quais devem ser estritamente respeitadas para que haja, efetivamente, comunicação entre nós e o computador.
+Dentre os *softwares* que usam uma interface de linha de comando que veremos neste capítulo, o principal deles
+é o R.
+
+Além de potencializarem a reprodutibilidade, uma das grandes vantagens dos *softwares* que utilizam comandos 
+de texto -- ao invés de botões e caixas de diálogo -- é o fato de permitirem ao usuário fazer adaptações
+metodológicas, desenvolver novos métodos e expandir sua caixa de ferramentas analíticas para além daquilo que
+já estiver implementado no *software*. Por outro lado, a grande desvantagem desses *softwares* é a maior
+dificuldade de aprendizagem do seu uso, geralmente necessitando grandes esforços, os quais são comumente
+descritos usando a chamada curva de aprendizagem:
 
 ```{r, echo=FALSE}
 y0 <- 0.2
@@ -70,12 +95,31 @@ arrows(-1, -0.01, -1, 1, length = 0.1)
 arrows(x[length(x)- 1], y[length(y)], x[length(x)], y[length(y)], length = 0.1)
 ```
 
-As primeiras experiências com o novo *software* serão difíceis e você se sentirá perdido, talvez desesperado. 
+Usando alguns *softwares* tradicionais, populares, você tem conseguido desenvolver estudos bastante 
+interessantes. Contudo, por algum motivo, você decide aprender a usar outro *software*, um *software* baseado 
+na emissão de linhas de comando, a fim de aumentar sua produtividade e a qualidade de seus estudos. As
+primeiras experiências com o novo *software* serão difíceis e você se sentirá perdido, talvez desesperado. 
 A tentação de abandonar aquele novo *software* aparecerá logo, e você se sentirá inclinado a voltar a usar
-apenas as mesmas ferramentas que usava antes. Contudo, você precisa resistir e acreditar que consegue vencer 
-os perigos do Vale da Morte. Você precisa estar disposto a encarar a íngreme curva de aprendizagem. Depois de
-passar por tudo isso, sua produtividade (ou capacidade produtiva) deverá ser algumas ordens de magnitude maior
-do que antes de conhecer aquele novo *software*.
+apenas as mesmas ferramentas que usava antes. Talvez sua vontade "morra" ao longo do caminho. Contudo, você
+precisa resistir e acreditar que consegue vencer os perigos do Vale da Morte. Você precisa estar disposto a
+encarar a íngreme curva de aprendizagem. Depois de passar por tudo isso, sua produtividade (ou capacidade
+produtiva) deverá ser algumas ordens de magnitude maior do que antes de conhecer aquele novo *software*.
+
+Note que a dificuldade na aprendizagem do uso de *softwares* baseados na emissão de linhas de comando não se 
+deve à uma dificuldade inerente à esses *softwares*. Na verdade, nossa dificuldade advém, principalmente, do
+fato de, em geral, sermos introduzidos primeiro, ainda na nossa infância, à *softwares* que dispõe apenas de
+interfaces gráficas, com uma porção de ícones e caixas de diálogo -- veja, por exemplo, seu computador de
+bolso.
+
+Nesse ponto você já deve ter percebido que para desenvolver estudos de pedologia quantitativa será preciso,
+além de aprender e dominar o uso de diversos softwares, aprender e dominar (pelo menos) uma nova linguagem, 
+um novo sistema de signos. Adianto que, em geral, algumas das regras gramaticais dessas linguagens podem ser
+deduzida a partir daquilo que já sabemos em função do uso de outros *softwares* de análise e processamento de
+dados. Contudo, como qualquer linguagem de programação, existem especificidades, boa parte das quais é preciso
+conhecer para termos sucesso em seu uso. Além disso, algum conhecimento da língua inglesa costuma ser
+necessário, haja vista que as linguagens de programação costumam ser construídas com base em palavras da 
+língua inglesa. A ideia aqui é tentar fazer com que sua passagem pelo Vale da Morte seja o menos dolorosa 
+possível.
 
 ## R/RStudio
 
@@ -370,7 +414,7 @@ Se você emitir um comando e o mesmo estiver sintaticamente incompleto, o consol
 indicando que há algo faltando. Note que esse aviso não é uma mensagem de erro, ou seja, não há necessidade de
 reescrever o comando, mas apenas completar o que falta. Mas se o comando possuir erros sintáticos, os mesmos
 serão identificados pelo RStudio ainda no editor do código fonte, mostrando um símbolo vermelho ao lado da
-linha na qual é mais prováve que o erro se encontra.
+linha na qual é mais provável que o erro se encontra.
 
 Como o domínio do uso do R depende da memorização, pelo menos parcial, dos nomes das funções e seus argumentos,
 sugiro que você sempre tenha à mão algum cartão de referência. Abaixo você pode encontrar quatro deles
