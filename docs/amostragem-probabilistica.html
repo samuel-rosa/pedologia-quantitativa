@@ -25,7 +25,7 @@
 
 
   
-<meta name="date" content="2016-10-07">
+<meta name="date" content="2016-10-08">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -152,15 +152,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.1" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#introducao-7"><i class="fa fa-check"></i><b>8.1</b> Introdução</a></li>
 <li class="chapter" data-level="8.2" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-simples"><i class="fa fa-check"></i><b>8.2</b> Amostragem aleatória simples</a></li>
 <li class="chapter" data-level="8.3" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-estratificada-simples"><i class="fa fa-check"></i><b>8.3</b> Amostragem aleatória estratificada simples</a></li>
-<li class="chapter" data-level="8.4" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-sistematica-alinhada"><i class="fa fa-check"></i><b>8.4</b> Amostragem aleatória sistemática alinhada</a></li>
-<li class="chapter" data-level="8.5" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-sistematica-desalinhada"><i class="fa fa-check"></i><b>8.5</b> Amostragem aleatória sistemática desalinhada</a></li>
-<li class="chapter" data-level="8.6" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-agrupada"><i class="fa fa-check"></i><b>8.6</b> Amostragem aleatória agrupada</a></li>
+<li class="chapter" data-level="8.4" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-sistematica"><i class="fa fa-check"></i><b>8.4</b> Amostragem aleatória sistemática</a></li>
+<li class="chapter" data-level="8.5" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-em-conglomerados"><i class="fa fa-check"></i><b>8.5</b> Amostragem aleatória em conglomerados</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html"><i class="fa fa-check"></i><b>9</b> Amostragem Não-Probabilística</a><ul>
 <li class="chapter" data-level="9.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#introducao-8"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
 <li class="chapter" data-level="9.2" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-casual"><i class="fa fa-check"></i><b>9.2</b> Amostragem casual</a></li>
 <li class="chapter" data-level="9.3" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-conveniente"><i class="fa fa-check"></i><b>9.3</b> Amostragem conveniente</a></li>
-<li class="chapter" data-level="9.4" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-intencional"><i class="fa fa-check"></i><b>9.4</b> Amostragem intencional</a></li>
+<li class="chapter" data-level="9.4" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-intencional"><i class="fa fa-check"></i><b>9.4</b> Amostragem intencional</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-sistematica"><i class="fa fa-check"></i><b>9.4.1</b> Amostragem sistemática</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="parte-iv-covariaveis-ambientais.html"><a href="parte-iv-covariaveis-ambientais.html"><i class="fa fa-check"></i>PARTE IV – COVARIÁVEIS AMBIENTAIS</a></li>
 <li class="chapter" data-level="10" data-path="principios-da-formacao-do-solo.html"><a href="principios-da-formacao-do-solo.html"><i class="fa fa-check"></i><b>10</b> Princípios da Formação do Solo</a></li>
@@ -254,9 +255,8 @@ sp::<span class="kw">gridded</span>(meuse.grid) &lt;-<span class="st"> </span><s
 sp::<span class="kw">proj4string</span>(meuse.grid) &lt;-<span class="st"> </span>sp::<span class="kw">CRS</span>(<span class="st">&quot;+init=epsg:28992&quot;</span>)
 <span class="kw">data</span>(meuse.riv, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
 <span class="kw">plot</span>(
-  meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>,
-  <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>, 
-  <span class="dt">main =</span> <span class="st">&quot;Conjunto de dados do Rio Meuse&quot;</span>)
+  meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">main =</span> main,
+  <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
 <span class="kw">polygon</span>(meuse.riv, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="dt">border =</span> <span class="st">&quot;lightgray&quot;</span>)
 <span class="kw">image</span>(
   meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
@@ -271,38 +271,44 @@ sp::<span class="kw">proj4string</span>(meuse.grid) &lt;-<span class="st"> </spa
 <h2><span class="header-section-number">8.2</span> Amostragem aleatória simples</h2>
 <p>Inglês: <em>simple random sampling</em>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;random&quot;</span>), <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<span class="kw">points</span>(
+  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;random&quot;</span>), 
+  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="amostragem-aleatoria-estratificada-simples" class="section level2">
 <h2><span class="header-section-number">8.3</span> Amostragem aleatória estratificada simples</h2>
 <p>Inglês: <em>stratified simple random sampling</em>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;stratified&quot;</span>), <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<span class="kw">points</span>(
+  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;stratified&quot;</span>), 
+  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
-<div id="amostragem-aleatoria-sistematica-alinhada" class="section level2">
-<h2><span class="header-section-number">8.4</span> Amostragem aleatória sistemática alinhada</h2>
-<p>Inglês: <em>systematic random sampling</em>, <em>centric systematic random sampling</em>, <em>aligned systematic random sampling</em>.</p>
+<div id="amostragem-aleatoria-sistematica" class="section level2">
+<h2><span class="header-section-number">8.4</span> Amostragem aleatória sistemática</h2>
+<p>Inglês: <em>systematic random sampling</em>, <em>centric systematic random sampling</em>, <em>aligned systematic random sampling</em>, <em>nonaligned systematic random sampling</em>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>), <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
+<span class="kw">points</span>(
+  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>), 
+  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
 <span class="kw">set.seed</span>(<span class="dv">1984</span>)
-<span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>), <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-</div>
-<div id="amostragem-aleatoria-sistematica-desalinhada" class="section level2">
-<h2><span class="header-section-number">8.5</span> Amostragem aleatória sistemática desalinhada</h2>
-<p>Inglês: <em>nonaligned systematic random sampling</em>.</p>
+<span class="kw">points</span>(
+  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>), 
+  <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;nonaligned&quot;</span>), <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<span class="kw">points</span>(
+  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;nonaligned&quot;</span>), 
+  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
-<div id="amostragem-aleatoria-agrupada" class="section level2">
-<h2><span class="header-section-number">8.6</span> Amostragem aleatória agrupada</h2>
-<p>Inglês: <em>clustered random sampling</em>.</p>
+<div id="amostragem-aleatoria-em-conglomerados" class="section level2">
+<h2><span class="header-section-number">8.5</span> Amostragem aleatória em conglomerados</h2>
+<p>Inglês: <em>cluster random sampling</em>, <em>two-stage random sampling</em>, <em>multistage random sampling</em>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
 <span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;clustered&quot;</span>, <span class="dt">nclusters =</span> <span class="dv">6</span>), <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <!-- # Amostragem Não-Probabilística -->
 
 <!-- # PARTE III -- AMOSTRAGEM ESPACIAL {-} -->
