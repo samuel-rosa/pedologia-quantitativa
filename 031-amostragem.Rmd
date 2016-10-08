@@ -46,17 +46,26 @@ text(179050, 331200, "Rio Meuse", srt = 50, cex = 0.7)
 Inglês: *simple random sampling*.
 
 ```{r, eval=FALSE}
+# Amostragem aleatória simples
 set.seed(2001)
-points(
-  sp::spsample(meuse.grid, n = 15, type = "random"), 
-  pch = 21, cex = 0.75)
+pts <- meuse.grid[sampling::srswr(n = 15, N = length(meuse.grid)) == 1, ]
+set.seed(2001)
+pts@coords <- pts@coords + 
+  matrix(runif(prod(dim(pts@coords)), min = -0.5, max = 0.5), ncol = 2) * 
+  meuse.grid@grid@cellsize
+points(pts, pch = 21, cex = 0.75)
 ```
 
 ```{r, echo=FALSE}
 main <- "Amostra aleatória simples"
 <<meuseRiverPlot>>
 set.seed(2001)
-points(sp::spsample(meuse.grid, n = 15, type = "random"), pch = 21, cex = 0.75)
+pts <- meuse.grid[sampling::srswr(15, length(meuse.grid)) == 1, ]
+set.seed(2001)
+pts@coords <- 
+  pts@coords + matrix(runif(prod(dim(pts@coords)), min = -0.5, max = 0.5), ncol = 2) * 
+  meuse.grid@grid@cellsize
+points(pts, pch = 21, cex = 0.75)
 legend(176100, 332750, legend = "Amostras", pch = 21, bty = "n")
 ```
 
@@ -65,17 +74,33 @@ legend(176100, 332750, legend = "Amostras", pch = 21, bty = "n")
 Inglês: *stratified simple random sampling*.
 
 ```{r, eval=FALSE}
+n <- round(15 * summary(meuse.grid$soil) / length(meuse.grid))
 set.seed(2001)
-points(
-  sp::spsample(meuse.grid, n = 15, type = "stratified"), 
-  pch = 21, cex = 0.75)
+pts <- sampling::strata(
+  meuse.grid[order(meuse.grid$soil), ], stratanames = "soil", size = n, 
+  method = "srswr")$ID_unit
+pts <- meuse.grid[order(meuse.grid$soil), ][pts, ]
+set.seed(2001)
+pts@coords <- pts@coords + 
+  matrix(runif(prod(dim(pts@coords)), min = -0.5, max = 0.5), ncol = 2) * 
+  meuse.grid@grid@cellsize
+points(pts, pch = 21, cex = 0.75)
 ```
 
 ```{r, echo=FALSE}
 main <- "Amostra aleatória estratificada simples"
 <<meuseRiverPlot>>
+n <- round(15 * summary(meuse.grid$soil) / length(meuse.grid))
 set.seed(2001)
-points(sp::spsample(meuse.grid, n = 15, type = "stratified"), pch = 21, cex = 0.75)
+pts <- sampling::strata(
+  meuse.grid[order(meuse.grid$soil), ], stratanames = "soil", size = n, 
+  method = "srswr")$ID_unit
+pts <- meuse.grid[order(meuse.grid$soil), ][pts, ]
+set.seed(2001)
+pts@coords <- pts@coords + 
+  matrix(runif(prod(dim(pts@coords)), min = -0.5, max = 0.5), ncol = 2) * 
+  meuse.grid@grid@cellsize
+points(pts, pch = 21, cex = 0.75)
 legend(176100, 332750, legend = "Amostras", pch = 21, bty = "n")
 ```
 
