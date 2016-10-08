@@ -132,7 +132,9 @@ Inglês: *cluster random sampling*, *two-stage random sampling*, *multistage ran
 
 ```{r, eval=FALSE}
 set.seed(2001)
-points(sp::spsample(meuse.grid, n = 15, type = "clustered", nclusters = 6), pch = 21, cex = 0.75)
+points(
+  sp::spsample(meuse.grid, n = 15, type = "clustered", nclusters = 6), 
+  pch = 21, cex = 0.75)
 ```
 
 ```{r, echo=FALSE}
