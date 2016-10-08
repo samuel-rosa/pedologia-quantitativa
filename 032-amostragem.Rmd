@@ -116,3 +116,37 @@ configuração espacial otimizada para atender aos requerimentos de um modelo me
 sub-ótimo para um modelo estatístico, e vice-versa. O mesmo vale para dois modelos mentais de pedogênese ou
 dois modelos estatísticos diferentes. É nesse sentido que quanto mais conhecido for o modelo de distribuição
 espacial, tanto mais ótima será a configuração espacial das observações.
+
+### Amostragem sistemática
+
+Inglês: *systematic sampling*, *grid sampling*.
+
+```{r, eval=FALSE}
+points(
+  sp::spsample(meuse.grid, n = 15, type = "regular", offset = c(0.5, 0.5)),
+  pch = 21, cex = 0.75)
+```
+
+```{r, echo=FALSE}
+main <- "Amostra sistemática (malha quadrada)"
+<<meuseRiverPlot>>
+pts <- sp::spsample(meuse.grid, n = 15, type = "regular", offset = c(0.5, 0.5))
+points(pts, pch = 21, cex = 0.75)
+polygon(pts@coords[c(4, 5, 8, 7, 4), ])
+legend(176100, 332750, legend = "Amostras", pch = 21, bty = "n")
+```
+
+```{r, eval=FALSE}
+points(
+  sp::spsample(meuse.grid, n = 15, type = "hexagonal", offset = c(0.5, 0.5)), 
+  pch = 21, cex = 0.75)
+```
+
+```{r, echo=FALSE}
+main <- "Amostra sistemática (malha triangular)"
+<<meuseRiverPlot>>
+pts <- sp::spsample(meuse.grid, n = 15, type = "hexagonal", offset = c(0.5, 0.5))
+points(pts, pch = 21, cex = 0.75)
+polygon(pts@coords[c(3, 4, 5, 3), ])
+legend(176100, 332750, legend = "Amostras", pch = 21, bty = "n")
+```
