@@ -30,7 +30,11 @@ A amostragem não-probabilística costuma ser dividida em três categorias:
 
 ## Amostragem casual
 
-Na amostragem casual (em inglês, *haphazard sampling*) os locais de amostragem são escolhidos,
+**Outros nomes**:<br>
+Português: amostragem ao acaso, ~~amostragem aleatória~~.<br>
+Inglês: *haphazard sampling*, *random sampling*.
+
+Na amostragem casual os locais de amostragem são escolhidos,
 fundamentalmente, em função da subjetividade da pessoa conduzindo a amostragem. Não existe um critério claro 
 a ser atendido. Outros locais amostrais podem ser escolhidos caso outra pessoa conduza a amostragem, mesmo que
 não haja justificativa plausível para isso. Assim, a amostragem causal deve ser evitada sempre que possível.
@@ -42,9 +46,31 @@ probabilidades de inclusão de cada amostra. É devido a esse comum equívoco qu
 aleatória* tem caído em desuso junto a comunidade estatística, dando-se preferência à expressão *amostragem 
 probabilística* (veja acima).
 
+```{r, echo=FALSE}
+main <- "Amostra casual (zigue-zague)"
+<<meuseRiverPlot>>
+set.seed(2000)
+pts <- sp::spsample(meuse.grid, n = 15, type = "nonaligned")
+points(pts, pch = 21, cex = 0.75)
+arrows(
+  meuse.grid@coords[1, 1], meuse.grid@coords[1, 2], pts@coords[length(pts), 1], pts@coords[length(pts), 2],
+  length = 0.1)
+for (i in 2:length(pts) - 1) {
+  arrows(
+    x1 = pts@coords[i, 1], y1 = pts@coords[i, 2], x0 = pts@coords[i + 1, 1], y0 = pts@coords[i + 1, 2],
+    length = 0.1)
+}
+leg <- paste("Amostras (n = ", length(pts), ")", sep = "")
+legend(176100, 332750, legend = leg, pch = 21, bty = "n")
+```
+
 ## Amostragem conveniente
 
-A amostragem conveniente (em inglês, *convenience sampling*) está diretamente relacionada à otimização do uso 
+**Outros nomes**:<br>
+Português: amostragem por conveniência, amostragem por acessibilidade.<br>
+Inglês: *convenience sampling*, *accessibility sampling*.
+
+A amostragem conveniente está diretamente relacionada à otimização do uso 
 dos recursos disponíveis. Ela consiste em evitar realizar observações em locais de difícil acesso como áreas 
 densamente florestadas, distantes de estradas, terrenos íngremes, ou áreas que apresentem risco para a saúde 
 ou à vida devido à presença de, por exemplo, animais peçonhentos. Assim sendo, o critério usado para a
@@ -67,9 +93,30 @@ drenagem, como nos divisores de águas. As áreas de borda de florestas são for
 terra subjascente. E os terrenos não-montanhosos costumam ter solo com maior desenvolvimento em profundidade. 
 O modelo preditivo calibrado com tais observações terá bom desempenho aqui, mas não no restante da área.
 
+```{r, echo=FALSE}
+main <- "Amostra conveninte (distante da margem do rio)"
+<<meuseRiverPlot>>
+pik <- ifelse(meuse.grid$dist < 0.4, 0.0001, 1)
+pik <- sampling::inclusionprobabilities(pik, 50)
+set.seed(2001)
+pts <- sampling::UPmultinomial(pik) == 1
+pts <- meuse.grid[pts, ]
+set.seed(2001)
+pts@coords <- pts@coords + 
+  matrix(runif(prod(dim(pts@coords)), min = -0.5, max = 0.5), ncol = 2) * 
+  meuse.grid@grid@cellsize
+points(pts, pch = 21, cex = 0.75)
+leg <- paste("Amostras (n = ", length(pts), ")", sep = "")
+legend(176100, 332750, legend = leg, pch = 21, bty = "n")
+```
+
 ## Amostragem intencional
 
-A amostragem intencional (em inglês, *purposive sampling*) é semelhante à amostragem conveniente no sentido de
+**Outros nomes**:<br>
+Português: amostragem por julgamento.<br>
+Inglês: *purposive sampling*, *judgement sampling*, *expert sampling*, *knowledge-based sampling*.
+
+A amostragem intencional é semelhante à amostragem conveniente no sentido de
 que em ambas os locais amostrais são definidos a fim de otimizar um critério pré-determinado. A diferença 
 fundamental entre as duas é a natureza desse critério. Enquanto na amostragem conveniente o critério tem 
 origem puramente econômica, na amostragem intencional o critério tem origem pedológica e/ou estatística, 
@@ -119,13 +166,10 @@ espacial, tanto mais ótima será a configuração espacial das observações.
 
 ### Amostragem sistemática
 
+**Outros nomes**:<br>
+Português: amostragem em malha, amostragem em *grid*, ~~amostragem geoestatística~~, ~~amostragem para
+krigagem~~.<br>
 Inglês: *systematic sampling*, *grid sampling*.
-
-```{r, eval=FALSE}
-points(
-  sp::spsample(meuse.grid, n = 15, type = "regular", offset = c(0.5, 0.5)),
-  pch = 21, cex = 0.75)
-```
 
 ```{r, echo=FALSE}
 main <- "Amostra sistemática (malha quadrada)"
@@ -133,13 +177,8 @@ main <- "Amostra sistemática (malha quadrada)"
 pts <- sp::spsample(meuse.grid, n = 15, type = "regular", offset = c(0.5, 0.5))
 points(pts, pch = 21, cex = 0.75)
 polygon(pts@coords[c(4, 5, 8, 7, 4), ])
-legend(176100, 332750, legend = "Amostras", pch = 21, bty = "n")
-```
-
-```{r, eval=FALSE}
-points(
-  sp::spsample(meuse.grid, n = 15, type = "hexagonal", offset = c(0.5, 0.5)), 
-  pch = 21, cex = 0.75)
+leg <- paste("Amostras (n = ", length(pts), ")", sep = "")
+legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 ```
 
 ```{r, echo=FALSE}
@@ -148,5 +187,6 @@ main <- "Amostra sistemática (malha triangular)"
 pts <- sp::spsample(meuse.grid, n = 15, type = "hexagonal", offset = c(0.5, 0.5))
 points(pts, pch = 21, cex = 0.75)
 polygon(pts@coords[c(3, 4, 5, 3), ])
-legend(176100, 332750, legend = "Amostras", pch = 21, bty = "n")
+leg <- paste("Amostras (n = ", length(pts), ")", sep = "")
+legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 ```
