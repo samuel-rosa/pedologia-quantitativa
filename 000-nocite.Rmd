@@ -23,6 +23,9 @@ nocite: |
   @Mueller2007,
   @WebsterEtAl2013,
   
+  # Amostragem Probabilística
+  @deGruijterEtAl2006,
+  
   # Amostragem Não-Probabilística
   @BrusEtAl2007a,
   @Rossiter2000,
