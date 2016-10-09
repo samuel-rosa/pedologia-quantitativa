@@ -46,9 +46,9 @@ probabilidades de inclusão de cada amostra. É devido a esse comum equívoco qu
 aleatória* tem caído em desuso junto a comunidade estatística, dando-se preferência à expressão *amostragem 
 probabilística* (veja acima).
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra casual (zigue-zague)"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 set.seed(2000)
 pts <- sp::spsample(meuse.grid, n = 15, type = "nonaligned")
 points(pts, pch = 21, cex = 0.75)
@@ -93,9 +93,9 @@ drenagem, como nos divisores de águas. As áreas de borda de florestas são for
 terra subjascente. E os terrenos não-montanhosos costumam ter solo com maior desenvolvimento em profundidade. 
 O modelo preditivo calibrado com tais observações terá bom desempenho aqui, mas não no restante da área.
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra conveninte (distante da margem do rio)"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 pik <- ifelse(meuse.grid$dist < 0.4, 0.0001, 1)
 pik <- sampling::inclusionprobabilities(pik, 50)
 set.seed(2001)
@@ -171,9 +171,9 @@ Português: amostragem em malha, amostragem em *grid*, ~~amostragem geoestatíst
 krigagem~~.<br>
 Inglês: *systematic sampling*, *grid sampling*.
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra sistemática (malha quadrada)"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 pts <- sp::spsample(meuse.grid, n = 15, type = "regular", offset = c(0.5, 0.5))
 points(pts, pch = 21, cex = 0.75)
 polygon(pts@coords[c(4, 5, 8, 7, 4), ])
@@ -181,12 +181,145 @@ leg <- paste("Amostras (n = ", length(pts), ")", sep = "")
 legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 ```
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra sistemática (malha triangular)"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 pts <- sp::spsample(meuse.grid, n = 15, type = "hexagonal", offset = c(0.5, 0.5))
 points(pts, pch = 21, cex = 0.75)
 polygon(pts@coords[c(3, 4, 5, 3), ])
 leg <- paste("Amostras (n = ", length(pts), ")", sep = "")
 legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 ```
+
+## Otimização amostral
+
+### Estimativa de tendências
+
+```{r, eval=FALSE}
+# Otimização para estimativa de tendências espaciais ####
+
+# Cronograma de recozimento simulado
+schedule <- spsann::scheduleSPSANN(
+  chains = 1000, initial.temperature = 50, stopping = 100,
+  x.max = 1540, y.max = 2060, x.min = 0, y.min = 0, cellsize = 40)
+
+# Covariáveis espaciais:
+# - soil: tipo de solo (3 categorias)
+# - ffreq: frequência de inundação (3 categorias)
+covars <- c("soil", "ffreq")
+image(meuse.grid, "soil", axes = TRUE, col = terrain.colors(3))
+image(meuse.grid, "ffreq", axes = TRUE, col = heat.colors(3))
+
+# Somente no espaço de atributos
+set.seed(2001)
+res_dist_att <- spsann::optimDIST(
+  points = 15, candi = meuse.grid@coords, covars = meuse.grid@data[, covars],
+  schedule = schedule, plotit = TRUE)
+
+# Em ambos os espaços de atributos e geográfico
+set.seed(2001)
+res_dist_geo <- spsann::optimDIST(
+  points = 15, candi = meuse.grid@coords, covars = meuse.grid@data[, covars],
+  use.coords = TRUE, schedule = schedule, plotit = TRUE)
+
+# Comparar visualmente ambas as configurações #####
+
+# Salvar imagem no formato PNG
+dev.off()
+png("images/optim_dist.png", height = 480 * 2, width = 480 * 3, res = 150)
+par(mfrow = c(1, 2))
+
+# Legenda
+leg <- c("Sem coordenadas", "Com coordenadas")
+
+# Tipo de solo
+image(meuse.grid, "soil", axes = TRUE, col = terrain.colors(3))
+title(main = "Tipo de solo", xlab = "Longitude (m)", ylab = "Latitude (m)")
+points(res_dist_att$points[, 2:3], pch = 21)
+points(res_dist_geo$points[, 2:3], pch = 24)
+legend("topleft", pch = c(21, 24), legend = leg, bty = "n", title = "Covariáveis")
+
+# Frequência de inundação
+image(meuse.grid, "ffreq", axes = TRUE, col = cm.colors(3))
+title(main = "Frequência de inundação", xlab = "Longitude (m)", ylab = "Latitude (m)")
+points(res_dist_att$points[, 2:3], pch = 21)
+points(res_dist_geo$points[, 2:3], pch = 24)
+legend("topleft", pch = c(21, 24), legend = leg, bty = "n", title = "Covariáveis")
+dev.off()
+```
+
+```{r, echo=FALSE}
+fig <- paste(
+  'Otimização de configurações amostrais no espaço de atributos (covariáveis) ',
+  'para estimativa de tendências espaciais e o efeito de considerarmos também o ',
+  'espaço geográfico.', sep = "")
+```
+
+![`r fig`](images/optim_dist.png)
+
+### Estimativa de variogramas
+
+```{r, eval=FALSE}
+# Otimização para estimativa de variogramas ####
+
+# Cronograma de recozimento simulado
+schedule <- spsann::scheduleSPSANN(
+  chains = 1000, initial.temperature = 100, stopping = 100,
+  x.max = 1540, y.max = 2060, x.min = 0, y.min = 0, cellsize = 40)
+
+# Otimização
+set.seed(1984)
+res_ppl <- spsann::optimPPL(
+  points = 15, candi = meuse.grid@coords, schedule = schedule, plotit = TRUE)
+
+# Salvar imagem no formato PNG
+dev.off()
+png("images/optim_ppl.png", width = 480 * 3, height = 480 * 2, res = 150)
+
+# Tipo de solo
+image(meuse.grid, "soil", axes = TRUE, col = terrain.colors(3))
+title(xlab = "Longitude (m)", ylab = "Latitude (m)")
+points(res_ppl$points[, 2:3], pch = 21)
+dev.off()
+```
+
+```{r, echo=FALSE}
+fig <- paste(
+  'Otimização de configurações amostrais para estimativa de variogramas.', sep = "")
+```
+
+![`r fig`](images/optim_ppl.png)
+
+### Interpolação espacial
+
+```{r, eval=FALSE}
+# Otimização para estimativa de tendências espaciais ####
+
+# Cronograma de recozimento simulado
+schedule <- spsann::scheduleSPSANN(
+  chains = 1000, initial.temperature = 500000, stopping = 100,
+  x.max = 1540, y.max = 2060, x.min = 0, y.min = 0, cellsize = 40)
+
+# Otimização
+set.seed(1984)
+res_mssd <- spsann::optimMSSD(
+  points = 15, candi = meuse.grid@coords, schedule = schedule, plotit = TRUE)
+
+# Salvar imagem no formato PNG
+dev.off()
+png("images/optim_mssd.png", width = 480 * 3, height = 480 * 2, res = 150)
+
+# Tipo de solo
+image(meuse.grid, "soil", axes = TRUE, col = terrain.colors(3))
+title(xlab = "Longitude (m)", ylab = "Latitude (m)")
+points(res_mssd$points[, 2:3], pch = 21)
+dev.off()
+```
+
+```{r, echo=FALSE}
+fig <- paste(
+  'Otimização de configurações amostrais no espaço geográfico ',
+  'para fins de interpolação espacial usando krigagem.', sep = "")
+```
+
+![`r fig`](images/optim_mssd.png)
