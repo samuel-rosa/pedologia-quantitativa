@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pedologia Quantitativa</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Pedologia Quantitativa">
+  <meta name="generator" content="bookdown 0.1.9 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Pedologia Quantitativa" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="samuel-rosa/pedologia-quantitativa" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pedologia Quantitativa" />
+  
+  
+  
+
+
+  
+<meta name="date" content="2016-10-09">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="hardware.html">
+<link rel="next" href="gestao-de-dados.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Pedologia Quantitativa</a></li>
+<li><a href="https://www.researchgate.net/profile/Alessandro_Samuel-Rosa">Alessandro Samuel-Rosa</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="" data-path="parte-i-fundamentacao-historica-e-conceitual.html"><a href="parte-i-fundamentacao-historica-e-conceitual.html"><i class="fa fa-check"></i>PARTE I – FUNDAMENTAÇÃO HISTÓRICA E CONCEITUAL</a></li>
+<li class="chapter" data-level="1" data-path="contextualizacao-historica.html"><a href="contextualizacao-historica.html"><i class="fa fa-check"></i><b>1</b> Contextualização Histórica</a><ul>
+<li class="chapter" data-level="1.1" data-path="contextualizacao-historica.html"><a href="contextualizacao-historica.html#introducao"><i class="fa fa-check"></i><b>1.1</b> Introdução</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pedologia-quantitativa-ou-pedometria.html"><a href="pedologia-quantitativa-ou-pedometria.html"><i class="fa fa-check"></i><b>2</b> Pedologia Quantitativa (ou Pedometria)</a><ul>
+<li class="chapter" data-level="2.1" data-path="pedologia-quantitativa-ou-pedometria.html"><a href="pedologia-quantitativa-ou-pedometria.html#introducao-1"><i class="fa fa-check"></i><b>2.1</b> Introdução</a></li>
+<li class="chapter" data-level="2.2" data-path="pedologia-quantitativa-ou-pedometria.html"><a href="pedologia-quantitativa-ou-pedometria.html#atividades-tipicamente-pedometricas"><i class="fa fa-check"></i><b>2.2</b> Atividades tipicamente pedométricas</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mapeamento-digital-do-solo.html"><a href="mapeamento-digital-do-solo.html"><i class="fa fa-check"></i><b>3</b> Mapeamento Digital do Solo</a><ul>
+<li class="chapter" data-level="3.1" data-path="mapeamento-digital-do-solo.html"><a href="mapeamento-digital-do-solo.html#introducao-2"><i class="fa fa-check"></i><b>3.1</b> Introdução</a></li>
+<li class="chapter" data-level="3.2" data-path="mapeamento-digital-do-solo.html"><a href="mapeamento-digital-do-solo.html#uma-definicao-pragmatica"><i class="fa fa-check"></i><b>3.2</b> Uma definição pragmática</a></li>
+<li class="chapter" data-level="3.3" data-path="mapeamento-digital-do-solo.html"><a href="mapeamento-digital-do-solo.html#scorpan-ou-clorpt"><i class="fa fa-check"></i><b>3.3</b> <em>scorpan</em> ou <em>clorpt</em>?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="parte-ii-infraestrutura-tecnologica.html"><a href="parte-ii-infraestrutura-tecnologica.html"><i class="fa fa-check"></i>PARTE II – INFRAESTRUTURA TECNOLÓGICA</a></li>
+<li class="chapter" data-level="4" data-path="hardware.html"><a href="hardware.html"><i class="fa fa-check"></i><b>4</b> Hardware</a><ul>
+<li class="chapter" data-level="4.1" data-path="hardware.html"><a href="hardware.html#introducao-3"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="software.html"><a href="software.html"><i class="fa fa-check"></i><b>5</b> Software</a><ul>
+<li class="chapter" data-level="5.1" data-path="software.html"><a href="software.html#introducao-4"><i class="fa fa-check"></i><b>5.1</b> Introdução</a></li>
+<li class="chapter" data-level="5.2" data-path="software.html"><a href="software.html#rrstudio"><i class="fa fa-check"></i><b>5.2</b> R/RStudio</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="software.html"><a href="software.html#conhecendo-melhor-o-r"><i class="fa fa-check"></i><b>5.2.1</b> Conhecendo melhor o R</a></li>
+<li class="chapter" data-level="5.2.2" data-path="software.html"><a href="software.html#primeiros-passos"><i class="fa fa-check"></i><b>5.2.2</b> Primeiros passos</a></li>
+<li class="chapter" data-level="5.2.3" data-path="software.html"><a href="software.html#conceitos-basicos"><i class="fa fa-check"></i><b>5.2.3</b> Conceitos básicos</a></li>
+<li class="chapter" data-level="5.2.4" data-path="software.html"><a href="software.html#os-pacotes"><i class="fa fa-check"></i><b>5.2.4</b> Os pacotes</a></li>
+<li class="chapter" data-level="5.2.5" data-path="software.html"><a href="software.html#lembrete-final"><i class="fa fa-check"></i><b>5.2.5</b> Lembrete final</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="software.html"><a href="software.html#qgis"><i class="fa fa-check"></i><b>5.3</b> QGIS</a></li>
+<li class="chapter" data-level="5.4" data-path="software.html"><a href="software.html#saga-gis"><i class="fa fa-check"></i><b>5.4</b> SAGA GIS</a></li>
+<li class="chapter" data-level="5.5" data-path="software.html"><a href="software.html#grass-gis"><i class="fa fa-check"></i><b>5.5</b> GRASS GIS</a></li>
+<li class="chapter" data-level="5.6" data-path="software.html"><a href="software.html#gdalogr"><i class="fa fa-check"></i><b>5.6</b> GDAL/OGR</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="gestao-de-dados.html"><a href="gestao-de-dados.html"><i class="fa fa-check"></i><b>6</b> Gestão de Dados</a><ul>
+<li class="chapter" data-level="6.1" data-path="gestao-de-dados.html"><a href="gestao-de-dados.html#introducao-5"><i class="fa fa-check"></i><b>6.1</b> Introdução</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="parte-iii-amostragem-espacial.html"><a href="parte-iii-amostragem-espacial.html"><i class="fa fa-check"></i>PARTE III – AMOSTRAGEM ESPACIAL</a></li>
+<li class="chapter" data-level="7" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html"><i class="fa fa-check"></i><b>7</b> Princípios da Amostragem Espacial</a><ul>
+<li class="chapter" data-level="7.1" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html#introducao-6"><i class="fa fa-check"></i><b>7.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.2" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html#exemplos"><i class="fa fa-check"></i><b>7.2</b> Exemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html"><i class="fa fa-check"></i><b>8</b> Amostragem Probabilística</a><ul>
+<li class="chapter" data-level="8.1" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#introducao-7"><i class="fa fa-check"></i><b>8.1</b> Introdução</a></li>
+<li class="chapter" data-level="8.2" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-simples"><i class="fa fa-check"></i><b>8.2</b> Amostragem aleatória simples</a></li>
+<li class="chapter" data-level="8.3" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-estratificada-simples"><i class="fa fa-check"></i><b>8.3</b> Amostragem aleatória estratificada simples</a></li>
+<li class="chapter" data-level="8.4" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-sistematica"><i class="fa fa-check"></i><b>8.4</b> Amostragem aleatória sistemática</a></li>
+<li class="chapter" data-level="8.5" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#amostragem-aleatoria-em-conglomerados"><i class="fa fa-check"></i><b>8.5</b> Amostragem aleatória em conglomerados</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html"><i class="fa fa-check"></i><b>9</b> Amostragem Não-Probabilística</a><ul>
+<li class="chapter" data-level="9.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#introducao-8"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-casual"><i class="fa fa-check"></i><b>9.2</b> Amostragem casual</a></li>
+<li class="chapter" data-level="9.3" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-conveniente"><i class="fa fa-check"></i><b>9.3</b> Amostragem conveniente</a></li>
+<li class="chapter" data-level="9.4" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-intencional"><i class="fa fa-check"></i><b>9.4</b> Amostragem intencional</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-sistematica"><i class="fa fa-check"></i><b>9.4.1</b> Amostragem sistemática</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#otimizacao-amostral"><i class="fa fa-check"></i><b>9.5</b> Otimização amostral</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#estimativa-de-tendencias"><i class="fa fa-check"></i><b>9.5.1</b> Estimativa de tendências</a></li>
+<li class="chapter" data-level="9.5.2" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#estimativa-de-variogramas"><i class="fa fa-check"></i><b>9.5.2</b> Estimativa de variogramas</a></li>
+<li class="chapter" data-level="9.5.3" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#interpolacao-espacial"><i class="fa fa-check"></i><b>9.5.3</b> Interpolação espacial</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="parte-iv-covariaveis-ambientais.html"><a href="parte-iv-covariaveis-ambientais.html"><i class="fa fa-check"></i>PARTE IV – COVARIÁVEIS AMBIENTAIS</a></li>
+<li class="chapter" data-level="10" data-path="principios-da-formacao-do-solo.html"><a href="principios-da-formacao-do-solo.html"><i class="fa fa-check"></i><b>10</b> Princípios da Formação do Solo</a></li>
+<li class="chapter" data-level="11" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html"><i class="fa fa-check"></i><b>11</b> Modelos Digitais de Elevação</a><ul>
+<li class="chapter" data-level="11.1" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#introducao-9"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
+<li class="chapter" data-level="11.2" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#atributos-de-terreno"><i class="fa fa-check"></i><b>11.2</b> Atributos de terreno</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#area-de-dispersao"><i class="fa fa-check"></i><b>11.2.1</b> Área de dispersão</a></li>
+<li class="chapter" data-level="11.2.2" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#area-de-contribuicao"><i class="fa fa-check"></i><b>11.2.2</b> Área de contribuição</a></li>
+<li class="chapter" data-level="11.2.3" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#balanco-liquido-da-celula"><i class="fa fa-check"></i><b>11.2.3</b> Balanço líquido da célula</a></li>
+<li class="chapter" data-level="11.2.4" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#comprimento-do-caminho-do-fluxo"><i class="fa fa-check"></i><b>11.2.4</b> Comprimento do caminho do fluxo</a></li>
+<li class="chapter" data-level="11.2.5" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#comprimento-do-declive"><i class="fa fa-check"></i><b>11.2.5</b> Comprimento do declive</a></li>
+<li class="chapter" data-level="11.2.6" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#curvaturas"><i class="fa fa-check"></i><b>11.2.6</b> Curvaturas</a></li>
+<li class="chapter" data-level="11.2.7" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#declividade"><i class="fa fa-check"></i><b>11.2.7</b> Declividade</a></li>
+<li class="chapter" data-level="11.2.8" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#declividade-media-da-area-a-montante"><i class="fa fa-check"></i><b>11.2.8</b> Declividade média da área à montante</a></li>
+<li class="chapter" data-level="11.2.9" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#distancia-do-fluxo-ate-a-rede-de-drenagem"><i class="fa fa-check"></i><b>11.2.9</b> Distância do fluxo até a rede de drenagem</a></li>
+<li class="chapter" data-level="11.2.10" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#elevacao"><i class="fa fa-check"></i><b>11.2.10</b> Elevação</a></li>
+<li class="chapter" data-level="11.2.11" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#fator-ls"><i class="fa fa-check"></i><b>11.2.11</b> Fator LS</a></li>
+<li class="chapter" data-level="11.2.12" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#gradiente-por-distancia-a-jusante"><i class="fa fa-check"></i><b>11.2.12</b> Gradiente por distância à jusante</a></li>
+<li class="chapter" data-level="11.2.13" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-balanco-de-massa"><i class="fa fa-check"></i><b>11.2.13</b> Índice de balanço de massa</a></li>
+<li class="chapter" data-level="11.2.14" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-convergencia"><i class="fa fa-check"></i><b>11.2.14</b> Índice de convergência</a></li>
+<li class="chapter" data-level="11.2.15" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-exposicao-ao-norte"><i class="fa fa-check"></i><b>11.2.15</b> Índice de exposição ao norte</a></li>
+<li class="chapter" data-level="11.2.16" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-exposicao-ao-norte-da-area-a-montante"><i class="fa fa-check"></i><b>11.2.16</b> Índice de exposição ao norte da área à montante</a></li>
+<li class="chapter" data-level="11.2.17" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-potencia-de-escoamento"><i class="fa fa-check"></i><b>11.2.17</b> Índice de potência de escoamento</a></li>
+<li class="chapter" data-level="11.2.18" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-protecao-morfometrica"><i class="fa fa-check"></i><b>11.2.18</b> Índice de proteção morfométrica</a></li>
+<li class="chapter" data-level="11.2.19" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-resolucao-multipla-de-nivelamento-de-fundo-de-vale"><i class="fa fa-check"></i><b>11.2.19</b> Índice de resolução múltipla de nivelamento de fundo de vale</a></li>
+<li class="chapter" data-level="11.2.20" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-resolucao-multipla-de-nivelamento-de-topo-de-morro"><i class="fa fa-check"></i><b>11.2.20</b> Índice de resolução múltipla de nivelamento de topo de morro</a></li>
+<li class="chapter" data-level="11.2.21" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-rugosidade-do-terreno"><i class="fa fa-check"></i><b>11.2.21</b> Índice de rugosidade do terreno</a></li>
+<li class="chapter" data-level="11.2.22" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#indice-de-umidade-topografica"><i class="fa fa-check"></i><b>11.2.22</b> Índice de umidade topográfica</a></li>
+<li class="chapter" data-level="11.2.23" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#insolacao-potencial"><i class="fa fa-check"></i><b>11.2.23</b> Insolação potencial</a></li>
+<li class="chapter" data-level="11.2.24" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#posicao-em-relacao-ao-meio-da-encosta"><i class="fa fa-check"></i><b>11.2.24</b> Posição em relação ao meio da encosta</a></li>
+<li class="chapter" data-level="11.2.25" data-path="modelos-digitais-de-elevacao.html"><a href="modelos-digitais-de-elevacao.html#rugosidade-vetorial-do-terreno"><i class="fa fa-check"></i><b>11.2.25</b> Rugosidade vetorial do terreno</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="imagens-de-satelite.html"><a href="imagens-de-satelite.html"><i class="fa fa-check"></i><b>12</b> Imagens de Satélite</a></li>
+<li class="chapter" data-level="" data-path="parte-v-analise-exploratoria-espacial.html"><a href="parte-v-analise-exploratoria-espacial.html"><i class="fa fa-check"></i>PARTE V – ANÁLISE EXPLORATÓRIA ESPACIAL</a></li>
+<li class="chapter" data-level="13" data-path="tipos-de-dados.html"><a href="tipos-de-dados.html"><i class="fa fa-check"></i><b>13</b> Tipos de Dados</a><ul>
+<li class="chapter" data-level="13.1" data-path="tipos-de-dados.html"><a href="tipos-de-dados.html#variaveis-categoricas"><i class="fa fa-check"></i><b>13.1</b> Variáveis categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="analise-de-padroes-pontuais.html"><a href="analise-de-padroes-pontuais.html"><i class="fa fa-check"></i><b>14</b> Análise de Padrões Pontuais</a></li>
+<li class="chapter" data-level="15" data-path="transformacao-de-dados.html"><a href="transformacao-de-dados.html"><i class="fa fa-check"></i><b>15</b> Transformação de Dados</a></li>
+<li class="chapter" data-level="16" data-path="selecao-de-covariaveis.html"><a href="selecao-de-covariaveis.html"><i class="fa fa-check"></i><b>16</b> Seleção de Covariáveis</a></li>
+<li class="chapter" data-level="" data-path="parte-vi-modelagem-da-variacao-espacial-i.html"><a href="parte-vi-modelagem-da-variacao-espacial-i.html"><i class="fa fa-check"></i>PARTE VI – MODELAGEM DA VARIAÇÃO ESPACIAL (I)</a></li>
+<li class="chapter" data-level="17" data-path="o-componente-deterministico.html"><a href="o-componente-deterministico.html"><i class="fa fa-check"></i><b>17</b> O Componente Determinístico</a></li>
+<li class="chapter" data-level="18" data-path="regressao-linear.html"><a href="regressao-linear.html"><i class="fa fa-check"></i><b>18</b> Regressão Linear</a></li>
+<li class="chapter" data-level="19" data-path="regressao-logistica.html"><a href="regressao-logistica.html"><i class="fa fa-check"></i><b>19</b> Regressão Logística</a></li>
+<li class="chapter" data-level="" data-path="parte-vii-modelagem-da-variacao-espacial-ii.html"><a href="parte-vii-modelagem-da-variacao-espacial-ii.html"><i class="fa fa-check"></i>PARTE VII – MODELAGEM DA VARIAÇÃO ESPACIAL (II)</a></li>
+<li class="chapter" data-level="20" data-path="o-componente-estocastico.html"><a href="o-componente-estocastico.html"><i class="fa fa-check"></i><b>20</b> O Componente Estocástico</a><ul>
+<li class="chapter" data-level="20.1" data-path="o-componente-estocastico.html"><a href="o-componente-estocastico.html#introducao-10"><i class="fa fa-check"></i><b>20.1</b> Introdução</a></li>
+<li class="chapter" data-level="20.2" data-path="o-componente-estocastico.html"><a href="o-componente-estocastico.html#jogos-de-azar"><i class="fa fa-check"></i><b>20.2</b> Jogos de azar</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="geoestatistica-univariada.html"><a href="geoestatistica-univariada.html"><i class="fa fa-check"></i><b>21</b> Geoestatística Univariada</a><ul>
+<li class="chapter" data-level="21.1" data-path="geoestatistica-univariada.html"><a href="geoestatistica-univariada.html#introducao-11"><i class="fa fa-check"></i><b>21.1</b> Introdução</a></li>
+<li class="chapter" data-level="21.2" data-path="geoestatistica-univariada.html"><a href="geoestatistica-univariada.html#krigagem-simples"><i class="fa fa-check"></i><b>21.2</b> Krigagem simples</a></li>
+<li class="chapter" data-level="21.3" data-path="geoestatistica-univariada.html"><a href="geoestatistica-univariada.html#krigagem-ordinaria"><i class="fa fa-check"></i><b>21.3</b> Krigagem ordinária</a></li>
+<li class="chapter" data-level="21.4" data-path="geoestatistica-univariada.html"><a href="geoestatistica-univariada.html#krigagem-universal"><i class="fa fa-check"></i><b>21.4</b> Krigagem universal</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="geoestatistica-multivariada.html"><a href="geoestatistica-multivariada.html"><i class="fa fa-check"></i><b>22</b> Geoestatística Multivariada</a><ul>
+<li class="chapter" data-level="22.1" data-path="geoestatistica-multivariada.html"><a href="geoestatistica-multivariada.html#introducao-12"><i class="fa fa-check"></i><b>22.1</b> Introdução</a></li>
+<li class="chapter" data-level="22.2" data-path="geoestatistica-multivariada.html"><a href="geoestatistica-multivariada.html#co-krigagem"><i class="fa fa-check"></i><b>22.2</b> Co-krigagem</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>23</b> Referências</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pedologia Quantitativa</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="software" class="section level1">
+<h1><span class="header-section-number">Capítulo 5</span> Software</h1>
+<p><strong>Atenção!</strong> Este capítulo está em fase de <em>desenvolvimento</em>. Visite a <a href="https://github.com/samuel-rosa/pedologia-quantitativa/issues" title="Sugestões e dúvidas">página do projeto</a> se tiver alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!</p>
+<div id="introducao-4" class="section level2">
+<h2><span class="header-section-number">5.1</span> Introdução</h2>
+<!-- Conforme vimos no capítulo anterior,  -->
+<p>A aplicação de métodos quantitativos – matemáticos e estatísticos – para o estudo da distribuição e gênese do solo se dá, fundamentalmente, pelo uso de computadores. Isso significa que necessitamos, obrigatoriamente, de <a href="https://en.wikipedia.org/wiki/Software"><em>softwares</em></a> especializados para tal tarefa. É por meio desses <em>softwares</em> que daremos instruções ao nosso computador para que ele desempenhe determinada tarefa quantitativa como, por exemplo, computar estatísticas descritivas de um conjunto de dados do solo ou produzir um gráfico relacionando uma variável dependente <span class="math inline">\(y\)</span> com uma variável independente <span class="math inline">\(x\)</span>.</p>
+<p>Os <em>softwares</em> disponíveis para o desenvolvimento de estudos quantitativos são inúmeros e diversos – fruto da diversidade de métodos quantitativos hoje existentes –, sendo geralmente necessário usar dois ou mais <em>softwares</em> para desenvolver qualquer estudo pedométrico – por mais simples que o estudo seja. Para aprender e dominar o uso de qualquer <em>software</em> com aplicação pedométrica, possivelmente alguns dos quais lhe são desconhecidos até então, será necessário que você aprenda a sua ‘linguagem’. Como sabemos, uma linguagem é um sistema de signos – símbolos ou palavras – convencionados que serve para a comunicação de conceitos, ideias, significados, pensamentos (veja mais na <a href="%22https://pt.wikipedia.org/wiki/Linguagem%22">Wikipedia</a>). Assim, a linguagem de um <em>software</em> qualquer será, também, um sistema de signos convencionados, mas que serve para a nossa comunicação com o computador.</p>
+<p>A linguagem usada por um software geralmente é um tanto quanto complicada quando comparada à linguagem que nós seres humanos usamos para nos comunicar entre nós mesmos. Isso é tanto mais verdade quanto mais distante das chamadas Ciências Exatas for a nossa formação – como é o meu caso. É por isso que os <em>softwares</em> mais populares, que você provavelmente já usa, são aqueles que possuem o que chamamos de interface gráfica do usuário (<a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a>, do inglês <em>graphical user interface</em>). Essa interface nada mais é, como o próprio nome já diz, uma camada sobreposta à linguagem usada pelo <em>software</em>, uma camada intermediária entre a linguagem e o usuário, cuja função é tornar o <em>software</em> mais amigável para uso. Assim, a comunicação do usuário se dá, primeiro, via emissão de comandos pressionando botões e ícones ou escolhendo itens em caixas de diálogo, usando tanto o <em>mouse</em> como o teclado. Ao longo deste capítulo nós veremos alguns <em>softwares</em> desse tipo, tais como o QGIS.</p>
+<p>Apesar da amigabilidade dos <em>softwares</em> que usam uma interface gráfica, no longo prazo, seu uso pode se tornar um tanto quanto difícil. Isso porque é praticamente impossível memorizar a sequência de ícones pressionados e itens escolhidos em caixas de diálogo para realizar uma determinada tarefa pedométrica. Em geral, será preciso anotar todos os passos em um arquivo separado, muitas vezes incluindo imagens da própria interface gráfica e dos ícones pressionados. Se essa documentação não for feita, você corre o risco de, depois de algum tempo, não mais conseguir executar exatamente a mesma tarefa com seu conjunto de dados. Por exemplo, os revisores de seu artigo exigem que você refaça uma determinada análise estatística do conjunto de dados usado para produzir uma determinada tabela do seu artigo submetido para publicação: doze meses depois da submissão, você já esqueceu, quase que completamente, como foi que você analisou aqueles dados. Esse problema é comumente conhecido como o problema da (ir)reprodutibilidade – veja mais na <a href="https://en.wikipedia.org/wiki/Reproducibility">Wikipedia</a>.</p>
+<p>A <strong>reprodutibilidade</strong> é uma característica de um experimento ou estudo. Ela correspondendo ao potencial que um experimento tem de ser reproduzido, tanto pelo mesmo pesquisador como por qualquer outro pesquisador trabalhando independentemente em qualquer lugar do planeta, constituindo um dos principais elementos do ideal científico – veja mais na <a href="https://en.wikipedia.org/wiki/Scientific_method">Wikipedia</a>. Logicamente, o problema da irreprodutibilidade de um estudo é muito mais difícil de superar quando outro pesquisador deseja reproduzir o experimento pedométrico que você conduziu e vice-versa. Em geral, além de uma extensiva descrição do material e dos métodos usados em um estudo pedométrico, a reprodutibilidade só se torna um fato quando o a totalidade do ambiente computacional usado para realizar o estudo está livremente disponível. Grosso modo, isso inclui os dados – veja mais no próximo capítulo <a href="gestao-de-dados.html#gestao-de-dados">Gestão de Dados</a> – e a sequência de comandos emitidos para comunicação com o computador.</p>
+<p>A maneira mais eficiente de registrar a sequência de comandos emitidos para comunicação com o computador durante a realização de uma tarefa pedométrica requer o uso, diretamente, da linguagem do <em>software</em>, ou seja, uma linguagem de programação – veja mais na <a href="https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o">Wikipedia</a>. Nesse caso, nossa comunicação com o computador se dá via uso de uma interface de linha de comando (<a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>, do inglês <em>command-line interface</em>), ou seja, via emissão de comandos sob a forma de sucessivas linhas de texto, as chamadas linhas de comando – veja mais na <a href="https://en.wikipedia.org/wiki/Command-line_interface">Wikipedia</a>. Sendo uma linguagem, toda linguagem de programação possui regras sintáticas e semânticas – uma gramática –, as quais devem ser estritamente respeitadas para que haja, efetivamente, comunicação entre nós e o computador. Dentre os <em>softwares</em> que usam uma interface de linha de comando que veremos neste capítulo, o principal deles é o R.</p>
+<p>Além de potencializarem a reprodutibilidade, uma das grandes vantagens dos <em>softwares</em> que utilizam comandos de texto – ao invés de botões e caixas de diálogo – é o fato de permitirem ao usuário fazer adaptações metodológicas, desenvolver novos métodos e expandir sua caixa de ferramentas analíticas para além daquilo que já estiver implementado no <em>software</em>. Por outro lado, a grande desvantagem desses <em>softwares</em> é a maior dificuldade de aprendizagem do seu uso, geralmente necessitando grandes esforços, os quais são comumente descritos usando a chamada curva de aprendizagem:</p>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Usando alguns <em>softwares</em> tradicionais, populares, você tem conseguido desenvolver estudos bastante interessantes. Contudo, por algum motivo, você decide aprender a usar outro <em>software</em>, um <em>software</em> baseado na emissão de linhas de comando, a fim de aumentar sua produtividade e a qualidade de seus estudos. As primeiras experiências com o novo <em>software</em> serão difíceis e você se sentirá perdido, talvez desesperado. A tentação de abandonar aquele novo <em>software</em> aparecerá logo, e você se sentirá inclinado a voltar a usar apenas as mesmas ferramentas que usava antes. Talvez sua vontade “morra” ao longo do caminho. Contudo, você precisa resistir e acreditar que consegue vencer os perigos do Vale da Morte. Você precisa estar disposto a encarar a íngreme curva de aprendizagem. Depois de passar por tudo isso, sua produtividade (ou capacidade produtiva) deverá ser algumas ordens de magnitude maior do que antes de conhecer aquele novo <em>software</em>.</p>
+<p>Note que a dificuldade na aprendizagem do uso de <em>softwares</em> baseados na emissão de linhas de comando não se deve à uma dificuldade inerente à esses <em>softwares</em>. Na verdade, nossa dificuldade advém, principalmente, do fato de, em geral, sermos introduzidos primeiro, ainda na nossa infância, à <em>softwares</em> que dispõe apenas de interfaces gráficas, com uma porção de ícones e caixas de diálogo – veja, por exemplo, seu computador de bolso.</p>
+<p>Nesse ponto você já deve ter percebido que para desenvolver estudos de pedologia quantitativa será preciso, além de aprender e dominar o uso de diversos softwares, aprender e dominar (pelo menos) uma nova linguagem, um novo sistema de signos. Adianto que, em geral, algumas das regras gramaticais dessas linguagens podem ser deduzida a partir daquilo que já sabemos em função do uso de outros <em>softwares</em> de análise e processamento de dados. Contudo, como qualquer linguagem de programação, existem especificidades, boa parte das quais é preciso conhecer para termos sucesso em seu uso. Além disso, algum conhecimento da língua inglesa costuma ser necessário, haja vista que as linguagens de programação costumam ser construídas com base em palavras da língua inglesa. A ideia aqui é tentar fazer com que sua passagem pelo Vale da Morte seja o menos dolorosa possível.</p>
+</div>
+<div id="rrstudio" class="section level2">
+<h2><span class="header-section-number">5.2</span> R/RStudio</h2>
+<p>O R é uma linguagem de programação e um ambiente de análises estatísticas e gráficas gratuito. Sua origem data de 1995, quando os pesquisadores <a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)" title="Robert Gentleman">Robert Gentleman</a> e <a href="https://en.wikipedia.org/wiki/Ross_Ihaka" title="Ross Ihaka">Ross Ihaka</a> iniciaram o projeto de seu desenvolvimento no Departamento de Estatística da Universidade de Auckland na Nova Zelândia. Baseado na linguagem de programação e ambiente estatístico <a href="https://en.wikipedia.org/wiki/S_(programming_language)" title="S (programming language)">S</a>, desenvolvido por <a href="https://en.wikipedia.org/wiki/John_Chambers_(statistician)" title="John Chambers">John Chambers</a> e colegas no <a href="https://en.wikipedia.org/wiki/Bell_Labs" title="Bell Laboratories">Bell Laboratories</a>, o nome deriva das iniciais dos dois pesquisadores (R), mas também de uma brincadeira com o nome da linguagem e ambiente no qual foi baseado (S). Hoje o R é um software livre mantido e desenvolvido pelo R Core Team, disponível gratuitamente para qualquer interessado em utilizá-lo, modificá-lo e redistribuí-lo.</p>
+<p>O R fornece uma ampla variedade de técnicas estatísticas, incluindo análises univariadas, bivariadas e multivariadas, desde as mais simples até as mais complexas, como análises descritivas, análise de variância e testes de médias, análise de agrupamento e de componentes principais, análise de séries temporais, modelagem geoestatísticas e muito, muito mais. O R ainda fornece uma série de ferramentas para produção de diversos tipos gráficos com qualidade para publicação. Todas essas técnicas e ferramentas, além de amplamente documentadas, são customizáveis e extensíveis. Assim, além de dispor das técnicas já incluídas no ambiente R, o usuário pode utilizar-se da linguagem R para criar suas próprias técnicas e, em seguida, torná-las disponíveis para uso pela comunidade científica.</p>
+<p>A grande vantagem do R em relação aos demais <em>softwares</em> existentes para análises estatísticas e gráficas é o fato de ele aliar o enorme volume de técnicas de análise estatística e gráfica à completa gratuidade. Ao contrário do que alguns possam pensar, essa gratuidade não é sinônimo de baixa qualidade. Pelo contrário, é a gratuidade que permite que milhares de cientistas ao redor do mundo usem e verifiquem a qualidade dessas técnicas. São esses mesmos cientistas que ajudam a desenvolver o R mais e mais, disponibilizando grande parte de seu tempo de trabalho para elaborar a miríade de tutoriais e materiais de apoio para o R disponíveis atualmente – nenhum <em>software</em> comercial possui, seja em meio digital ou em meio impresso, um volume de material de apoio maior do que o R. Ao tornar-se uma linguagem comum entre os cientistas, o R ainda permite que o registro das rotinas analíticas possa ser compartilhado e, quando necessário, verificado ou disponibilizado para verificação por outros cientistas, possibilitando a observação de um dos principais ideias do método científico: a reprodutibilidade.</p>
+<p>Em resumo, o R é completamente gratuito, pode ser usado para conduzir qualquer tipo de análise estatística e gráfica, é amplamente documentado, customizável e extensível, permite o compartilhamento e reprodução de rotinas analíticas, sendo uma linguagem comum entre cientistas de diferentes partes do mundo. Será que é preciso dizer mais alguma coisa para convencer-te a usar o R?</p>
+<div id="conhecendo-melhor-o-r" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Conhecendo melhor o R</h3>
+<p>A maneira mais eficiente de conhecer melhor o R é, sem dúvida, instalando-o em seu computador. Para isso precisamos, primeiro, visitar a página do projeto na Internet:</p>
+<iframe src="http://www.r-project.org/" width="672" height="400px">
+</iframe>
+<p>Uma grande quantidade de informação, muito além do que se busca incluir neste capítulo, pode ser encontrada no sítio do projeto. Ali estão disponíveis diversos manuais de uso (<code>Documentation &gt; Munuals</code>), bem como livros (<code>Documentation &gt; Books</code>) e artigos publicados na revista do projeto (<code>Documentation &gt; The R Journal</code>). Ainda há uma página com respostas às perguntas mais frequentes (<code>Documentation &gt; FAQs</code>) e uma página inteira explicando como é possível conseguir ajuda do próprio R antes de recorrer a terceiros (<code>Help With R &gt; Getting Help</code>) – como a documentação do R é extensa e a maioria dos colaboradores do projeto não são pagos pela colaboração, recomendo que você sempre procure, primeiro, resolver qualquer dúvida sozinho.</p>
+<p>O procedimento de instalação do R depende do sistema operacional (<a href="https://en.wikipedia.org/wiki/Operating_system">OS</a>, do inglês <em>operating system</em>) de seu computador:</p>
+<ul>
+<li>Linux: <a href="https://cloud.r-project.org/bin/linux/" class="uri">https://cloud.r-project.org/bin/linux/</a></li>
+<li>(Mac) OS X: <a href="https://cloud.r-project.org/bin/macosx/" class="uri">https://cloud.r-project.org/bin/macosx/</a></li>
+<li>Windows: <a href="https://cloud.r-project.org/bin/windows/base/" class="uri">https://cloud.r-project.org/bin/windows/base/</a></li>
+</ul>
+<p>A página referente à cada OS possui as instruções necessárias para descarregar e instalar o R em seu computador. Em geral, o processo de instalação é exatamente igual àquele de outros <em>softwares</em> que você usa em seu dia-a-dia. (Caso o R apresente problemas de funcionamento após a instalação, tente descarregar e instalar a versão anterior do R.)</p>
+<p>Depois de instalar o R, agora é a hora de escolher uma GUI que facilite nossa interação com o R. Isso porque o R possui apenas uma interface para emissão de linhas de comando de texto, também chamado <strong><em>console</em></strong>. Dentre as diversas opções gratuitamente disponíveis, as mais atrativas são aquelas que incluem ferramentas adicionais de apoio à programação em R e facilitem a análise, visualização e gerenciamento dos dados. Tais ferramentas constituem os chamados ambientes de desenvolvimento integrado (<a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a>, do inglês <em>integrated development environment</em>). Atualmente, a GUI e IDE mais popular é o</p>
+<ul>
+<li>RStudio, cujo instalador pode ser descarregado de
+<ul>
+<li><a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>.</li>
+</ul></li>
+</ul>
+<p>Assim como para o R, o procedimento de instalação do RStudio depende do OS do seu computador. Depois de instalado, inicie o RStudio em seu computador. Ele deve se parecer mais ou menos como na figura a seguir:</p>
+<div class="figure">
+<img src="images/rstudio-snapshot.png" alt="RStudio – interface gráfica do usuário e ambiente de desenvolvimento integrado para R (em sua versão para Linux). Uma extensa lista de alternativas está disponível na Wikipedia." />
+<p class="caption">RStudio – interface gráfica do usuário e ambiente de desenvolvimento integrado para R (em sua versão para Linux). Uma extensa lista de alternativas está disponível na <a href="https://en.wikipedia.org/wiki/R_(programming_language)#Interfaces">Wikipedia</a>.</p>
+</div>
+<p>Você deve ter notado que o RStudio é composto por quatro grandes painéis retangulares, cada um contendo conteúdo específico. Grosso modo, o painel superior direito mostra informações diversas sobre a atual sessão de trabalho, sendo geralmente pouco utilizado. Já o painel inferior direito serve à visualização de gráficos e páginas de ajuda do R, o que o faz ser bastante utilizado. O painel superior esquerdo é aquele utilizado para a programação em R, ou seja, aquele onde o código fonte utilizado para a análise dos dados é editado. Esse painel é aquele onde creio que ocupamos a maior parte do tempo. Por fim, o painel inferior esquerdo corresponde à interface de linha de comando, CLI, do R. É ali que o código fonte editado no painel superior esquerdo deve ser emitido para que a mágica aconteça. Para isso você pode, no editor, posicionar o cursor sobre a linha de código fonte que deseja que seja emitida e pressionar, simultaneamente, as teclas <code>Ctrl</code> e <code>Enter</code>. Alternativamente, para emitir um bloco de código fonte, você deverá selecioná-lo por completo, e então pressionar as teclas <code>Ctrl</code> e <code>Enter</code>.</p>
+</div>
+<div id="primeiros-passos" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Primeiros passos</h3>
+<p>Façamos algumas operações matemáticas para nos familiarizarmos com o R. Você pode copiar e colar as linhas de código abaixo no console do R.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># As quatro operações matemáticas básicas:</span>
+<span class="dv">2</span> +<span class="st"> </span><span class="dv">3</span> <span class="co"># soma</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span>*<span class="st"> </span><span class="dv">5</span> <span class="co"># multiplicação</span></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">25</span>/<span class="dv">5</span> <span class="co"># divisão </span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> -<span class="dv">3</span> <span class="co"># subtração</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Três operações matemáticas úteis:</span>
+<span class="dv">2</span>^<span class="dv">2</span>      <span class="co"># Potenciação (ou exponenciação)</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">4</span>)   <span class="co"># Função logarítmica</span></code></pre></div>
+<pre><code>## [1] 1.386294</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">25</span>) <span class="co"># Raiz quadrada</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>Você deve ter notado que que os símbolos utilizados (<code>+</code>, <code>*</code>, <code>/</code> e <code>-</code>) são os mesmos encontrados em qualquer calculadora científica. São também os mesmos utilizados nas operações matemáticas de qualquer planilha eletrônica de edição de dados. Isso significa que podemos deduzir algumas coisas sobre o funcionamento do R a partir do que conhecemos de outros <em>softwares</em> dedicados à análise e manipulação de dados. Você também deve ter observado que o espaçamento entre número e operador matemático não tem qualquer importância do ponto de vista da operação matemática. Contudo, do ponto de vista estético – para facilidade de leitura do código fonte –, costuma-se usar a formatação <code>2 + 3</code> ao invés de <code>2+3</code>.</p>
+<p>Outro detalhe importante nas linhas de código acima é o uso do símbolo <code>#</code> para a inclusão de comentários. Os comentários podem ser incluídos tanto em uma linha própria como após (nunca antes) um comando. A inclusão de comentários no código fonte é fundamental para documentarmos a atividade que estamos realizando a fim de que outros (e nós mesmos, algumas semanas ou meses mais tarde) possamos entender o propósito daquelas linhas de código.</p>
+<p>Finalmente, você deve ter notado que as duas últimas operações matemáticas foram feitas usando uma declaração nominal e dois parênteses, ou seja, <code>log()</code> para a função logarítmica e <code>sqrt()</code> para a raiz quadrada. Na verdade, <code>log()</code> e <code>sqrt()</code> são <strong><em>funções</em></strong> do R, assim como <code>sum()</code> (soma), <code>diff()</code> (diferença), entre outras. Uma função arbitrária chamada <code>fun()</code> sempre é usada da seguinte maneira: <code>fun(x)</code>, onde <code>x</code> é um argumento qualquer (um número, por exemplo) tomado pela função. Por exemplo, uma função bastante conhecida entre nós é aquela da Lei Básica da Ciência do Solo,</p>
+<p><span class="math display">\[solo = f(cl, o, r, p, t, \ldots)\]</span></p>
+<p>onde <span class="math inline">\(cl\)</span> representa o clima, <span class="math inline">\(o\)</span> representa os organismos vivos, incluindo nós seres humanos, <span class="math inline">\(r\)</span> significa relevo, <span class="math inline">\(p\)</span> é o material parental, <span class="math inline">\(t\)</span> representa o tempo e <span class="math inline">\(\ldots\)</span> são fatores não conhecidos ou de limitada relevância. Em R, essa função seria escrita exatamente da seguinte forma: <code>solo(cl, o, r, p, t, ...)</code>. Vejamos mais um exemplo, agora de uma função que aceita vários argumentos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># No RStudio, ponha o cursor sobre o nome da função e pressione &#39;F1&#39; para ver a </span>
+<span class="co"># sua página de ajuda. Lá você verá o nome dos argumentos aceitos pela função </span>
+<span class="co"># &#39;plot()&#39; seguido de uma breve descrição.</span>
+<span class="kw">plot</span>(<span class="dt">x =</span> <span class="dv">25</span>, <span class="dt">y =</span> <span class="dv">25</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Um ponto vermelho&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;y&quot;</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="conceitos-basicos" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Conceitos básicos</h3>
+<p>Passada a primeira impressão, agora precisamos nos familiarizar com alguns conceitos básicos para que possamos entender o R e utilizá-lo com êxito. Conforme destacado acima, o R não é um simples <em>software</em> para análises estatísticas, mas sim um ambiente de programação. E, para isso, precisamos de uma linguagem de programação, ou seja, a linguagem de programação R.</p>
+<p>A gramática da linguagem de programação R possui dois elementos principais: as palavras reservadas e as palavras-chave. As <strong><em>palavras reservadas</em></strong> constituem signos com significado especial para a linguagem de programação, definidas internamente no código fonte, e que não podem ser utilizadas pelo usuário para fins outros que não aqueles especificados internamente pelo <em>software</em> (por exemplo, para identificar objetos e funções – veremos esses conceitos a seguir). Algumas das palavras reservadas do R são <code>if</code>, <code>else</code>, <code>while</code>, <code>TRUE</code> e <code>FALSE</code>. Note que no editor de código fonte do RStudio as palavras reservadas aparecem sempre destacadas em azul – busque pelo termo <em>reserved</em> no painel de ajuda do RStudio (painel inferior direito) para conhecer as palavras reservadas do R.</p>
+<p>As <strong><em>palavras-chave</em></strong> são aquelas utilizadas para definir funções (e objetos, como veremos a seguir). As palavras-chave que definem funções são aquelas que acionam operações matemáticas e lógicas que possibilitam, por exemplo, a realização de uma determinada análise estatística de um determinado conjunto de dados – na verdade, tudo o que “acontece” no R acontece pela ação de uma função. As palavras-chave que definem funções podem já estar definidas na própria linguagem de programação – como <code>log</code>, <code>sqrt</code> e <code>plot</code> nos exemplos acima – ou ser criadas pelo usuário. Isso significa que o usuário pode criar suas próprias funções no R conforme sua necessidade. Vejamos um exemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A palavra-chave &#39;soma&#39; é usada para definir uma função que computa</span>
+<span class="co"># e retorna como resultado `res` a soma de dois valores numéricos.</span>
+<span class="co"># A estrutura de uma função aparece, sempre, entre &#39;{&#39; e &#39;}&#39;.</span>
+soma &lt;-<span class="st"> </span>
+<span class="st">  </span>function (x, y) { 
+    res &lt;-<span class="st"> </span>x +<span class="st"> </span>y
+    <span class="kw">return</span> (res)
+    }
+<span class="kw">soma</span>(<span class="dt">x =</span> <span class="dv">2</span>, <span class="dt">y =</span> <span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>Você deve ter notado que duas palavras reservadas foram usadas na construção da função <code>soma()</code>. São elas: <code>function</code> e <code>return</code>. Além disso, uma segunda palavra-chave foi usada: <code>res</code>. Essa palavra-chave foi usada para definir um objeto que armazena o resultado da operação matemática realizada usando o símbolo <code>+</code>. Assim, na verdade, a função <code>soma()</code> não retorna o resultado da operação matemática, mas sim um objeto que armazena o seu resultado. Grosso modo, um <strong><em>objeto</em></strong> nada mais é do que uma estrutura de dados – como diria John Chambers, tudo o que “existe” no R é um objeto. Essas estruturas de dados são vetores, matrizes, listas e outras estruturas de dados inseridas ou criadas pelo próprio usuário ou produzidas como resultado dos diversos procedimentos analíticos. Vejamos alguns exemplos para nos familiarizamos com o conceito de objeto.</p>
+<p>Imagine dois vetores de dados <span class="math inline">\(x = [1, 2, 3, 4, 5]\)</span> e <span class="math inline">\(y = [2, 4, 3, 5, 7]\)</span>. Esses vetores são inseridos no R e nomeados, respectivamente, como <code>x</code> e <code>y</code>. Então, <code>x</code> e <code>y</code> passam a ser palavras-chave que identificam dois objetos, ou seja, uma estrutura de dados, nesse caso, vetores. Ao emitirmos uma chamada dos objetos <code>x</code> e <code>y</code>, o R retorna os respectivos valores neles armazenados:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Definindo dois objetos vetoriais</span>
+<span class="co"># Note que quando criamos uma sequência ordenada de valores podemos </span>
+<span class="co"># simplesmente usar o símbolo &#39;:&#39; entre o menor e o maior valor da </span>
+<span class="co"># sequência ao invés de declarar todos os seus valores.</span>
+x &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
+y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>)
+x</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y</code></pre></div>
+<pre><code>## [1] 2 4 3 5 7</code></pre>
+<p>Suponha agora que estamos interessados na construção de um modelo de regressão linear, para a qual usamos a função <code>lm()</code> (do inglês <em>linear model</em>), do vetor <span class="math inline">\(y\)</span> em função do vetor <span class="math inline">\(x\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calibração de um modelo de regressão linear</span>
+<span class="co"># Note que é possível usar simbolos como &#39;.&#39; e &#39;_&#39; na construção de </span>
+<span class="co"># uma palavra-chave identificadora de objeto (ou função).</span>
+meu.modelo_linear &lt;-<span class="st"> </span><span class="kw">lm</span>(y ~<span class="st"> </span>x)
+meu.modelo_linear</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Coefficients:
+## (Intercept)            x  
+##         0.9          1.1</code></pre>
+<p>Nesse exemplo, o objeto identificado pela palavra-chave <code>meu.modelo_linear</code> constitui uma estrutura de dados que contém todas as especificações do modelo de regressão linear de <span class="math inline">\(y\)</span> em função de <span class="math inline">\(x\)</span>. Ao emitirmos uma chamada ao objeto <code>meu.modelo_linear</code> o R retorna os coeficientes do modelo de regressão linear calibrado. Se você quiser conhecer mais sobre a estrutura do objeto <code>meu.modelo_linear</code>, use o seguinte comando: <code>str(meu.modelo_linear)</code>. Como sugestão, use também os comandos <code>anova(meu.modelo_linear)</code>, <code>summary(meu.modelo_linear)</code> e <code>plot(meu.modelo_linear)</code>.</p>
+<p>Você deve ter notado nos exemplos acima que a atribuição de uma palavra-chave à um objeto ou à uma função está sempre atrelada ao uso do símbolo <code>&lt;-</code>. Por exemplo, <code>x &lt;- 1:5</code> atribui a palavra-chave <code>x</code> ao objeto de estrutura vetorial contendo valores numéricos de 1 até 5. A atribuição também pode ser feita usando o símbolo <code>=</code>. Contudo, como <code>=</code> também pode ser usado em contextos outros que não a atribuição de palavras-chave, o uso de <code>&lt;-</code> costuma ser preferido.</p>
+</div>
+<div id="os-pacotes" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> Os pacotes</h3>
+<p>A instalação básica do R oferece uma série de ferramentas para análises estatísticas e gráficas. Essas ferramentas são organizadas em pacotes. Um <strong><em>pacote</em></strong> constitui uma coleção de arquivos e diretórios que contém as regras sintáticas e semânticas que definem determinadas operações matemáticas e lógicas. Cada pacote possui um nome específico e ficam armazenados no diretório de instalação do R. São exemplos os pacotes <code>base</code> e <code>stats</code>.</p>
+<p>Conforme dito acima, o R oferece uma infinidade de ferramentas para análises estatísticas e gráficas desenvolvidas por cientistas ao redor de todo o mundo. Contudo, essas ferramentas não estão disponíveis na instalação básica do R. Para ter acesso a essas ferramentas você precisa instalar novos pacotes, ou seja, novas coleções de arquivos e diretórios que contém regras sintáticas e semânticas que definem operações matemáticas e lógicas. No caso da análise de dados espaciais (geográficos), o pacote mais importante é o <code>sp</code>. Para análises geoestatísticas temos, entre outros, os pacotes <code>gstat</code> e <code>geoR</code>. Já os pacotes <code>spcosa</code> e <code>spsann</code> prestam-se à amostragem espacial. A seguir você tem uma visão da lista de pacotes disponíveis para o R.</p>
+<iframe src="https://cloud.r-project.org/web/packages/available_packages_by_name.html" width="672" height="400px">
+</iframe>
+<p>Existem duas maneiras principais para instalar um novo pacote. Primeiro, você pode ir até o painel inferior direito do RStudio e escolher <code>Packages &gt; Install</code>. Na caixa de diálogo que aparecerá, você insere o nome do pacote que quiser instalar – você também pode inserir o nome de vários pacotes separados por um espaço. Definido o pacote, basta pressionar <code>Install</code>. A outra maneira é usando uma linha de comando como segue:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Instalando novos pacotes no R.</span>
+<span class="co"># Procure na ajuda da função &#39;install.packages&#39; pelo significado</span>
+<span class="co"># do argumento &#39;dependencies&#39;.</span>
+<span class="kw">install.packages</span>(
+  <span class="kw">c</span>(<span class="st">&quot;sp&quot;</span>, <span class="st">&quot;raster&quot;</span>, <span class="st">&quot;rgdal&quot;</span>, <span class="st">&quot;pedometrics&quot;</span>, <span class="st">&quot;randomForest&quot;</span>, <span class="st">&quot;rsaga&quot;</span>), <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>Pronto! Agora você terá a sua disposição também as funcionalidades incluídas nesses pacotes.</p>
+</div>
+<div id="lembrete-final" class="section level3">
+<h3><span class="header-section-number">5.2.5</span> Lembrete final</h3>
+<p>Conforme vimos acima, todas as funcionalidades do R são acionadas pelo uso de comandos de texto e símbolos (matemáticos ou não). A maioria desses comandos e símbolos já estão definidos na linguagem do R e, por isso, quando utilizados, devem ser inseridos de maneira correta para que sejam efetivamente reconhecidos. Assim, é importante ter muito cuidado durante a edição do código fonte. Tome cuidado, por exemplo, com a sensibilidade do R ao uso de letras maiúsculas e minúsculas. E evite, sempre, o uso de acentuação e cedilha em palavras-chave para nomear objetos e funções.</p>
+<p>Se você emitir um comando e o mesmo estiver sintaticamente incompleto, o console mostrará o símbolo <code>+</code>, indicando que há algo faltando. Note que esse aviso não é uma mensagem de erro, ou seja, não há necessidade de reescrever o comando, mas apenas completar o que falta. Mas se o comando possuir erros sintáticos, os mesmos serão identificados pelo RStudio ainda no editor do código fonte, mostrando um símbolo vermelho ao lado da linha na qual é mais provável que o erro se encontra.</p>
+<p>Como o domínio do uso do R depende da memorização, pelo menos parcial, dos nomes das funções e seus argumentos, sugiro que você sempre tenha à mão algum cartão de referência. Abaixo você pode encontrar quatro deles produzidos por diferentes usuários do R:</p>
+<ul>
+<li><a href="http://www.psych.upenn.edu/~baron/refcard.pdf">Jonathan Baron</a></li>
+<li><a href="https://cloud.r-project.org/doc/contrib/Short-refcard.pdf">Tom Short</a></li>
+<li><a href="https://cran.r-project.org/doc/contrib/Ricci-refcard-regression.pdf">Vito Ricci</a></li>
+<li><a href="https://cran.r-project.org/doc/contrib/YanchangZhao-refcard-data-mining.pdf">Yanchang Zhao</a></li>
+</ul>
+</div>
+</div>
+<div id="qgis" class="section level2">
+<h2><span class="header-section-number">5.3</span> QGIS</h2>
+<p><a href="http://www.qgis.org/" class="uri">http://www.qgis.org/</a></p>
+</div>
+<div id="saga-gis" class="section level2">
+<h2><span class="header-section-number">5.4</span> SAGA GIS</h2>
+<p><a href="http://www.saga-gis.org/" class="uri">http://www.saga-gis.org/</a></p>
+</div>
+<div id="grass-gis" class="section level2">
+<h2><span class="header-section-number">5.5</span> GRASS GIS</h2>
+<p><a href="https://grass.osgeo.org/" class="uri">https://grass.osgeo.org/</a></p>
+</div>
+<div id="gdalogr" class="section level2">
+<h2><span class="header-section-number">5.6</span> GDAL/OGR</h2>
+<p><a href="http://www.gdal.org/" class="uri">http://www.gdal.org/</a></p>
+<!-- # Gestão de Dados -->
+
+<!-- # PARTE II -- INFRAESTRUTURA TECNOLÓGICA {-} -->
+<!-- # Hardware -->
+<!-- # Software -->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hardware.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gestao-de-dados.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/021-infraestrutura.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"code_folding": "hide"
+});
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62786300-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
