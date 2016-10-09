@@ -25,9 +25,25 @@ usada para obter observações para a calibração dos modelos preditivos.
 Português: ...<br>
 Inglês: *simple random sampling*.
 
-```{r, echo=FALSE}
+A principal característica da amostragem aleatória simples (AAS) é que todos os locais amostrais são 
+selecionados com exatamente a mesma probabilidade de inclusão e de maneira completamente independente uns dos
+outros. Assim sendo, o único atributo desse tipo de delineamento amostral que precisa ser definido de antemão
+é o tamanho da amostra $n$.
+
+A figura abaixo mostra uma realização de AAS na área adjascente ao Rio Meuse. Três características são
+marcantes: 
+
+1. A irregularidade na distribuição espacial dos locais amostrais;
+2. O forte agrupamento de alguns locais amostrais;
+3. A presença de amplos espaços vazios entre locais amostrais.
+
+Essas três características são muito comuns na AAS. Isso significa que a AAS não se presta à obtenção de
+amostras espacialmente representativas de uma área de estudo. Portanto, não use ASS se uma cobertura
+geográfica homogênea for seu objetivo.
+
+```{r}
 main <- "Amostra aleatória simples"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 set.seed(2001)
 pts <- meuse.grid[sampling::srswr(15, length(meuse.grid)) == 1, ]
 set.seed(2001)
@@ -45,9 +61,9 @@ legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 Português: ...<br>
 Inglês: *stratified simple random sampling*.
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra aleatória estratificada simples"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 n <- round(15 * summary(meuse.grid$soil) / length(meuse.grid))
 set.seed(2001)
 pts <- sampling::strata(
@@ -70,9 +86,9 @@ Português: ...<br>
 Inglês: *systematic random sampling*, *centric systematic random sampling*, 
 *aligned systematic random sampling*, *nonaligned systematic random sampling*.
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra aleatória sistemática (malha quadrada)"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 set.seed(2001)
 pts <- sp::spsample(meuse.grid, n = 15, type = "regular")
 points(pts, pch = 21, cex = 0.75)
@@ -84,9 +100,9 @@ legend(176100, 332400, legend = "Amostras (1984)", pch = 20, bty = "n")
 ```
 
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra aleatória sistemática (malha desalinhada)"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 set.seed(2001)
 pts <- sp::spsample(meuse.grid, n = 15, type = "nonaligned")
 points(pts, pch = 21, cex = 0.75)
@@ -101,9 +117,9 @@ legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 Português: ...<br>
 Inglês: *cluster random sampling*, *two-stage random sampling*, *multistage random sampling*.
 
-```{r, echo=FALSE}
+```{r}
 main <- "Amostra aleatória em conglomerados (dois estágios)"
-<<meuseRiverPlot>>
+<<plotMeuseRiver>>
 set.seed(2001)
 pts <- sp::spsample(meuse.grid, n = 15, type = "clustered", nclusters = 6)
 points(pts, pch = 21, cex = 0.75)
