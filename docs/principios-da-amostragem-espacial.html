@@ -25,7 +25,7 @@
 
 
   
-<meta name="date" content="2016-10-08">
+<meta name="date" content="2016-10-09">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -107,6 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li><a href="./">Pedologia Quantitativa</a></li>
+<li><a href="https://www.researchgate.net/profile/Alessandro_Samuel-Rosa">Alessandro Samuel-Rosa</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
@@ -147,6 +148,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="parte-iii-amostragem-espacial.html"><a href="parte-iii-amostragem-espacial.html"><i class="fa fa-check"></i>PARTE III – AMOSTRAGEM ESPACIAL</a></li>
 <li class="chapter" data-level="7" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html"><i class="fa fa-check"></i><b>7</b> Princípios da Amostragem Espacial</a><ul>
 <li class="chapter" data-level="7.1" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html#introducao-6"><i class="fa fa-check"></i><b>7.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.2" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html#exemplos"><i class="fa fa-check"></i><b>7.2</b> Exemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html"><i class="fa fa-check"></i><b>8</b> Amostragem Probabilística</a><ul>
 <li class="chapter" data-level="8.1" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#introducao-7"><i class="fa fa-check"></i><b>8.1</b> Introdução</a></li>
@@ -161,6 +163,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.3" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-conveniente"><i class="fa fa-check"></i><b>9.3</b> Amostragem conveniente</a></li>
 <li class="chapter" data-level="9.4" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-intencional"><i class="fa fa-check"></i><b>9.4</b> Amostragem intencional</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-sistematica"><i class="fa fa-check"></i><b>9.4.1</b> Amostragem sistemática</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#otimizacao-amostral"><i class="fa fa-check"></i><b>9.5</b> Otimização amostral</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#estimativa-de-tendencias"><i class="fa fa-check"></i><b>9.5.1</b> Estimativa de tendências</a></li>
+<li class="chapter" data-level="9.5.2" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#estimativa-de-variogramas"><i class="fa fa-check"></i><b>9.5.2</b> Estimativa de variogramas</a></li>
+<li class="chapter" data-level="9.5.3" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#interpolacao-espacial"><i class="fa fa-check"></i><b>9.5.3</b> Interpolação espacial</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="parte-iv-covariaveis-ambientais.html"><a href="parte-iv-covariaveis-ambientais.html"><i class="fa fa-check"></i>PARTE IV – COVARIÁVEIS AMBIENTAIS</a></li>
@@ -256,6 +263,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>probabilística, e</li>
 <li>não-probabilística.</li>
 </ul>
+</div>
+<div id="exemplos" class="section level2">
+<h2><span class="header-section-number">7.2</span> Exemplos</h2>
+<p>Ao longo dos capítulos sobre amostragem, você verá exemplos de cada tipo de amostragem implementados no R usando o conjunto de dados do Rio Meuse.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(meuse.grid, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
+sp::<span class="kw">gridded</span>(meuse.grid) &lt;-<span class="st"> </span><span class="er">~</span><span class="st"> </span>x +<span class="st"> </span>y
+sp::<span class="kw">proj4string</span>(meuse.grid) &lt;-<span class="st"> </span>sp::<span class="kw">CRS</span>(<span class="st">&quot;+init=epsg:28992&quot;</span>)
+<span class="kw">data</span>(meuse.riv, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
+main &lt;-<span class="st"> &quot;Conjunto de dados do Rio Meuse&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(
+  meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">main =</span> main,
+  <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">polygon</span>(meuse.riv, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="dt">border =</span> <span class="st">&quot;lightgray&quot;</span>)
+<span class="kw">image</span>(
+  meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
+<span class="kw">legend</span>(
+  <span class="st">&quot;topleft&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">fill =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>),
+  <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Solo calcário&quot;</span>, <span class="st">&quot;Solo não-calcário&quot;</span>, <span class="st">&quot;Solo vermelho&quot;</span>),
+  <span class="dt">border =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)
+<span class="kw">text</span>(<span class="dv">179050</span>, <span class="dv">331200</span>, <span class="st">&quot;Rio Meuse&quot;</span>, <span class="dt">srt =</span> <span class="dv">50</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/plotMeuseRiver-1.png" width="672" /></p>
 <!-- # Amostragem Probabilística -->
 <!-- # Amostragem Não-Probabilística -->
 
@@ -292,7 +320,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "sans",
+"family": "serif",
 "size": 2
 },
 "edit": {
@@ -302,7 +330,8 @@ gitbook.start({
 "download": null,
 "toc": {
 "collapse": "subsection"
-}
+},
+"code_folding": "hide"
 });
 });
 </script>

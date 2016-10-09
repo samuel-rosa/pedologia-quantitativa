@@ -25,7 +25,7 @@
 
 
   
-<meta name="date" content="2016-10-08">
+<meta name="date" content="2016-10-09">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -107,6 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li><a href="./">Pedologia Quantitativa</a></li>
+<li><a href="https://www.researchgate.net/profile/Alessandro_Samuel-Rosa">Alessandro Samuel-Rosa</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
@@ -147,6 +148,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="parte-iii-amostragem-espacial.html"><a href="parte-iii-amostragem-espacial.html"><i class="fa fa-check"></i>PARTE III – AMOSTRAGEM ESPACIAL</a></li>
 <li class="chapter" data-level="7" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html"><i class="fa fa-check"></i><b>7</b> Princípios da Amostragem Espacial</a><ul>
 <li class="chapter" data-level="7.1" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html#introducao-6"><i class="fa fa-check"></i><b>7.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.2" data-path="principios-da-amostragem-espacial.html"><a href="principios-da-amostragem-espacial.html#exemplos"><i class="fa fa-check"></i><b>7.2</b> Exemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html"><i class="fa fa-check"></i><b>8</b> Amostragem Probabilística</a><ul>
 <li class="chapter" data-level="8.1" data-path="amostragem-probabilistica.html"><a href="amostragem-probabilistica.html#introducao-7"><i class="fa fa-check"></i><b>8.1</b> Introdução</a></li>
@@ -161,6 +163,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.3" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-conveniente"><i class="fa fa-check"></i><b>9.3</b> Amostragem conveniente</a></li>
 <li class="chapter" data-level="9.4" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-intencional"><i class="fa fa-check"></i><b>9.4</b> Amostragem intencional</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#amostragem-sistematica"><i class="fa fa-check"></i><b>9.4.1</b> Amostragem sistemática</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#otimizacao-amostral"><i class="fa fa-check"></i><b>9.5</b> Otimização amostral</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#estimativa-de-tendencias"><i class="fa fa-check"></i><b>9.5.1</b> Estimativa de tendências</a></li>
+<li class="chapter" data-level="9.5.2" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#estimativa-de-variogramas"><i class="fa fa-check"></i><b>9.5.2</b> Estimativa de variogramas</a></li>
+<li class="chapter" data-level="9.5.3" data-path="amostragem-nao-probabilistica.html"><a href="amostragem-nao-probabilistica.html#interpolacao-espacial"><i class="fa fa-check"></i><b>9.5.3</b> Interpolação espacial</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="parte-iv-covariaveis-ambientais.html"><a href="parte-iv-covariaveis-ambientais.html"><i class="fa fa-check"></i>PARTE IV – COVARIÁVEIS AMBIENTAIS</a></li>
@@ -250,10 +257,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">8.1</span> Introdução</h2>
 <p>A característica fundamental da amostragem probabilística é que a chance de um determinado local ser amostrado (probabilidade de inclusão) é conhecida e maior do que zero. Em outras palavras, todo e qualquer local possui alguma chance de ser amostrado, mesmo que alguns tenham maior chance do que outros. Um local que não pode ser amostrado tem probabilidade de inclusão igual a zero.</p>
 <p>A amostragem probabilística é muito utilizada em experimentos controlados, como aqueles desenvolvidos em campos experimentais, casas de vegetação e laboratórios. No caso da modelagem espacial do solo, a amostragem probabilística costuma ser usada para a validação das predições espaciais. Entretanto, ela também pode ser usada para obter observações para a calibração dos modelos preditivos.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(meuse.grid, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
-sp::<span class="kw">gridded</span>(meuse.grid) &lt;-<span class="st"> </span><span class="er">~</span><span class="st"> </span>x +<span class="st"> </span>y
-sp::<span class="kw">proj4string</span>(meuse.grid) &lt;-<span class="st"> </span>sp::<span class="kw">CRS</span>(<span class="st">&quot;+init=epsg:28992&quot;</span>)
-<span class="kw">data</span>(meuse.riv, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
+</div>
+<div id="amostragem-aleatoria-simples" class="section level2">
+<h2><span class="header-section-number">8.2</span> Amostragem aleatória simples</h2>
+<p><strong>Outros nomes</strong>:<br> Português: …<br> Inglês: <em>simple random sampling</em>.</p>
+<p>A principal característica da amostragem aleatória simples (AAS) é que todos os locais amostrais são selecionados com exatamente a mesma probabilidade de inclusão e de maneira completamente independente uns dos outros. Assim sendo, o único atributo desse tipo de delineamento amostral que precisa ser definido de antemão é o tamanho da amostra <span class="math inline">\(n\)</span>.</p>
+<p>A figura abaixo mostra uma realização de AAS na área adjascente ao Rio Meuse. Três características são marcantes:</p>
+<ol style="list-style-type: decimal">
+<li>A irregularidade na distribuição espacial dos locais amostrais;</li>
+<li>O forte agrupamento de alguns locais amostrais;</li>
+<li>A presença de amplos espaços vazios entre locais amostrais.</li>
+</ol>
+<p>Essas três características são muito comuns na AAS. Isso significa que a AAS não se presta à obtenção de amostras espacialmente representativas de uma área de estudo. Portanto, não use ASS se uma cobertura geográfica homogênea for seu objetivo.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">main &lt;-<span class="st"> &quot;Amostra aleatória simples&quot;</span>
 <span class="kw">plot</span>(
   meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">main =</span> main,
   <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
@@ -264,51 +280,113 @@ sp::<span class="kw">proj4string</span>(meuse.grid) &lt;-<span class="st"> </spa
   <span class="st">&quot;topleft&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">fill =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>),
   <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Solo calcário&quot;</span>, <span class="st">&quot;Solo não-calcário&quot;</span>, <span class="st">&quot;Solo vermelho&quot;</span>),
   <span class="dt">border =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)
-<span class="kw">text</span>(<span class="dv">179050</span>, <span class="dv">331200</span>, <span class="st">&quot;Rio Meuse&quot;</span>, <span class="dt">srt =</span> <span class="dv">50</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/meuseRiverPlot-1.png" width="672" /></p>
-</div>
-<div id="amostragem-aleatoria-simples" class="section level2">
-<h2><span class="header-section-number">8.2</span> Amostragem aleatória simples</h2>
-<p>Inglês: <em>simple random sampling</em>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(
-  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;random&quot;</span>), 
-  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<span class="kw">text</span>(<span class="dv">179050</span>, <span class="dv">331200</span>, <span class="st">&quot;Rio Meuse&quot;</span>, <span class="dt">srt =</span> <span class="dv">50</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+pts &lt;-<span class="st"> </span>meuse.grid[sampling::<span class="kw">srswr</span>(<span class="dv">15</span>, <span class="kw">length</span>(meuse.grid)) ==<span class="st"> </span><span class="dv">1</span>, ]
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+pts@coords &lt;-<span class="st"> </span>
+<span class="st">  </span>pts@coords +<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="kw">prod</span>(<span class="kw">dim</span>(pts@coords)), <span class="dt">min =</span> -<span class="fl">0.5</span>, <span class="dt">max =</span> <span class="fl">0.5</span>), <span class="dt">ncol =</span> <span class="dv">2</span>) *<span class="st"> </span>
+<span class="st">  </span>meuse.grid@grid@cellsize
+<span class="kw">points</span>(pts, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
+leg &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;Amostras (n = &quot;</span>, <span class="kw">length</span>(pts), <span class="st">&quot;)&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)
+<span class="kw">legend</span>(<span class="dv">176100</span>, <span class="dv">332750</span>, <span class="dt">legend =</span> leg, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="amostragem-aleatoria-estratificada-simples" class="section level2">
 <h2><span class="header-section-number">8.3</span> Amostragem aleatória estratificada simples</h2>
-<p>Inglês: <em>stratified simple random sampling</em>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(
-  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;stratified&quot;</span>), 
-  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><strong>Outros nomes</strong>:<br> Português: …<br> Inglês: <em>stratified simple random sampling</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">main &lt;-<span class="st"> &quot;Amostra aleatória estratificada simples&quot;</span>
+<span class="kw">plot</span>(
+  meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">main =</span> main,
+  <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">polygon</span>(meuse.riv, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="dt">border =</span> <span class="st">&quot;lightgray&quot;</span>)
+<span class="kw">image</span>(
+  meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
+<span class="kw">legend</span>(
+  <span class="st">&quot;topleft&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">fill =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>),
+  <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Solo calcário&quot;</span>, <span class="st">&quot;Solo não-calcário&quot;</span>, <span class="st">&quot;Solo vermelho&quot;</span>),
+  <span class="dt">border =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)
+<span class="kw">text</span>(<span class="dv">179050</span>, <span class="dv">331200</span>, <span class="st">&quot;Rio Meuse&quot;</span>, <span class="dt">srt =</span> <span class="dv">50</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)
+n &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="dv">15</span> *<span class="st"> </span><span class="kw">summary</span>(meuse.grid$soil) /<span class="st"> </span><span class="kw">length</span>(meuse.grid))
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+pts &lt;-<span class="st"> </span>sampling::<span class="kw">strata</span>(
+  meuse.grid[<span class="kw">order</span>(meuse.grid$soil), ], <span class="dt">stratanames =</span> <span class="st">&quot;soil&quot;</span>, <span class="dt">size =</span> n, 
+  <span class="dt">method =</span> <span class="st">&quot;srswr&quot;</span>)$ID_unit
+pts &lt;-<span class="st"> </span>meuse.grid[<span class="kw">order</span>(meuse.grid$soil), ][pts, ]
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+pts@coords &lt;-<span class="st"> </span>pts@coords +<span class="st"> </span>
+<span class="st">  </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="kw">prod</span>(<span class="kw">dim</span>(pts@coords)), <span class="dt">min =</span> -<span class="fl">0.5</span>, <span class="dt">max =</span> <span class="fl">0.5</span>), <span class="dt">ncol =</span> <span class="dv">2</span>) *<span class="st"> </span>
+<span class="st">  </span>meuse.grid@grid@cellsize
+<span class="kw">points</span>(pts, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
+leg &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;Amostras (n = &quot;</span>, <span class="kw">length</span>(pts), <span class="st">&quot;)&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)
+<span class="kw">legend</span>(<span class="dv">176100</span>, <span class="dv">332750</span>, <span class="dt">legend =</span> leg, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="amostragem-aleatoria-sistematica" class="section level2">
 <h2><span class="header-section-number">8.4</span> Amostragem aleatória sistemática</h2>
-<p>Inglês: <em>systematic random sampling</em>, <em>centric systematic random sampling</em>, <em>aligned systematic random sampling</em>, <em>nonaligned systematic random sampling</em>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(
-  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>), 
-  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
+<p><strong>Outros nomes</strong>:<br> Português: …<br> Inglês: <em>systematic random sampling</em>, <em>centric systematic random sampling</em>, <em>aligned systematic random sampling</em>, <em>nonaligned systematic random sampling</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">main &lt;-<span class="st"> &quot;Amostra aleatória sistemática (malha quadrada)&quot;</span>
+<span class="kw">plot</span>(
+  meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">main =</span> main,
+  <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">polygon</span>(meuse.riv, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="dt">border =</span> <span class="st">&quot;lightgray&quot;</span>)
+<span class="kw">image</span>(
+  meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
+<span class="kw">legend</span>(
+  <span class="st">&quot;topleft&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">fill =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>),
+  <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Solo calcário&quot;</span>, <span class="st">&quot;Solo não-calcário&quot;</span>, <span class="st">&quot;Solo vermelho&quot;</span>),
+  <span class="dt">border =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)
+<span class="kw">text</span>(<span class="dv">179050</span>, <span class="dv">331200</span>, <span class="st">&quot;Rio Meuse&quot;</span>, <span class="dt">srt =</span> <span class="dv">50</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+pts &lt;-<span class="st"> </span>sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>)
+<span class="kw">points</span>(pts, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
 <span class="kw">set.seed</span>(<span class="dv">1984</span>)
-<span class="kw">points</span>(
-  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>), 
-  <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(
-  sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;nonaligned&quot;</span>), 
-  <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;regular&quot;</span>), <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
+<span class="kw">polygon</span>(pts@coords[<span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">4</span>), ])
+<span class="kw">legend</span>(<span class="dv">176100</span>, <span class="dv">332750</span>, <span class="dt">legend =</span> <span class="st">&quot;Amostras (2001)&quot;</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)
+<span class="kw">legend</span>(<span class="dv">176100</span>, <span class="dv">332400</span>, <span class="dt">legend =</span> <span class="st">&quot;Amostras (1984)&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">main &lt;-<span class="st"> &quot;Amostra aleatória sistemática (malha desalinhada)&quot;</span>
+<span class="kw">plot</span>(
+  meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">main =</span> main,
+  <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">polygon</span>(meuse.riv, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="dt">border =</span> <span class="st">&quot;lightgray&quot;</span>)
+<span class="kw">image</span>(
+  meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
+<span class="kw">legend</span>(
+  <span class="st">&quot;topleft&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">fill =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>),
+  <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Solo calcário&quot;</span>, <span class="st">&quot;Solo não-calcário&quot;</span>, <span class="st">&quot;Solo vermelho&quot;</span>),
+  <span class="dt">border =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)
+<span class="kw">text</span>(<span class="dv">179050</span>, <span class="dv">331200</span>, <span class="st">&quot;Rio Meuse&quot;</span>, <span class="dt">srt =</span> <span class="dv">50</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+pts &lt;-<span class="st"> </span>sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;nonaligned&quot;</span>)
+<span class="kw">points</span>(pts, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
+<span class="kw">polygon</span>(pts@coords[<span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">4</span>), ])
+leg &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;Amostras (n = &quot;</span>, <span class="kw">length</span>(pts), <span class="st">&quot;)&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)
+<span class="kw">legend</span>(<span class="dv">176100</span>, <span class="dv">332750</span>, <span class="dt">legend =</span> leg, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="amostragem-aleatoria-em-conglomerados" class="section level2">
 <h2><span class="header-section-number">8.5</span> Amostragem aleatória em conglomerados</h2>
-<p>Inglês: <em>cluster random sampling</em>, <em>two-stage random sampling</em>, <em>multistage random sampling</em>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2001</span>)
-<span class="kw">points</span>(sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;clustered&quot;</span>, <span class="dt">nclusters =</span> <span class="dv">6</span>), <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><strong>Outros nomes</strong>:<br> Português: …<br> Inglês: <em>cluster random sampling</em>, <em>two-stage random sampling</em>, <em>multistage random sampling</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">main &lt;-<span class="st"> &quot;Amostra aleatória em conglomerados (dois estágios)&quot;</span>
+<span class="kw">plot</span>(
+  meuse.grid@coords, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">main =</span> main,
+  <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">polygon</span>(meuse.riv, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="dt">border =</span> <span class="st">&quot;lightgray&quot;</span>)
+<span class="kw">image</span>(
+  meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>)
+<span class="kw">legend</span>(
+  <span class="st">&quot;topleft&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">fill =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>),
+  <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Solo calcário&quot;</span>, <span class="st">&quot;Solo não-calcário&quot;</span>, <span class="st">&quot;Solo vermelho&quot;</span>),
+  <span class="dt">border =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>), <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)
+<span class="kw">text</span>(<span class="dv">179050</span>, <span class="dv">331200</span>, <span class="st">&quot;Rio Meuse&quot;</span>, <span class="dt">srt =</span> <span class="dv">50</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+pts &lt;-<span class="st"> </span>sp::<span class="kw">spsample</span>(meuse.grid, <span class="dt">n =</span> <span class="dv">15</span>, <span class="dt">type =</span> <span class="st">&quot;clustered&quot;</span>, <span class="dt">nclusters =</span> <span class="dv">6</span>)
+<span class="kw">points</span>(pts, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>)
+leg &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;Amostras (n = &quot;</span>, <span class="kw">length</span>(pts), <span class="st">&quot;)&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)
+<span class="kw">legend</span>(<span class="dv">176100</span>, <span class="dv">332750</span>, <span class="dt">legend =</span> leg, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)</code></pre></div>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <!-- # Amostragem Não-Probabilística -->
 
 <!-- # PARTE III -- AMOSTRAGEM ESPACIAL {-} -->
@@ -345,7 +423,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "sans",
+"family": "serif",
 "size": 2
 },
 "edit": {
@@ -355,7 +433,8 @@ gitbook.start({
 "download": null,
 "toc": {
 "collapse": "subsection"
-}
+},
+"code_folding": "hide"
 });
 });
 </script>
