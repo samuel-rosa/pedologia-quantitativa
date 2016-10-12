@@ -25,7 +25,7 @@
 
 
   
-<meta name="date" content="2016-10-09">
+<meta name="date" content="2016-10-12">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -54,6 +54,32 @@ MathJax.Hub.Config({
 
 
 
+<style type="text/css">
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunss.otf');
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunsx.otf');
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunsi.otf');
+    font-style: italic, oblique;
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunbxo.otf');
+    font-weight: bold;
+    font-style: italic, oblique;
+  }
+
+  body {
+    font-family: "Computer Modern", serif;
+  }
+</style>
 
 
 <style type="text/css">
@@ -267,9 +293,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="exemplos" class="section level2">
 <h2><span class="header-section-number">7.2</span> Exemplos</h2>
 <p>Ao longo dos capítulos sobre amostragem, você verá exemplos de cada tipo de amostragem implementados no R usando o conjunto de dados do Rio Meuse.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(meuse.grid, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Carregar malha de predição do conjunto de dados do Rio Meuse e</span>
+<span class="co"># criar objeto espacial definindo as coordenadas e o sistemas de</span>
+<span class="co"># coordenadas de referência (veja mais informações sobre</span>
+<span class="co"># sistemas de coordenadas de referência em http://spatialreference.org/).</span>
+<span class="kw">data</span>(meuse.grid, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
 sp::<span class="kw">gridded</span>(meuse.grid) &lt;-<span class="st"> </span><span class="er">~</span><span class="st"> </span>x +<span class="st"> </span>y
 sp::<span class="kw">proj4string</span>(meuse.grid) &lt;-<span class="st"> </span>sp::<span class="kw">CRS</span>(<span class="st">&quot;+init=epsg:28992&quot;</span>)
+
+<span class="co"># Carregar polígono do Rio Meuse</span>
 <span class="kw">data</span>(meuse.riv, <span class="dt">package =</span> <span class="st">&quot;sp&quot;</span>)
 main &lt;-<span class="st"> &quot;Conjunto de dados do Rio Meuse&quot;</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(
@@ -320,7 +352,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "Computer Modern",
 "size": 2
 },
 "edit": {

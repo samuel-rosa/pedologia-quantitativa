@@ -25,7 +25,7 @@
 
 
   
-<meta name="date" content="2016-10-09">
+<meta name="date" content="2016-10-12">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -54,6 +54,32 @@ MathJax.Hub.Config({
 
 
 
+<style type="text/css">
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunss.otf');
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunsx.otf');
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunsi.otf');
+    font-style: italic, oblique;
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunbxo.otf');
+    font-weight: bold;
+    font-style: italic, oblique;
+  }
+
+  body {
+    font-family: "Computer Modern", serif;
+  }
+</style>
 
 
 <style type="text/css">
@@ -263,7 +289,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>A <strong>reprodutibilidade</strong> é uma característica de um experimento ou estudo. Ela correspondendo ao potencial que um experimento tem de ser reproduzido, tanto pelo mesmo pesquisador como por qualquer outro pesquisador trabalhando independentemente em qualquer lugar do planeta, constituindo um dos principais elementos do ideal científico – veja mais na <a href="https://en.wikipedia.org/wiki/Scientific_method">Wikipedia</a>. Logicamente, o problema da irreprodutibilidade de um estudo é muito mais difícil de superar quando outro pesquisador deseja reproduzir o experimento pedométrico que você conduziu e vice-versa. Em geral, além de uma extensiva descrição do material e dos métodos usados em um estudo pedométrico, a reprodutibilidade só se torna um fato quando o a totalidade do ambiente computacional usado para realizar o estudo está livremente disponível. Grosso modo, isso inclui os dados – veja mais no próximo capítulo <a href="gestao-de-dados.html#gestao-de-dados">Gestão de Dados</a> – e a sequência de comandos emitidos para comunicação com o computador.</p>
 <p>A maneira mais eficiente de registrar a sequência de comandos emitidos para comunicação com o computador durante a realização de uma tarefa pedométrica requer o uso, diretamente, da linguagem do <em>software</em>, ou seja, uma linguagem de programação – veja mais na <a href="https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o">Wikipedia</a>. Nesse caso, nossa comunicação com o computador se dá via uso de uma interface de linha de comando (<a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>, do inglês <em>command-line interface</em>), ou seja, via emissão de comandos sob a forma de sucessivas linhas de texto, as chamadas linhas de comando – veja mais na <a href="https://en.wikipedia.org/wiki/Command-line_interface">Wikipedia</a>. Sendo uma linguagem, toda linguagem de programação possui regras sintáticas e semânticas – uma gramática –, as quais devem ser estritamente respeitadas para que haja, efetivamente, comunicação entre nós e o computador. Dentre os <em>softwares</em> que usam uma interface de linha de comando que veremos neste capítulo, o principal deles é o R.</p>
 <p>Além de potencializarem a reprodutibilidade, uma das grandes vantagens dos <em>softwares</em> que utilizam comandos de texto – ao invés de botões e caixas de diálogo – é o fato de permitirem ao usuário fazer adaptações metodológicas, desenvolver novos métodos e expandir sua caixa de ferramentas analíticas para além daquilo que já estiver implementado no <em>software</em>. Por outro lado, a grande desvantagem desses <em>softwares</em> é a maior dificuldade de aprendizagem do seu uso, geralmente necessitando grandes esforços, os quais são comumente descritos usando a chamada curva de aprendizagem:</p>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Usando alguns <em>softwares</em> tradicionais, populares, você tem conseguido desenvolver estudos bastante interessantes. Contudo, por algum motivo, você decide aprender a usar outro <em>software</em>, um <em>software</em> baseado na emissão de linhas de comando, a fim de aumentar sua produtividade e a qualidade de seus estudos. As primeiras experiências com o novo <em>software</em> serão difíceis e você se sentirá perdido, talvez desesperado. A tentação de abandonar aquele novo <em>software</em> aparecerá logo, e você se sentirá inclinado a voltar a usar apenas as mesmas ferramentas que usava antes. Talvez sua vontade “morra” ao longo do caminho. Contudo, você precisa resistir e acreditar que consegue vencer os perigos do Vale da Morte. Você precisa estar disposto a encarar a íngreme curva de aprendizagem. Depois de passar por tudo isso, sua produtividade (ou capacidade produtiva) deverá ser algumas ordens de magnitude maior do que antes de conhecer aquele novo <em>software</em>.</p>
 <p>Note que a dificuldade na aprendizagem do uso de <em>softwares</em> baseados na emissão de linhas de comando não se deve à uma dificuldade inerente à esses <em>softwares</em>. Na verdade, nossa dificuldade advém, principalmente, do fato de, em geral, sermos introduzidos primeiro, ainda na nossa infância, à <em>softwares</em> que dispõe apenas de interfaces gráficas, com uma porção de ícones e caixas de diálogo – veja, por exemplo, seu computador de bolso.</p>
 <p>Nesse ponto você já deve ter percebido que para desenvolver estudos de pedologia quantitativa será preciso, além de aprender e dominar o uso de diversos softwares, aprender e dominar (pelo menos) uma nova linguagem, um novo sistema de signos. Adianto que, em geral, algumas das regras gramaticais dessas linguagens podem ser deduzida a partir daquilo que já sabemos em função do uso de outros <em>softwares</em> de análise e processamento de dados. Contudo, como qualquer linguagem de programação, existem especificidades, boa parte das quais é preciso conhecer para termos sucesso em seu uso. Além disso, algum conhecimento da língua inglesa costuma ser necessário, haja vista que as linguagens de programação costumam ser construídas com base em palavras da língua inglesa. A ideia aqui é tentar fazer com que sua passagem pelo Vale da Morte seja o menos dolorosa possível.</p>
@@ -329,7 +355,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co"># sua página de ajuda. Lá você verá o nome dos argumentos aceitos pela função </span>
 <span class="co"># &#39;plot()&#39; seguido de uma breve descrição.</span>
 <span class="kw">plot</span>(<span class="dt">x =</span> <span class="dv">25</span>, <span class="dt">y =</span> <span class="dv">25</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Um ponto vermelho&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;y&quot;</span>)</code></pre></div>
-<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="conceitos-basicos" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Conceitos básicos</h3>
@@ -452,7 +478,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "Computer Modern",
 "size": 2
 },
 "edit": {

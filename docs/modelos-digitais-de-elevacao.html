@@ -25,7 +25,7 @@
 
 
   
-<meta name="date" content="2016-10-09">
+<meta name="date" content="2016-10-12">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -54,6 +54,32 @@ MathJax.Hub.Config({
 
 
 
+<style type="text/css">
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunss.otf');
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunsx.otf');
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunsi.otf');
+    font-style: italic, oblique;
+  }
+  @font-face {
+    font-family: "Computer Modern";
+    src: url('/fonts/cmunbxo.otf');
+    font-weight: bold;
+    font-style: italic, oblique;
+  }
+
+  body {
+    font-family: "Computer Modern", serif;
+  }
+</style>
 
 
 <style type="text/css">
@@ -386,8 +412,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Terrain ruggedness index</p>
 <p>Descreve a heterogeneidade (rugosidade) de uma superfície em função do gradiente da elevação entre células vizinhas. A rugosidade do terreno impõe restrições ao fluxo de água de uma célula à outra, fazendo-o estar intimamente relacionado à erosão do solo. Além disso, o índice de rugosidade do terreno costuma ser usado como indicativo de afloramentos rochosos e deslizamentos de massa. Nesses locais o solo é pouco desenvolvido e a proporção das frações mais finas da distribuição do tamanho de partículas costuma ser pouco significativa.</p>
 <p>Índice de rugosidade da superfície: (sinônimo – algum?; inglês – terrain eggedness index; unidade – adimensional): atributo desenvolvido por Riley et al. (1999) que quantifica a heterogeneidade da superfície. Está relacionado aos processos de formação do solo, a geomorfologia e a distribuição da fauna e da flora. O índice é calculado a partir da soma da mudança de elevação entre uma célula e as suas oito células vizinhas.</p>
-<div class="figure"><span id="fig:unnamed-chunk-24"></span>
-<img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-24-1.png" alt="Representação de uma janela de 3 por 3 células de uma superfície de elevação para o cálculo do Índice de Rugosidade da Superfície. Adaptado de Riley et al. (1999)." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-25"></span>
+<img src="pedologia-quantitativa_files/figure-html/unnamed-chunk-25-1.png" alt="Representação de uma janela de 3 por 3 células de uma superfície de elevação para o cálculo do Índice de Rugosidade da Superfície. Adaptado de Riley et al. (1999)." width="672" />
 <p class="caption">
 Figure 11.1: Representação de uma janela de 3 por 3 células de uma superfície de elevação para o cálculo do Índice de Rugosidade da Superfície. Adaptado de Riley et al. (1999).
 </p>
@@ -465,7 +491,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "Computer Modern",
 "size": 2
 },
 "edit": {
