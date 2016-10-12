@@ -14,6 +14,11 @@ link-citations: yes
 github-repo: samuel-rosa/pedologia-quantitativa
 ---
 
+```{r}
+knitr::opts_chunk$set(dev.args = list(bg = 'transparent'))
+```
+
+
 # Prefácio {-}
 
 O planejamento e desenvolvimento deste livro estão (mais ou menos) estruturados em partes, de 
