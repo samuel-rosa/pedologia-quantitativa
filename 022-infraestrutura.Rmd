@@ -63,3 +63,25 @@ Inicie o QGIS e acesse
 
 e navegue até o diretório `projeto`. Nomeie o projeto como `projeto`. Assim como para o
 RStudio, a criação de um projeto no QGIS facilita a organização dos dados.
+
+## Bases de Dados do Solo
+
+### Perfis do Solo
+
+* CENA-USP: Digital soil properties database of the Amazon part from the RADAMBRASIL project
+    + ftp://fapespclima.ccst.inpe.br/lba/ornlworking/carbon_dynamics/CD/CD-208/CD208_RADAMBRASIL_Soils/
+* Esalq-USP: A national soil profile database for Brazil available to international scientists
+    + http://www.esalq.usp.br/gerd/
+* EMBRAPA: Sistema de Informação de Solos Brasileiros
+    + https://www.bdsolos.cnptia.embrapa.br/consulta_publica.html
+* ISRIC: World Soil Information Service (WoSIS)
+    + http://www.isric.org/data/wosis
+* NASA: Large-Scale Biosphere-Atmosphere Experiment in Amazonia
+    + https://daac.ornl.gov/LBA/lba.shtml
+
+### Mapas do Solo 
+
+* EMBRAPA: GeoPortal Digital
+  + http://mapoteca.cnps.embrapa.br/
+* ISRIC: SoilGrids
+  + https://soilgrids.org/
