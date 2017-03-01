@@ -4,8 +4,11 @@
 
 # Regressão Linear
 
-**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
-alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+```{r echo=FALSE}
+source("helpme.R")
+```
+
+`r helpme`
 
 ## Formulação
 
