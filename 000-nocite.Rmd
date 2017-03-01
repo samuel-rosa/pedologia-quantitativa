@@ -38,6 +38,20 @@ nocite: |
   @HairEtAl2010, @HenglEtAl2007a,
   @WebsterEtAl1990,
   
+  # PARTE VI -- MODELAGEM DA VARIAÇÃO ESPACIAL (I)
+
+  # O Componente Determinístico
+
+  # Regressão Linear
+  @DiggleEtAl2007,
+  @Heuvelink1996, @HeuvelinkEtAl2001,
+  @KutnerEtAl2004,
+  @NussbaumEtAl2014,
+  @Papritz2015,
+  
+  # Regressão Logística
+  @Agresti2002
+  
   # PARTE VII -- MODELAGEM DA VARIAÇÃO ESPACIAL (II)
   
   # O Componente Estocástico
