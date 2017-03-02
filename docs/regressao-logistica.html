@@ -25,7 +25,7 @@
 
 
   
-<meta name="date" content="2017-03-01">
+<meta name="date" content="2017-03-02">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -117,7 +117,10 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="11" data-path="analise-de-padroes-pontuais.html"><a href="analise-de-padroes-pontuais.html"><i class="fa fa-check"></i><b>11</b> Análise de Padrões Pontuais</a></li>
 <li class="chapter" data-level="" data-path="parte-vi-modelagem-da-variacao-espacial-i.html"><a href="parte-vi-modelagem-da-variacao-espacial-i.html"><i class="fa fa-check"></i>PARTE VI – MODELAGEM DA VARIAÇÃO ESPACIAL (I)</a></li>
 <li class="chapter" data-level="12" data-path="regressao-linear.html"><a href="regressao-linear.html"><i class="fa fa-check"></i><b>12</b> Regressão Linear</a></li>
-<li class="chapter" data-level="13" data-path="regressao-logistica.html"><a href="regressao-logistica.html"><i class="fa fa-check"></i><b>13</b> Regressão Logística</a></li>
+<li class="chapter" data-level="13" data-path="regressao-logistica.html"><a href="regressao-logistica.html"><i class="fa fa-check"></i><b>13</b> Regressão Logística</a><ul>
+<li class="chapter" data-level="13.1" data-path="regressao-logistica.html"><a href="regressao-logistica.html#introducao"><i class="fa fa-check"></i><b>13.1</b> Introdução</a></li>
+<li class="chapter" data-level="13.2" data-path="regressao-logistica.html"><a href="regressao-logistica.html#a-funcao-logit"><i class="fa fa-check"></i><b>13.2</b> A função logit</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="parte-vii-modelagem-da-variacao-espacial-ii.html"><a href="parte-vii-modelagem-da-variacao-espacial-ii.html"><i class="fa fa-check"></i>PARTE VII – MODELAGEM DA VARIAÇÃO ESPACIAL (II)</a></li>
 <li class="chapter" data-level="14" data-path="geoestatistica-univariada.html"><a href="geoestatistica-univariada.html"><i class="fa fa-check"></i><b>14</b> Geoestatística Univariada</a></li>
 <li class="chapter" data-level="15" data-path="geoestatistica-multivariada.html"><a href="geoestatistica-multivariada.html"><i class="fa fa-check"></i><b>15</b> Geoestatística Multivariada</a></li>
@@ -145,12 +148,26 @@ MathJax.Hub.Config({
 <div id="regressao-logistica" class="section level1">
 <h1><span class="header-section-number">Capítulo 13</span> Regressão Logística</h1>
 <blockquote>
-<p>Este capítulo está em desenvolvimento. Visite a <a href="https://github.com/samuel-rosa/pedologia-quantitativa/issues">página do projeto</a> se tiver alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante! Alessandro Samuel-Rosa</p>
+<p>Este capítulo está em desenvolvimento. Visite a <a href="https://github.com/samuel-rosa/pedologia-quantitativa/issues">página do projeto</a> se tiver alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!</p>
 </blockquote>
-<p>O modelo de regressão logística múltipla quantifica a correlação entre as <span class="math inline">\(p\)</span> covariáveis, qualitativas e/ou quantitativas, e a probabilidade de ocorrência de cada uma das <span class="math inline">\(k\)</span> categorias da variável dependente. Para isso, o modelo de regressão logística múltipla usa como função de ligação a função logit:</p>
+<p>Até agora, este capítulo contou com contribuições na forma de conteúdo intelectual e/ou revisões relevantes das seguintes pessoas:</p>
+<ul>
+<li><a href="http://lattes.cnpq.br/2831196588233643">Elias Mendes Costa</a></li>
+<li><a href="http://lattes.cnpq.br/7882538227876962">Lúcia Helena Cunha dos Anjos</a></li>
+</ul>
+<div id="introducao" class="section level2">
+<h2><span class="header-section-number">13.1</span> Introdução</h2>
+<p>Em diversas situações, estudamos uma propriedade do solo <span class="math inline">\(Y(\boldsymbol{s})\)</span> que consiste numa variável aleatória de natureza categórica com dois ou mais níveis, especificamente, uma variável aleatória binomial, para o caso de dois níveis – <span class="math inline">\(k = 2\)</span> – ou multinomial, quando houverem três ou mais níveis – <span class="math inline">\(k \geq 3\)</span>. Para uma variável aleatória categórica, todas as <span class="math inline">\(k\)</span> categorias constituintes possuem probabilidade de ocorrência positiva em toda a extensão do domínio espacial <span class="math inline">\(\mathscr{D}\)</span>.</p>
+<p>O <em>modelo linear de probabilidade</em> é dado por:</p>
+<p><span class="math display">\[\pi_c(\boldsymbol{s}) = \sum_{j = 0}^{p} \beta_{c,j}\cdot X_{j}(\boldsymbol{s})\]</span></p>
+</div>
+<div id="a-funcao-logit" class="section level2">
+<h2><span class="header-section-number">13.2</span> A função logit</h2>
+<p>O modelo de regressão logística quantifica a correlação entre as <span class="math inline">\(p\)</span> covariáveis, qualitativas e/ou quantitativas, e a probabilidade de ocorrência de cada uma das <span class="math inline">\(k\)</span> categorias da variável dependente. Para isso, o modelo de regressão logística usa como função de ligação a função logit:</p>
 <p><span class="math display">\[\text{logit}_c(\boldsymbol{s}) = \log\frac{\pi_c(\boldsymbol{s})}{\pi_k(\boldsymbol{s})} = \sum_{j = 0}^{p} \beta_{c,j}\cdot X_{j}(\boldsymbol{s})\]</span></p>
 <p>onde <span class="math inline">\(c = 1, \ldots, k – 1\)</span>, <span class="math inline">\(\text{logit}_c(\boldsymbol{s})\)</span> é o logaritmo natural da razão entre a probabilidade <span class="math inline">\(\pi_c(\boldsymbol{s})\)</span> de uma dada observação do solo pertencer à <span class="math inline">\(c\)</span>-ésima categoria, condicionada aos valores das variáveis preditoras <span class="math inline">\(X_{j}(\boldsymbol{s})\)</span>, e a probabilidade <span class="math inline">\(\pi_k(\boldsymbol{s})\)</span> daquela observação do solo pertencer à categoria <span class="math inline">\(k\)</span> tomada como referência. <span class="math inline">\(\beta_{c,j}\)</span> é um vetor com os coeficientes ajustados para cada uma das <span class="math inline">\(p\)</span> variáveis preditoras.</p>
 
+</div>
 </div>
             </section>
 

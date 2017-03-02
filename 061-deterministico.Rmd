@@ -10,8 +10,6 @@ source("helpme.R")
 
 `r helpme`
 
-## Formulação
-
 O modelo de regressão linear múltipla, aplicado a um conjunto de dados observados do solo, $y(\boldsymbol{s})$,
 é formulado da seguinte maneira:
 

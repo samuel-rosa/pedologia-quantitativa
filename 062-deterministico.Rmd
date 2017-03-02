@@ -12,9 +12,29 @@ source("helpme.R")
 
 `r helpme`
 
-O modelo de regressão logística múltipla quantifica a correlação entre as $p$ covariáveis, qualitativas e/ou 
+Até agora, este capítulo contou com contribuições na forma de conteúdo intelectual e/ou revisões relevantes 
+das seguintes pessoas:
+
+* [Elias Mendes Costa](http://lattes.cnpq.br/2831196588233643)
+* [Lúcia Helena Cunha dos Anjos](http://lattes.cnpq.br/7882538227876962)
+
+## Introdução
+
+Em diversas situações, estudamos uma propriedade do solo $Y(\boldsymbol{s})$ que consiste numa variável
+aleatória de natureza categórica com dois ou mais níveis, especificamente, uma variável aleatória binomial, 
+para o caso de dois níveis -- $k = 2$ -- ou multinomial, quando houverem três ou mais níveis -- $k \geq 3$. 
+Para uma variável aleatória categórica, todas as $k$ categorias constituintes possuem probabilidade de 
+ocorrência positiva em toda a extensão do domínio espacial $\mathscr{D}$.
+
+O *modelo linear de probabilidade* é dado por:
+
+$$\pi_c(\boldsymbol{s}) = \sum_{j = 0}^{p} \beta_{c,j}\cdot X_{j}(\boldsymbol{s})$$
+
+## A função logit
+
+O modelo de regressão logística quantifica a correlação entre as $p$ covariáveis, qualitativas e/ou 
 quantitativas, e a probabilidade de ocorrência de cada uma das $k$ categorias da variável dependente. Para 
-isso, o modelo de regressão logística múltipla usa como função de ligação a função logit:
+isso, o modelo de regressão logística usa como função de ligação a função logit:
 
 $$\text{logit}_c(\boldsymbol{s}) = \log\frac{\pi_c(\boldsymbol{s})}{\pi_k(\boldsymbol{s})} = \sum_{j = 0}^{p} \beta_{c,j}\cdot X_{j}(\boldsymbol{s})$$
 
