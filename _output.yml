@@ -4,8 +4,6 @@ bookdown::gitbook:
     after_body: google_analytics.html
   css: style.css
   config:
-    fontsettings:
-      family: "Computer Modern"
     code_folding: hide
     toc:
       before: |
