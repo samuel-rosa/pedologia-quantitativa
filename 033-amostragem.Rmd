@@ -8,6 +8,10 @@
 
 # Otimização de Configurações Amostrais
 
+```{r, echo=FALSE}
+source("r/loadMeuseRiver.R")
+```
+
 ## Estimativa de tendências
 
 ```{r, eval=FALSE}
