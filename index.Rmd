@@ -2,7 +2,7 @@
 title: "Pedologia Quantitativa"
 author: |
   | ALESSANDRO SAMUEL-ROSA
-  | Universidade Federal Rural do Rio de Janeiro
+  | Universidade Federal de Santa Maria
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
