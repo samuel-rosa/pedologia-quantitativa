@@ -72,3 +72,5 @@ text(179050, 331200, "Rio Meuse", srt = 50, cex = 0.7)
 <!-- # Amostragem Probabilística -->
 
 <!-- # Amostragem Não-Probabilística -->
+
+<!-- # Otimização de Configurações Amostrais -->

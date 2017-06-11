@@ -128,3 +128,5 @@ legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 ```
 
 <!-- # Amostragem Não-Probabilística -->
+
+<!-- # Otimização de Configurações Amostrais -->
