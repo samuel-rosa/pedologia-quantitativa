@@ -12,6 +12,8 @@
 source("r/loadMeuseRiver.R")
 ```
 
+## Introdução
+
 ## Estimativa de tendências
 
 ```{r, eval=FALSE}
@@ -29,13 +31,13 @@ covars <- c("soil", "ffreq")
 image(meuse.grid, "soil", axes = TRUE, col = terrain.colors(3))
 image(meuse.grid, "ffreq", axes = TRUE, col = heat.colors(3))
 
-# Somente no espaço de atributos
+# Otimização: somente no espaço de atributos
 set.seed(2001)
 res_dist_att <- spsann::optimDIST(
   points = 15, candi = meuse.grid@coords, covars = meuse.grid@data[, covars],
   schedule = schedule, plotit = TRUE)
 
-# Em ambos os espaços de atributos e geográfico
+# Otimização: em ambos os espaços de atributos e geográfico
 set.seed(2001)
 res_dist_geo <- spsann::optimDIST(
   points = 15, candi = meuse.grid@coords, covars = meuse.grid@data[, covars],
@@ -69,9 +71,8 @@ dev.off()
 
 ```{r, echo=FALSE}
 fig <- paste(
-  'Otimização de configurações amostrais no espaço de atributos (covariáveis) ',
-  'para estimativa de tendências espaciais e o efeito de considerarmos também o ',
-  'espaço geográfico.', sep = "")
+  'Configurações amostrais espaciais otimizadas no espaço de atributos (covariáveis) para estimativa de',
+  'tendências espaciais e o efeito de levar em consideração também o espaço geográfico.', sep = "")
 ```
 
 ![`r fig`](images/optim_dist.png)
@@ -83,28 +84,46 @@ fig <- paste(
 
 # Cronograma de recozimento simulado
 schedule <- spsann::scheduleSPSANN(
-  chains = 1000, initial.temperature = 100, stopping = 100,
+  chains = 1000, initial.temperature = 200, stopping = 100,
   x.max = 1540, y.max = 2060, x.min = 0, y.min = 0, cellsize = 40)
 
-# Otimização
+# Otimização: pontos por classe de distância
 set.seed(1984)
-res_ppl <- spsann::optimPPL(
+res_ppl_points <- spsann::optimPPL(
   points = 15, candi = meuse.grid@coords, schedule = schedule, plotit = TRUE)
+
+# Otimização: pares de pontos por classe de distãncia
+set.seed(1984)
+res_ppl_pairs <- spsann::optimPPL(
+  points = 15, candi = meuse.grid@coords, schedule = schedule, plotit = TRUE, pairs = TRUE)
+
+# Comparar visualmente ambas as configurações #####
 
 # Salvar imagem no formato PNG
 dev.off()
 png("images/optim_ppl.png", width = 480 * 3, height = 480 * 2, res = 150)
+par(mfrow = c(1, 2))
 
-# Tipo de solo
+# Pontos
 image(meuse.grid, "soil", axes = TRUE, col = terrain.colors(3))
-title(xlab = "Longitude (m)", ylab = "Latitude (m)")
-points(res_ppl$points[, 2:3], pch = 21)
+title(xlab = "Longitude (m)", ylab = "Latitude (m)", main = "Pontos por classe de distância")
+points(res_ppl_points$points[, 2:3], pch = 21)
+text(meuse.grid@bbox[1, 1], meuse.grid@bbox[2, 2], labels = "(a)")
+
+# Pares de pontos
+image(meuse.grid, "soil", axes = TRUE, col = terrain.colors(3))
+title(xlab = "Longitude (m)", ylab = "Latitude (m)", main = "Pares por classe de distância")
+points(res_ppl_pairs$points[, 2:3], pch = 21)
+text(meuse.grid@bbox[1, 1], meuse.grid@bbox[2, 2], labels = "(b)")
+
 dev.off()
 ```
 
 ```{r, echo=FALSE}
 fig <- paste(
-  'Otimização de configurações amostrais para estimativa de variogramas.', sep = "")
+  'Configurações amostrais espaciais otimizadas para estimativa de variogramas usando como critério a ',
+  'distribuição do número de (a) pontos e (b) pares de pontos entre sete classes de distãncia, ',
+  'exponencialmente crescentes, entre pares de pontos.', sep = "")
 ```
 
 ![`r fig`](images/optim_ppl.png)
@@ -137,8 +156,8 @@ dev.off()
 
 ```{r, echo=FALSE}
 fig <- paste(
-  'Otimização de configurações amostrais no espaço geográfico ',
-  'para fins de interpolação espacial usando krigagem.', sep = "")
+  'Configuração amostral espacial otimizada no espaço geográfico para fins de interpolação espacial usando',
+  'krigagem.', sep = "")
 ```
 
 ![`r fig`](images/optim_mssd.png)
