@@ -1,0 +1,12 @@
+<!-- # PARTE V -- ANÁLISE EXPLORATÓRIA ESPACIAL -->
+
+<!-- # Tipos de Dados -->
+
+<!-- # Análise de Padrões Pontuais -->
+
+<!-- # Transformação de Dados -->
+
+# Seleção de Covariáveis
+
+**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
