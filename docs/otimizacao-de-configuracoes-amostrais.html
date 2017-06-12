@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="analise-de-padroes-pontuais.html">
-<link rel="next" href="selecao-de-covariaveis.html">
+<link rel="prev" href="amostragem-nao-probabilistica.html">
+<link rel="next" href="parte-iv-covariaveis-ambientais.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -281,9 +281,141 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="transformacao-de-dados" class="section level1">
-<h1><span class="header-section-number">Capítulo 16</span> Transformação de Dados</h1>
-<p><strong>Atenção!</strong> Este capítulo está em fase de <em>planejamento</em>. Visite a <a href="https://github.com/samuel-rosa/pedologia-quantitativa/issues" title="Sugestões e dúvidas">página do projeto</a> se tiver alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!</p>
+<div id="otimizacao-de-configuracoes-amostrais" class="section level1">
+<h1><span class="header-section-number">Capítulo 10</span> Otimização de Configurações Amostrais</h1>
+<div id="introducao-9" class="section level2">
+<h2><span class="header-section-number">10.1</span> Introdução</h2>
+</div>
+<div id="estimativa-de-tendencias" class="section level2">
+<h2><span class="header-section-number">10.2</span> Estimativa de tendências</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Otimização para estimativa de tendências espaciais ####</span>
+
+<span class="co"># Cronograma de recozimento simulado</span>
+schedule &lt;-<span class="st"> </span>spsann::<span class="kw">scheduleSPSANN</span>(
+  <span class="dt">chains =</span> <span class="dv">1000</span>, <span class="dt">initial.temperature =</span> <span class="dv">50</span>, <span class="dt">stopping =</span> <span class="dv">100</span>,
+  <span class="dt">x.max =</span> <span class="dv">1540</span>, <span class="dt">y.max =</span> <span class="dv">2060</span>, <span class="dt">x.min =</span> <span class="dv">0</span>, <span class="dt">y.min =</span> <span class="dv">0</span>, <span class="dt">cellsize =</span> <span class="dv">40</span>)
+
+<span class="co"># Covariáveis espaciais:</span>
+<span class="co"># - soil: tipo de solo (3 categorias)</span>
+<span class="co"># - ffreq: frequência de inundação (3 categorias)</span>
+covars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;soil&quot;</span>, <span class="st">&quot;ffreq&quot;</span>)
+<span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
+<span class="kw">image</span>(meuse.grid, <span class="st">&quot;ffreq&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">heat.colors</span>(<span class="dv">3</span>))
+
+<span class="co"># Otimização: somente no espaço de atributos</span>
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+res_dist_att &lt;-<span class="st"> </span>spsann::<span class="kw">optimDIST</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">covars =</span> meuse.grid@data[, covars],
+  <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># Otimização: em ambos os espaços de atributos e geográfico</span>
+<span class="kw">set.seed</span>(<span class="dv">2001</span>)
+res_dist_geo &lt;-<span class="st"> </span>spsann::<span class="kw">optimDIST</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">covars =</span> meuse.grid@data[, covars],
+  <span class="dt">use.coords =</span> <span class="ot">TRUE</span>, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># Comparar visualmente ambas as configurações #####</span>
+
+<span class="co"># Salvar imagem no formato PNG</span>
+<span class="kw">dev.off</span>()
+<span class="kw">png</span>(<span class="st">&quot;images/optim_dist.png&quot;</span>, <span class="dt">height =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">2</span>, <span class="dt">width =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">3</span>, <span class="dt">res =</span> <span class="dv">150</span>)
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+
+<span class="co"># Legenda</span>
+leg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sem coordenadas&quot;</span>, <span class="st">&quot;Com coordenadas&quot;</span>)
+
+<span class="co"># Tipo de solo</span>
+<span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
+<span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">points</span>(res_dist_att$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">points</span>(res_dist_geo$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">24</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">24</span>), <span class="dt">legend =</span> leg, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Covariáveis&quot;</span>)
+
+<span class="co"># Frequência de inundação</span>
+<span class="kw">image</span>(meuse.grid, <span class="st">&quot;ffreq&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">3</span>))
+<span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Frequência de inundação&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">points</span>(res_dist_att$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">points</span>(res_dist_geo$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">24</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">24</span>), <span class="dt">legend =</span> leg, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Covariáveis&quot;</span>)
+<span class="kw">dev.off</span>()</code></pre></div>
+<div class="figure">
+<img src="images/optim_dist.png" alt="Configurações amostrais espaciais otimizadas no espaço de atributos (covariáveis) para estimativa detendências espaciais e o efeito de levar em consideração também o espaço geográfico." />
+<p class="caption">Configurações amostrais espaciais otimizadas no espaço de atributos (covariáveis) para estimativa detendências espaciais e o efeito de levar em consideração também o espaço geográfico.</p>
+</div>
+</div>
+<div id="estimativa-de-variogramas" class="section level2">
+<h2><span class="header-section-number">10.3</span> Estimativa de variogramas</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Otimização para estimativa de variogramas ####</span>
+
+<span class="co"># Cronograma de recozimento simulado</span>
+schedule &lt;-<span class="st"> </span>spsann::<span class="kw">scheduleSPSANN</span>(
+  <span class="dt">chains =</span> <span class="dv">1000</span>, <span class="dt">initial.temperature =</span> <span class="dv">200</span>, <span class="dt">stopping =</span> <span class="dv">100</span>,
+  <span class="dt">x.max =</span> <span class="dv">1540</span>, <span class="dt">y.max =</span> <span class="dv">2060</span>, <span class="dt">x.min =</span> <span class="dv">0</span>, <span class="dt">y.min =</span> <span class="dv">0</span>, <span class="dt">cellsize =</span> <span class="dv">40</span>)
+
+<span class="co"># Otimização: pontos por classe de distância</span>
+<span class="kw">set.seed</span>(<span class="dv">1984</span>)
+res_ppl_points &lt;-<span class="st"> </span>spsann::<span class="kw">optimPPL</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># Otimização: pares de pontos por classe de distãncia</span>
+<span class="kw">set.seed</span>(<span class="dv">1984</span>)
+res_ppl_pairs &lt;-<span class="st"> </span>spsann::<span class="kw">optimPPL</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>, <span class="dt">pairs =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># Comparar visualmente ambas as configurações #####</span>
+
+<span class="co"># Salvar imagem no formato PNG</span>
+<span class="kw">dev.off</span>()
+<span class="kw">png</span>(<span class="st">&quot;images/optim_ppl.png&quot;</span>, <span class="dt">width =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">3</span>, <span class="dt">height =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">2</span>, <span class="dt">res =</span> <span class="dv">150</span>)
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+
+<span class="co"># Pontos</span>
+<span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
+<span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Pontos por classe de distância&quot;</span>)
+<span class="kw">points</span>(res_ppl_points$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">text</span>(meuse.grid@bbox[<span class="dv">1</span>, <span class="dv">1</span>], meuse.grid@bbox[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dt">labels =</span> <span class="st">&quot;(a)&quot;</span>)
+
+<span class="co"># Pares de pontos</span>
+<span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
+<span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Pares por classe de distância&quot;</span>)
+<span class="kw">points</span>(res_ppl_pairs$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">text</span>(meuse.grid@bbox[<span class="dv">1</span>, <span class="dv">1</span>], meuse.grid@bbox[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dt">labels =</span> <span class="st">&quot;(b)&quot;</span>)
+
+<span class="kw">dev.off</span>()</code></pre></div>
+<div class="figure">
+<img src="images/optim_ppl.png" alt="Configurações amostrais espaciais otimizadas para estimativa de variogramas usando como critério a distribuição do número de (a) pontos e (b) pares de pontos entre sete classes de distãncia, exponencialmente crescentes, entre pares de pontos." />
+<p class="caption">Configurações amostrais espaciais otimizadas para estimativa de variogramas usando como critério a distribuição do número de (a) pontos e (b) pares de pontos entre sete classes de distãncia, exponencialmente crescentes, entre pares de pontos.</p>
+</div>
+</div>
+<div id="interpolacao-espacial" class="section level2">
+<h2><span class="header-section-number">10.4</span> Interpolação espacial</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Otimização para estimativa de tendências espaciais ####</span>
+
+<span class="co"># Cronograma de recozimento simulado</span>
+schedule &lt;-<span class="st"> </span>spsann::<span class="kw">scheduleSPSANN</span>(
+  <span class="dt">chains =</span> <span class="dv">1000</span>, <span class="dt">initial.temperature =</span> <span class="dv">500000</span>, <span class="dt">stopping =</span> <span class="dv">100</span>,
+  <span class="dt">x.max =</span> <span class="dv">1540</span>, <span class="dt">y.max =</span> <span class="dv">2060</span>, <span class="dt">x.min =</span> <span class="dv">0</span>, <span class="dt">y.min =</span> <span class="dv">0</span>, <span class="dt">cellsize =</span> <span class="dv">40</span>)
+
+<span class="co"># Otimização</span>
+<span class="kw">set.seed</span>(<span class="dv">1984</span>)
+res_mssd &lt;-<span class="st"> </span>spsann::<span class="kw">optimMSSD</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># Salvar imagem no formato PNG</span>
+<span class="kw">dev.off</span>()
+<span class="kw">png</span>(<span class="st">&quot;images/optim_mssd.png&quot;</span>, <span class="dt">width =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">3</span>, <span class="dt">height =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">2</span>, <span class="dt">res =</span> <span class="dv">150</span>)
+
+<span class="co"># Tipo de solo</span>
+<span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
+<span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
+<span class="kw">points</span>(res_mssd$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">dev.off</span>()</code></pre></div>
+<div class="figure">
+<img src="images/optim_mssd.png" alt="Configuração amostral espacial otimizada no espaço geográfico para fins de interpolação espacial usandokrigagem." />
+<p class="caption">Configuração amostral espacial otimizada no espaço geográfico para fins de interpolação espacial usandokrigagem.</p>
+</div>
+
+</div>
 </div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -300,8 +432,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="analise-de-padroes-pontuais.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="selecao-de-covariaveis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="amostragem-nao-probabilistica.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="parte-iv-covariaveis-ambientais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -330,7 +462,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/051-exploratoria.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/033-amostragem.Rmd",
 "text": "Edit"
 },
 "download": null,
