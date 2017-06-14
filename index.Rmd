@@ -38,6 +38,7 @@ maneira:
     + Amostragem probabilística
     + Amostragem não-probabilística
     + Otimização de configurações amostrais
+    + Pseudo-amostragem
 * Parte IV -- Covariáveis ambientais
     + Princípios da formação do solo
     + Modelos digitais de elevação
