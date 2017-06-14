@@ -194,3 +194,5 @@ legend(176100, 332750, legend = leg, pch = 21, bty = "n")
 ### Caminhamento livre
 
 <!-- # Otimização de Configurações Amostrais -->
+
+<!-- # Pseudo-Amostragem -->
