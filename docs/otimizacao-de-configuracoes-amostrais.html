@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Pedologia Quantitativa</title>
   <meta name="description" content="Pedologia Quantitativa">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Pedologia Quantitativa" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2017-06-14">
+<meta name="date" content="2017-09-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -292,7 +292,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Otimização para estimativa de tendências espaciais ####</span>
 
 <span class="co"># Cronograma de recozimento simulado</span>
-schedule &lt;-<span class="st"> </span>spsann::<span class="kw">scheduleSPSANN</span>(
+schedule &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">scheduleSPSANN</span>(
   <span class="dt">chains =</span> <span class="dv">1000</span>, <span class="dt">initial.temperature =</span> <span class="dv">50</span>, <span class="dt">stopping =</span> <span class="dv">100</span>,
   <span class="dt">x.max =</span> <span class="dv">1540</span>, <span class="dt">y.max =</span> <span class="dv">2060</span>, <span class="dt">x.min =</span> <span class="dv">0</span>, <span class="dt">y.min =</span> <span class="dv">0</span>, <span class="dt">cellsize =</span> <span class="dv">40</span>)
 
@@ -305,21 +305,21 @@ covars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">
 
 <span class="co"># Otimização: somente no espaço de atributos</span>
 <span class="kw">set.seed</span>(<span class="dv">2001</span>)
-res_dist_att &lt;-<span class="st"> </span>spsann::<span class="kw">optimDIST</span>(
-  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">covars =</span> meuse.grid@data[, covars],
+res_dist_att &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">optimDIST</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid<span class="op">@</span>coords, <span class="dt">covars =</span> meuse.grid<span class="op">@</span>data[, covars],
   <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
 
 <span class="co"># Otimização: em ambos os espaços de atributos e geográfico</span>
 <span class="kw">set.seed</span>(<span class="dv">2001</span>)
-res_dist_geo &lt;-<span class="st"> </span>spsann::<span class="kw">optimDIST</span>(
-  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">covars =</span> meuse.grid@data[, covars],
+res_dist_geo &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">optimDIST</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid<span class="op">@</span>coords, <span class="dt">covars =</span> meuse.grid<span class="op">@</span>data[, covars],
   <span class="dt">use.coords =</span> <span class="ot">TRUE</span>, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
 
 <span class="co"># Comparar visualmente ambas as configurações #####</span>
 
 <span class="co"># Salvar imagem no formato PNG</span>
 <span class="kw">dev.off</span>()
-<span class="kw">png</span>(<span class="st">&quot;images/optim_dist.png&quot;</span>, <span class="dt">height =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">2</span>, <span class="dt">width =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">3</span>, <span class="dt">res =</span> <span class="dv">150</span>)
+<span class="kw">png</span>(<span class="st">&quot;images/optim_dist.png&quot;</span>, <span class="dt">height =</span> <span class="dv">480</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span>, <span class="dt">width =</span> <span class="dv">480</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span>, <span class="dt">res =</span> <span class="dv">150</span>)
 <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
 
 <span class="co"># Legenda</span>
@@ -328,15 +328,15 @@ leg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&qu
 <span class="co"># Tipo de solo</span>
 <span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
 <span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Tipo de solo&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
-<span class="kw">points</span>(res_dist_att$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
-<span class="kw">points</span>(res_dist_geo$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">24</span>)
+<span class="kw">points</span>(res_dist_att<span class="op">$</span>points[, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">points</span>(res_dist_geo<span class="op">$</span>points[, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">24</span>)
 <span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">24</span>), <span class="dt">legend =</span> leg, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Covariáveis&quot;</span>)
 
 <span class="co"># Frequência de inundação</span>
 <span class="kw">image</span>(meuse.grid, <span class="st">&quot;ffreq&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">3</span>))
 <span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Frequência de inundação&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
-<span class="kw">points</span>(res_dist_att$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
-<span class="kw">points</span>(res_dist_geo$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">24</span>)
+<span class="kw">points</span>(res_dist_att<span class="op">$</span>points[, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">points</span>(res_dist_geo<span class="op">$</span>points[, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">24</span>)
 <span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">24</span>), <span class="dt">legend =</span> leg, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Covariáveis&quot;</span>)
 <span class="kw">dev.off</span>()</code></pre></div>
 <div class="figure">
@@ -349,38 +349,38 @@ leg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&qu
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Otimização para estimativa de variogramas ####</span>
 
 <span class="co"># Cronograma de recozimento simulado</span>
-schedule &lt;-<span class="st"> </span>spsann::<span class="kw">scheduleSPSANN</span>(
+schedule &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">scheduleSPSANN</span>(
   <span class="dt">chains =</span> <span class="dv">1000</span>, <span class="dt">initial.temperature =</span> <span class="dv">200</span>, <span class="dt">stopping =</span> <span class="dv">100</span>,
   <span class="dt">x.max =</span> <span class="dv">1540</span>, <span class="dt">y.max =</span> <span class="dv">2060</span>, <span class="dt">x.min =</span> <span class="dv">0</span>, <span class="dt">y.min =</span> <span class="dv">0</span>, <span class="dt">cellsize =</span> <span class="dv">40</span>)
 
 <span class="co"># Otimização: pontos por classe de distância</span>
 <span class="kw">set.seed</span>(<span class="dv">1984</span>)
-res_ppl_points &lt;-<span class="st"> </span>spsann::<span class="kw">optimPPL</span>(
-  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
+res_ppl_points &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">optimPPL</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid<span class="op">@</span>coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
 
 <span class="co"># Otimização: pares de pontos por classe de distãncia</span>
 <span class="kw">set.seed</span>(<span class="dv">1984</span>)
-res_ppl_pairs &lt;-<span class="st"> </span>spsann::<span class="kw">optimPPL</span>(
-  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>, <span class="dt">pairs =</span> <span class="ot">TRUE</span>)
+res_ppl_pairs &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">optimPPL</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid<span class="op">@</span>coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>, <span class="dt">pairs =</span> <span class="ot">TRUE</span>)
 
 <span class="co"># Comparar visualmente ambas as configurações #####</span>
 
 <span class="co"># Salvar imagem no formato PNG</span>
 <span class="kw">dev.off</span>()
-<span class="kw">png</span>(<span class="st">&quot;images/optim_ppl.png&quot;</span>, <span class="dt">width =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">3</span>, <span class="dt">height =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">2</span>, <span class="dt">res =</span> <span class="dv">150</span>)
+<span class="kw">png</span>(<span class="st">&quot;images/optim_ppl.png&quot;</span>, <span class="dt">width =</span> <span class="dv">480</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span>, <span class="dt">height =</span> <span class="dv">480</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span>, <span class="dt">res =</span> <span class="dv">150</span>)
 <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
 
 <span class="co"># Pontos</span>
 <span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
 <span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Pontos por classe de distância&quot;</span>)
-<span class="kw">points</span>(res_ppl_points$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
-<span class="kw">text</span>(meuse.grid@bbox[<span class="dv">1</span>, <span class="dv">1</span>], meuse.grid@bbox[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dt">labels =</span> <span class="st">&quot;(a)&quot;</span>)
+<span class="kw">points</span>(res_ppl_points<span class="op">$</span>points[, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">text</span>(meuse.grid<span class="op">@</span>bbox[<span class="dv">1</span>, <span class="dv">1</span>], meuse.grid<span class="op">@</span>bbox[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dt">labels =</span> <span class="st">&quot;(a)&quot;</span>)
 
 <span class="co"># Pares de pontos</span>
 <span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
 <span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Pares por classe de distância&quot;</span>)
-<span class="kw">points</span>(res_ppl_pairs$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
-<span class="kw">text</span>(meuse.grid@bbox[<span class="dv">1</span>, <span class="dv">1</span>], meuse.grid@bbox[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dt">labels =</span> <span class="st">&quot;(b)&quot;</span>)
+<span class="kw">points</span>(res_ppl_pairs<span class="op">$</span>points[, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">text</span>(meuse.grid<span class="op">@</span>bbox[<span class="dv">1</span>, <span class="dv">1</span>], meuse.grid<span class="op">@</span>bbox[<span class="dv">2</span>, <span class="dv">2</span>], <span class="dt">labels =</span> <span class="st">&quot;(b)&quot;</span>)
 
 <span class="kw">dev.off</span>()</code></pre></div>
 <div class="figure">
@@ -393,23 +393,23 @@ res_ppl_pairs &lt;-<span class="st"> </span>spsann::<span class="kw">optimPPL</s
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Otimização para estimativa de tendências espaciais ####</span>
 
 <span class="co"># Cronograma de recozimento simulado</span>
-schedule &lt;-<span class="st"> </span>spsann::<span class="kw">scheduleSPSANN</span>(
+schedule &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">scheduleSPSANN</span>(
   <span class="dt">chains =</span> <span class="dv">1000</span>, <span class="dt">initial.temperature =</span> <span class="dv">500000</span>, <span class="dt">stopping =</span> <span class="dv">100</span>,
   <span class="dt">x.max =</span> <span class="dv">1540</span>, <span class="dt">y.max =</span> <span class="dv">2060</span>, <span class="dt">x.min =</span> <span class="dv">0</span>, <span class="dt">y.min =</span> <span class="dv">0</span>, <span class="dt">cellsize =</span> <span class="dv">40</span>)
 
 <span class="co"># Otimização</span>
 <span class="kw">set.seed</span>(<span class="dv">1984</span>)
-res_mssd &lt;-<span class="st"> </span>spsann::<span class="kw">optimMSSD</span>(
-  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid@coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
+res_mssd &lt;-<span class="st"> </span>spsann<span class="op">::</span><span class="kw">optimMSSD</span>(
+  <span class="dt">points =</span> <span class="dv">15</span>, <span class="dt">candi =</span> meuse.grid<span class="op">@</span>coords, <span class="dt">schedule =</span> schedule, <span class="dt">plotit =</span> <span class="ot">TRUE</span>)
 
 <span class="co"># Salvar imagem no formato PNG</span>
 <span class="kw">dev.off</span>()
-<span class="kw">png</span>(<span class="st">&quot;images/optim_mssd.png&quot;</span>, <span class="dt">width =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">3</span>, <span class="dt">height =</span> <span class="dv">480</span> *<span class="st"> </span><span class="dv">2</span>, <span class="dt">res =</span> <span class="dv">150</span>)
+<span class="kw">png</span>(<span class="st">&quot;images/optim_mssd.png&quot;</span>, <span class="dt">width =</span> <span class="dv">480</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span>, <span class="dt">height =</span> <span class="dv">480</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span>, <span class="dt">res =</span> <span class="dv">150</span>)
 
 <span class="co"># Tipo de solo</span>
 <span class="kw">image</span>(meuse.grid, <span class="st">&quot;soil&quot;</span>, <span class="dt">axes =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">3</span>))
 <span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Longitude (m)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Latitude (m)&quot;</span>)
-<span class="kw">points</span>(res_mssd$points[, <span class="dv">2</span>:<span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
+<span class="kw">points</span>(res_mssd<span class="op">$</span>points[, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">21</span>)
 <span class="kw">dev.off</span>()</code></pre></div>
 <div class="figure">
 <img src="images/optim_mssd.png" alt="Configuração amostral espacial otimizada no espaço geográfico para fins de interpolação espacial usandokrigagem." />
@@ -451,7 +451,7 @@ res_mssd &lt;-<span class="st"> </span>spsann::<span class="kw">optimMSSD</span>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,

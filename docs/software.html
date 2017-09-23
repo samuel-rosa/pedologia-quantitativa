@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Pedologia Quantitativa</title>
   <meta name="description" content="Pedologia Quantitativa">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Pedologia Quantitativa" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2017-06-14">
+<meta name="date" content="2017-09-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -337,16 +337,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">5.2.2</span> Primeiros passos</h3>
 <p>Façamos algumas operações matemáticas para nos familiarizarmos com o R. Você pode copiar e colar as linhas de código abaixo no console do R.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># As quatro operações matemáticas básicas:</span>
-<span class="dv">2</span> +<span class="st"> </span><span class="dv">3</span> <span class="co"># soma</span></code></pre></div>
+<span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="co"># soma</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span>*<span class="st"> </span><span class="dv">5</span> <span class="co"># multiplicação</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span><span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="co"># multiplicação</span></code></pre></div>
 <pre><code>## [1] 25</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">25</span>/<span class="dv">5</span> <span class="co"># divisão </span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">25</span><span class="op">/</span><span class="dv">5</span> <span class="co"># divisão </span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> -<span class="dv">3</span> <span class="co"># subtração</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">-</span><span class="dv">3</span> <span class="co"># subtração</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Três operações matemáticas úteis:</span>
-<span class="dv">2</span>^<span class="dv">2</span>      <span class="co"># Potenciação (ou exponenciação)</span></code></pre></div>
+<span class="dv">2</span><span class="op">^</span><span class="dv">2</span>      <span class="co"># Potenciação (ou exponenciação)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">4</span>)   <span class="co"># Função logarítmica</span></code></pre></div>
 <pre><code>## [1] 1.386294</code></pre>
@@ -372,8 +372,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co"># e retorna como resultado `res` a soma de dois valores numéricos.</span>
 <span class="co"># A estrutura de uma função aparece, sempre, entre &#39;{&#39; e &#39;}&#39;.</span>
 soma &lt;-<span class="st"> </span>
-<span class="st">  </span>function (x, y) { 
-    res &lt;-<span class="st"> </span>x +<span class="st"> </span>y
+<span class="st">  </span><span class="cf">function</span> (x, y) { 
+    res &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y
     <span class="kw">return</span> (res)
     }
 <span class="kw">soma</span>(<span class="dt">x =</span> <span class="dv">2</span>, <span class="dt">y =</span> <span class="dv">2</span>)</code></pre></div>
@@ -384,7 +384,7 @@ soma &lt;-<span class="st"> </span>
 <span class="co"># Note que quando criamos uma sequência ordenada de valores podemos </span>
 <span class="co"># simplesmente usar o símbolo &#39;:&#39; entre o menor e o maior valor da </span>
 <span class="co"># sequência ao invés de declarar todos os seus valores.</span>
-x &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
+x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>
 y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>)
 x</code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
@@ -394,7 +394,7 @@ x</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calibração de um modelo de regressão linear</span>
 <span class="co"># Note que é possível usar simbolos como &#39;.&#39; e &#39;_&#39; na construção de </span>
 <span class="co"># uma palavra-chave identificadora de objeto (ou função).</span>
-meu.modelo_linear &lt;-<span class="st"> </span><span class="kw">lm</span>(y ~<span class="st"> </span>x)
+meu.modelo_linear &lt;-<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>x)
 meu.modelo_linear</code></pre></div>
 <pre><code>## 
 ## Call:
@@ -482,7 +482,7 @@ meu.modelo_linear</code></pre></div>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,

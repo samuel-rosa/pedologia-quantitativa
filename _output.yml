@@ -7,7 +7,7 @@ bookdown::gitbook:
     code_folding: hide
     toc:
       before: |
-        <li><a href="./">Pedologia Quantitativa</a></li>
+        <li><a href="./">Pedometria Feita Simples</a></li>
         <li><a href="https://www.researchgate.net/profile/Alessandro_Samuel-Rosa">Alessandro Samuel-Rosa</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>

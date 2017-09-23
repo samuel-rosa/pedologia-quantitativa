@@ -1,5 +1,5 @@
 --- 
-title: "Pedologia Quantitativa"
+title: "Pedometria Feita Simples"
 author: |
   | ALESSANDRO SAMUEL-ROSA
   | Universidade Federal de Santa Maria
