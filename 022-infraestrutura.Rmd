@@ -2,9 +2,9 @@
 
 <!-- # Hardware -->
 
-<!-- # Software -->
+<!-- # Programas de Computador -->
 
-# Gestão de Dados
+# Gestão de Dados e Código Fonte
 
 **Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
@@ -85,3 +85,78 @@ RStudio, a criação de um projeto no QGIS facilita a organização dos dados.
   + http://mapoteca.cnps.embrapa.br/
 * ISRIC: SoilGrids
   + https://soilgrids.org/
+
+## Gerenciamento de Código Fonte
+
+### git
+
+Sistema git de gerenciamento de código fonte e controle de versão distribuído
+
+O instalador do git para o seu OS está disponível no endereço abaixo:
+
+* https://git-scm.com/downloads
+
+### GitHub
+
+O [GitHub][github] é uma das plataformas mais populares para hospedagem de código fonte, sobretudo entre os usuários e desenvolvedores de pacotes para o R.
+
+[github]: https://github.com/
+
+Acesse a página do GitHub no endereço abaixo para criar sua conta:
+
+* https://github.com/
+
+## Documentação e Publicação
+
+### Programação letrada
+
+Linguagem de marcação [Markdown do R](http://rmarkdown.rstudio.com/)
+
+[Cadernos de anotações](http://rmarkdown.rstudio.com/r_notebooks.html). 
+
+### Plataformas de publicação
+
+O [Hugo][hugo], um programa de computador gratuíto e de código aberto, é um dos geradores de páginas estáticas da Internet mais populares. Um gerador de páginas estáticas consiste num programa que recebe arquivos de texto plano (Markdown) como entrada e os processa de maneira a produzir arquivos no formato HTML. Esses arquivos no formato HTML finalmente vão compor o conteúdo essencial da página da Internet. Qualquer pessoa que acessar uma página estática receberá, em seu computador, exatamente o mesmo conteúdo. Isso é completamente diferente das páginas com conteúdo dinâmico (Figure \@ref(fig:ufsm-page)), as quais podem enviar conteúdos diferentes para as pessoas que a estiverem acessando dependendo de condições específicas. Por exemplo, uma página que exige o cadastro do visitante enviará conteúdo relacionado àquele visitante. Para que isso ocorra, as páginas dinâmicas dependem de uma base de dados e uma linguagem como PHP no servidor para realizar algum processamento antes de enviar o conteúdo da página ao seu visitante. Numa página estática, o conteúdo não fica armazenado em uma base de dados, e sim em arquivos HTML prontos para servir armazenados num servidor qualquer. Assim, as páginas estáticas costumam ser mais rápidas em responder às ações dos visitantes. Elas também são mais fáceis de implementar e manter, uma vez que não dependem de servidores especializados ou a instalação de programas específicos para gerenciamento de conteúdo.
+
+[hugo]: https://gohugo.io/
+
+```{r ufsm-page, echo=FALSE, fig.cap="Página dinâmica da Universidade Federal de Santa Maria.", out.width='80%', fig.align='center'}
+knitr::include_url("http://site.ufsm.br/")
+```
+
+Existem inúmeros geradores de páginas estáticas da Internet. O Hugo se destaca entre eles por ser de fácil instalação e conter nenhuma ou pouquíssimas dependências (dependendo do sistema operacional). O Hugo também é bastante rápido na geração das páginas e relativamente fácil de configurar se comparado aos demais geradores de páginas estáticas existentes. Além disso, o Hugo possui uma comunidade de usuários bastante ativa, o que facilita as coisas quando precisamos resolver alguma dúvida. Essa atividade reflete no número de [temas][tema-hugo] -- coleção de arquivos de modelos e recursos opcionais (CSS e JavaScript) que definem o aspecto visual da página quando publicada -- disponíveis para instalação.
+
+[tema-hugo]: https://themes.gohugo.io
+
+Visite o endereço abaixo para ver as instruções sobre como instalar a última versão do Hugo:
+
+* https://gohugo.io/getting-started/installing/
+
+Ou, alternativamente, descarregue o instalador para o seu OS do seguinte endereço:
+
+* https://github.com/gohugoio/hugo/releases
+
+A principal deficiência do Hugo -- para usuários do R -- é a falta de suporte para a implementação do Markdown para o R. Isso significa que, na implementação nativa do Hugo, não é nada fácil gerar resultados (figuras, tabelas) usando código do R. Além disso, o Hugo não usa o [Pandoc][pandoc] como motor de conversão de Markdown em HTML. Foi exatamente para sanar essas duas deficiências que o engenheiro de *software* do RStudio [Yihui Xie][yihui-xie] criou o pacote do R [blogdown][blogdown].
+
+[pandoc]: http://pandoc.org/
+[blogdown]: https://bookdown.org/yihui/blogdown/
+[yihui-xie]: https://yihui.name
+
+```{r, eval=FALSE}
+# Instalação da última versão do pacote blogdown e dependências
+devtools::install_github("rstudio/blogdown", dependencies = TRUE)
+```
+
+Projetos de construção de páginas da Internet usando Hugo e blogdown podem ser facilmente gerenciados usando o RStudio. Para criar um projeto, vá até `File > new Project > New Directory` e escolha `Website using blogdown` (Figura \@ref(fig:website-using-blogdown)).
+
+```{r website-using-blogdown, echo=FALSE, fig.cap='Criação de novo projeto de página da Internet usando blogdown no RStudio.', out.width='50%', fig.align='center'}
+knitr::include_graphics('images/website-using-blogdown.png')
+```
+
+A próxima caixa de diálogo traz opções para definir o nome do novo diretório e a sua localização no sistema de arquivos de seu computador (Figura \@ref(fig:diretorio-tema-blogdown)). Como você já instalou o Hugo, desabilite a opção `Install Hugo automatically`. Escolha o [tema do Hugo][tema-hugo] indicando o nome do respectivo repositório no GitHub. (Recomendo usar o tema [acadêmico][tema-academico] `gcushen/hugo-academic` 😃)
+
+```{r diretorio-tema-blogdown, echo=FALSE, fig.cap='Escolha do diretório do projeto e tema da página da Internet usando blogdown no RStudio.', out.width='50%', fig.align='center'}
+knitr::include_graphics('images/diretorio-tema-blogdown.png')
+```
+
+[tema-academico]: https://themes.gohugo.io/academic/
