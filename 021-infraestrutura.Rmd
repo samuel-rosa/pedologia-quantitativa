@@ -2,85 +2,42 @@
 
 <!-- # Hardware -->
 
-# Software
+# Programas de Computador
 
-**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
-alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se você tiver alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+[issues]: https://github.com/samuel-rosa/pedologia-quantitativa/issues
 
 ## Introdução
 
 <!-- Conforme vimos no capítulo anterior,  -->
-A aplicação de métodos quantitativos -- matemáticos e estatísticos -- para o
-estudo da distribuição e gênese do solo se dá, fundamentalmente, pelo uso de computadores. Isso significa
-que necessitamos, obrigatoriamente, de [*softwares*](https://en.wikipedia.org/wiki/Software) especializados
-para tal tarefa. É por meio desses *softwares* que daremos instruções ao nosso computador para que ele 
-desempenhe determinada tarefa quantitativa como, por exemplo, computar estatísticas descritivas de um conjunto
-de dados do solo ou produzir um gráfico relacionando uma variável dependente $y$ com uma variável independente
-$x$.
+A aplicação de métodos quantitativos -- matemáticos e estatísticos -- para o estudo da distribuição e gênese do solo se dá, fundamentalmente, pelo uso de computadores. Isso significa que necessitamos, obrigatoriamente, de programas de computador -- *software* -- especializados para tal tarefa. É por meio desses programa de computador que daremos instruções ao nosso computador para que ele desempenhe determinada tarefa quantitativa como, por exemplo, computar estatísticas descritivas de um conjunto de dados do solo ou produzir um gráfico relacionando uma variável dependente $y$ com uma variável independente $x$.
 
-Os *softwares* disponíveis para o desenvolvimento de estudos quantitativos são inúmeros e diversos -- fruto da
-diversidade de métodos quantitativos hoje existentes --, sendo geralmente necessário usar dois ou mais
-*softwares* para desenvolver qualquer estudo pedométrico -- por mais simples que o estudo seja. Para aprender 
-e dominar o uso de qualquer *software* com aplicação pedométrica, possivelmente alguns dos quais lhe são
-desconhecidos até então, será necessário que você aprenda a sua 'linguagem'. Como sabemos, uma linguagem é um
-sistema de signos -- símbolos ou palavras -- convencionados que serve para a comunicação de conceitos, ideias,
-significados, pensamentos (veja mais na [Wikipedia]("https://pt.wikipedia.org/wiki/Linguagem")). Assim, a
-linguagem de um *software* qualquer será, também, um sistema de signos convencionados, mas que serve para a
-nossa comunicação com o computador. 
+Os programas de computador disponíveis para o desenvolvimento de estudos quantitativos são inúmeros e diversos -- fruto da diversidade de métodos quantitativos hoje existentes --, sendo geralmente necessário usar dois ou mais programa de computador para desenvolver qualquer estudo pedométrico -- por mais simples que o estudo seja. Para aprender e potencialmente dominar o uso de qualquer programa de computador com aplicação pedométrica, possivelmente alguns dos quais ainda lhe são desconhecidos até então, será necessário que você aprenda a sua 'linguagem'. Como sabemos, uma [linguagem][linguagem] é um sistema de signos -- símbolos ou palavras -- convencionados que serve para a comunicação de conceitos, ideias, significados, pensamentos. Assim, a linguagem de um programa de computador qualquer será, também, um sistema de signos convencionados, mas que serve para a nossa comunicação com o computador.
 
-A linguagem usada por um software geralmente é um tanto quanto complicada quando comparada à linguagem que nós
-seres humanos usamos para nos comunicar entre nós mesmos. Isso é tanto mais verdade quanto mais distante das 
-chamadas Ciências Exatas for a nossa formação -- como é o meu caso. É por isso que os *softwares* mais
-populares, que você provavelmente já usa, são aqueles que possuem o que chamamos de interface gráfica do
-usuário ([GUI][gui], do inglês *graphical user interface*). Essa interface nada mais é, como o próprio nome
-já diz, uma camada sobreposta à linguagem usada pelo *software*, uma camada intermediária entre a linguagem 
-e o usuário, cuja função é tornar o *software* mais amigável para uso. Assim, a comunicação do usuário se
-dá, primeiro, via emissão de comandos pressionando botões e ícones ou escolhendo itens em caixas de diálogo, 
-usando tanto o *mouse* como o teclado. Ao longo deste capítulo nós veremos alguns *softwares* desse tipo, tais
-como o QGIS.
+[linguagem]: https://pt.wikipedia.org/wiki/Linguagem
 
-Apesar da amigabilidade dos *softwares* que usam uma interface gráfica, no longo prazo, seu uso pode se tornar
-um tanto quanto difícil. Isso porque é praticamente impossível memorizar a sequência de ícones pressionados e
-itens escolhidos em caixas de diálogo para realizar uma determinada tarefa pedométrica. Em geral, será preciso
-anotar todos os passos em um arquivo separado, muitas vezes incluindo imagens da própria interface gráfica e
-dos ícones pressionados. Se essa documentação não for feita, você corre o risco de, depois de algum tempo, não 
-mais conseguir executar exatamente a mesma tarefa com seu conjunto de dados. Por exemplo, os revisores de seu
-artigo exigem que você refaça uma determinada análise estatística do conjunto de dados usado para produzir uma
-determinada tabela do seu artigo submetido para publicação: doze meses depois da submissão, você já esqueceu,
-quase que completamente, como foi que você analisou aqueles dados. Esse problema é comumente conhecido como o
-problema da (ir)reprodutibilidade -- veja mais na [Wikipedia](https://en.wikipedia.org/wiki/Reproducibility).
+A linguagem usada por um programa de computador geralmente é um tanto quanto complicada quando comparada à linguagem que nós, seres humanos, usamos para nos comunicar entre nós mesmos no dia a dia. Isso é tanto mais verdade quanto mais distante das chamadas Ciências Exatas for a nossa formação -- como é o meu caso. É por isso que os programas de computador mais populares, que você provavelmente já usa, são aqueles que possuem o que chamamos de interface gráfica do usuário ([GUI][gui], do inglês *graphical user interface*). Essa interface nada mais é, como o próprio nome já diz, uma camada sobreposta à linguagem usada pelo programa de computador, uma camada intermediária entre a linguagem e o usuário, cuja função é tornar o programa de computador mais amigável para uso. Assim, a comunicação do usuário se dá, primeiro, via emissão de comandos pressionando botões e ícones ou escolhendo itens em caixas de diálogo, usando tanto o *mouse* como o teclado.
 
-A **reprodutibilidade** é uma característica de um experimento ou estudo. Ela correspondendo ao potencial que
-um experimento tem de ser reproduzido, tanto pelo mesmo pesquisador como por qualquer outro pesquisador
-trabalhando independentemente em qualquer lugar do planeta, constituindo um dos principais elementos do ideal
-científico -- veja mais na [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method). Logicamente, o
-problema da irreprodutibilidade de um estudo é muito mais difícil de superar quando outro pesquisador deseja
-reproduzir o experimento pedométrico que você conduziu e vice-versa. Em geral, além de uma extensiva descrição
-do material e dos métodos usados em um estudo pedométrico, a reprodutibilidade só se torna um fato quando o
-a totalidade do ambiente computacional usado para realizar o estudo está livremente disponível. Grosso modo,
-isso inclui os dados -- veja mais no próximo capítulo [Gestão de Dados] -- e a sequência de comandos emitidos
-para comunicação com o computador.
+[gui]: https://pt.wikipedia.org/wiki/Interface_gr%C3%A1fica_do_utilizador
 
-A maneira mais eficiente de registrar a sequência de comandos emitidos para comunicação com o computador 
-durante a realização de uma tarefa pedométrica requer o uso, diretamente, da linguagem do *software*, ou seja,
-uma linguagem de programação -- veja mais na 
-[Wikipedia](https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o). Nesse caso, nossa comunicação
-com o computador se dá via uso de uma interface de linha de comando ([CLI][cli], do inglês 
-*command-line interface*), ou seja, via emissão de comandos sob a forma de sucessivas linhas de texto, as
-chamadas linhas de comando -- veja mais na [Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface).
-Sendo uma linguagem, toda linguagem de programação possui regras sintáticas e semânticas -- uma gramática --, 
-as quais devem ser estritamente respeitadas para que haja, efetivamente, comunicação entre nós e o computador.
-Dentre os *softwares* que usam uma interface de linha de comando que veremos neste capítulo, o principal deles
-é o R.
+Apesar da amigabilidade dos programas de computador que usam uma interface gráfica, no longo prazo, seu uso pode se tornar um tanto quanto difícil. Isso porque é praticamente impossível memorizar a sequência de ícones pressionados e itens escolhidos em caixas de diálogo para realizar uma determinada tarefa pedométrica. Em geral, será preciso anotar todos os passos em um arquivo separado, muitas vezes incluindo imagens da própria interface gráfica e dos ícones pressionados. Se essa documentação não for feita, você corre o risco de, depois de algum tempo, não mais conseguir executar exatamente a mesma tarefa com seu conjunto de dados. Por exemplo, os revisores de um artigo que você submeteu para publicação exigem que você refaça um determinado passo de uma análise estatística que você usou para produzir uma das tabelas do seu artigo: doze meses depois da submissão, você já esqueceu, quase que completamente, como foi que você analisou aqueles dados. Esse problema é comumente conhecido como o problema da [irreprodutibilidade][reprodutibilidade].
 
-Além de potencializarem a reprodutibilidade, uma das grandes vantagens dos *softwares* que utilizam comandos 
-de texto -- ao invés de botões e caixas de diálogo -- é o fato de permitirem ao usuário fazer adaptações
-metodológicas, desenvolver novos métodos e expandir sua caixa de ferramentas analíticas para além daquilo que
-já estiver implementado no *software*. Por outro lado, a grande desvantagem desses *softwares* é a maior
-dificuldade de aprendizagem do seu uso, geralmente necessitando grandes esforços, os quais são comumente
-descritos usando a chamada curva de aprendizagem:
+[reprodutibilidade]: https://pt.wikipedia.org/wiki/Reprodutibilidade
 
-```{r, echo=FALSE}
+A **reprodutibilidade** é uma característica de um experimento ou estudo. Ela correspondendo ao potencial que um experimento tem de ser reproduzido, tanto pelo mesmo pesquisador como por qualquer outro pesquisador trabalhando independentemente em qualquer lugar do planeta, constituindo um dos principais elementos do [ideal científico][metodo-cientifico]. Logicamente, o problema da irreprodutibilidade de um estudo é muito mais difícil de superar quando outro pesquisador deseja reproduzir o experimento pedométrico que você conduziu e vice-versa. Em geral, além de uma extensiva descrição do material e dos métodos usados em um estudo pedométrico, a reprodutibilidade só se torna um fato quando a totalidade do ambiente computacional usado para realizar o estudo está livremente disponível. Grosso modo, isso inclui os dados -- veja mais no próximo capítulo [Gestão de Dados] -- e a sequência de comandos emitidos para comunicação com o computador.
+
+[metodo-cientifico]: https://pt.wikipedia.org/wiki/M%C3%A9todo_cient%C3%ADfico
+
+A maneira mais eficiente de registrar a sequência de comandos emitidos para comunicação com o computador durante a realização de uma tarefa pedométrica requer o uso, diretamente, da linguagem do programa de computador, ou seja, uma [linguagem de programação][linguagem-de-programacao]. Nesse caso, nossa comunicação com o computador se dá via uso de uma interface de linha de comando ([CLI][cli], do inglês *command-line interface*), ou seja, via emissão de comandos sob a forma de sucessivas linhas de texto, as chamadas linhas de comando. Sendo uma linguagem, toda linguagem de programação possui regras sintáticas e semânticas -- uma gramática --, as quais devem ser estritamente respeitadas para que haja, efetivamente, comunicação entre nós e o computador. Dentre os programa de computador que veremos neste capítulo que usam uma interface de linha de comando, o principal deles é o R.
+
+[linguagem-de-programacao]: https://pt.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o
+
+[cli]: https://pt.wikipedia.org/wiki/Linha_de_comandos
+
+Além de potencializarem a reprodutibilidade, uma das grandes vantagens dos programas de computador que utilizam comandos de texto -- ao invés de botões e caixas de diálogo -- é o fato de permitirem ao usuário fazer adaptações metodológicas, desenvolver novos métodos e expandir sua caixa de ferramentas analíticas para além daquilo que já estiver implementado no programa de computador. Por outro lado, a grande desvantagem desses programas de computador é a maior dificuldade de aprendizagem e domínio do seu uso, geralmente necessitando grande esforço e persistência. Em outras palavras, diz-se que esses programas de computador possuem uma curva de aprendizagem -- uma representação gráfica da aprendizagem ao longo do tempo -- bastante inclinada, portanto difícil de superar (Figure \@ref(fig:curva-de-aprendizagem)).
+
+```{r curva-de-aprendizagem, echo=FALSE, fig.cap="Curva de aprendizagem hipotética de um programa de computador que utiliza comandos de texto e a produtividade relativa do usuário ao longo do tempo."}
 y0 <- 0.2
 y <- c(rep(y0, 25), seq(y0, 0.1, -0.1), rep(0.01, 30), seq(0.1, y0 * 3, 0.1), rep(y0 * 3, 35))
 x <- 1:length(y)
@@ -95,202 +52,116 @@ arrows(-1, -0.01, -1, 1, length = 0.1)
 arrows(x[length(x)- 1], y[length(y)], x[length(x)], y[length(y)], length = 0.1)
 ```
 
-Usando alguns *softwares* tradicionais, populares, você tem conseguido desenvolver estudos bastante 
-interessantes. Contudo, por algum motivo, você decide aprender a usar outro *software*, um *software* baseado 
-na emissão de linhas de comando, a fim de aumentar sua produtividade e a qualidade de seus estudos. As
-primeiras experiências com o novo *software* serão difíceis e você se sentirá perdido, talvez desesperado. 
-A tentação de abandonar aquele novo *software* aparecerá logo, e você se sentirá inclinado a voltar a usar
-apenas as mesmas ferramentas que usava antes. Talvez sua vontade "morra" ao longo do caminho. Contudo, você
-precisa resistir e acreditar que consegue vencer os perigos do Vale da Morte. Você precisa estar disposto a
-encarar a íngreme curva de aprendizagem. Depois de passar por tudo isso, sua produtividade (ou capacidade
-produtiva) deverá ser algumas ordens de magnitude maior do que antes de conhecer aquele novo *software*.
+Usando alguns programas de computador tradicionais, populares, você tem conseguido desenvolver estudos bastante interessantes. Contudo, por algum motivo, você decide aprender a usar outro programa de computador, um programa de computador baseado na emissão de linhas de comando, a fim de aumentar sua produtividade e a qualidade de seus estudos. As primeiras experiências com o novo programa de computador serão difíceis e você se sentirá perdido, talvez desesperado. A tentação de abandonar aquele novo programa de computador aparecerá logo, e você se sentirá inclinado a voltar a usar apenas as mesmas ferramentas que usava antes. Talvez sua vontade "morra" ao longo do caminho. Contudo, você precisa resistir e acreditar que consegue vencer os perigos do Vale da Morte. Você precisa estar disposto a encarar a íngreme curva de aprendizagem. Depois de passar por tudo isso, sua produtividade (ou capacidade produtiva) deverá ser algumas ordens de magnitude maior do que antes de conhecer aquele novo programa de computador.
 
-Note que a dificuldade na aprendizagem do uso de *softwares* baseados na emissão de linhas de comando não se 
-deve à uma dificuldade inerente à esses *softwares*. Na verdade, nossa dificuldade advém, principalmente, do
-fato de, em geral, sermos introduzidos primeiro, ainda na nossa infância, à *softwares* que dispõe apenas de
-interfaces gráficas, com uma porção de ícones e caixas de diálogo -- veja, por exemplo, seu computador de
-bolso.
+Note que a dificuldade na aprendizagem do uso de programas de computador baseados na emissão de linhas de comando não se deve à uma dificuldade inerente à esses programa de computador. Na verdade, nossa dificuldade advém, principalmente, do fato de, em geral, sermos introduzidos primeiro, ainda na nossa infância, à programa de computador que dispõe apenas de interfaces gráficas, com uma porção de ícones e caixas de diálogo -- veja, por exemplo, seu *smartphone*.
 
-Nesse ponto você já deve ter percebido que para desenvolver estudos de pedologia quantitativa será preciso,
-além de aprender e dominar o uso de diversos softwares, aprender e dominar (pelo menos) uma nova linguagem, 
-um novo sistema de signos. Adianto que, em geral, algumas das regras gramaticais dessas linguagens podem ser
-deduzida a partir daquilo que já sabemos em função do uso de outros *softwares* de análise e processamento de
-dados. Contudo, como qualquer linguagem de programação, existem especificidades, boa parte das quais é preciso
-conhecer para termos sucesso em seu uso. Além disso, algum conhecimento da língua inglesa costuma ser
-necessário, haja vista que as linguagens de programação costumam ser construídas com base em palavras da 
-língua inglesa. A ideia aqui é tentar fazer com que sua passagem pelo Vale da Morte seja o menos dolorosa 
-possível.
+Nesse ponto você já deve ter percebido que para desenvolver estudos pedométricos não basta aprender e dominar o uso de diversos softwares. Também é preciso aprender e dominar (pelo menos) uma nova linguagem, um novo sistema de signos. Adianto que, em geral, algumas das regras gramaticais dessas linguagens podem ser deduzidas a partir daquilo que já sabemos em função do uso de outros programas de computador de análise e processamento de dados. Contudo, como qualquer linguagem de programação, existem especificidades, boa parte das quais é preciso conhecer para termos sucesso em seu uso. Além disso, algum conhecimento da língua inglesa costuma ser necessário, haja vista que as linguagens de programação costumam ser construídas com base em palavras da língua inglesa. A ideia aqui é tentar fazer com que sua travessia pelo Vale da Morte seja a mais curta e menos dolorosa possível.
 
-## R/RStudio
+## R & RStudio
 
-O R é uma linguagem de programação e um ambiente de análises estatísticas e gráficas gratuito. Sua origem data
-de 1995, quando os pesquisadores [Robert Gentleman][robert] e [Ross Ihaka][ross] iniciaram o projeto de seu
-desenvolvimento no Departamento de Estatística da Universidade de Auckland na Nova Zelândia. Baseado na
-linguagem de programação e ambiente estatístico [S][s], desenvolvido por [John Chambers][chambers] e colegas 
-no [Bell Laboratories][bell], o nome deriva das iniciais dos dois pesquisadores (R), mas também de uma 
-brincadeira com o nome da linguagem e ambiente no qual foi baseado (S). Hoje o R é um software livre mantido 
-e desenvolvido pelo R Core Team, disponível gratuitamente para qualquer interessado em utilizá-lo, modificá-lo
-e redistribuí-lo.
+O R é uma linguagem de programação e um ambiente de análises estatísticas e gráficas gratuito. Sua origem data de 1995, quando os pesquisadores [Robert Gentleman][robert-gentleman] e [Ross Ihaka][ross-ihaka] iniciaram o projeto de seu desenvolvimento no Departamento de Estatística da Universidade de Auckland na Nova Zelândia. Baseado na linguagem de programação e ambiente estatístico [S][s], desenvolvido por [John Chambers][john-chambers] e colegas no [Bell Laboratories][bell-laboratories], o nome R deriva das iniciais dos dois pesquisadores (R), mas também de uma brincadeira com o nome da linguagem e ambiente no qual foi baseado (S). Hoje o R é um software livre mantido e desenvolvido pelo [R Core Team][r-core-team], disponível gratuitamente para qualquer interessado em utilizá-lo, modificá-lo e redistribuí-lo.
 
-[bell]: https://en.wikipedia.org/wiki/Bell_Labs "Bell Laboratories"
-[ross]: https://en.wikipedia.org/wiki/Ross_Ihaka "Ross Ihaka"
-[robert]: https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician) "Robert Gentleman"
-[s]: https://en.wikipedia.org/wiki/S_(programming_language) "S (programming language)"
-[chambers]: https://en.wikipedia.org/wiki/John_Chambers_(statistician) "John Chambers"
+[bell-laboratories]: https://en.wikipedia.org/wiki/Bell_Labs
+[ross-ihaka]: https://en.wikipedia.org/wiki/Ross_Ihaka
+[robert-gentleman]: https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)
+[s]: https://en.wikipedia.org/wiki/S_(programming_language)
+[john-chambers]: https://en.wikipedia.org/wiki/John_Chambers_(statistician)
+[r-core-team]: https://www.r-project.org/contributors.html
 
-O R fornece uma ampla variedade de técnicas estatísticas, incluindo análises univariadas, bivariadas e
-multivariadas, desde as mais simples até as mais complexas, como análises descritivas, análise de variância 
-e testes de médias, análise de agrupamento e de componentes principais, análise de séries temporais, 
-modelagem geoestatísticas e muito, muito mais. O R ainda fornece uma série de ferramentas para produção
-de diversos tipos gráficos com qualidade para publicação. Todas essas técnicas e ferramentas, além de 
-amplamente documentadas, são customizáveis e extensíveis. Assim, além de dispor das técnicas já incluídas no
-ambiente R, o usuário pode utilizar-se da linguagem R para criar suas próprias técnicas e, em seguida, 
-torná-las disponíveis para uso pela comunidade científica.
+O R fornece uma ampla variedade de técnicas estatísticas, incluindo análises univariadas, bivariadas e multivariadas, desde as mais simples até as mais complexas, como análises descritivas, análise de variância e testes de médias, análise de agrupamento e de componentes principais, análise de séries temporais, modelagem geoestatísticas e muito, muito mais. O R ainda fornece uma série de ferramentas para produção de diversos tipos gráficos com qualidade para publicação. Todas essas técnicas e ferramentas, além de amplamente documentadas, são customizáveis e extensíveis. Assim, além de dispor das técnicas já incluídas no ambiente R, o usuário pode utilizar-se da linguagem R para criar suas próprias técnicas e, em seguida, torná-las disponíveis para uso pela comunidade científica na forma de pacotes.
 
-A grande vantagem do R em relação aos demais *softwares* existentes para análises estatísticas e gráficas é o
-fato de ele aliar o enorme volume de técnicas de análise estatística e gráfica à completa gratuidade. Ao
-contrário do que alguns possam pensar, essa gratuidade não é sinônimo de baixa qualidade. Pelo contrário, é a
-gratuidade que permite que milhares de cientistas ao redor do mundo usem e verifiquem a qualidade dessas
-técnicas. São esses mesmos cientistas que ajudam a desenvolver o R mais e mais, disponibilizando grande parte
-de seu tempo de trabalho para elaborar a miríade de tutoriais e materiais de apoio para o R disponíveis
-atualmente -- nenhum *software* comercial possui, seja em meio digital ou em meio impresso, um volume de
-material de apoio maior do que o R. Ao tornar-se uma linguagem comum entre os cientistas, o R ainda permite 
-que o registro das rotinas analíticas possa ser compartilhado e, quando necessário, verificado ou 
-disponibilizado para verificação por outros cientistas, possibilitando a observação de um dos principais
-ideias do método científico: a reprodutibilidade.
+A grande vantagem do R em relação aos demais programas de computador existentes para análises estatísticas e gráficas é o fato de ele aliar o enorme volume de técnicas de análise estatística e gráfica à completa gratuidade. Ao contrário do que alguns possam pensar, essa gratuidade não é sinônimo de baixa qualidade. Pelo contrário, é a gratuidade que permite que milhares de cientistas ao redor do mundo usem e verifiquem a qualidade dessas técnicas. São esses mesmos cientistas que ajudam a desenvolver o R mais e mais, disponibilizando grande parte de seu tempo de trabalho para elaborar a miríade de tutoriais e materiais de apoio para o R disponíveis atualmente -- nenhum programa de computador comercial possui, seja em meio digital ou em meio impresso, um volume de material de apoio maior do que o R. Ao tornar-se uma linguagem comum entre os cientistas, o R ainda permite que o registro das rotinas analíticas possa ser compartilhado e, quando necessário, verificado ou disponibilizado para verificação por outros cientistas, possibilitando a observação daquele que vimos ser um dos principais ideias do método científico: a reprodutibilidade.
 
-Em resumo, o R é completamente gratuito, pode ser usado para conduzir qualquer tipo de análise estatística e
-gráfica, é amplamente documentado, customizável e extensível, permite o compartilhamento e reprodução de
-rotinas analíticas, sendo uma linguagem comum entre cientistas de diferentes partes do mundo. Será que é
-preciso dizer mais alguma coisa para convencer-te a usar o R?
+Em resumo, o R é completamente gratuito, pode ser usado para conduzir qualquer tipo de análise estatística e gráfica, é amplamente documentado, customizável e extensível, permite o compartilhamento e reprodução de rotinas analíticas, sendo uma linguagem comum entre cientistas de diferentes partes do mundo. Será que é preciso dizer mais alguma coisa?!
 
-### Conhecendo melhor o R
+<!-- Depois de instalar o R, agora é a hora de escolher uma [GUI][gui] que facilite nossa interação com o R. Isso porque  -->
+<!-- o R possui apenas uma  -->
+<!-- interface para emissão de linhas de comando de texto, também chamado ***console***. Dentre as diversas opções -->
+<!-- gratuitamente disponíveis, as -->
+<!-- mais atrativas são aquelas que incluem ferramentas adicionais de apoio à programação em R e facilitem a -->
+<!-- análise, visualização e gerenciamento dos dados. Tais ferramentas constituem os chamados ambientes de -->
+<!-- desenvolvimento integrado ([IDE][ide], do inglês *integrated development environment*). Atualmente, a GUI e  -->
+<!-- IDE mais popular é o -->
 
-A maneira mais eficiente de conhecer melhor o R é, sem dúvida, instalando-o em seu computador. Para isso 
-precisamos, primeiro, visitar a página do projeto na Internet:
+<!-- [ide]: https://en.wikipedia.org/wiki/Integrated_development_environment -->
 
-```{r r-project-page, echo=FALSE}
+### Instalação
+
+Passemos agora à instalação do R em seu computador. Para isso precisamos, primeiro, visitar a página do projeto na Internet (Figura \@ref(fig:r-project-page)).
+
+```{r r-project-page, echo=FALSE, fig.cap="Janela de acesso à página inicial do projeto R na Internet."}
 knitr::include_url("http://www.r-project.org/")
 ```
 
-Uma grande quantidade de informação, muito além do que se busca incluir neste capítulo, pode ser encontrada no
-sítio do projeto. Ali estão disponíveis diversos manuais de uso (`Documentation > Munuals`), bem como livros
-(`Documentation > Books`) e artigos publicados na revista do projeto (`Documentation > The R Journal`). Ainda 
-há uma página com respostas às perguntas mais frequentes (`Documentation > FAQs`) e uma página inteira 
-explicando como é possível conseguir ajuda do próprio R antes de recorrer a terceiros 
-(`Help With R > Getting Help`) -- como a documentação do R é extensa e a maioria dos colaboradores do projeto
-não são pagos pela colaboração, recomendo que você sempre procure, primeiro, resolver qualquer dúvida sozinho.
+Veja que uma grande quantidade de informação, muito além do que se busca incluir neste capítulo, pode ser encontrada na página do projeto. Ali estão disponíveis diversos manuais de uso (`Documentation > Munuals`), bem como livros (`Documentation > Books`) e artigos publicados na revista do projeto (`Documentation > The R Journal`). Há ainda uma página com respostas às perguntas mais frequentes (`Documentation > FAQs`) e uma página inteira explicando como é possível conseguir ajuda antes de recorrer diretamente a terceiros (`Help With R > Getting Help`). (Como a documentação do R é extensa e a maioria dos colaboradores do projeto não são pagos pela colaboração, recomendo que você sempre procure, primeiro, resolver qualquer dúvida sozinho 😃)
 
-O procedimento de instalação do R depende do sistema operacional ([OS][os], do inglês *operating system*) 
-de seu computador:
+O procedimento de instalação do R depende do sistema operacional ([OS][os], do inglês *operating system*) de seu computador:
+
+[os]: https://en.wikipedia.org/wiki/Operating_system
 
 * Linux: https://cloud.r-project.org/bin/linux/
 * (Mac) OS X: https://cloud.r-project.org/bin/macosx/
 * Windows: https://cloud.r-project.org/bin/windows/base/
 
-A página referente à cada OS possui as instruções necessárias para descarregar e instalar o R em seu
-computador. Em geral, o processo de instalação é exatamente igual àquele de outros *softwares* que você usa
-em seu dia-a-dia. (Caso o R apresente problemas de funcionamento após a instalação, tente descarregar e
-instalar a versão anterior do R.)
+A página referente à cada OS possui as instruções necessárias para descarregar e instalar o R em seu computador. Em geral, o processo de instalação é exatamente igual aquele de outros programas de computador que você usa em seu dia-a-dia. (Caso o R apresente problemas de funcionamento após a instalação, tente descarregar e instalar a versão anterior 😃)
 
-Depois de instalar o R, agora é a hora de escolher uma GUI que facilite nossa interação com o R. Isso porque 
-o R possui apenas uma 
-interface para emissão de linhas de comando de texto, também chamado ***console***. Dentre as diversas opções
-gratuitamente disponíveis, as
-mais atrativas são aquelas que incluem ferramentas adicionais de apoio à programação em R e facilitem a
-análise, visualização e gerenciamento dos dados. Tais ferramentas constituem os chamados ambientes de
-desenvolvimento integrado ([IDE][ide], do inglês *integrated development environment*). Atualmente, a GUI e 
-IDE mais popular é o
+Instalado o R, agora é a hora de instalar o RStudio. A última versão do instalador do RStudio para o seu OS pode ser descarregada do seguinte endereço:
 
-* RStudio, cujo instalador pode ser descarregado de
-    + https://www.rstudio.com/products/rstudio/download/.
+* https://www.rstudio.com/products/rstudio/download/
 
-Assim como para o R, o procedimento de instalação do RStudio depende do OS do seu computador. Depois de
-instalado, inicie o RStudio em seu computador. Ele deve se parecer mais ou menos como na figura a seguir:
+Caso você queira instalar a mais nova versão do RStudio, ainda em estágio de teste, então descarregue o instalador do seguinte endereço:
 
-![RStudio -- interface gráfica do usuário e ambiente de desenvolvimento integrado para R (em sua
-versão para Linux). Uma extensa lista de alternativas está disponível na 
-[Wikipedia](https://en.wikipedia.org/wiki/R_(programming_language)#Interfaces).](images/rstudio-snapshot.png)
+* https://www.rstudio.com/products/rstudio/download/preview/
 
-Você deve ter notado que o RStudio é composto por quatro grandes painéis retangulares, cada um contendo 
-conteúdo específico. Grosso modo, o painel superior direito mostra informações diversas sobre a atual sessão 
-de trabalho, sendo geralmente pouco utilizado. Já o painel inferior direito serve à visualização de gráficos
-e páginas de ajuda do R, o que o faz ser bastante utilizado. O painel superior esquerdo é aquele utilizado 
-para a programação em R, ou seja, aquele onde o código fonte utilizado para a análise dos dados é editado. 
-Esse painel é aquele onde creio que ocupamos a maior parte do tempo. Por fim, o painel inferior esquerdo 
-corresponde à interface de linha de comando, CLI, do R. É ali que o código fonte editado no painel superior
-esquerdo deve ser emitido para que a mágica aconteça. Para isso você pode, no editor, posicionar o cursor 
-sobre a linha de código fonte que deseja que seja emitida e pressionar, simultaneamente, as teclas `Ctrl` e 
-`Enter`. Alternativamente, para emitir um bloco de código fonte, você deverá selecioná-lo por completo, e 
-então pressionar as teclas `Ctrl` e `Enter`.
+Depois de instalados o R e o RStudio, inicie o RStudio em seu computador. Ele deve se parecer mais ou menos como na figura a seguir:
+
+![RStudio -- ambiente de desenvolvimento integrado para R (em sua versão para Linux).](images/rstudio-snapshot.png)
+
+Você deve ter notado que o RStudio é composto por quatro grandes painéis retangulares, cada um contendo conteúdo específico. Grosso modo, o painel superior direito mostra informações diversas sobre a atual sessão de trabalho, sendo geralmente pouco utilizado. Já o painel inferior direito serve à visualização de gráficos e páginas de ajuda do R, o que o faz ser bastante utilizado. O painel superior esquerdo é aquele utilizado para a programação em R, ou seja, aquele onde as linhas de comando utilizadas para a análise dos dados são editadas. Esse painel é aquele onde creio que ocupamos a maior parte do tempo. Por fim, o painel inferior esquerdo corresponde à interface de linha de comando (CLI), o **console** do R. É ali que as linhas de comando editadas no painel superior esquerdo deve ser emitidas para que a "mágica" aconteça. Para isso você pode, no editor, posicionar o cursor sobre a linha de código fonte que deseja que seja emitida e pressionar, simultaneamente, as teclas `Ctrl` e `Enter`. Alternativamente, para emitir um bloco de linhas de comando, você deve selecioná-lo por completo e então pressionar as teclas `Ctrl` e `Enter`.
 
 ### Primeiros passos
 
-Façamos algumas operações matemáticas para nos familiarizarmos com o R. Você pode copiar e colar as linhas de
-código abaixo no console do R.
+Agora é a hora de efetivamente interagir com o R. Façamos logo algumas operações matemáticas para nos familiarizarmos com ele. Você pode copiar e colar as linhas de comando abaixo no console do R.
 
 ```{r}
 # As quatro operações matemáticas básicas:
-2 + 3 # soma
-5* 5 # multiplicação
-25/5 # divisão 
-5 -3 # subtração
+2+3   # soma
+5 * 5 # multiplicação
+25/5  # divisão 
+5 - 3 # subtração
 
 # Três operações matemáticas úteis:
-2^2      # Potenciação (ou exponenciação)
-log(4)   # Função logarítmica
-sqrt(25) # Raiz quadrada
+2^2          # Potenciação (ou exponenciação)
+log(x = 4)   # Função logarítmica
+sqrt(x = 25) # Raiz quadrada
 ```
 
-Você deve ter notado que que os símbolos utilizados (`+`, `*`, `/` e `-`) são os mesmos encontrados em 
-qualquer calculadora 
-científica. São também os mesmos utilizados nas operações matemáticas de qualquer planilha eletrônica de 
-edição de dados. Isso significa que podemos deduzir algumas coisas sobre o funcionamento do R a partir do que
-conhecemos de outros *softwares* dedicados à análise e manipulação de dados. Você também deve
-ter observado que o espaçamento entre número e operador matemático não tem qualquer importância do 
-ponto de vista da operação matemática. Contudo, do ponto de vista estético -- para facilidade de leitura do 
-código fonte --, costuma-se usar a formatação `2 + 3` ao invés de `2+3`.
+Você deve ter notado que que os símbolos utilizados (`+`, `*`, `/` e `-`) são os mesmos encontrados em qualquer calculadora científica. São também os mesmos utilizados nas operações matemáticas de qualquer planilha eletrônica de edição de dados. Isso significa que podemos deduzir algumas coisas sobre o funcionamento do R a partir daquilo que conhecemos de outros programas de computador dedicados à análise e manipulação de dados. Você também deve ter observado que o espaçamento entre número e operador matemático não tem qualquer importância do ponto de vista da operação matemática. Contudo, do ponto de vista estético -- para facilidade de leitura do código fonte por humanos --, costuma-se usar a formatação com espaços `2 + 3` ao invés de `2+3`. (A exceção é a operação de divisão, geralmente expressa na forma sem espaços `2/3` 😃)
 
-Outro detalhe importante nas linhas de código acima é o uso do símbolo `#` para a inclusão de comentários. 
-Os comentários podem ser incluídos tanto em uma linha própria como após (nunca antes) um 
-comando. A inclusão de comentários no código fonte é fundamental para documentarmos a atividade que estamos
-realizando a fim de que outros (e nós mesmos, algumas semanas ou meses mais tarde) possamos entender o 
-propósito daquelas linhas de código.
+Outro detalhe importante nas linhas de comando acima é o uso do símbolo `#` para a inclusão de pequenos comentários sobre os comandos. Os comentários podem ser incluídos tanto em uma linha própria como na mesma linha após um comando -- mas nunca antes de um comando. A inclusão de pequenos comentários no código fonte é fundamental para documentarmos os detalhes da atividade que estamos realizando a fim de que outros -- e nós mesmos, algumas semanas ou meses mais tarde -- possamos entender o propósito de cada uma daquelas linhas de comando.
 
-Finalmente, você deve ter notado que as duas últimas operações matemáticas foram feitas usando uma declaração
-nominal e dois parênteses, ou seja, `log()` para a função logarítmica e `sqrt()` para a raiz quadrada. Na
-verdade, `log()` e `sqrt()` são ***funções*** do R, assim como `sum()` (soma), `diff()` (diferença), entre 
-outras. Uma função 
-arbitrária chamada `fun()` sempre é usada da seguinte maneira: `fun(x)`, onde `x` é um argumento qualquer (um
-número, por exemplo) tomado pela função. Por exemplo, uma função bastante conhecida entre nós é aquela da
-Lei Básica da Ciência do Solo,
+Finalmente, você deve ter notado que as duas últimas operações matemáticas foram feitas usando um identificador -- especificamente, uma "palavra" -- seguido por dois parênteses contendo um valor numérico atribuído ao argumento `x`: `log(x = 4)` e `sqrt(x = 25)`. Aqui, `log()` e `sqrt()` são ***funções*** do R, nesse caso as funções logarítmica e raiz quadrada, assim como `sum()` (soma), `diff()` (diferença), `prod()` (produto), entre outras. No R, uma função arbitrária chamada `fun()` sempre é usada da seguinte maneira: `fun(x)`, onde `x` é um argumento qualquer (um número, por exemplo) tomado pela função para realizar uma determinada operação. Como exemplo final, tomemos uma função bastante conhecida entre cientistas do solo, a função que que representa a Lei Básica da Ciência do Solo,
 
 $$solo = f(cl, o, r, p, t, \ldots)$$
 
-onde $cl$ representa o clima, $o$ representa os organismos vivos, incluindo nós seres humanos, $r$ significa
-relevo, $p$ é o material parental, $t$ representa o tempo e $\ldots$ são fatores não conhecidos ou de limitada 
-relevância. Em R, essa função seria escrita exatamente da seguinte forma: `solo(cl, o, r, p, t, ...)`. Vejamos 
-mais um
-exemplo, agora de uma função que aceita vários argumentos:
+onde $cl$ representa o clima, $o$ representa os organismos vivos, incluindo nós seres humanos, $r$ significa relevo, $p$ é o material parental, $t$ representa o tempo e $\ldots$ são fatores não conhecidos ou de limitada relevância. Em R, essa função seria escrita exatamente da mesma forma: `solo = f(cl, o, r, p, t, ...)`. Vejamos mais um exemplo, agora de uma função que aceita vários argumentos:
 
 ```{r}
-# No RStudio, ponha o cursor sobre o nome da função e pressione 'F1' para ver a 
-# sua página de ajuda. Lá você verá o nome dos argumentos aceitos pela função 
-# 'plot()' seguido de uma breve descrição.
 plot(x = 25, y = 25, col = "red", main = "Um ponto vermelho", xlab = "x", ylab = "y")
 ```
 
 ### Conceitos básicos
 
 Passada a primeira impressão, agora precisamos nos familiarizar com alguns conceitos básicos para que 
-possamos entender o R e utilizá-lo com êxito. Conforme destacado acima, o R não é um simples *software* para
+possamos entender o R e utilizá-lo com êxito. Conforme destacado acima, o R não é um simples programa de computador para
 análises estatísticas, mas sim um ambiente de programação. E, para isso, precisamos de uma linguagem de 
 programação, ou seja, a linguagem de programação R.
 
 A gramática da linguagem de programação R possui dois elementos principais: as palavras reservadas
 e as palavras-chave. As ***palavras reservadas*** constituem signos com significado especial para a linguagem
 de programação, definidas internamente no código fonte, e que não podem ser utilizadas pelo usuário para fins 
-outros que não aqueles especificados internamente pelo *software* (por exemplo, para identificar objetos e
+outros que não aqueles especificados internamente pelo programa de computador (por exemplo, para identificar objetos e
 funções -- veremos esses conceitos a seguir). Algumas das palavras reservadas do R são `if`, `else`, `while`,
 `TRUE` e `FALSE`. Note que no editor de código fonte do RStudio as palavras reservadas aparecem sempre
 destacadas em azul -- busque pelo termo *reserved* no painel de ajuda do RStudio (painel inferior direito) 
@@ -401,6 +272,52 @@ install.packages(
 
 Pronto! Agora você terá a sua disposição também as funcionalidades incluídas nesses pacotes.
 
+### Ferramentas avançadas
+
+O [tidyverse][tidyverse] é uma coleção de pacotes desenvolvidos principalmente pela equipe do RStudio. Esses pacotes visam fornecer as ferramentas necessárias para realizar a maioria das tarefas básicas executadas no processo de análise de dados (leitura, limpeza, manipulação e exportação de dados, produção de gráficos, entre outros).
+
+[tidyverse]: https://www.tidyverse.org/
+
+Uma das maiores contribuições do tidyverse é o operador `%>%`, chamado tubo ou cano, em inglês *pipe*, provida pelo pacote [magrittr][magrittr]. Operacionalmente, um tubo serve para estabelecer a comunicação direta entre dois processos, representando assim algo que possui uma "entrada", um "caminho" e uma "saída". Essa "entrada" representa, por exemplo, o produto de uma função qualquer, o qual é encaminhado diretamente, sem a necessidade de "paradas", pelo operador para uma segunda função, que então produz um produto final na "saída". Vejamos um exemplo para que você entenda a utilidade de um tubo.
+
+[magrittr]: https://github.com/tidyverse/magrittr
+
+Suponha que você queira fazer uma sequência de operações. Uma forma comum é definir, para cada operação, um objeto temporário, até que o produto final da sequência de operações seja obtido. Por exemplo:
+
+```{r}
+# Sequência de operações usando objetos temporários
+x <- exp(25)
+y <- sqrt(x)
+z <- log(y)
+z
+rm(x, y)
+gc()
+```
+
+O problema dessa estratégia é que ela é muito verbosa, ou seja, ela requer muitas linhas de comando. No exemplo usado, apesar das operações serem bastante simples, foram necessárias seis linhas de comando. Uma alternativa é usar funções aninhadas, que elimina a necessidade de criação de objetos temporários. Dependendo do tamanho do conjunto de dados, esses objetos temporários podem consumir toda a RAM disponível em seu computador durante a execução da sequência de operações. Além disso, você pode acabar esquecendo de removê-los do ambiente de trabalho e assim permitir que eles indesejadamente afetem outras operações. Vejamos um exemplo:
+
+```{r}
+# Sequência de operações usando funções aninhadas
+z <- log(sqrt(exp(25)))
+z
+```
+
+Note que agora apenas duas linhas de comando foram necessárias para executar a mesma sequência de operações. Contudo, um novo problema foi criado, o da legibilidade das linhas de comando. Como nossa tradição de leitura segue de cima para baixo e da esquerda para a direita, temos grande facilidade de ler e entender qual é a sequência de operações realizada no primeira exemplo. Já no segundo exemplo, precisamos realizar a leitura da direita para a esquerda ou então pensar de maneira reversa. É claro que isso é fácil de fazer com o exemplo acima. Contudo, à medida que aumenta a complexidade das sequência de operações e das funções utilizadas, mais difícil fica de ler/decifrar um conjunto de funções aninhadas.
+
+O operador `%>%` resolve todos esses problemas de uma vez só (Pressione Ctrl+Shift+M para inserir o operador `%>%` 😃):
+
+```{r, echo=FALSE}
+library(magrittr)
+```
+
+```{r}
+# Sequência de operações usando o operador %>%
+z <- exp(25) %>% sqrt() %>% log()
+z
+```
+
+Veja como a leitura das linhas de comando é muito fácil -- como quando usamos objetos temporários -- e pouquíssimo verbosa -- como quando usamos funções aninhadas. Assim, o operador `%>%` colabora para a produção de código fonte letrado, ou seja, que seja legível e compreensível não apenas por máquinas, mas principalmente por seres humanos.
+
 ### Lembrete final
 
 Conforme vimos acima, todas as funcionalidades do R são acionadas pelo uso de comandos de texto e
@@ -441,9 +358,5 @@ https://grass.osgeo.org/
 
 http://www.gdal.org/
 
-[gui]: https://en.wikipedia.org/wiki/Graphical_user_interface
-[ide]: https://en.wikipedia.org/wiki/Integrated_development_environment
-[os]: https://en.wikipedia.org/wiki/Operating_system
-[cli]: https://en.wikipedia.org/wiki/Command-line_interface
 
-<!-- # Gestão de Dados -->
+<!-- # Gestão de Dados e Código Fonte -->
