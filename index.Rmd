@@ -21,7 +21,7 @@ knitr::opts_chunk$set(dev.args = list(bg = 'transparent'))
 
 # Prefácio {-}
 
-O planejamento e desenvolvimento deste livro estão (mais ou menos) estruturados em partes, de 
+O planejamento e desenvolvimento desse livro estão (mais ou menos) estruturados em partes, de 
 caráter mais geral, subdivididas em capítulos, de caráter mais específico. Atualmente, isso se dá da seguinte
 maneira:
 
@@ -31,8 +31,8 @@ maneira:
     + Mapeamento digital do solo
 * Parte II -- Infraestrutura tecnológica
     + Hardware
-    + Software
-    + Gestão de dados
+    + Programas de Computador
+    + Gestão de Dados e Código Fonte
 * Parte III -- Amostragem espacial
     + Princípios da amostragem espacial
     + Amostragem probabilística
