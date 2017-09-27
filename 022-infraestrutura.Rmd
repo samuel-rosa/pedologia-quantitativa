@@ -90,26 +90,26 @@ RStudio, a criação de um projeto no QGIS facilita a organização dos dados.
 
 ### git
 
-O controle de versão é uma prática de fundamental importância para o gerenciamento ao longo do tempo de arquivos em geral, dentre eles arquivos contendo código fonte. Um sistema de controle de versão registra todas as mudança feitas no código fonte. Assim, quando cometemos algum erro ou desenvolvemos o código fonte em uma direção que mais tarde se mostra equivocada, podemos olhar para as versões anteriores do código fonte até encontrarmos o ponto em que erramos ou o momento no qual tomamos aquela direção equivocada. Basta então recuperar aquela versão do código fonte e continuar o seu desenvolvimento.
+O controle de versão é uma prática de fundamental importância para o gerenciamento ao longo do tempo de arquivos em geral, dentre eles arquivos contendo código fonte. Um sistema de controle de versão registra todas as mudança feitas no código fonte. Assim, quando cometemos algum erro ou desenvolvemos o código fonte em uma direção que mais tarde se mostra equivocada, podemos olhar para as versões anteriores do código fonte até encontrarmos o ponto em que erramos ou o momento no qual tomamos aquela direção equivocada. Basta então recuperar aquela versão do código fonte e continuar o seu desenvolvimento dali em diante.
 
 A estratégia de controle de versão mais comumente usada consiste em manter uma estrutura de arquivos mais ou menos com a seguinte:
 
     projeto/
     |- code/
-    |  |- R/
-    |     |- script01.R
-    |     |- script01-modificado.R
-    |     |- script02.R
-    |     |- script02-revisado.R
-    |     |- script02-revisado-novo.R
-    |     |- script-final.R
-    |     |- script-final-final.R
+    |  |- script01.R
+    |  |- script01-modificado.R
+    |  |- script02.R
+    |  |- script02-revisado.R
+    |  |- script02-revisado-novo.R
+    |  |- script-final.R
+    |  |- script-final-final.R
 
-Felizmente existem alternativas bastante mais eficientes do que essa. Na verdade, um bom sistema de control de versão dará conta do registro e organização das diferentes versões do código fonte de maneira completamente automática.
+Segundo a estratégia acima, cada arquivo é nomeado de acordo com o estágio de desenvolvimento e fazendo uma referência generalista ao tipo de alteração feita. Isso pode ser eficiente quando fazemos poucas alterações ou então alterações pouco significativas. Contudo, à medida que aumenta a complexidade de nosso projeto, maior será o número de edições no código fonte e, também, maior será a complexidade delas. Felizmente existem alternativas bastante mais eficientes do que aquela mostrada acima. Na verdade, um bom sistema de controle de versão dará conta do registro e organização das diferentes versões do código fonte de maneira completamente automática.
 
-Um dos sistemas mais populares de gerenciamento e controle de versão de código fonte é o [git][git]. Uma das grandes vantagens do git é o fato de ser facilmente instalado e utilizado localmente, em seu computador, sem necessitar da conexão permanente a um servidor remoto centralizador das operações de gerenciamento do código fonte. Isso é muito importante para que possamos fazer o controle de versão do código fonte localmente mesmo tendo acesso limitado ou intermitente ao repositório remoto onde o código fonte fica armazenado e publicado/compartilhado.
+Um dos sistemas mais populares de gerenciamento e controle de versão de código fonte é o [git][git]. Comparado aos outros sistemas de controle de versão, uma das grandes vantagens do git é o fato de ser de fácil instalação e poder ser utilizado localmente, sem necessidade de conexão permanente a um servidor remoto. Isso é possível porque o git  realiza todas as operações de gerenciamento do código fonte localmente. Além da importância para o uso pessoal, essa funcionalidade também é muito importante, por exemplo, quando temos acesso limitado ou intermitente ao [repositório remoto][github] onde publicamos e compartilhamos o código fonte.
 
 [git]: https://git-scm.com/
+[github]: https://github.com/
 
 Outra importante vantagem do git em relação aos demais sistemas de controle de versão é o fato de que permite criar cópias, ramificações (`branch`, do inglês *branching*) do código fonte com as quais podemos fazer testes e desenvolvimentos sem muito comprometimento com o resultado, tudo isso sem tocar na versão estável do código fonte (`master`). Caso os desenvolvimentos em uma ramificação do código fonte se mostrarem uteis, basta fazer uma fusão (`merge`, do inglês *merging*) entre o ramo e o código fonte estável -- ou simplesmente deletar a ramificação caso ela se mostre inútil. Isso é particularmente importante quando mais de uma pessoa está trabalhando no desenvolvimento do código fonte e quando trabalhamos sozinhos mas precisamos fazer uma alteração muito grande no código fonte.
 
@@ -131,6 +131,8 @@ Depois de instalado o git, precisamos fazer a sua configuração. Trata-se de in
 git config --global user.name 'Seu Nome aqui'
 git config --global user.email 'seu@email.aqui'
 ```
+
+
 
 Vamos agora fazer um pequeno exercício usando o git. Para começar, acesse o Terminal no RStudio e emita o comando `git status`. Esse comando produzirá como resultado informações sobre o estado atual do sistema de controle de versão. Entre outras coisas, ele indica o ramo em que estamos trabalhando, nesse caso, o ramo `master`. Para criar um novo ramo usamos o comando `git branch`:
 
