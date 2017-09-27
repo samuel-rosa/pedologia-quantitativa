@@ -113,9 +113,10 @@ Um dos sistemas mais populares de gerenciamento e controle de versão de código
 
 Outra importante vantagem do git em relação aos demais sistemas de controle de versão é o fato de que permite criar cópias, ramificações (`branch`, do inglês *branching*) do código fonte com as quais podemos fazer testes e desenvolvimentos sem muito comprometimento com o resultado, tudo isso sem tocar na versão estável do código fonte (`master`). Caso os desenvolvimentos em uma ramificação do código fonte se mostrarem uteis, basta fazer uma fusão (`merge`, do inglês *merging*) entre o ramo e o código fonte estável -- ou simplesmente deletar a ramificação caso ela se mostre inútil. Isso é particularmente importante quando mais de uma pessoa está trabalhando no desenvolvimento do código fonte e quando trabalhamos sozinhos mas precisamos fazer uma alteração muito grande no código fonte.
 
-Para verificar se você já tem o git instalado em seu computador, acesse o Terminal do RStudio (painel esquerdo inferior) e emita as duas linhas de comando abaixo:
+Para verificar se você já tem o git instalado em seu computador, acesse o Terminal -- no painel esquerdo inferior do RStudio -- e emita as linhas de comando abaixo conforme o seu sistema operacional:
 
-    which git
+    which git # Linux & Mac
+    where git # Windows
     git --version
 
 Se o git estiver instalado, o primeiro comando deverá produzir como saída o local onde os arquivos do git estão localizados -- por exemplo, `/usr/bin/git` --, enquanto o segundo comando mostra a versão do git que está instalada -- por exemplo, `git version 2.7.4`. Caso você não tenha o git instalado em seu computador, vá até o endereço abaixo e descarregue o instalador ou estudo as diretrizes para instalação para o seu sistema operacional.
