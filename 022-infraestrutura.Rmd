@@ -115,13 +115,12 @@ Outra importante vantagem do git em relação aos demais sistemas de controle de
 
 Para verificar se você já tem o git instalado em seu computador, acesse o Terminal -- no painel esquerdo inferior do RStudio -- e emita as linhas de comando abaixo conforme o seu sistema operacional:
 
+    # Verificação da instalação do git
     which git # Linux & Mac
     where git # Windows
     git --version
 
-Se o git estiver instalado, o primeiro comando deverá produzir como saída o local onde os arquivos do git estão localizados -- por exemplo, `/usr/bin/git` --, enquanto o segundo comando mostra a versão do git que está instalada -- por exemplo, `git version 2.7.4`. Caso você não tenha o git instalado em seu computador, vá até o endereço abaixo e descarregue o instalador ou estudo as diretrizes para instalação para o seu sistema operacional.
-
-* https://git-scm.com/downloads
+Se o git estiver instalado, o primeiro comando (`which git`, em Linux e Mac, ou `where git`, em Windows) deverá retornar o caminho para o diretório onde os arquivos do git estão localizados -- por exemplo, `/usr/bin/git` --, enquanto o segundo comando mostra a versão do git que está instalada -- por exemplo, `git version 2.7.4`. Caso você não tenha o git instalado em seu computador, vá até o endereço https://git-scm.com/downloads e descarregue o instalador e estude as diretrizes para instalação para o seu sistema operacional.
 
 Depois de instalado o git, precisamos fazer a sua configuração. Trata-se de informar seu nome e endereço de e-mail para o git. Isso porque o git registra essas duas informações à cada mudança feita no código fonte e enviada (`commit`) ao sistema de controle de versão. Isso é da maior importância quando duas ou mais pessoas colaboram no desenvolvimento do código fonte. Para configurar o seu nome e endereço de e-mail no git, acesse o Terminal no RStudio (painel esquerdo inferior) e emita as duas linhas de comando abaixo, informando os dados solicitados.
 
