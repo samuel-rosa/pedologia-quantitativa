@@ -274,9 +274,13 @@ Pronto! Agora você terá a sua disposição também as funcionalidades incluíd
 
 ### Ferramentas avançadas
 
+#### Tidyverse
+
 O [tidyverse][tidyverse] é uma coleção de pacotes desenvolvidos principalmente pela equipe do RStudio. Esses pacotes visam fornecer as ferramentas necessárias para realizar a maioria das tarefas básicas executadas no processo de análise de dados (leitura, limpeza, manipulação e exportação de dados, produção de gráficos, entre outros).
 
 [tidyverse]: https://www.tidyverse.org/
+
+#### Operador `%>%`
 
 Uma das maiores contribuições do tidyverse é o operador `%>%`, chamado tubo ou cano, em inglês *pipe*, provida pelo pacote [magrittr][magrittr]. Operacionalmente, um tubo serve para estabelecer a comunicação direta entre dois processos, representando assim algo que possui uma "entrada", um "caminho" e uma "saída". Essa "entrada" representa, por exemplo, o produto de uma função qualquer, o qual é encaminhado diretamente, sem a necessidade de "paradas", pelo operador para uma segunda função, que então produz um produto final na "saída". Vejamos um exemplo para que você entenda a utilidade de um tubo.
 
@@ -317,6 +321,17 @@ z
 ```
 
 Veja como a leitura das linhas de comando é muito fácil -- como quando usamos objetos temporários -- e pouquíssimo verbosa -- como quando usamos funções aninhadas. Assim, o operador `%>%` colabora para a produção de código fonte letrado, ou seja, que seja legível e compreensível não apenas por máquinas, mas principalmente por seres humanos.
+
+#### Visualização interativa de objetos espaciais
+
+Pacote [mapview][mapview].
+
+[mapview]: https://r-spatial.github.io/mapview/
+
+```{r, eval=FALSE}
+# Instalação da versão mais recente do pacote mapview
+devtools::install_github("r-spatial/mapview", dependencies = TRUE)
+```
 
 ### Lembrete final
 

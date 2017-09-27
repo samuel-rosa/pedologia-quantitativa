@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2017-09-26">
+<meta name="date" content="2017-09-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -422,7 +422,12 @@ meu.modelo_linear</code></pre></div>
 </div>
 <div id="ferramentas-avancadas" class="section level3">
 <h3><span class="header-section-number">5.2.5</span> Ferramentas avançadas</h3>
+<div id="tidyverse" class="section level4">
+<h4><span class="header-section-number">5.2.5.1</span> Tidyverse</h4>
 <p>O <a href="https://www.tidyverse.org/">tidyverse</a> é uma coleção de pacotes desenvolvidos principalmente pela equipe do RStudio. Esses pacotes visam fornecer as ferramentas necessárias para realizar a maioria das tarefas básicas executadas no processo de análise de dados (leitura, limpeza, manipulação e exportação de dados, produção de gráficos, entre outros).</p>
+</div>
+<div id="operador" class="section level4">
+<h4><span class="header-section-number">5.2.5.2</span> Operador <code>%&gt;%</code></h4>
 <p>Uma das maiores contribuições do tidyverse é o operador <code>%&gt;%</code>, chamado tubo ou cano, em inglês <em>pipe</em>, provida pelo pacote <a href="https://github.com/tidyverse/magrittr">magrittr</a>. Operacionalmente, um tubo serve para estabelecer a comunicação direta entre dois processos, representando assim algo que possui uma “entrada”, um “caminho” e uma “saída”. Essa “entrada” representa, por exemplo, o produto de uma função qualquer, o qual é encaminhado diretamente, sem a necessidade de “paradas”, pelo operador para uma segunda função, que então produz um produto final na “saída”. Vejamos um exemplo para que você entenda a utilidade de um tubo.</p>
 <p>Suponha que você queira fazer uma sequência de operações. Uma forma comum é definir, para cada operação, um objeto temporário, até que o produto final da sequência de operações seja obtido. Por exemplo:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Sequência de operações usando objetos temporários</span>
@@ -434,8 +439,8 @@ z</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(x, y)
 <span class="kw">gc</span>()</code></pre></div>
 <pre><code>##           used (Mb) gc trigger (Mb) max used (Mb)
-## Ncells  668505 35.8    1168576 62.5  1168576 62.5
-## Vcells 1209524  9.3    2384213 18.2  1920175 14.7</code></pre>
+## Ncells  764573 40.9    1442291 77.1  1168576 62.5
+## Vcells 1313130 10.1    2384213 18.2  1920119 14.7</code></pre>
 <p>O problema dessa estratégia é que ela é muito verbosa, ou seja, ela requer muitas linhas de comando. No exemplo usado, apesar das operações serem bastante simples, foram necessárias seis linhas de comando. Uma alternativa é usar funções aninhadas, que elimina a necessidade de criação de objetos temporários. Dependendo do tamanho do conjunto de dados, esses objetos temporários podem consumir toda a RAM disponível em seu computador durante a execução da sequência de operações. Além disso, você pode acabar esquecendo de removê-los do ambiente de trabalho e assim permitir que eles indesejadamente afetem outras operações. Vejamos um exemplo:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Sequência de operações usando funções aninhadas</span>
 z &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="kw">sqrt</span>(<span class="kw">exp</span>(<span class="dv">25</span>)))
@@ -448,6 +453,13 @@ z &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="dv">25<
 z</code></pre></div>
 <pre><code>## [1] 12.5</code></pre>
 <p>Veja como a leitura das linhas de comando é muito fácil – como quando usamos objetos temporários – e pouquíssimo verbosa – como quando usamos funções aninhadas. Assim, o operador <code>%&gt;%</code> colabora para a produção de código fonte letrado, ou seja, que seja legível e compreensível não apenas por máquinas, mas principalmente por seres humanos.</p>
+</div>
+<div id="visualizacao-interativa-de-objetos-espaciais" class="section level4">
+<h4><span class="header-section-number">5.2.5.3</span> Visualização interativa de objetos espaciais</h4>
+<p>Pacote <a href="https://r-spatial.github.io/mapview/">mapview</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Instalação da versão mais recente do pacote mapview</span>
+devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;r-spatial/mapview&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div>
+</div>
 </div>
 <div id="lembrete-final" class="section level3">
 <h3><span class="header-section-number">5.2.6</span> Lembrete final</h3>
