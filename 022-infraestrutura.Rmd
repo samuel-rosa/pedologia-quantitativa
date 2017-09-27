@@ -27,7 +27,7 @@ de diretórios e crie a seguinte estrutura de diretórios em seu local favorito 
     |  |- fig/     # figuras usadas no relatório
 
 Note que, dentro do nosso diretório de trabalho principal (`projeto`) existem três subdiretórios:
-`code`, `data` e `doc`. O primeiro deles, `code`, serve para armazernamos os arquivos
+`code`, `data` e `doc`. O primeiro deles, `code`, serve para armazenarmos os arquivos
 contendo código de programação em qualquer linguagem. Para cada linguagem criamos um subsubdiretório 
 específico. Nesse exemplo, como usaremos apenas o R, criaremos apenas um subsubdiretório chamado R. Ali 
 dentro serão armazenados os *scripts* com código de programação do escritos em R.
@@ -41,7 +41,7 @@ Isso inclui os dados de solo e dos limites da área de estudo. Por fim, o subsub
 usado para armazenar dados diversos produzidos durante o processamento no R, os quais serão salvos 
 usando o formato `rda`.
 
-O terceito e último subdiretório de nosso diretório de trabalho `projeto`, aqui denominado `doc`,
+O terceiro e último subdiretório de nosso diretório de trabalho `projeto`, aqui denominado `doc`,
 será usado para armazenar os arquivos usados para redigir os documentos resultantes do projeto.
 
 No RStudio, acesse
@@ -90,11 +90,74 @@ RStudio, a criação de um projeto no QGIS facilita a organização dos dados.
 
 ### git
 
-Sistema git de gerenciamento de código fonte e controle de versão distribuído
+O controle de versão é uma prática de fundamental importância para o gerenciamento ao longo do tempo de arquivos em geral, dentre eles arquivos contendo código fonte. Um sistema de controle de versão registra todas as mudança feitas no código fonte. Assim, quando cometemos algum erro ou desenvolvemos o código fonte em uma direção que mais tarde se mostra equivocada, podemos olhar para as versões anteriores do código fonte até encontrarmos o ponto em que erramos ou o momento no qual tomamos aquela direção equivocada. Basta então recuperar aquela versão do código fonte e continuar o seu desenvolvimento.
 
-O instalador do git para o seu OS está disponível no endereço abaixo:
+A estratégia de controle de versão mais comumente usada consiste em manter uma estrutura de arquivos mais ou menos com a seguinte:
+
+    projeto/
+    |- code/
+    |  |- R/
+    |     |- script01.R
+    |     |- script01-modificado.R
+    |     |- script02.R
+    |     |- script02-revisado.R
+    |     |- script02-revisado-novo.R
+    |     |- script-final.R
+    |     |- script-final-final.R
+
+Felizmente existem alternativas bastante mais eficientes do que essa. Na verdade, um bom sistema de control de versão dará conta do registro e organização das diferentes versões do código fonte de maneira completamente automática.
+
+Um dos sistemas mais populares de gerenciamento e controle de versão de código fonte é o [git][git]. Uma das grandes vantagens do git é o fato de ser facilmente instalado e utilizado localmente, em seu computador, sem necessitar da conexão permanente a um servidor remoto centralizador das operações de gerenciamento do código fonte. Isso é muito importante para que possamos fazer o controle de versão do código fonte localmente mesmo tendo acesso limitado ou intermitente ao repositório remoto onde o código fonte fica armazenado e publicado/compartilhado.
+
+[git]: https://git-scm.com/
+
+Outra importante vantagem do git em relação aos demais sistemas de controle de versão é o fato de que permite criar cópias, ramificações (`branch`, do inglês *branching*) do código fonte com as quais podemos fazer testes e desenvolvimentos sem muito comprometimento com o resultado, tudo isso sem tocar na versão estável do código fonte (`master`). Caso os desenvolvimentos em uma ramificação do código fonte se mostrarem uteis, basta fazer uma fusão (`merge`, do inglês *merging*) entre o ramo e o código fonte estável -- ou simplesmente deletar a ramificação caso ela se mostre inútil. Isso é particularmente importante quando mais de uma pessoa está trabalhando no desenvolvimento do código fonte e quando trabalhamos sozinhos mas precisamos fazer uma alteração muito grande no código fonte.
+
+Para verificar se você já tem o git instalado em seu computador, acesse o Terminal do RStudio (painel esquerdo inferior) e emita as duas linhas de comando abaixo:
+
+    which git
+    git --version
+
+Se o git estiver instalado, o primeiro comando deverá produzir como saída o local onde os arquivos do git estão localizados -- por exemplo, `/usr/bin/git` --, enquanto o segundo comando mostra a versão do git que está instalada -- por exemplo, `git version 2.7.4`. Caso você não tenha o git instalado em seu computador, vá até o endereço abaixo e descarregue o instalador ou estudo as diretrizes para instalação para o seu sistema operacional.
 
 * https://git-scm.com/downloads
+
+Depois de instalado o git, precisamos fazer a sua configuração. Trata-se de informar seu nome e endereço de e-mail para o git. Isso porque o git registra essas duas informações à cada mudança feita no código fonte e enviada (`commit`) ao sistema de controle de versão. Isso é da maior importância quando duas ou mais pessoas colaboram no desenvolvimento do código fonte. Para configurar o seu nome e endereço de e-mail no git, acesse o Terminal no RStudio (painel esquerdo inferior) e emita as duas linhas de comando abaixo, informando os dados solicitados.
+
+    git config --global user.name 'Seu Nome aqui'
+    git config --global user.email 'seu@email.aqui'
+
+Vamos agora fazer um pequeno exercício usando o git. Para começar, acesse o Terminal no RStudio e emita o comando `git status`. Esse comando produzirá como resultado informações sobre o estado atual do sistema de controle de versão. Entre outras coisas, ele indica o ramo em que estamos trabalhando, nesse caso, o ramo `master`. Para criar um novo ramo usamos o comando `git branch`:
+
+    git branch teste
+
+O comando acima criou um ramo chamado `teste`. Agora precisamos informar o git que as próximas edições feita no código fonte sejam registradas no ramo `teste`. Para mudarmos para o novo ramo usamos o comando `git checkout`:
+
+    git checkout teste
+
+Ou, alternativamente, podemos usar a opção `-b` com o comando `git checkout` para criar e mudar para o novo ramo de uma só vez:
+
+    git checkout -b teste
+
+Se emitirmos novamente o comando `git status`, veremos que estamos, de fato, trabalhando no ramo `teste`. A partir de agora todas as edições são registradas no ramo `teste`. Suponha, por exemplo, que dentre as edições feitas está a criação de um arquivo chamado `teste.txt`. Nesse caso, precisamos adicionar o novo arquivo ao índice do git. Para isso usamo o comando `git add`: 
+
+    git add teste.txt
+
+Também precisamos registrar no git uma mensagem que descreva minimamente nossa ação. Para isso usamos o comando `git commit`:
+
+    git commit -m 'Criação do novo arquivo teste.txt contendo informações sobre o teste'
+
+Enquanto fazemos essas edições no ramo `teste`, o ramo `master` continua exatamente como o deixamos quando criamos e mudamos para o ramo `teste`. Suponha que agora queremos fundir as edições feitas no ramo `teste` com aquelas feitas no ramo `master`. Para isso precisaos primeiro mudar para o ramo `master`:
+
+    git checkout master
+
+Para fundir o ramo `teste` com o ramo `master` usamos o comando `git merge`:
+
+    git merge teste
+
+Caso tenhamos terminado o desenvolvimento no ramo `teste` e não voltaremos mais a usar aquele ramos, podemos deletá-lo. Para isso usamos a opção `-d` com o comando `git branch`:
+
+    git branch -d teste
 
 ### GitHub
 
@@ -116,7 +179,7 @@ Linguagem de marcação [Markdown do R](http://rmarkdown.rstudio.com/)
 
 ### Plataformas de publicação
 
-O [Hugo][hugo], um programa de computador gratuíto e de código aberto, é um dos geradores de páginas estáticas da Internet mais populares. Um gerador de páginas estáticas consiste num programa que recebe arquivos de texto plano (Markdown) como entrada e os processa de maneira a produzir arquivos no formato HTML. Esses arquivos no formato HTML finalmente vão compor o conteúdo essencial da página da Internet. Qualquer pessoa que acessar uma página estática receberá, em seu computador, exatamente o mesmo conteúdo. Isso é completamente diferente das páginas com conteúdo dinâmico (Figure \@ref(fig:ufsm-page)), as quais podem enviar conteúdos diferentes para as pessoas que a estiverem acessando dependendo de condições específicas. Por exemplo, uma página que exige o cadastro do visitante enviará conteúdo relacionado àquele visitante. Para que isso ocorra, as páginas dinâmicas dependem de uma base de dados e uma linguagem como PHP no servidor para realizar algum processamento antes de enviar o conteúdo da página ao seu visitante. Numa página estática, o conteúdo não fica armazenado em uma base de dados, e sim em arquivos HTML prontos para servir armazenados num servidor qualquer. Assim, as páginas estáticas costumam ser mais rápidas em responder às ações dos visitantes. Elas também são mais fáceis de implementar e manter, uma vez que não dependem de servidores especializados ou a instalação de programas específicos para gerenciamento de conteúdo.
+O [Hugo][hugo], um programa de computador gratuito e de código aberto, é um dos geradores de páginas estáticas da Internet mais populares. Um gerador de páginas estáticas consiste num programa que recebe arquivos de texto plano (Markdown) como entrada e os processa de maneira a produzir arquivos no formato HTML. Esses arquivos no formato HTML finalmente vão compor o conteúdo essencial da página da Internet. Qualquer pessoa que acessar uma página estática receberá, em seu computador, exatamente o mesmo conteúdo. Isso é completamente diferente das páginas com conteúdo dinâmico (Figure \@ref(fig:ufsm-page)), as quais podem enviar conteúdos diferentes para as pessoas que a estiverem acessando dependendo de condições específicas. Por exemplo, uma página que exige o cadastro do visitante enviará conteúdo relacionado àquele visitante. Para que isso ocorra, as páginas dinâmicas dependem de uma base de dados e uma linguagem como PHP no servidor para realizar algum processamento antes de enviar o conteúdo da página ao seu visitante. Numa página estática, o conteúdo não fica armazenado em uma base de dados, e sim em arquivos HTML prontos para servir armazenados num servidor qualquer. Assim, as páginas estáticas costumam ser mais rápidas em responder às ações dos visitantes. Elas também são mais fáceis de implementar e manter, uma vez que não dependem de servidores especializados ou a instalação de programas específicos para gerenciamento de conteúdo.
 
 [hugo]: https://gohugo.io/
 

@@ -433,9 +433,9 @@ z</code></pre></div>
 <pre><code>## [1] 12.5</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(x, y)
 <span class="kw">gc</span>()</code></pre></div>
-<pre><code>##           used (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 1375972 73.5    2164898 115.7  2164898 115.7
-## Vcells 2333062 17.8    4826033  36.9  4701415  35.9</code></pre>
+<pre><code>##           used (Mb) gc trigger (Mb) max used (Mb)
+## Ncells  668505 35.8    1168576 62.5  1168576 62.5
+## Vcells 1209524  9.3    2384213 18.2  1920175 14.7</code></pre>
 <p>O problema dessa estratégia é que ela é muito verbosa, ou seja, ela requer muitas linhas de comando. No exemplo usado, apesar das operações serem bastante simples, foram necessárias seis linhas de comando. Uma alternativa é usar funções aninhadas, que elimina a necessidade de criação de objetos temporários. Dependendo do tamanho do conjunto de dados, esses objetos temporários podem consumir toda a RAM disponível em seu computador durante a execução da sequência de operações. Além disso, você pode acabar esquecendo de removê-los do ambiente de trabalho e assim permitir que eles indesejadamente afetem outras operações. Vejamos um exemplo:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Sequência de operações usando funções aninhadas</span>
 z &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="kw">sqrt</span>(<span class="kw">exp</span>(<span class="dv">25</span>)))
