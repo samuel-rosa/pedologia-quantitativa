@@ -148,16 +148,42 @@ O diretório do novo projeto do RStudio deverá conter uma estrutura com a mostr
     |- meu-novo-projeto.Rproj
     |- .gitignore
 
-Tando o subdiretório `.Rproj.user` como o arquivo `meu-novo-projeto.Rproj` já foram descritos anteriormente. O que temos de novidade aqui são o subdiretório `.git` e o arquivo `.gitignore`. O subdiretório `.git` consiste no repositório local onde as edições submetidas ao git são registradas. Já o arquivo `.gitignore` serve para identificar os arquivos e subdiretórios que devem ser, como o próprio nome sugere, ignorados pelo git. É o caso, por exemplo, de um subdiretório temporário onde armazenamos produtos temporários do projeto que podem mudar a cada instante e serem descartados àaqualquer momento.
+Tando o subdiretório `.Rproj.user` como o arquivo `meu-novo-projeto.Rproj` já foram descritos anteriormente. O que temos de novidade aqui são o subdiretório `.git` e o arquivo `.gitignore`. O subdiretório `.git` consiste no repositório local onde as edições submetidas ao git são registradas. Já o arquivo `.gitignore` serve para identificar os arquivos e subdiretórios que devem ser, como o próprio nome sugere, ignorados pelo git. É o caso, por exemplo, de um subdiretório temporário criado para armazenar produtos do projeto que podem mudar a cada instante e serem descartados a qualquer momento.
 
-No Terminal, emita o comando `git status` para acessar informações sobre o estado atual do git:
+Agora, no Terminal, emita o comando `git status` para acessar as informações sobre o estado atual do git:
 
 ```{bash, eval=FALSE}
-# Verificação do estado do git
+# Verificação do estado atual do git
 git status
 ```
 
-Entre outras informações, o comando `git status` deve indicar que as edições atuais  o ramo em que estamos trabalhando, nesse caso, o ramo `master`. Para criar um novo ramo usamos o comando `git branch`:
+O resultado impresso no terminal deve ser aproximadamente o seguinte:
+
+    On branch master
+    
+    Initial commit
+    
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+    
+            .gitignore
+            meu-novo-projeto.Rproj
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+A primeira informação é de que estamos operando no ramo `master` do git. Ademais, temos a informação de que existem dois arquivos não monitorados pelo git: `.gitignore` e `meu-novo-projeto.Rproj`. Para iniciar o monitoramento desses arquivos, acessamos a aba `Git` no painel superior direito to RStudio e habilitamos as caixas sob o item `Staged`, o que fará o símbolo sob o item `Status` passar de um sinal de interrogoção amarelo para um `A` verde (adicionar, do inglês *add*).
+
+```{r rstudio-git-add, echo=FALSE, fig.cap="Adicionando arquivos ao monitoramento do git.", out.width='50%', fig.align='center'}
+knitr::include_graphics("images/rstudio-git-add.png")
+```
+
+Em seguida acessamos o item `Commit` e, na janela que abrir, inserirmos uma mensagem (`Commit message`) descrevendo o tipo de edição feita no projeto. Nesse caso, a edição consistiu na criação de um novo projeto do RStudio usando git para controle de versão (Figura \@ref(fig:rstudio-git-commit)). Feito isso basta pressionar o botão `Commit`.
+
+```{r rstudio-git-commit, echo=FALSE, fig.cap="Submissão de edição ao git.", out.width='50%', fig.align='center'}
+knitr::include_graphics("images/rstudio-git-commit.png")
+```
+
+Para criar um novo ramo usamos o comando `git branch`:
 
     git branch teste
 
