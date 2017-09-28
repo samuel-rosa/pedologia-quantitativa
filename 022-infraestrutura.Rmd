@@ -134,9 +134,23 @@ git config --global user.name 'Seu Nome aqui'
 git config --global user.email 'seu@email.aqui'
 ```
 
+A maneira mais fácil de utilizar o git para o gerenciamento e controle de versão do código fonte -- e demais dados e documentos -- que produzimos em nossos projetos é via RStudio. Para isso, ao criar um novo projeto no RStudio usando um novo diretório (`Files > New Project > New Directory > New Project`), devemos habilitar a opção `Create a git repository`:
+
+```{r rstudio-novo-projeto-git, echo=FALSE, fig.cap="Novo projeto do RStudio usando git para controle de versão.", out.width='50%', fig.align='center'}
+knitr::include_graphics("images/rstudio-novo-projeto-git.png")
+```
 
 
-Vamos agora fazer um pequeno exercício usando o git. Para começar, acesse o Terminal no RStudio e emita o comando `git status`. Esse comando produzirá como resultado informações sobre o estado atual do sistema de controle de versão. Entre outras coisas, ele indica o ramo em que estamos trabalhando, nesse caso, o ramo `master`. Para criar um novo ramo usamos o comando `git branch`:
+
+
+Ainda no Terminal, emita o comando `git status` para acessar informações sobre o estado atual do git:
+
+```{bash, eval=FALSE}
+# Verificação do estado do git
+git status
+```
+
+Entre outras informações, o comando `git status` deve indicar que as edições atuais  o ramo em que estamos trabalhando, nesse caso, o ramo `master`. Para criar um novo ramo usamos o comando `git branch`:
 
     git branch teste
 
