@@ -94,7 +94,7 @@ O controle de versão é uma prática de fundamental importância para o gerenci
 
 A estratégia de controle de versão mais comumente usada consiste em manter uma estrutura de arquivos mais ou menos com a seguinte:
 
-    projeto/
+    meu-novo-projeto/
     |- code/
     |  |- script01.R
     |  |- script01-modificado.R
@@ -140,10 +140,17 @@ A maneira mais fácil de utilizar o git para o gerenciamento e controle de vers�
 knitr::include_graphics("images/rstudio-novo-projeto-git.png")
 ```
 
+O diretório do novo projeto do RStudio deverá conter uma estrutura com a mostrada abaixo: (Pode ser preciso habilitar a visualização de arquivos ocultos em seu gerenciador de arquivos 😉)
 
+    meu-novo-projeto/
+    |- .git/
+    |- .Rproj.user/
+    |- meu-novo-projeto.Rproj
+    |- .gitignore
 
+Tando o subdiretório `.Rproj.user` como o arquivo `meu-novo-projeto.Rproj` já foram descritos anteriormente. O que temos de novidade aqui são o subdiretório `.git` e o arquivo `.gitignore`. O subdiretório `.git` consiste no repositório local onde as edições submetidas ao git são registradas. Já o arquivo `.gitignore` serve para identificar os arquivos e subdiretórios que devem ser, como o próprio nome sugere, ignorados pelo git. É o caso, por exemplo, de um subdiretório temporário onde armazenamos produtos temporários do projeto que podem mudar a cada instante e serem descartados àaqualquer momento.
 
-Ainda no Terminal, emita o comando `git status` para acessar informações sobre o estado atual do git:
+No Terminal, emita o comando `git status` para acessar informações sobre o estado atual do git:
 
 ```{bash, eval=FALSE}
 # Verificação do estado do git
