@@ -1,0 +1,135 @@
+---
+title: "Variação espacial"
+output: html_notebook
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(magrittr)
+library(dplyr)
+```
+
+# Natureza da variação espacial
+
+
+
+# Modelo discreto de variação espacial
+
+## Modelo discreto determinístico
+
+```{r}
+pedologia25 <- 
+  raster::shapefile('../data/pedologia25.shp', stringsAsFactors = TRUE) %>% 
+  sp::spTransform(sp::CRS('+proj=utm +zone=22 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs'))
+sp::spplot(
+  pedologia25, scales = list(draw = TRUE), col.regions = terrain.colors(nlevels(pedologia25$um)))
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+perfis25_o <- febr::observations('ctb0030', which.cols = 'all')
+perfis25_l <- febr::layers('ctb0030', which.cols = 'all', missing.data = 'keep')
+id <- c('dataset_id', 'observacao_id')
+perfis25 <- 
+  merge(perfis25_o, perfis25_l, by.x = id, by.y = id) %>% 
+  select(observacao_id, coord_x, coord_y, taxon_sibcs_2009, ca_kcl_aas, mg_kcl_aas, 
+         k_mehlich1_faes, na_mehlich1_faes, al_kcl_naoh) %>% 
+  filter(coord_x < 0)
+rm(perfis25_l, perfis25_o)
+```
+
+```{r, echo=FALSE}
+sp::coordinates(perfis25) <- ~ coord_x + coord_y
+sp::proj4string(perfis25) <- '+proj=longlat +ellps=WGS84'
+perfis25 <- sp::spTransform(perfis25, sp::CRS('+proj=utm +zone=22 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs'))
+sp::spplot(
+  pedologia25, scales = list(draw = TRUE),  col.regions = terrain.colors(nlevels(pedologia25$um)),
+  panel = function (...) {
+    sp::panel.polygonsplot(...)
+    lattice::panel.points(perfis25@coords[, 1], perfis25@coords[, 2], pch = 21, col = 'red', lwd = 2)
+  })
+```
+
+```{r, echo=FALSE}
+perfis25@data
+```
+
+## Modelo discreto estocástico
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+pontos400_o <- febr::observations('ctb0003', which.cols = 'all')
+pontos400_l <- febr::layers('ctb0003', which.cols = 'all', missing.data = 'keep')
+id <- c('dataset_id', 'observacao_id')
+pontos400 <- 
+  merge(pontos400_o, pontos400_l, by.x = id, by.y = id) %>% 
+  select(observacao_id, coord_x, coord_y, taxon_sibcs_2009, ca_kcl_aas, mg_kcl_aas, 
+         k_mehlich1_faes, na_mehlich1_faes, al_kcl_naoh)
+rm(pontos400_l, pontos400_o)
+```
+
+```{r, echo=FALSE}
+sp::coordinates(pontos400) <- ~ coord_x + coord_y
+sp::proj4string(pontos400) <- '+proj=longlat +ellps=WGS84'
+sp::spplot(
+  pedologia25, scales = list(draw = TRUE),  col.regions = terrain.colors(nlevels(pedologia25$um)),
+  panel = function (...) {
+    sp::panel.polygonsplot(...)
+    lattice::panel.points(pontos400@coords[, 1], pontos400@coords[, 2], pch = 21, col = 'red')
+  })
+```
+
+Nós podemos calcular a média e desvio padrão da variável de interesse para cada categoria a partir das observações do solo que estão dentro de cada categoria. Mas primeiro temos que identificar a categoria dentro da qual cada observação do solo se encontra. Para isso usamos a função `sp::over` e armazenamos o resultado em uma nova coluna de `pontos400` chamada `um`. Assumindo que nossa amostra é grande o suficiente, que as observações são independetes, e que a variável de interesse possui distribuição nomal, calculamos o erro padrão (EP) da média para obter os limites inferior e superior do intervalo de confiança de 95%.
+
+$$EP = \frac{DP}{\sqrt{n}}$$
+
+```{r, echo=FALSE}
+pontos400$um <- sp::over(pontos400, pedologia25)[[1]]
+pontos400@data %>% 
+  filter(!is.na(um)) %>% 
+  group_by(um) %>% 
+  summarise(mean = mean(ca_kcl_aas),
+            ci95 = 1.96 * sd(ca_kcl_aas) / sqrt(n()),
+            n = n()) %>% 
+  mutate(inf = round(mean - ci95, 2), mean = round(mean, 2), sup = round(mean + ci95, 2)) %>% 
+  select(um, inf, mean, sup, n)
+```
+
+Vamos comparar o resultado acima com os valores obtidos diretamente dos perfis modais. Será que os dados produzidos a partir dos perfis modais encontram-se dentro do intervalo de confiança de 95% da média estimada acima?
+
+```{r}
+perfis25@data %>% 
+  select(taxon_sibcs_2009, ca_kcl_aas) %>% 
+  arrange(taxon_sibcs_2009)
+```
+
+# Modelo contínuo de variação espacial
+
+## Modelo contínuo determinístico
+
+Interpolação determinística usando o inverso da distância como peso da influência das observações vizinhas.
+
+```{r, echo=FALSE}
+grid <- sp::spsample(pedologia25, 1000, type = 'regular')
+modelo_idw <- gstat::gstat(
+  id = 'ca_kcl_aas', formula = ca_kcl_aas ~ 1, data = pontos400, nmax = 8, set = list(idp = 0.5))
+mapa_idw <- predict(modelo_idw, grid)
+sp::gridded(mapa_idw) <- TRUE
+sp::spplot(
+  mapa_idw, col.regions = topo.colors(100), scales = list(draw = TRUE),
+  panel = function (...) {
+    lattice::panel.levelplot(...)
+    if (lattice::panel.number() == 1) {
+     lattice::panel.points(pontos400@coords[, 1], pontos400@coords[, 2], pch = 21, col = 'red', cex = 0.5) 
+    }
+    })
+```
+
+## Modelo contínuo estocástico
+
+```{r}
+sp::bubble(pontos400, 'ca_kcl_aas')
+```
+
+```{r}
+variograma <- gstat::variogram(ca_kcl_aas ~ 1, pontos400, cloud = TRUE)
+plot(variograma, asp = 1, ylab = "Semivariância", xlab = "Distância")
+```
+
