@@ -26,10 +26,9 @@ col_soil_var <- topo.colors(100)
 
 ## Modelo discreto: visão determinística
 
-$$Solo = f(cl, o, r, p, t, \ldots)$$
+<!-- $$Solo = f(cl, o, r, p, t, \ldots)$$ -->
+ Carregar o mapa pedológico e gerar figura. No MS Windows, usar o argumento `encoding = 'UTF-8'` na função `raster::shapefile` para reconhecer carácteres especiais.
 
-Carregar o mapa pedológico e gerar figura. No MS Windows, usar o argumento `encoding = 'UTF-8'` na função `raster::shapefile` para reconhecer carácteres especiais.
- 
 ```{r}
 pedologia25 <- 
   raster::shapefile('../data/pedologia25.shp', stringsAsFactors = TRUE, encoding = 'UTF-8') %>% 
@@ -75,7 +74,7 @@ perfis25@data
 
 ## Modelo discreto: visão estocástica
 
-$$Y(\boldsymbol{s}) = m(\boldsymbol{s}) + \epsilon(\boldsymbol{s})$$
+<!-- $$Y(\boldsymbol{s}) = m(\boldsymbol{s}) + \epsilon(\boldsymbol{s})$$ -->
 
 ```{r, message=FALSE, warning=FALSE}
 pontos400_o <- febr::observations('ctb0003', which.cols = 'all')
@@ -102,7 +101,9 @@ sp::spplot(
 
 Nós podemos calcular a média e desvio padrão da variável de interesse para cada categoria a partir das observações do solo que estão dentro de cada categoria. Mas primeiro temos que identificar a categoria dentro da qual cada observação do solo se encontra. Para isso usamos a função `sp::over` e armazenamos o resultado em uma nova coluna de `pontos400` chamada `um`. Assumindo que nossa amostra é grande o suficiente, que as observações são independetes, e que a variável de interesse possui distribuição nomal, calculamos o erro padrão (EP) da média para obter os limites inferior e superior do intervalo de confiança de 95%.
 
-$$EP = \frac{DP}{\sqrt{n}}$$
+<!-- $$EP = \frac{DP}{\sqrt{n}}$$ -->
+
+Calcular estatísticas de uma variável do solo para cada unidade de mapeamento.
 
 Calcular estatísticas de uma variável do solo para cada unidade de mapeamento.
 
