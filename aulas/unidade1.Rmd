@@ -7,11 +7,12 @@ output:
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # Carregar alguns pacotes
-library(magrittr)
+library(magrittr) # %>% 
 library(dplyr)
 library(lattice)
 
 # Definir variáveis
+# http://spatialreference.org/ref/epsg/
 wgs84utm22s <- sp::CRS('+proj=utm +zone=22 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs')
 wgs84 <- sp::CRS('+proj=longlat +ellps=WGS84')
 
@@ -25,37 +26,45 @@ col_soil_var <- topo.colors(100)
 
 ## Modelo discreto: visão determinística
 
-$$Solo = f(cl, o, r, p, t, \ldots)$$
-
+<!-- $$Solo = f(cl, o, r, p, t, \ldots)$$ -->
+ Carregar o mapa pedológico e gerar figura. No MS Windows, usar o argumento `encoding = 'UTF-8'` na função `raster::shapefile` para reconhecer carácteres especiais.
+ 
 ```{r}
 pedologia25 <- 
-  raster::shapefile('../data/pedologia25.shp', stringsAsFactors = TRUE) %>% 
+  raster::shapefile('../data/pedologia25.shp', stringsAsFactors = TRUE, encoding = 'UTF-8') %>% 
   sp::spTransform(wgs84utm22s)
 sp::spplot(
-  pedologia25, scales = list(draw = TRUE), col.regions = terrain.colors(nlevels(pedologia25$um)),
+  pedologia25, scales = list(draw = TRUE), 
+  col.regions = terrain.colors(nlevels(pedologia25$um)),
   main = "Mapa pedológico")
 ```
 
+Descarregar dados do conjunto de dados `ctbo0030`:
+
 ```{r, message=FALSE, warning=FALSE}
-perfis25_o <- febr::observations('ctb0030', which.cols = 'all', progress = FALSE)
-perfis25_l <- febr::layers('ctb0030', which.cols = 'all', missing.data = 'keep', progress = FALSE)
+perfis25_o <- febr::observations('ctb0030', which.cols = 'all')
+perfis25_l <- febr::layers('ctb0030', which.cols = 'all', missing.data = 'keep')
 id <- c('dataset_id', 'observacao_id')
 perfis25 <- 
-  merge(perfis25_o, perfis25_l, by.x = id, by.y = id) %>% 
-  select(observacao_id, coord_x, coord_y, taxon_sibcs_2009, ca_kcl_aas, mg_kcl_aas, 
-         k_mehlich1_faes, na_mehlich1_faes, al_kcl_naoh) %>% 
-  filter(coord_x < 0)
+  merge(x = perfis25_o, y = perfis25_l, by.x = id, by.y = id) %>% 
+  select(observacao_id, coord_x, coord_y, taxon_sibcs_2009, ca_kcl_aas, areia_, argila_)
 rm(perfis25_l, perfis25_o)
 ```
 
+Criar objeto espacial com os perfis e gerar figura.
+
 ```{r}
-sp::coordinates(perfis25) <- ~ coord_x + coord_y
+sp::coordinates(perfis25) <- c('coord_x', 'coord_y')
 sp::proj4string(perfis25) <- wgs84
 perfis25 <- sp::spTransform(perfis25, wgs84utm22s)
 sp::spplot(
-  pedologia25, scales = list(draw = TRUE),  col.regions = terrain.colors(nlevels(pedologia25$um)),
+  pedologia25, scales = list(draw = TRUE),
+  xlim = extendrange(c(perfis25@bbox[1, ], pedologia25@bbox[1, ])),
+  ylim = extendrange(c(perfis25@bbox[2, ], pedologia25@bbox[2, ])),
+  col.regions = terrain.colors(nlevels(pedologia25$um)),
   main = "Localização dos perfis modais") +
-  lattice::xyplot(coord_y ~ coord_x, data = as.data.frame(perfis25@coords), pch = 21, col = 'red', lwd = 2) %>% 
+  lattice::xyplot(coord_y ~ coord_x, data = as.data.frame(perfis25@coords), 
+                  pch = 20, col = 'red', lwd = 2, cex = 2) %>% 
   latticeExtra::as.layer()
 ```
 
@@ -65,16 +74,14 @@ perfis25@data
 
 ## Modelo discreto: visão estocástica
 
-$$Y(\boldsymbol{s}) = m(\boldsymbol{s}) + \epsilon(\boldsymbol{s})$$
+<!-- $$Y(\boldsymbol{s}) = m(\boldsymbol{s}) + \epsilon(\boldsymbol{s})$$ -->
 
 ```{r, message=FALSE, warning=FALSE}
-pontos400_o <- febr::observations('ctb0003', which.cols = 'all', progress = FALSE)
-pontos400_l <- febr::layers('ctb0003', which.cols = 'all', missing.data = 'keep', progress = FALSE)
+pontos400_o <- febr::observations('ctb0003', which.cols = 'all')pontos400_l <- febr::layers('ctb0003', which.cols = 'all', missing.data = 'keep')
 id <- c('dataset_id', 'observacao_id')
 pontos400 <- 
   merge(pontos400_o, pontos400_l, by.x = id, by.y = id) %>% 
-  select(observacao_id, coord_x, coord_y, taxon_sibcs_2009, ca_kcl_aas, mg_kcl_aas, 
-         k_mehlich1_faes, na_mehlich1_faes, al_kcl_naoh)
+  select(observacao_id, coord_x, coord_y, taxon_sibcs_2009, ca_kcl_aas, argila_, areia_)
 rm(pontos400_l, pontos400_o)
 ```
 
@@ -83,37 +90,41 @@ sp::coordinates(pontos400) <- ~ coord_x + coord_y
 sp::proj4string(pontos400) <- wgs84
 pontos400 <- sp::spTransform(pontos400, wgs84utm22s)
 sp::spplot(
-  pedologia25, scales = list(draw = TRUE),  col.regions = terrain.colors(nlevels(pedologia25$um)),
+  pedologia25, scales = list(draw = TRUE),  
+  col.regions = terrain.colors(nlevels(pedologia25$um)),
   main = "Localização das 400 observações") +
-  lattice::xyplot(coord_y ~ coord_x, data = pontos400@coords %>% as.data.frame(), pch = 21, col = 'red') %>% 
+  lattice::xyplot(coord_y ~ coord_x, 
+                  data = pontos400@coords %>% as.data.frame(), pch = 21, col = 'red') %>% 
   latticeExtra::as.layer()
 ```
 
 Nós podemos calcular a média e desvio padrão da variável de interesse para cada categoria a partir das observações do solo que estão dentro de cada categoria. Mas primeiro temos que identificar a categoria dentro da qual cada observação do solo se encontra. Para isso usamos a função `sp::over` e armazenamos o resultado em uma nova coluna de `pontos400` chamada `um`. Assumindo que nossa amostra é grande o suficiente, que as observações são independetes, e que a variável de interesse possui distribuição nomal, calculamos o erro padrão (EP) da média para obter os limites inferior e superior do intervalo de confiança de 95%.
 
-$$EP = \frac{DP}{\sqrt{n}}$$
+<!-- $$EP = \frac{DP}{\sqrt{n}}$$ -->
+
+Calcular estatísticas de uma variável do solo para cada unidade de mapeamento.
 
 ```{r}
-pontos400$um <- sp::over(pontos400, pedologia25) %>% unlist()
+pontos400$um <- sp::over(x = pontos400, y = pedologia25) %>% unlist()
 pontos400@data %>% 
-  filter(!is.na(um)) %>% 
-  group_by(um) %>% 
+  filter(!is.na(um)) %>%
+  group_by(um) %>%
   summarise(
-    mean = mean(ca_kcl_aas),
-    ci95 = 1.96 * sd(ca_kcl_aas) / sqrt(n()),
+    media = mean(areia_),
+    ic95 = 1.96 * sd(areia_) / sqrt(n()),
     n = n()) %>% 
   mutate(
-    inf = round(mean - ci95, 2), 
-    mean = round(mean, 2), 
-    sup = round(mean + ci95, 2)) %>% 
-  select(um, inf, mean, sup, n)
+    inf = round(media - ic95),
+    media = round(media),
+    sup = round(media + ic95)) %>% 
+  select(um, inf, media, sup, n)
 ```
 
 Vamos comparar o resultado acima com os valores obtidos diretamente dos perfis modais. Será que os dados produzidos a partir dos perfis modais encontram-se dentro do intervalo de confiança de 95% da média estimada acima?
 
 ```{r}
 perfis25@data %>% 
-  select(taxon_sibcs_2009, ca_kcl_aas) %>% 
+  select(taxon_sibcs_2009, areia_) %>% 
   arrange(taxon_sibcs_2009)
 ```
 
@@ -130,12 +141,15 @@ Interpolação determinística usando o inverso da distância como peso da influ
 ```{r}
 grid <- sp::spsample(pedologia25, 10000, type = 'regular')
 modelo_idw <- gstat::gstat(
-  id = 'ca_kcl_aas', formula = ca_kcl_aas ~ 1, data = pontos400, nmax = 8, set = list(idp = 0.5))
+  id = 'argila', formula = argila_ ~ 1, 
+  data = pontos400, nmax = 8, set = list(idp = 0.5))
 mapa_idw <- predict(modelo_idw, grid)
 sp::gridded(mapa_idw) <- TRUE
-sp::spplot(mapa_idw, 1, col.regions = col_soil_var, main = "Interpolação determinística") +
+sp::spplot(mapa_idw, 'argila.pred', col.regions = col_soil_var, 
+           main = "Interpolação determinística") +
   latticeExtra::as.layer(lattice::xyplot(
-    coord_y ~ coord_x, data = pontos400@coords %>% as.data.frame(), pch = 21, col = 'red', cex = 0.5))
+    coord_y ~ coord_x, data = pontos400@coords %>% as.data.frame(), 
+    pch = 21, col = 'red', cex = 0.5))
 ```
 
 ## Modelo contínuo: visão estocástica
