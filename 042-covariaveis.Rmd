@@ -4,5 +4,31 @@
 
 # Imagens de Satélite
 
+```{r}
+library(magrittr)
+```
+
+
 **Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Obtenção de imagens
+
+```{r}
+landsat <- list.files("data/raster/", pattern = ".tif.zip")
+landsat <- glue::glue("data/raster/{landsat}")
+for (i in 1:length(landsat)) {
+  unzip(landsat[i], exdir = "data/raster/")
+}
+landsat <- list.files("data/raster/", pattern = ".tif$")
+landsat <- 
+  glue::glue("data/raster/{landsat}")[-6] %>% 
+  as.list() %>% 
+  raster::stack() %>% 
+  raster::crop()
+```
+
+```{r}
+mapview::viewRGB(landsat, r = 3, g = 2, b = 1)
+```
+
