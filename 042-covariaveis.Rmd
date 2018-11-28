@@ -7,6 +7,7 @@
 ```{r}
 library(magrittr)
 library(raster)
+library(mapview)
 ```
 
 
@@ -24,23 +25,38 @@ if (length(landsat) == 0) {
     unzip(landsat[i], exdir = "data/raster/")
   }
 }
+
 landsat <- list.files("data/raster/", pattern = ".tif$")
 landsat <- 
   glue::glue("data/raster/{landsat}")[-6] %>% 
   as.list() %>% 
-  stack()
+  stack() %>% 
+  crop(shapefile("data/vector/santa-maria-itaara.shp"))
+landsat
 ```
+
 https://eos.com/color-infrared/
+
+```{r}
+plot(landsat)
+```
+
 
 ### Escala de cinza
 
 ```{r, warning=FALSE}
-mapview::plainview(landsat[[1]], col = gray.colors(256, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+plainview(
+  landsat[[1]], col = gray.colors(256, start = 0, end = 1, gamma = 2.2, alpha = NULL))
 ```
 
 ```{r, warning=FALSE}
 mapview::plainview(landsat[[3]], col = gray.colors(256, start = 0, end = 1, gamma = 2.2, alpha = NULL))
 ```
+
+```{r}
+landsat
+```
+
 
 ### Cor natural
 
