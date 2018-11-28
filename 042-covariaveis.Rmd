@@ -2,84 +2,207 @@
 
 <!-- # Princípios da Formação do Solo -->
 
-# Imagens de Satélite
+# Imagens de satélite
 
-```{r}
+**Atenção!** Este capítulo está em fase de *desenvolvimento*. Visite a [página do projeto][issues] se tiver 
+alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
+
+## Obtenção de imagens de satélite
+
+```{r, echo=FALSE, warning=FALSE}
 library(magrittr)
+library(glue)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(raster)
 library(mapview)
 ```
 
-
-**Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
-alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
-
-## Visualização de imagens
+Vamos utilizar imagem do sensor Thematic Mapper (TM), do satélite Landsat 5 da região do município de Santa 
+Maria, no Estado do Rio Grande do Sul. A imagem escolhida foi obtida no dia 06 de janeiro de 1986. Primeiro 
+vamos descompactar os aquivos obtidos do catálogo de imagens da Divisão de Geração de Imagens (DGI) do 
+Instituto Nacional de Pesquisas Espaciais (INPE).
 
 ```{r}
-landsat <- list.files("data/raster/", pattern = ".tif$")
-if (length(landsat) == 0) {
-  landsat <- list.files("data/raster/", pattern = ".tif.zip")
-  landsat <- glue::glue("data/raster/{landsat}")
-  for (i in 1:length(landsat)) {
-    unzip(landsat[i], exdir = "data/raster/")
+files <- list.files("data/raster/", pattern = ".tif$")
+if (length(files) == 0) {
+  files <- list.files("data/raster/", pattern = ".tif.zip")
+  files <- glue::glue("data/raster/{files}")
+  for (i in 1:length(files)) {
+    unzip(files[i], exdir = "data/raster/")
   }
 }
+```
 
-landsat <- list.files("data/raster/", pattern = ".tif$")
+Vamos ler os dados das imagens utilizando as funções `raster::raster()` e `raster::stack()`. Enquanto a 
+primeira lê os dados de uma imagem, a segunda empilha as imagens -- o verbo da língua inglesa _to stack_
+significa 'empilhar'. Durante o empilhamento, a função `raster::stack()` verifica se as imagens possuem as
+mesmas dimensões e resolução espacial. No caso das bandas do sensor TM do Landsat 5, todas possuem as mesmas 
+dimensões, ou seja, cerca de 170 km na direção norte-sul e 183 km na direção leste-oeste. Contudo, as bandas
+possuem resolução espacial diferente. Especificamente, as bandas 1 a 6 e a banda 7 possuem resolução espacial
+de 30 m, enquanto a banda 6 (termal) possui resolução espacial de 120 m. Assim, durante o empilhamento das 
+bandas, reamostramos a banda 6 para a resolução de 30 m usando a função `raster::resample()`. Para não alterar
+os valores de nível de cinza dos pixeis, utilizamos o método do vizinho mais próximo para a interpolação 
+(`method = "ngb"`). Note que esse processamento demora algumas dezenas de segundos para executar. O resultado
+é um objeto da classe `RasterStack`.
+
+```{r, warning=FALSE}
+files <- list.files("data/raster/", pattern = ".tif$")
+files <- glue::glue("data/raster/{files}")
 landsat <- 
-  glue::glue("data/raster/{landsat}")[-6] %>% 
+  files[1:5] %>% 
   as.list() %>% 
-  stack() %>% 
-  crop(shapefile("data/vector/santa-maria-itaara.shp"))
+  raster::stack()
+landsat <- 
+  landsat %>% 
+  raster::addLayer(
+    raster::resample(x = raster::raster(files[6]), y = landsat, method = "ngb"), 
+    raster::raster(x = files[7])
+  )
 landsat
 ```
 
-https://eos.com/color-infrared/
+Uma maneira de visualizar todos os dados é usando a função `raster::plot()`, que mostra todas as sete bandas.
+Para que cada banda seja mostrada usando a escala de cinza correspondente, usamos a função
+`grDevices::gray.colors()`. Note como a banda 6 é a mais clara de todas as bandas, indicando uma quantidade 
+muito grande de radiação eletromagnética com comprimento de onda entre 10,40 e 12,50 μm refletida pela 
+superfície da Terra/atmosfera. Dentre as bandas 1, 2 e 3, que representam as cores azul, verde e vermelhor, 
+respectivamente, a mais clara delas é a banda 1. Isso porque a maior parte da radiação eletromagnética com 
+comprimento de onda entre 0,45 e 0,52 μm sofre dispersão na atmosfera, razão pela qual o céu aparenta ser azul.
+Por outro lado, das três bandas, a mais escura é a banda 3, do vermelho, com comprimento de onda entre 0,63 e 
+0,69 μm. A menor luminosidade dessa banda ocorre porque a vegetação absorve grande parte da radiação 
+eletromagnética no vermelho.
 
 ```{r}
-plot(landsat)
+raster::plot(
+  landsat, col = gray.colors(n = 256, start = 0, end = 1, gamma = 2.2, alpha = NULL), 
+  main = glue::glue("Banda {1:7}"))
 ```
 
-
-### Escala de cinza
-
-```{r, warning=FALSE}
-plainview(
-  landsat[[1]], col = gray.colors(256, start = 0, end = 1, gamma = 2.2, alpha = NULL))
-```
-
-```{r, warning=FALSE}
-mapview::plainview(landsat[[3]], col = gray.colors(256, start = 0, end = 1, gamma = 2.2, alpha = NULL))
-```
+Também podemos utilizar a função `raster::image()` para visualizar cada uma das bandas. Contudo, como ela não
+gera uma legenda de cores automaticamente, preferimos a função `raster::image()`
 
 ```{r}
-landsat
+raster::plot(
+  x = landsat[[3]], 
+  col = gray.colors(n = 256, start = 0, end = 1, gamma = 2.2, alpha = NULL), main = "Banda 3")
 ```
 
+## Visualização de imagens de satélite
 
-### Cor natural
+<!-- https://eos.com/color-infrared/ -->
+
+Uma das etapas mais importantes da utilizada de imagens de satélite para análises espaciais consiste na 
+preparação de composições coloridas utilizando as diferentes bandas. As composições coloridas facilitam a 
+identificação de objetos e feições da paisagem quando comparadas à escala de cinza vista anteriormente. A 
+identificação desses objetos e feições da paisagem será útil, por exemplo, na interpretação visual das imagens
+e na coleta/geração de dados diretamente na tela do computador.
+
+A geração das composições coloridas pode ser feita usando as funções `raster::plotRGB()` e 
+`mapview::viewRGB()`.
+
+A composição colorida mais comum de visualização é aquela que representa aquilo que o olho humano vê. Trata-se
+da chamada _cor natural_, definida pelo uso das bandas 3, 2 e 1 para compor os canais R, G e B,
+respectivamente. A composição colorida cor natural de uma pequena área da imagem do satélite Landsat é mostrada
+abaixo. Pode-se notar que a imagem aparece azulada, fruto da dispersão e reflexão da radiação eletromagnética
+no comprimento de onda do azul em toda a atmosfera. Assim, vista do topo da atmosfera, a cor da Terra é azul.
+
+```{r}
+ext <- raster::extent(c(226790, 241745, 6749875, 6758852))
+raster::plotRGB(landsat, r = 3, g = 2, b = 1, ext = ext)
+```
+
+Uma maneira de melhorar a visualização da imagem é realizar uma transformação espectral, ou seja, uma alteração
+racional dos valores de nível de cinza dos pixeis da imagem. Uma dessas transformações é a 
+_transformação linear_, usada na figura abaixo pelo uso do argumento `stretch = "lin"`. Na transformação
+linear, os valores de nível de cinza são "esticados" de maneira que o menor valor de nível de cinza da imagem
+passe a ser igua a zero, enquanto o maior valor de nível de cinza passe a ser igual a 255.
+
+```{r}
+raster::plotRGB(landsat, r = 3, g = 2, b = 1, ext = ext, stretch = "lin")
+```
+
+Para facilitar a compreenção sobre a transformação linear, vamos observar o histograma de distribuição dos 
+valores de nível de cinza da banda 3 antes e depois da transformação.
+
+```{r}
+par(mfrow = c(1, 2))
+landsat[[3]] %>% raster::crop(y = ext) %>% hist(main = "Banda 3 original")
+landsat[[3]] %>% raster::crop(y = ext) %>% raster::stretch() %>% hist(main = "Banda 3 transformada")
+```
+
+As composições de bandas que geral representação colorida diferente da cor natural são denominadas 
+_false-cor_. A composição falsa-cor mais usada é a chamada _infravermelho colorido_, gerada a partir do uso das
+bandas 4, 3 e 2 para compor os canais R, G e B, respectivamente. A grande utilidade da composição falsa-cor 432
+é a identificação da vegetação em contraste aos demais componentes da paisagem. Na imagem abaixo, a vegetação 
+aparece em forte tom de vermelho. Isso ocorre porque a vegetação reflete praticamente toda a radiação 
+eletromagnética nos comprimentos de onda entre 0,76 e 0,90 μm, que corresponde ao infra-vermelho próximo. Por 
+outro lado a vegetação absorve a grande parte da radiação eletromagnética nos comprimentos de onda entre 0,52 
+e 0,60 μm (verde) e 0,63 e 0,69 μm (vermelho). Assim, como a banda 4, do infravermelho próximo, é usada com o 
+canal R, os locais com vegetação destacam-se em vermelho na imagem.
+
+```{r}
+raster::plotRGB(landsat, r = 4, g = 3, b = 2, ext = ext, stretch = "lin")
+```
+
+Na composição 432, as áreas urbanas aparecem em azul-ciano, como é o caso da região no extremo sul da imagem 
+acima, localização da área urbana do município de Santa Maria. Por sua vez, o solo exposto costuma aparecer
+em tons de marrom, o que não é visto na imagem, indicando que não há área de solo exposto. Os corpos de água, 
+que absorvem grande quantidade de radiação eletromagnética, aparecem com coloração mais escura. É o caso do
+corpo de água no centro sul da imagem.
+
+Uma segunda composição colorida falsa-cor amplamente usada é a 543. Diferente da composição colorida anterior, 
+agora a banda 4, do infravermelho próximo, é atribuida ao canal G (verde), fazendo com que a vegetação apareça
+destacada em verde.
 
 ```{r, warning=FALSE}
-mapview::viewRGB(landsat, r = 3, g = 2, b = 1)
-```
-
-### Infravermelho colorido
-
-```{r, warning=FALSE}
-mapview::viewRGB(landsat, r = 4, g = 3, b = 2)
-```
-
-### Falsa cor
-
-```{r, warning=FALSE}
-mapview::viewRGB(landsat, r = 5, g = 4, b = 3)
+raster::plotRGB(landsat, r = 5, g = 4, b = 3, ext = ext, stretch = "lin")
 ```
 
 ```{r, warning=FALSE}
-mapview::viewRGB(landsat, r = 6, g = 5, b = 3)
+raster::plotRGB(landsat, r = 7, g = 5, b = 3, ext = ext, stretch = "lin")
 ```
 
 ```{r, warning=FALSE}
-mapview::viewRGB(landsat, r = 6, g = 4, b = 2)
+raster::plotRGB(landsat, r = 7, g = 4, b = 2, ext = ext, stretch = "lin")
 ```
+
+## Correção atmosférica
+
+
+
+```{r}
+library(landsat)
+
+# One approach to choosing a Starting Haze Value is to take the lowest DN value
+# with a frequency greater than some predetermined threshold, in this case 1000 pixels.
+shv <- sapply(c(1:5, 7), function (i) {
+  tmp <- landsat[[1]] %>% values() %>% table()
+  tmp <- names(tmp)[tmp > 1000] %>% as.numeric()
+  tmp %>% min()
+  # tmp[tmp != 0] %>% min()
+}) %>% min()
+shv <- 0
+# this is used as Lhaze in the radiocorr function.
+# we avoid zero because this is the value of the borders and could be an optimiztic estimate.
+# https://landsat.usgs.gov/esun
+dos <- landsat::DOS(
+  sat = 5, SHV = shv, SHV.band = 1, Grescale = 0.668706, Brescale = -1.52, edist = ESdist("1986-01-06"), 
+  sunelev = 52.67848915)$DNfinal.mean
+dos <- dos[, "coef-4"]
+library(sp)
+i <- 1
+landsat[[i]] <- 
+  landsat[[i]] %>% 
+  as("SpatialGridDataFrame") %>% 
+  radiocorr(
+    Grescale = 0.668706, Brescale = -1.52, edist = ESdist("1986-01-06"), sunelev = 52.67848915,
+    Esun = 1958, Lhaze = dos[i], method = "DOS") %>% 
+  raster::raster()
+raster::plot(
+  x = landsat[[i]], 
+  col = gray.colors(n = 256, start = 0, end = 1, gamma = 2.2, alpha = NULL), main = "Banda 1")
+hist(landsat[[i]])
+```
+
