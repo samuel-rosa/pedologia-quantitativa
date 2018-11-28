@@ -1,0 +1,73 @@
+<!-- # PARTE I -- FUNDAMENTAÇÃO HISTÓRICA E CONCEITUAL {-} -->
+
+<!-- # Contextualização Histórica -->
+
+<!-- # Pedologia Quantitativa (ou Pedometria) -->
+
+<!-- # Mapeamento Digital do Solo -->
+
+# Exemplos
+
+```{r}
+library(magrittr)
+library(dplyr)
+library(sf)
+```
+
+
+```{r}
+dst <- "data/vector/rio-grande-do-sul.shp"
+if (!file.exists(dst)) {
+  gdalUtils::ogr2ogr(
+  src_datasource_name ="WFS:http://www.geoservicos.ibge.gov.br:80/geoserver/wfs",
+  layer = "CGEO:C02_limite_estadual_2010",
+  dst_datasource_name = dst,
+  t_srs = "+proj=utm +zone=22 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+  where = "NomUF = 'Rio Grande do Sul'")
+}
+rs <- read_sf(dst)
+plot(rs["NomUF"], main = rs$NomUF, axes = TRUE, type = "n", reset = FALSE)
+grid(lty = 1)
+plot(rs["NomUF"], main = rs$NomUF, add = TRUE)
+```
+
+```{r}
+dst <- "data/vector/santa-maria-itaara.shp"
+if (!file.exists(dst)) {
+  gdalUtils::ogr2ogr(
+  src_datasource_name ="WFS:http://www.geoservicos.ibge.gov.br:80/geoserver/wfs",
+  layer = "CGEO:LIM_Municipios2013",
+  dst_datasource_name = dst,
+  t_srs = "+proj=utm +zone=22 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+  where = "Nome_do_municipio = 'Santa Maria' OR Nome_do_municipio = 'Itaara'")
+smi <- read_sf(dst)
+idx <- st_intersects(rs, smi)[[1]]
+smi[idx, ] %>% write_sf(dsn = dst)
+}
+smi <- read_sf(dst)
+plot(smi["Nome_do_mu"], axes = TRUE, type = "n", reset = FALSE, main = "", key.pos = 3)
+grid(lty = 1)
+plot(smi["Nome_do_mu"], add = TRUE)
+```
+
+```{r}
+dnos <- read_sf("data/vector/bacia-dnos.shp")
+plot(dnos, main = "Bacia do DNOS", axes = TRUE, reset = FALSE)
+grid(lty = 1)
+plot(dnos, add = TRUE)
+```
+
+```{r, message=FALSE, warning=FALSE}
+plot(dnos, reset = FALSE, axes = TRUE, main = "")
+plot(smi["Nome_do_mu"], add = TRUE, border = "transparent")
+plot(dnos, add = TRUE, col = "lightblue3")
+plot(smi["Nome_do_mu"], add = TRUE, col = "transparent", lty = 2)
+text(x = 225000, y = 6716000, labels = "Santa Maria")
+text(x = 233000, y = 6721000, labels = "Itaara")
+text(st_centroid(dnos) %>% st_coordinates(), labels = "Bacia do DNOS")
+```
+
+```{r}
+
+```
+
