@@ -13,7 +13,7 @@ library(raster)
 **Atenção!** Este capítulo está em fase de *planejamento*. Visite a [página do projeto][issues] se tiver 
 alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é muito importante!
 
-## Obtenção de imagens
+## Visualização de imagens
 
 ```{r}
 landsat <- list.files("data/raster/", pattern = ".tif$")
@@ -28,11 +28,42 @@ landsat <- list.files("data/raster/", pattern = ".tif$")
 landsat <- 
   glue::glue("data/raster/{landsat}")[-6] %>% 
   as.list() %>% 
-  stack() %>% 
-  crop(shapefile("data/vector/bacia-dnos.shp"))
+  stack()
+```
+https://eos.com/color-infrared/
+
+### Escala de cinza
+
+```{r, warning=FALSE}
+mapview::plainview(landsat[[1]], col = gray.colors(256, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+```
+
+```{r, warning=FALSE}
+mapview::plainview(landsat[[3]], col = gray.colors(256, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+```
+
+### Cor natural
+
+```{r, warning=FALSE}
+mapview::viewRGB(landsat, r = 3, g = 2, b = 1)
+```
+
+### Infravermelho colorido
+
+```{r, warning=FALSE}
+mapview::viewRGB(landsat, r = 4, g = 3, b = 2)
+```
+
+### Falsa cor
+
+```{r, warning=FALSE}
+mapview::viewRGB(landsat, r = 5, g = 4, b = 3)
+```
+
+```{r, warning=FALSE}
+mapview::viewRGB(landsat, r = 6, g = 5, b = 3)
 ```
 
 ```{r, warning=FALSE}
 mapview::viewRGB(landsat, r = 6, g = 4, b = 2)
 ```
-
