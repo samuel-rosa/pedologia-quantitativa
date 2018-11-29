@@ -35,32 +35,40 @@ if (length(files) == 0) {
 }
 ```
 
-Vamos ler os dados das imagens utilizando as funções `raster::raster()` e `raster::stack()`. Enquanto a 
-primeira lê os dados de uma imagem, a segunda empilha as imagens -- o verbo da língua inglesa _to stack_
-significa 'empilhar'. Durante o empilhamento, a função `raster::stack()` verifica se as imagens possuem as
-mesmas dimensões e resolução espacial. No caso das bandas do sensor TM do Landsat 5, todas possuem as mesmas 
-dimensões, ou seja, cerca de 170 km na direção norte-sul e 183 km na direção leste-oeste. Contudo, as bandas
-possuem resolução espacial diferente. Especificamente, as bandas 1 a 6 e a banda 7 possuem resolução espacial
-de 30 m, enquanto a banda 6 (termal) possui resolução espacial de 120 m. Assim, durante o empilhamento das 
-bandas, reamostramos a banda 6 para a resolução de 30 m usando a função `raster::resample()`. Para não alterar
-os valores de nível de cinza dos pixeis, utilizamos o método do vizinho mais próximo para a interpolação 
-(`method = "ngb"`). Note que esse processamento demora algumas dezenas de segundos para executar. O resultado
-é um objeto da classe `RasterStack`.
+Vamos ler os dados das imagens utilizando a função `raster::stack()` que, internamente, utiliza a função
+`raster::raster()` para fazer a leitura de cada uma das bandas individualmente. Enquanto a segunda lê os dados
+de uma banda, a segunda as empilha -- o verbo da língua inglesa _to stack_ significa 'empilhar'.
+
+Durante o empilhamento, a função `raster::stack()` verifica se as bandas possuem as mesmas dimensões e 
+resolução espacial. Isso é essencial para garantir a consistência dos dados e o sucesso de quaiquer operações 
+futuras com os mesmos. No caso do sensor TM do satélite Landsat 5, todas as bandas possuem as mesmas dimensões,
+ou seja, cerca de 170 km na direção norte-sul e 183 km na direção leste-oeste. Contudo, as bandas possuem
+resolução espacial diferente. Especificamente, as bandas 1 a 6 e a banda 7 possuem resolução espacial de 30 m,
+enquanto a banda 6 (termal) possui resolução espacial de 120 m. Assim, antes de ler os dados das bandas, 
+reamostramos a banda 6 para a resolução de 30 m usando o `gdal_translate` instalado localmente. A reamostragem
+também pode ser feita no R, usando a função `raster::resample()`. Contudo, o `gdal_translate` é muitíssimo mais
+rápido do que a função `raster::resample()`. Para não alterar os valores de nível de cinza dos pixeis da banda
+6, utilizamos o método do vizinho mais próximo -- `-r nearest` -- para a interpolação.
+
+Feita a reamostragem da banda 6, a leitura das sete bandas é realizada sem erros. O resultado é um objeto da
+classe `RasterStack`.
 
 ```{r, warning=FALSE}
 files <- list.files("data/raster/", pattern = ".tif$")
 files <- glue::glue("data/raster/{files}")
+if (file.size(files[6]) < 4000000) {
+  tmpdir <- tempdir()
+  glue::glue("cp {files[6]} {tmpdir}") %>% system()
+  tmpfile <- list.files(tmpdir, pattern = ".tif$")
+  # Informações sobre o gdal_translate em https://www.gdal.org/gdal_translate.html
+  glue::glue("gdal_translate -tr 30 30 -r nearest {tmpdir}/{tmpfile} {files[6]}") %>% system()
+  glue::glue("rm -r {tmpdir}") %>% system()
+}
 landsat <- 
-  files[1:5] %>% 
-  as.list() %>% 
-  raster::stack()
-landsat <- 
-  landsat %>% 
-  raster::addLayer(
-    raster::resample(x = raster::raster(files[6]), y = landsat, method = "ngb"), 
-    raster::raster(x = files[7])
-  )
-landsat
+  files %>% 
+  as.list() %>%
+  raster::stack() %T>% # O operador %T>%, chamado 'tee', permite a impressão do resultado
+  print()
 ```
 
 Uma maneira de visualizar todos os dados é usando a função `raster::plot()`, que mostra todas as sete bandas.
@@ -112,6 +120,14 @@ no comprimento de onda do azul em toda a atmosfera. Assim, vista do topo da atmo
 ext <- raster::extent(c(226790, 241745, 6749875, 6758852))
 raster::plotRGB(landsat, r = 3, g = 2, b = 1, ext = ext)
 ```
+
+```{r}
+library(mapedit)
+tmp <- landsat %>% raster::crop(ext) %>% mapview::viewRGB(r = 5, g = 4, b = 3)
+a <- drawFeatures(tmp)
+plot(a)
+```
+
 
 Uma maneira de melhorar a visualização da imagem é realizar uma transformação espectral, ou seja, uma alteração
 racional dos valores de nível de cinza dos pixeis da imagem. Uma dessas transformações é a 
