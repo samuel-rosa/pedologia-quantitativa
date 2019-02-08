@@ -132,12 +132,18 @@ git --version
 
 Se o git estiver instalado, o primeiro comando (`which git`, em Linux e Mac, ou `where git`, em Windows) deverá retornar o caminho para o diretório onde os arquivos do git estão localizados -- por exemplo, `/usr/bin/git` --, enquanto o segundo comando mostra a versão do git que está instalada -- por exemplo, `git version 2.7.4`. Caso você não tenha o git instalado em seu computador, vá até o endereço https://git-scm.com/downloads e descarregue o instalador e estude as diretrizes de instalação para o seu sistema operacional.
 
-Depois de instalado o git, precisamos fazer a sua configuração. Trata-se de informar seu nome e endereço de e-mail para o git. Isso é necessário porque o git registra esses dados à cada edição submetida ao controle de versão. Apesar da pequena utilidade quando trabalhamos sozinhos, essa prática é da maior importância quando duas ou mais pessoas colaboram na edição do código fonte, permitindo identificar quem fez cada alteração. Para configurar o seu nome e endereço de e-mail no git, acesse o Terminal -- painel esquerdo inferior do RStudio -- e emita as duas linhas de comando abaixo substituindo com seus dados os campos pertinentes:
+Depois de instalado o git, e antes do seu primeiro uso, é preciso configurar duas variáveis globais. Trata-se
+de informar seu nome e endereço de e-mail para o git. Isso é necessário porque o git registra esses dados à
+cada edição submetida ao controle de versão. Apesar da pequena utilidade quando trabalhamos sozinhos, essa
+prática é da maior importância quando duas ou mais pessoas colaboram na edição do código fonte, permitindo
+identificar quem fez cada alteração e quantas alterações foram feitas por cada colaborador. Para configurar o
+seu nome e endereço de e-mail no git, acesse o Terminal, localizado ao lado do Console do R, e emita as duas 
+linhas de comando abaixo substituindo com seus dados os campos pertinentes:
 
 ```{bash, eval=FALSE}
 # Configuração do git
-git config --global user.name 'Seu Nome aqui'
-git config --global user.email 'seu@email.aqui'
+git config --global user.name 'Escreva Seu Nome aqui'
+git config --global user.email 'escrevaseu@email.aqui'
 ```
 
 A maneira mais fácil de utilizar o git para o gerenciamento e controle de versão do código fonte -- e demais dados e documentos -- que produzimos em nossos projetos é via RStudio. Para isso, ao criar um novo projeto no RStudio usando um novo diretório (`Files > New Project > New Directory > New Project`), devemos habilitar a opção `Create a git repository`:
