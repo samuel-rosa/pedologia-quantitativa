@@ -14,45 +14,51 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 Um importante passo consiste na criação do nosso diretório de trabalho. Para isso, acesse seu gerenciador
 de diretórios e crie a seguinte estrutura de diretórios em seu local favorito de trabalho:
 
-    projeto
-    |- code/       # qualquer código de programação
-    |  |- R/       # código de programação em R
-    |
-    |- data
-    |  |- grid/    # dados matriciais
-    |  |- R/       # dados no formato *.rda
-    |  |- vector/  # dados vetoriais
-    |
-    |- doc/        # arquivos usados para redigir o relatório
-    |  |- fig/     # figuras usadas no relatório
+```bash
+projeto
+|- code/             # código fonte
+|
+|- data/             # dados usados no projeto
+|  |- r/             # dados no formato *.RDA
+|  |- raster/        # dados matriciais (GeoTIFF)
+|  |- vector/        # dados vetoriais (SHP)
+|
+|- docs/             # documentos do projeto
+|
+|- res/              # resultados do projeto
+|  |- fig/           # figuras (PNG, TIFF, JPEG, SVG)
+|  |- tab/           # tabelas (CSV, TSV)
+|
+|- README.md         # descrição do projeto
+```
 
-Note que, dentro do nosso diretório de trabalho principal (`projeto`) existem três subdiretórios:
-`code`, `data` e `doc`. O primeiro deles, `code`, serve para armazenarmos os arquivos
-contendo código de programação em qualquer linguagem. Para cada linguagem criamos um subsubdiretório 
-específico. Nesse exemplo, como usaremos apenas o R, criaremos apenas um subsubdiretório chamado R. Ali 
-dentro serão armazenados os *scripts* com código de programação do escritos em R.
+Note que o diretório de trabalho do projeto contém quatro subdiretórios: `code`, `data`, `docs` e `res`. O
+primeiro deles, `code`, serve para armazenarmos os arquivos contendo código de programação em qualquer 
+linguagem. Por exemplo, código em R, Python, SQL, LaTeX e assim por diante. São os _scripts_ com código de programação que usamos no projeto.
 
-O segundo subdiretório será utilizado para armazenarmos os dados usados no projeto. Nesse exemplo, são 
-três os tipos de dados que utilizaremos, cada um armazenado em um subsubdiretório específico. No 
-subsubdiretório `grid` ficarão armazenados os dados matriciais, ou seja, os dados das covariáveis e 
-os resultados das predições espaciais. Já no subsubdiretório `vector` ficarão armazenados os dados 
-vetoriais, ou seja, aqueles cuja forma de representação espacial pode ser a de pontos, linhas e polígonos. 
-Isso inclui os dados de solo e dos limites da área de estudo. Por fim, o subsubdiretório R será
-usado para armazenar dados diversos produzidos durante o processamento no R, os quais serão salvos 
-usando o formato `rda`.
+O segundo subdiretório é utilizado para armazenarmos os dados usados no projeto. Nesse exemplo, são três os
+tipos de dados considerados, cada tipo dedicado a um subsubdiretório específico. No subsubdiretório `raster` 
+ficam armazenados os dados matriciais, também conhecidos como dados no formato _raster_ ou _grid_. Por exemplo,
+dados de covariáveis ambientais como modelos digitais de elevação e imagens de satélite e o resultado de
+predições espaciais do solo. Já no subsubdiretório `vector` ficam armazenados os dados vetoriais, ou seja,
+aqueles cuja forma de representação espacial pode ser a de pontos, linhas e polígonos. Isso inclui os dados do
+solo e dos limites da área de estudo. Por fim, o subsubdiretório `r` serve para armazenar dados diversos
+produzidos durante a análise e processamento dos dados R e que são salvos em disco usando o formato `RDA`.
 
-O terceiro e último subdiretório de nosso diretório de trabalho `projeto`, aqui denominado `doc`,
-será usado para armazenar os arquivos usados para redigir os documentos resultantes do projeto.
+O terceiro subdiretório do diretório de trabalho do projeto, denominado `docs`, é usado para armazenar os
+arquivos usados para redigir os documentos resultantes do projeto.
+
+Por fim, o diretório `res` armazena os resultados do projeto exportados na forma de figuras -- `fig` -- e
+tabelas -- `tab`.
 
 No RStudio, acesse
 
     Arquivo > Novo projeto > Diretório existente
 
-e navegue até o diretório recém criado `projeto`. Clique em `Criar projeto`. Toda a 
-estrutura de diretórios criada recentemente aparecerá no painel direito inferior do RStudio. Agora crie um
-novo arquivo do R e salve-o no diretório `bigdata > code > R`. Será nesse arquivo que você organizará o 
-código em R usado para o processamento dos dados. A criação de um projeto no RStudio 
-facilita a organização dos dados.
+e navegue até o diretório recém criado -- `projeto`. Pressione `Criar projeto`. Pronto! Toda a estrutura de
+diretórios recém criada aparecerá no painel direito inferior do RStudio. Agora crie um novo arquivo do R e
+salve-o no diretório `bigdata > code > R`. Será nesse arquivo que você organizará o código em R usado para o
+processamento dos dados. A criação de um projeto no RStudio facilita a organização dos dados.
 Sempre que uma rotina de análises for desenvolvida no R é preciso definir o diretório de trabalho. O diretório 
 de trabalho constitui a pasta em que estão localizados os arquivos contendo os dados a serem analisados. Além 
 disso, é no diretório de trabalho que o R salva o histórico de trabalho contendo todas as operações realizadas.
