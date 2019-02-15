@@ -36,7 +36,8 @@ projeto
 
 Note que o diretório de trabalho do projeto contém quatro subdiretórios: `code`, `data`, `docs` e `res`. O
 primeiro deles, `code`, serve para armazenarmos os arquivos contendo código de programação em qualquer 
-linguagem. Por exemplo, código em R, Python, SQL, LaTeX e assim por diante. São os _scripts_ com código de programação que usamos no projeto.
+linguagem. Por exemplo, código em R, Python, SQL, LaTeX e assim por diante. São os _scripts_ com código de
+programação que usamos no projeto.
 
 O segundo subdiretório é utilizado para armazenarmos os dados usados no projeto. Nesse exemplo, são três os
 tipos de dados considerados, cada tipo dedicado a um subsubdiretório específico. No subsubdiretório `raster` 
@@ -102,15 +103,26 @@ O controle de versão é uma prática de fundamental importância para o gerenci
 
 A estratégia de controle de versão mais comumente usada consiste em manter uma estrutura de arquivos mais ou menos com a seguinte:
 
-    meu-novo-projeto/
-    |- code/
-    |  |- script01.R
-    |  |- script01-modificado.R
-    |  |- script02.R
-    |  |- script02-revisado.R
-    |  |- script02-revisado-novo.R
-    |  |- script-final.R
-    |  |- script-final-final.R
+```{bash, eval = FALSE}
+projeto
+|- docs/
+|  |- artigo.odt
+|  |- artigo-v2.odt
+|  |- artigo-v3.odt
+|  |- artigo-v3-orientador.odt
+|  |- artigo-v3-orientador-v2.odt
+|  |- artigo-v4.odt
+|  |- artigo-v4-modificado.odt
+|  |- artigo-v4-modificado-mais.odt
+|  |- ...
+|  |- artigo-v15-agora-vai.odt
+|  |- artigo-v15-ainda-nao-deu.odt
+|  |- artigo-v16.odt
+|  |- artigo-v16-modificado.odt
+|  |- artigo-v16-submetido.odt
+|  |- artigo-v16-negado-sugestoes-revisores.odt
+|  |- artigo-v17.odt
+```
 
 Segundo a estratégia acima, cada arquivo é nomeado de acordo com o estágio de desenvolvimento e fazendo uma referência generalista ao tipo de alteração feita. Isso pode ser eficiente quando fazemos poucas alterações ou então alterações pouco significativas. Contudo, à medida que aumenta a complexidade de nosso projeto, maior será o número de edições no código fonte e, também, maior será a complexidade delas. Felizmente existem alternativas bastante mais eficientes do que aquela mostrada acima. Na verdade, um bom sistema de controle de versão dará conta do registro e organização das diferentes versões do código fonte de maneira completamente automática.
 
