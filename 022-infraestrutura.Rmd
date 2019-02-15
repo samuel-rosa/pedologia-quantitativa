@@ -14,22 +14,24 @@ alguma sugestão, dúvida ou estiver disposto a colaborar. Sua opinião/ajuda é
 Um importante passo consiste na criação do nosso diretório de trabalho. Para isso, acesse seu gerenciador
 de diretórios e crie a seguinte estrutura de diretórios em seu local favorito de trabalho:
 
-```bash
+```{bash, eval=FALSE}
 projeto
-|- code/             # código fonte
+|- code/            # código fonte
 |
-|- data/             # dados usados no projeto
-|  |- r/             # dados no formato *.RDA
-|  |- raster/        # dados matriciais (GeoTIFF)
-|  |- vector/        # dados vetoriais (SHP)
+|- data/            # dados usados no projeto
+|  |- r/            # dados no formato *.RDA
+|  |- raster/       # dados matriciais (GeoTIFF)
+|  |- vector/       # dados vetoriais (SHP)
 |
-|- docs/             # documentos do projeto
+|- docs/            # documentos do projeto
 |
-|- res/              # resultados do projeto
-|  |- fig/           # figuras (PNG, TIFF, JPEG, SVG)
-|  |- tab/           # tabelas (CSV, TSV)
+|- res/             # resultados do projeto
+|  |- fig/          # figuras (PNG, TIFF, JPEG, SVG)
+|  |- tab/          # tabelas (CSV, TSV)
 |
-|- README.md         # descrição do projeto
+|- tmp/             # arquivos temporários irrelevantes
+|
+|- README.md        # descrição do projeto
 ```
 
 Note que o diretório de trabalho do projeto contém quatro subdiretórios: `code`, `data`, `docs` e `res`. O
@@ -160,7 +162,7 @@ O diretório do novo projeto do RStudio deverá conter uma estrutura com a mostr
     |- meu-novo-projeto.Rproj
     |- .gitignore
 
-Tando o subdiretório `.Rproj.user` como o arquivo `meu-novo-projeto.Rproj` já foram descritos anteriormente. O que temos de novidade aqui são o subdiretório `.git` e o arquivo `.gitignore`. O subdiretório `.git` consiste no repositório local onde as edições submetidas ao git são registradas. Já o arquivo `.gitignore` serve para identificar os arquivos e subdiretórios que devem ser, como o próprio nome sugere, ignorados pelo git. É o caso, por exemplo, de um subdiretório temporário criado para armazenar produtos do projeto que podem mudar a cada instante e serem descartados a qualquer momento.
+Tanto o subdiretório `.Rproj.user` como o arquivo `meu-novo-projeto.Rproj` já foram descritos anteriormente. O que temos de novidade aqui são o subdiretório `.git` e o arquivo `.gitignore`. O subdiretório `.git` consiste no repositório local onde as edições submetidas ao git são registradas. Já o arquivo `.gitignore` serve para identificar os arquivos e subdiretórios que devem ser, como o próprio nome sugere, ignorados pelo git. É o caso, por exemplo, de um subdiretório temporário criado para armazenar produtos do projeto que podem mudar a cada instante e serem descartados a qualquer momento.
 
 Agora, no Terminal, emita o comando `git status` para acessar as informações sobre o estado atual do git:
 
