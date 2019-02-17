@@ -282,11 +282,17 @@ O [tidyverse][tidyverse] é uma coleção de pacotes desenvolvidos principalment
 
 #### Operador `%>%`
 
-Uma das maiores contribuições do tidyverse é o operador `%>%`, chamado tubo ou cano, em inglês *pipe*, provida pelo pacote [magrittr][magrittr]. Operacionalmente, um tubo serve para estabelecer a comunicação direta entre dois processos, representando assim algo que possui uma "entrada", um "caminho" e uma "saída". Essa "entrada" representa, por exemplo, o produto de uma função qualquer, o qual é encaminhado diretamente, sem a necessidade de "paradas", pelo operador para uma segunda função, que então produz um produto final na "saída". Vejamos um exemplo para que você entenda a utilidade de um tubo.
+Uma das contribuições mais úteis do `titidyverseo operador `%>%`, chamado _pipe_ (tubo ou cano), provido pelo
+pacote [magmagrittragrittr]. Um _pipe_ estabelece uma comunicação direta entre dois procesos, representando 
+assim algo que possui uma "entrada", um "caminho" e uma "saída". Essa "entrada" representa, por exemplo, o 
+produto de uma função qualquer, o qual é encaminhado diretamente, sem a necessidade de "paradas", pelo operador
+`%>%`, para uma segunda função, que então produz um produto final na "saída". Vejamos um exemplo para que você
+entenda a utilidade do _pipe_.
 
 [magrittr]: https://github.com/tidyverse/magrittr
 
-Suponha que você queira fazer uma sequência de operações. Uma forma comum é definir, para cada operação, um objeto temporário, até que o produto final da sequência de operações seja obtido. Por exemplo:
+Suponha que você queira fazer uma sequência de operações. Uma forma comum é definir, para cada operação, um 
+objeto temporário, até que o produto final da sequência de operações seja obtido. Por exemplo:
 
 ```{r}
 # Sequência de operações usando objetos temporários
@@ -298,7 +304,12 @@ rm(x, y)
 gc()
 ```
 
-O problema dessa estratégia é que ela é muito verbosa, ou seja, ela requer muitas linhas de comando. No exemplo usado, apesar das operações serem bastante simples, foram necessárias seis linhas de comando. Uma alternativa é usar funções aninhadas, que elimina a necessidade de criação de objetos temporários. Dependendo do tamanho do conjunto de dados, esses objetos temporários podem consumir toda a RAM disponível em seu computador durante a execução da sequência de operações. Além disso, você pode acabar esquecendo de removê-los do ambiente de trabalho e assim permitir que eles indesejadamente afetem outras operações. Vejamos um exemplo:
+O problema dessa estratégia é que ela é muito verbosa, ou seja, ela requer muitas linhas de comando. No exemplo
+usado, apesar das operações serem bastante simples, foram necessárias seis linhas de comando. Uma alternativa é
+usar funções aninhadas, que elimina a necessidade de criação de objetos temporários. Dependendo do tamanho do
+conjunto de dados, esses objetos temporários podem consumir toda a RAM disponível em seu computador durante a
+execução da sequência de operações. Além disso, você pode acabar esquecendo de removê-los do ambiente de 
+trabalho e assim permitir que eles indesejadamente afetem outras operações. Vejamos um exemplo:
 
 ```{r}
 # Sequência de operações usando funções aninhadas
@@ -306,21 +317,28 @@ z <- log(sqrt(exp(25)))
 z
 ```
 
-Note que agora apenas duas linhas de comando foram necessárias para executar a mesma sequência de operações. Contudo, um novo problema foi criado, o da legibilidade das linhas de comando. Como nossa tradição de leitura segue de cima para baixo e da esquerda para a direita, temos grande facilidade de ler e entender qual é a sequência de operações realizada no primeira exemplo. Já no segundo exemplo, precisamos realizar a leitura da direita para a esquerda ou então pensar de maneira reversa. É claro que isso é fácil de fazer com o exemplo acima. Contudo, à medida que aumenta a complexidade das sequência de operações e das funções utilizadas, mais difícil fica de ler/decifrar um conjunto de funções aninhadas.
+Note que agora apenas duas linhas de comando foram necessárias para executar a mesma sequência de operações.
+Contudo, um novo problema foi criado, o da legibilidade das linhas de comando. Como nossa tradição de leitura
+segue de cima para baixo e da esquerda para a direita, temos grande facilidade de ler e entender qual é a
+sequência de operações realizada no primeira exemplo. Já no segundo exemplo, precisamos realizar a leitura da
+direita para a esquerda ou então pensar de maneira reversa. É claro que isso é fácil de se fazer com o exemplo
+acima. Contudo, à medida que aumenta a complexidade da sequência de operações e das funções utilizadas, mais
+difícil fica de ler/decifrar um conjunto de funções aninhadas.
 
-O operador `%>%` resolve todos esses problemas de uma vez só (Pressione Ctrl+Shift+M para inserir o operador `%>%` 😃):
+O operador `%>%` resolve todos esses problemas de uma vez só (seu atalho é `Ctrl + Shift + M`):
 
 ```{r, echo=FALSE}
 library(magrittr)
 ```
 
 ```{r}
-# Sequência de operações usando o operador %>%
-z <- exp(25) %>% sqrt() %>% log()
-z
+# Sequência de operações usando os operadores %>% e %T>%
+z <- exp(25) %>% sqrt() %>% log() %T>% print()
 ```
 
-Veja como a leitura das linhas de comando é muito fácil -- como quando usamos objetos temporários -- e pouquíssimo verbosa -- como quando usamos funções aninhadas. Assim, o operador `%>%` colabora para a produção de código fonte letrado, ou seja, que seja legível e compreensível não apenas por máquinas, mas principalmente por seres humanos.
+Veja como a leitura da linha de comando ficou bem mais fácil -- como quando usamos objetos temporários -- e 
+pouquíssimo verbosa -- como quando usamos funções aninhadas. Assim, o _pipe_ colabora para a produção de código
+fonte letrado, ou seja, legível e compreensível não apenas por máquinas, mas principalmente por seres humanos.
 
 #### Visualização interativa de objetos espaciais
 
