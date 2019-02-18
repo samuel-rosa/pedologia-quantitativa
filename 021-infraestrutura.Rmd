@@ -283,7 +283,7 @@ O [tidyverse][tidyverse] é uma coleção de pacotes desenvolvidos principalment
 #### Operador `%>%`
 
 Uma das contribuições mais úteis do `titidyverseo operador `%>%`, chamado _pipe_ (tubo ou cano), provido pelo
-pacote [magmagrittragrittr]. Um _pipe_ estabelece uma comunicação direta entre dois procesos, representando 
+pacote [magmagrittragrittr]. Um _pipe_ estabelece uma comunicação direta entre dois procesos,s representando 
 assim algo que possui uma "entrada", um "caminho" e uma "saída". Essa "entrada" representa, por exemplo, o 
 produto de uma função qualquer, o qual é encaminhado diretamente, sem a necessidade de "paradas", pelo operador
 `%>%`, para uma segunda função, que então produz um produto final na "saída". Vejamos um exemplo para que você
@@ -321,11 +321,12 @@ Note que agora apenas duas linhas de comando foram necessárias para executar a 
 Contudo, um novo problema foi criado, o da legibilidade das linhas de comando. Como nossa tradição de leitura
 segue de cima para baixo e da esquerda para a direita, temos grande facilidade de ler e entender qual é a
 sequência de operações realizada no primeira exemplo. Já no segundo exemplo, precisamos realizar a leitura da
-direita para a esquerda ou então pensar de maneira reversa. É claro que isso é fácil de se fazer com o exemplo
-acima. Contudo, à medida que aumenta a complexidade da sequência de operações e das funções utilizadas, mais
-difícil fica de ler/decifrar um conjunto de funções aninhadas.
+do 
+código da eita para a esquerda ou então pensar de maneira reversa. É claro que isso é fácil de se fazer com o e
+o exemplo ma. Contudo, à medida que aumenta a complexidade da sequência de operações e das funções uti
+utilizadas, mais ícil fica de ler/decifrar um conjunto de funções aninhadas.
 
-O operador `%>%` resolve todos esses problemas de uma vez só (seu atalho é `Ctrl + Shift + M`):
+O operador `%>%` resolve todos esses problemas de uma vezsó  só u atalho é `Ctrl + Shift + M`):
 
 ```{r, echo=FALSE}
 library(magrittr)
